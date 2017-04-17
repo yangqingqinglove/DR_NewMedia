@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="ALK-yx-Vcg">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--搭配间-->
+        <scene sceneID="WTf-Tl-RO2">
+            <objects>
+                <viewController id="VWn-nY-4Hc" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="M2Z-SP-k2I"/>
+                        <viewControllerLayoutGuide type="bottom" id="ybI-3O-ckG"/>
+                    </layoutGuides>
+                    <view key="view" clipsSubviews="YES" contentMode="scaleToFill" id="qaZ-Gt-szO">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.92506155550000002" green="1" blue="0.2235887848" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="搭配间" id="YYE-CJ-4QK"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9Ux-y6-wsk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="305" y="311"/>
+        </scene>
+        <!--Item 4-->
+        <scene sceneID="YUa-Ez-yuU">
+            <objects>
+                <tableViewController id="Yfs-BH-0Tb" userLabel="Item 4" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="P2u-vU-vH4">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="pey-sk-tyb">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="pey-sk-tyb" id="CZW-Vh-c6B">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="Yfs-BH-0Tb" id="pyX-nM-16I"/>
+                            <outlet property="delegate" destination="Yfs-BH-0Tb" id="3Ct-cH-WSr"/>
+                        </connections>
+                    </tableView>
+                    <tabBarItem key="tabBarItem" title="未登录" id="yS9-Cg-837" userLabel="Item 4"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6ic-kd-fIp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="305" y="1099"/>
+        </scene>
+        <!--首页-->
+        <scene sceneID="vZK-e4-fdU">
+            <objects>
+                <viewController id="6FQ-wY-JRf" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="z7a-Cc-SHb"/>
+                        <viewControllerLayoutGuide type="bottom" id="Nca-lq-ydZ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="RqI-OQ-b4j">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="1" green="0.63341499040000004" blue="0.2297120483" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="首页" id="nQb-cB-1SE"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Of1-cH-S7L" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="305" y="-344"/>
+        </scene>
+        <!--Item 3-->
+        <scene sceneID="DFC-9N-G36">
+            <objects>
+                <viewController id="vfg-Mw-3lL" userLabel="Item 3" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="NzM-Z2-xRd"/>
+                        <viewControllerLayoutGuide type="bottom" id="eej-uF-MAn"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="qzt-XF-J7k">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.50196081400000003" green="0.0" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="关注" id="ZDF-ob-SZB" userLabel="Item 3"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rCR-Xx-H43" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="305" y="-1005"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="wMw-2R-VLD">
+            <objects>
+                <tabBarController id="ALK-yx-Vcg" customClass="YQTabBarController" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="3fl-wc-TcQ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="6FQ-wY-JRf" kind="relationship" relationship="viewControllers" id="ZuG-vS-DPj"/>
+                        <segue destination="VWn-nY-4Hc" kind="relationship" relationship="viewControllers" id="EXD-0D-TI1"/>
+                        <segue destination="vfg-Mw-3lL" kind="relationship" relationship="viewControllers" id="pTO-WG-1cD"/>
+                        <segue destination="Yfs-BH-0Tb" kind="relationship" relationship="viewControllers" id="8H7-nO-hbp"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tqD-cH-gOH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1497" y="54"/>
+        </scene>
+    </scenes>
+</document>
