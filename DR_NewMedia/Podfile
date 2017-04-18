@@ -10,7 +10,8 @@ target 'DR_NewMedia' do
   # use_frameworks!
 
   # Pods for DR_NewMedia
+pod ‘Masonry’
 
-pod 'Masonry'
+pod ‘SDWebImage’
 
 end

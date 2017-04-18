@@ -7,6 +7,24 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2F4FA5B31EA5C3E800E6E25F /* TAAbstractDotView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F4FA5A61EA5C3E800E6E25F /* TAAbstractDotView.m */; };
+		2F4FA5B41EA5C3E800E6E25F /* TAAnimatedDotView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F4FA5A81EA5C3E800E6E25F /* TAAnimatedDotView.m */; };
+		2F4FA5B51EA5C3E800E6E25F /* TADotView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F4FA5AA1EA5C3E800E6E25F /* TADotView.m */; };
+		2F4FA5B61EA5C3E800E6E25F /* TAPageControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F4FA5AC1EA5C3E800E6E25F /* TAPageControl.m */; };
+		2F4FA5B71EA5C3E800E6E25F /* SDCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F4FA5AE1EA5C3E800E6E25F /* SDCollectionViewCell.m */; };
+		2F4FA5B81EA5C3E800E6E25F /* SDCycleScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F4FA5B01EA5C3E800E6E25F /* SDCycleScrollView.m */; };
+		2F4FA5B91EA5C3E800E6E25F /* UIView+SDExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F4FA5B21EA5C3E800E6E25F /* UIView+SDExtension.m */; };
+		2F4FA5BC1EA5C52E00E6E25F /* YQCycleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F4FA5BB1EA5C52E00E6E25F /* YQCycleView.m */; };
+		2F4FA5DD1EA5E23700E6E25F /* 01.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2F4FA5D31EA5E23700E6E25F /* 01.jpg */; };
+		2F4FA5DE1EA5E23700E6E25F /* 02.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2F4FA5D41EA5E23700E6E25F /* 02.jpg */; };
+		2F4FA5DF1EA5E23700E6E25F /* 03.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2F4FA5D51EA5E23700E6E25F /* 03.jpg */; };
+		2F4FA5E01EA5E23700E6E25F /* 04.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2F4FA5D61EA5E23700E6E25F /* 04.jpg */; };
+		2F4FA5E11EA5E23700E6E25F /* 05.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2F4FA5D71EA5E23700E6E25F /* 05.jpg */; };
+		2F4FA5E21EA5E23700E6E25F /* 06.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2F4FA5D81EA5E23700E6E25F /* 06.jpg */; };
+		2F4FA5E31EA5E23700E6E25F /* 07.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2F4FA5D91EA5E23700E6E25F /* 07.jpg */; };
+		2F4FA5E41EA5E23700E6E25F /* 08.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2F4FA5DA1EA5E23700E6E25F /* 08.jpg */; };
+		2F4FA5E51EA5E23700E6E25F /* 09.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2F4FA5DB1EA5E23700E6E25F /* 09.jpg */; };
+		2F4FA5E61EA5E23700E6E25F /* 10.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2F4FA5DC1EA5E23700E6E25F /* 10.jpg */; };
 		2F8966931EA497FA00A1F697 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F8966921EA497FA00A1F697 /* main.m */; };
 		2F8966961EA497FA00A1F697 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F8966951EA497FA00A1F697 /* AppDelegate.m */; };
 		2F89669C1EA497FA00A1F697 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2F89669A1EA497FA00A1F697 /* Main.storyboard */; };
@@ -14,7 +32,6 @@
 		2F8966A11EA497FA00A1F697 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2F89669F1EA497FA00A1F697 /* LaunchScreen.storyboard */; };
 		2F8966AA1EA49C9B00A1F697 /* YQTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F8966A91EA49C9B00A1F697 /* YQTabBarController.m */; };
 		2F8966F41EA4F66400A1F697 /* YQHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F8966F31EA4F66400A1F697 /* YQHomeViewController.m */; };
-		2F8966FA1EA4F9BC00A1F697 /* YQColletionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F8966F91EA4F9BC00A1F697 /* YQColletionView.m */; };
 		2F8966FD1EA4FA1600A1F697 /* YQScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F8966FC1EA4FA1600A1F697 /* YQScrollView.m */; };
 		2F8967001EA4FA4200A1F697 /* YQTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F8966FF1EA4FA4200A1F697 /* YQTableView.m */; };
 		2F8967041EA4FA7700A1F697 /* YQTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F8967021EA4FA7700A1F697 /* YQTableViewCell.m */; };
@@ -23,6 +40,32 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2F4FA5A51EA5C3E800E6E25F /* TAAbstractDotView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TAAbstractDotView.h; sourceTree = "<group>"; };
+		2F4FA5A61EA5C3E800E6E25F /* TAAbstractDotView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TAAbstractDotView.m; sourceTree = "<group>"; };
+		2F4FA5A71EA5C3E800E6E25F /* TAAnimatedDotView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TAAnimatedDotView.h; sourceTree = "<group>"; };
+		2F4FA5A81EA5C3E800E6E25F /* TAAnimatedDotView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TAAnimatedDotView.m; sourceTree = "<group>"; };
+		2F4FA5A91EA5C3E800E6E25F /* TADotView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TADotView.h; sourceTree = "<group>"; };
+		2F4FA5AA1EA5C3E800E6E25F /* TADotView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TADotView.m; sourceTree = "<group>"; };
+		2F4FA5AB1EA5C3E800E6E25F /* TAPageControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TAPageControl.h; sourceTree = "<group>"; };
+		2F4FA5AC1EA5C3E800E6E25F /* TAPageControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TAPageControl.m; sourceTree = "<group>"; };
+		2F4FA5AD1EA5C3E800E6E25F /* SDCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDCollectionViewCell.h; sourceTree = "<group>"; };
+		2F4FA5AE1EA5C3E800E6E25F /* SDCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDCollectionViewCell.m; sourceTree = "<group>"; };
+		2F4FA5AF1EA5C3E800E6E25F /* SDCycleScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDCycleScrollView.h; sourceTree = "<group>"; };
+		2F4FA5B01EA5C3E800E6E25F /* SDCycleScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDCycleScrollView.m; sourceTree = "<group>"; };
+		2F4FA5B11EA5C3E800E6E25F /* UIView+SDExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+SDExtension.h"; sourceTree = "<group>"; };
+		2F4FA5B21EA5C3E800E6E25F /* UIView+SDExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+SDExtension.m"; sourceTree = "<group>"; };
+		2F4FA5BA1EA5C52E00E6E25F /* YQCycleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YQCycleView.h; sourceTree = "<group>"; };
+		2F4FA5BB1EA5C52E00E6E25F /* YQCycleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YQCycleView.m; sourceTree = "<group>"; };
+		2F4FA5D31EA5E23700E6E25F /* 01.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 01.jpg; sourceTree = "<group>"; };
+		2F4FA5D41EA5E23700E6E25F /* 02.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 02.jpg; sourceTree = "<group>"; };
+		2F4FA5D51EA5E23700E6E25F /* 03.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 03.jpg; sourceTree = "<group>"; };
+		2F4FA5D61EA5E23700E6E25F /* 04.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 04.jpg; sourceTree = "<group>"; };
+		2F4FA5D71EA5E23700E6E25F /* 05.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 05.jpg; sourceTree = "<group>"; };
+		2F4FA5D81EA5E23700E6E25F /* 06.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 06.jpg; sourceTree = "<group>"; };
+		2F4FA5D91EA5E23700E6E25F /* 07.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 07.jpg; sourceTree = "<group>"; };
+		2F4FA5DA1EA5E23700E6E25F /* 08.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 08.jpg; sourceTree = "<group>"; };
+		2F4FA5DB1EA5E23700E6E25F /* 09.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 09.jpg; sourceTree = "<group>"; };
+		2F4FA5DC1EA5E23700E6E25F /* 10.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 10.jpg; sourceTree = "<group>"; };
 		2F89668E1EA497FA00A1F697 /* DR_NewMedia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DR_NewMedia.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2F8966921EA497FA00A1F697 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		2F8966941EA497FA00A1F697 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -35,8 +78,6 @@
 		2F8966A91EA49C9B00A1F697 /* YQTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YQTabBarController.m; sourceTree = "<group>"; };
 		2F8966F21EA4F66400A1F697 /* YQHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YQHomeViewController.h; sourceTree = "<group>"; };
 		2F8966F31EA4F66400A1F697 /* YQHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YQHomeViewController.m; sourceTree = "<group>"; };
-		2F8966F81EA4F9BC00A1F697 /* YQColletionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YQColletionView.h; sourceTree = "<group>"; };
-		2F8966F91EA4F9BC00A1F697 /* YQColletionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YQColletionView.m; sourceTree = "<group>"; };
 		2F8966FB1EA4FA1600A1F697 /* YQScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YQScrollView.h; sourceTree = "<group>"; };
 		2F8966FC1EA4FA1600A1F697 /* YQScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YQScrollView.m; sourceTree = "<group>"; };
 		2F8966FE1EA4FA4200A1F697 /* YQTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YQTableView.h; sourceTree = "<group>"; };
@@ -70,9 +111,65 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		2F4FA5A21EA5C25100E6E25F /* Framework */ = {
+			isa = PBXGroup;
+			children = (
+				2F4FA5D21EA5E23700E6E25F /* images */,
+				2F4FA5A31EA5C3E800E6E25F /* SDCycleScrollView */,
+			);
+			name = Framework;
+			sourceTree = "<group>";
+		};
+		2F4FA5A31EA5C3E800E6E25F /* SDCycleScrollView */ = {
+			isa = PBXGroup;
+			children = (
+				2F4FA5A41EA5C3E800E6E25F /* PageControl */,
+				2F4FA5AD1EA5C3E800E6E25F /* SDCollectionViewCell.h */,
+				2F4FA5AE1EA5C3E800E6E25F /* SDCollectionViewCell.m */,
+				2F4FA5AF1EA5C3E800E6E25F /* SDCycleScrollView.h */,
+				2F4FA5B01EA5C3E800E6E25F /* SDCycleScrollView.m */,
+				2F4FA5B11EA5C3E800E6E25F /* UIView+SDExtension.h */,
+				2F4FA5B21EA5C3E800E6E25F /* UIView+SDExtension.m */,
+			);
+			path = SDCycleScrollView;
+			sourceTree = "<group>";
+		};
+		2F4FA5A41EA5C3E800E6E25F /* PageControl */ = {
+			isa = PBXGroup;
+			children = (
+				2F4FA5A51EA5C3E800E6E25F /* TAAbstractDotView.h */,
+				2F4FA5A61EA5C3E800E6E25F /* TAAbstractDotView.m */,
+				2F4FA5A71EA5C3E800E6E25F /* TAAnimatedDotView.h */,
+				2F4FA5A81EA5C3E800E6E25F /* TAAnimatedDotView.m */,
+				2F4FA5A91EA5C3E800E6E25F /* TADotView.h */,
+				2F4FA5AA1EA5C3E800E6E25F /* TADotView.m */,
+				2F4FA5AB1EA5C3E800E6E25F /* TAPageControl.h */,
+				2F4FA5AC1EA5C3E800E6E25F /* TAPageControl.m */,
+			);
+			path = PageControl;
+			sourceTree = "<group>";
+		};
+		2F4FA5D21EA5E23700E6E25F /* images */ = {
+			isa = PBXGroup;
+			children = (
+				2F4FA5D31EA5E23700E6E25F /* 01.jpg */,
+				2F4FA5D41EA5E23700E6E25F /* 02.jpg */,
+				2F4FA5D51EA5E23700E6E25F /* 03.jpg */,
+				2F4FA5D61EA5E23700E6E25F /* 04.jpg */,
+				2F4FA5D71EA5E23700E6E25F /* 05.jpg */,
+				2F4FA5D81EA5E23700E6E25F /* 06.jpg */,
+				2F4FA5D91EA5E23700E6E25F /* 07.jpg */,
+				2F4FA5DA1EA5E23700E6E25F /* 08.jpg */,
+				2F4FA5DB1EA5E23700E6E25F /* 09.jpg */,
+				2F4FA5DC1EA5E23700E6E25F /* 10.jpg */,
+			);
+			path = images;
+			sourceTree = "<group>";
+		};
 		2F8966851EA497FA00A1F697 = {
 			isa = PBXGroup;
 			children = (
+				2F4FA5A21EA5C25100E6E25F /* Framework */,
 				2F8966901EA497FA00A1F697 /* DR_NewMedia */,
 				2F89668F1EA497FA00A1F697 /* Products */,
 				101E19C4B09621BD6F035C49 /* Pods */,
@@ -143,8 +240,6 @@
 		2F8966F61EA4F82000A1F697 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				2F8966F81EA4F9BC00A1F697 /* YQColletionView.h */,
-				2F8966F91EA4F9BC00A1F697 /* YQColletionView.m */,
 				2F8966FB1EA4FA1600A1F697 /* YQScrollView.h */,
 				2F8966FC1EA4FA1600A1F697 /* YQScrollView.m */,
 				2F8966FE1EA4FA4200A1F697 /* YQTableView.h */,
@@ -152,6 +247,8 @@
 				2F8967011EA4FA7700A1F697 /* YQTableViewCell.h */,
 				2F8967021EA4FA7700A1F697 /* YQTableViewCell.m */,
 				2F8967031EA4FA7700A1F697 /* YQTableViewCell.xib */,
+				2F4FA5BA1EA5C52E00E6E25F /* YQCycleView.h */,
+				2F4FA5BB1EA5C52E00E6E25F /* YQCycleView.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -233,6 +330,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2F4FA5E51EA5E23700E6E25F /* 09.jpg in Resources */,
+				2F4FA5DF1EA5E23700E6E25F /* 03.jpg in Resources */,
+				2F4FA5E41EA5E23700E6E25F /* 08.jpg in Resources */,
+				2F4FA5E01EA5E23700E6E25F /* 04.jpg in Resources */,
+				2F4FA5DD1EA5E23700E6E25F /* 01.jpg in Resources */,
+				2F4FA5DE1EA5E23700E6E25F /* 02.jpg in Resources */,
+				2F4FA5E11EA5E23700E6E25F /* 05.jpg in Resources */,
+				2F4FA5E31EA5E23700E6E25F /* 07.jpg in Resources */,
+				2F4FA5E61EA5E23700E6E25F /* 10.jpg in Resources */,
+				2F4FA5E21EA5E23700E6E25F /* 06.jpg in Resources */,
 				2F8966A11EA497FA00A1F697 /* LaunchScreen.storyboard in Resources */,
 				2F8967051EA4FA7700A1F697 /* YQTableViewCell.xib in Resources */,
 				2F89669E1EA497FA00A1F697 /* Assets.xcassets in Resources */,
@@ -296,12 +403,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				2F8966AA1EA49C9B00A1F697 /* YQTabBarController.m in Sources */,
+				2F4FA5B81EA5C3E800E6E25F /* SDCycleScrollView.m in Sources */,
 				2F8967041EA4FA7700A1F697 /* YQTableViewCell.m in Sources */,
 				2F8966961EA497FA00A1F697 /* AppDelegate.m in Sources */,
 				2F8966931EA497FA00A1F697 /* main.m in Sources */,
+				2F4FA5B31EA5C3E800E6E25F /* TAAbstractDotView.m in Sources */,
+				2F4FA5B61EA5C3E800E6E25F /* TAPageControl.m in Sources */,
+				2F4FA5B71EA5C3E800E6E25F /* SDCollectionViewCell.m in Sources */,
 				2F8966FD1EA4FA1600A1F697 /* YQScrollView.m in Sources */,
-				2F8966FA1EA4F9BC00A1F697 /* YQColletionView.m in Sources */,
 				2F8966F41EA4F66400A1F697 /* YQHomeViewController.m in Sources */,
+				2F4FA5B51EA5C3E800E6E25F /* TADotView.m in Sources */,
+				2F4FA5B41EA5C3E800E6E25F /* TAAnimatedDotView.m in Sources */,
+				2F4FA5B91EA5C3E800E6E25F /* UIView+SDExtension.m in Sources */,
+				2F4FA5BC1EA5C52E00E6E25F /* YQCycleView.m in Sources */,
 				2F8967001EA4FA4200A1F697 /* YQTableView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
