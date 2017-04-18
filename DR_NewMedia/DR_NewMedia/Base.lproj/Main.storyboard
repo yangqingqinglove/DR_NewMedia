@@ -69,14 +69,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XGb-Vx-aqg" customClass="YQScrollView">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XGb-Vx-aqg">
                                 <rect key="frame" x="0.0" y="200" width="375" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="1Ir-7i-Hc0"/>
                                 </constraints>
-                            </scrollView>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="e8r-xk-6T7">
-                                <rect key="frame" x="0.0" y="260" width="375" height="358"/>
                             </scrollView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="x98-xi-co2" customClass="YQCycleView">
                                 <rect key="frame" x="0.0" y="20" width="375" height="180"/>
@@ -85,6 +82,12 @@
                                     <constraint firstAttribute="height" constant="180" id="EFe-MU-cZF"/>
                                 </constraints>
                             </view>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e8r-xk-6T7">
+                                <rect key="frame" x="0.0" y="260" width="375" height="358"/>
+                                <connections>
+                                    <outlet property="delegate" destination="6FQ-wY-JRf" id="aw0-h7-5Ie"/>
+                                </connections>
+                            </scrollView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.63341499040000004" blue="0.2297120483" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -101,6 +104,10 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="首页" id="nQb-cB-1SE"/>
+                    <connections>
+                        <outlet property="contentScrollView" destination="e8r-xk-6T7" id="1Q9-jB-V7H"/>
+                        <outlet property="titleScrollView" destination="XGb-Vx-aqg" id="Idc-DL-lar"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Of1-cH-S7L" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
