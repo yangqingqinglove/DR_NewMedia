@@ -9,9 +9,10 @@
 #import "YQHomeViewController.h"
 #import "YQFirstTableViewController.h"
 #import "YQButton.h"
+#import "YQTitleScrollView.h"
 
 @interface YQHomeViewController ()
-@property (weak, nonatomic) IBOutlet UIScrollView *titleScrollView;
+@property (weak, nonatomic) IBOutlet YQTitleScrollView *titleScrollView;
 @property (weak, nonatomic) IBOutlet UIScrollView *contentScrollView;
 
 @end
@@ -66,11 +67,11 @@
     NSUInteger count = self.childViewControllers.count;
     
     CGFloat labelW = self.view.bounds.size.width / count;
-    CGFloat labelH = self.titleScrollView.bounds.size.height;
+    CGFloat labelH = self.titleScrollView.bounds.size.height -2;
     CGFloat labelY = 0;
     
     for (NSUInteger i = 0; i < count; i++) {
-        // 创建label
+        // 创建labe
         YQButton *btn = [[YQButton alloc] init];
         btn.tag = i;
         
@@ -132,6 +133,7 @@
     
     [scrollView addSubview:vc.view];
 }
+
 /**
  *  当scrollview停止滚动时调用这个方法 (用户手动触发的动画结束,会调用这个方法)
  */
@@ -147,7 +149,7 @@
     // 2. 两个标题各自的比例值
     // 偏移量 / 宽度
     CGFloat value = ABS(self.contentScrollView.contentOffset.x / self.contentScrollView.frame.size.width);
-    
+    //NSLog(@"===%f",value);// 这个的 value的取值的 范围是: 0 ~ 3 的取值的情况!!!
     
     // 左边bnt的索引
     NSUInteger leftIndex = (NSUInteger)(self.contentScrollView.contentOffset.x / self.contentScrollView.frame.size.width);
@@ -164,11 +166,15 @@
     CGFloat leftScale = 1 - rightScale;
     
     // 取出label设置高亮状态的apla 的渐变的效果
-    YQButton *leftBtn = self.titleScrollView.subviews[leftIndex];
-    [leftBtn buttonWithScaleToHighlightedAnimation:leftScale];
+    YQButton *leftBtn = self.titleScrollView.subviews[leftIndex +1];
+    leftBtn.scale = leftScale;
     
-    YQButton *rightBtn = self.titleScrollView.subviews[rightIndex];
-    [rightBtn buttonWithScaleToHighlightedAnimation:rightScale];;
+    YQButton *rightBtn = self.titleScrollView.subviews[rightIndex +1];
+    rightBtn.scale = rightScale;
+    
+    
+    //范围是: 0~3
+    [self.titleScrollView scrollToRate:(self.contentScrollView.contentOffset.x / self.contentScrollView.frame.size.width)];
 
 }
 

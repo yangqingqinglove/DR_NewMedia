@@ -11,6 +11,7 @@
 @interface YQButton : UIButton
 
 //提供创建button的类方法
--(void)buttonWithScaleToHighlightedAnimation:(CGFloat)scale;
+@property(nonatomic,assign)CGFloat scale;
+
 
 @end

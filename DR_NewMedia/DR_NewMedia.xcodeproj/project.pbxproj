@@ -27,6 +27,7 @@
 		2F4FA5E61EA5E23700E6E25F /* 10.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2F4FA5DC1EA5E23700E6E25F /* 10.jpg */; };
 		2F4FA5EF1EA5EC8800E6E25F /* YQFirstTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F4FA5EE1EA5EC8800E6E25F /* YQFirstTableViewController.m */; };
 		2F4FA5F21EA5EF7100E6E25F /* YQButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F4FA5F11EA5EF7100E6E25F /* YQButton.m */; };
+		2F5E5CED1EA70DA600F5940B /* YQTitleScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F5E5CEC1EA70DA600F5940B /* YQTitleScrollView.m */; };
 		2F8966931EA497FA00A1F697 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F8966921EA497FA00A1F697 /* main.m */; };
 		2F8966961EA497FA00A1F697 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F8966951EA497FA00A1F697 /* AppDelegate.m */; };
 		2F89669C1EA497FA00A1F697 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2F89669A1EA497FA00A1F697 /* Main.storyboard */; };
@@ -70,6 +71,8 @@
 		2F4FA5EE1EA5EC8800E6E25F /* YQFirstTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YQFirstTableViewController.m; sourceTree = "<group>"; };
 		2F4FA5F01EA5EF7100E6E25F /* YQButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YQButton.h; sourceTree = "<group>"; };
 		2F4FA5F11EA5EF7100E6E25F /* YQButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YQButton.m; sourceTree = "<group>"; };
+		2F5E5CEB1EA70DA600F5940B /* YQTitleScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YQTitleScrollView.h; sourceTree = "<group>"; };
+		2F5E5CEC1EA70DA600F5940B /* YQTitleScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YQTitleScrollView.m; sourceTree = "<group>"; };
 		2F89668E1EA497FA00A1F697 /* DR_NewMedia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DR_NewMedia.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2F8966921EA497FA00A1F697 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		2F8966941EA497FA00A1F697 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -245,6 +248,8 @@
 				2F8967011EA4FA7700A1F697 /* YQTableViewCell.h */,
 				2F8967021EA4FA7700A1F697 /* YQTableViewCell.m */,
 				2F8967031EA4FA7700A1F697 /* YQTableViewCell.xib */,
+				2F5E5CEB1EA70DA600F5940B /* YQTitleScrollView.h */,
+				2F5E5CEC1EA70DA600F5940B /* YQTitleScrollView.m */,
 				2F4FA5BA1EA5C52E00E6E25F /* YQCycleView.h */,
 				2F4FA5BB1EA5C52E00E6E25F /* YQCycleView.m */,
 				2F4FA5F01EA5EF7100E6E25F /* YQButton.h */,
@@ -406,6 +411,7 @@
 				2F4FA5F21EA5EF7100E6E25F /* YQButton.m in Sources */,
 				2F4FA5B81EA5C3E800E6E25F /* SDCycleScrollView.m in Sources */,
 				2F8967041EA4FA7700A1F697 /* YQTableViewCell.m in Sources */,
+				2F5E5CED1EA70DA600F5940B /* YQTitleScrollView.m in Sources */,
 				2F8966961EA497FA00A1F697 /* AppDelegate.m in Sources */,
 				2F8966931EA497FA00A1F697 /* main.m in Sources */,
 				2F4FA5B31EA5C3E800E6E25F /* TAAbstractDotView.m in Sources */,

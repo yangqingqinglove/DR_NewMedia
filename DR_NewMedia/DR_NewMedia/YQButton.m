@@ -29,8 +29,16 @@
     
     //思路怎么来实现 渐变的效果:
     self.imageView.alpha = scale;
+    
+}
 
-
+-(void)setScale:(CGFloat)scale{
+    _scale = scale;
+    
+    //思路怎么来实现 渐变的效果:
+    self.imageView.alpha = scale;
+    //设置select的高亮的选择
+    
 }
 
 
