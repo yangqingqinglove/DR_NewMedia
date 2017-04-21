@@ -31,6 +31,10 @@
 		2F70F3771EA9A1B90012EF8A /* YQWardrobeCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F70F3761EA9A1B90012EF8A /* YQWardrobeCollectionView.m */; };
 		2F70F37B1EA9A4200012EF8A /* YQWardrobeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F70F3791EA9A4200012EF8A /* YQWardrobeCell.m */; };
 		2F70F37C1EA9A4200012EF8A /* YQWardrobeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2F70F37A1EA9A4200012EF8A /* YQWardrobeCell.xib */; };
+		2F70F3801EA9D9370012EF8A /* YQRulerVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F70F37E1EA9D9370012EF8A /* YQRulerVC.m */; };
+		2F70F3851EA9F1610012EF8A /* YQDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F70F3831EA9F1610012EF8A /* YQDetailViewController.m */; };
+		2F70F3881EA9F39F0012EF8A /* YQDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2F70F3871EA9F39F0012EF8A /* YQDetail.storyboard */; };
+		2F70F38A1EAA08F90012EF8A /* YQRulerVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2F70F3891EAA08F90012EF8A /* YQRulerVC.xib */; };
 		2F8966931EA497FA00A1F697 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F8966921EA497FA00A1F697 /* main.m */; };
 		2F8966961EA497FA00A1F697 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F8966951EA497FA00A1F697 /* AppDelegate.m */; };
 		2F89669C1EA497FA00A1F697 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2F89669A1EA497FA00A1F697 /* Main.storyboard */; };
@@ -86,6 +90,12 @@
 		2F70F3781EA9A4200012EF8A /* YQWardrobeCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YQWardrobeCell.h; sourceTree = "<group>"; };
 		2F70F3791EA9A4200012EF8A /* YQWardrobeCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YQWardrobeCell.m; sourceTree = "<group>"; };
 		2F70F37A1EA9A4200012EF8A /* YQWardrobeCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YQWardrobeCell.xib; sourceTree = "<group>"; };
+		2F70F37D1EA9D9370012EF8A /* YQRulerVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YQRulerVC.h; sourceTree = "<group>"; };
+		2F70F37E1EA9D9370012EF8A /* YQRulerVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YQRulerVC.m; sourceTree = "<group>"; };
+		2F70F3821EA9F1610012EF8A /* YQDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YQDetailViewController.h; sourceTree = "<group>"; };
+		2F70F3831EA9F1610012EF8A /* YQDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YQDetailViewController.m; sourceTree = "<group>"; };
+		2F70F3871EA9F39F0012EF8A /* YQDetail.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = YQDetail.storyboard; sourceTree = "<group>"; };
+		2F70F3891EAA08F90012EF8A /* YQRulerVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YQRulerVC.xib; sourceTree = "<group>"; };
 		2F89668E1EA497FA00A1F697 /* DR_NewMedia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DR_NewMedia.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2F8966921EA497FA00A1F697 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		2F8966941EA497FA00A1F697 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -138,6 +148,7 @@
 		2F4FA5A21EA5C25100E6E25F /* Framework */ = {
 			isa = PBXGroup;
 			children = (
+				2F70F38B1EAA109C0012EF8A /* category */,
 				2F4FA5D21EA5E23700E6E25F /* images */,
 				2F4FA5A31EA5C3E800E6E25F /* SDCycleScrollView */,
 			);
@@ -188,6 +199,13 @@
 				2F4FA5DC1EA5E23700E6E25F /* 10.jpg */,
 			);
 			path = images;
+			sourceTree = "<group>";
+		};
+		2F70F38B1EAA109C0012EF8A /* category */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = category;
 			sourceTree = "<group>";
 		};
 		2F8966851EA497FA00A1F697 = {
@@ -302,6 +320,12 @@
 			children = (
 				2F8F894F1EA86646006DDDE9 /* YQCollocationViewController.h */,
 				2F8F89501EA86646006DDDE9 /* YQCollocationViewController.m */,
+				2F70F37D1EA9D9370012EF8A /* YQRulerVC.h */,
+				2F70F37E1EA9D9370012EF8A /* YQRulerVC.m */,
+				2F70F3891EAA08F90012EF8A /* YQRulerVC.xib */,
+				2F70F3821EA9F1610012EF8A /* YQDetailViewController.h */,
+				2F70F3831EA9F1610012EF8A /* YQDetailViewController.m */,
+				2F70F3871EA9F39F0012EF8A /* YQDetail.storyboard */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -403,7 +427,9 @@
 			files = (
 				2F4FA5E51EA5E23700E6E25F /* 09.jpg in Resources */,
 				2F4FA5DF1EA5E23700E6E25F /* 03.jpg in Resources */,
+				2F70F38A1EAA08F90012EF8A /* YQRulerVC.xib in Resources */,
 				2F4FA5E41EA5E23700E6E25F /* 08.jpg in Resources */,
+				2F70F3881EA9F39F0012EF8A /* YQDetail.storyboard in Resources */,
 				2F4FA5E01EA5E23700E6E25F /* 04.jpg in Resources */,
 				2F4FA5DD1EA5E23700E6E25F /* 01.jpg in Resources */,
 				2F4FA5DE1EA5E23700E6E25F /* 02.jpg in Resources */,
@@ -479,6 +505,7 @@
 				2F8966AA1EA49C9B00A1F697 /* YQTabBarController.m in Sources */,
 				2F8F895C1EA89275006DDDE9 /* YQTopView.m in Sources */,
 				2F4FA5F21EA5EF7100E6E25F /* YQButton.m in Sources */,
+				2F70F3801EA9D9370012EF8A /* YQRulerVC.m in Sources */,
 				2F8F89511EA86646006DDDE9 /* YQCollocationViewController.m in Sources */,
 				2F70F3771EA9A1B90012EF8A /* YQWardrobeCollectionView.m in Sources */,
 				2F4FA5B81EA5C3E800E6E25F /* SDCycleScrollView.m in Sources */,
@@ -491,6 +518,7 @@
 				2F4FA5B61EA5C3E800E6E25F /* TAPageControl.m in Sources */,
 				2F4FA5B71EA5C3E800E6E25F /* SDCollectionViewCell.m in Sources */,
 				2F8966F41EA4F66400A1F697 /* YQHomeViewController.m in Sources */,
+				2F70F3851EA9F1610012EF8A /* YQDetailViewController.m in Sources */,
 				2F4FA5B51EA5C3E800E6E25F /* TADotView.m in Sources */,
 				2F4FA5B41EA5C3E800E6E25F /* TAAnimatedDotView.m in Sources */,
 				2F4FA5B91EA5C3E800E6E25F /* UIView+SDExtension.m in Sources */,

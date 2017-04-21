@@ -16,6 +16,9 @@
 #import "YQTopView.h"
 #import "YQWardrobeCollectionView.h"
 #import "YQWardrobeCell.h"
+#import "YQDetailViewController.h"
+#import "YQRulerVC.h"
+#import <Masonry.h>
 
 @interface YQCollocationViewController ()<YQBottomViewClickDeleage,YQTopViewClickDeleate,UICollectionViewDelegate,UICollectionViewDataSource>
 
@@ -25,12 +28,16 @@
 
 @property(nonatomic,strong)YQWardrobeCollectionView * wardrobeView;
 
-
+///各种的展示控制器
+@property(nonatomic,strong)YQDetailViewController * detailVC;
+@property(nonatomic,strong)YQRulerVC * rulerVC;
 
 
 /// 定义的记录属性 view
 @property(nonatomic,strong)UIView * bottomV;
 @property(nonatomic,strong)UIView * topView;
+@property(nonatomic,strong)UIView * baffleView;
+
 
 /// 伸缩属性
 @property(nonatomic,assign)BOOL isShow;
@@ -99,6 +106,9 @@ static NSString * ID = @"imageCell";
     switch (tag) {
         case 2:{//移动 transform
             
+            //禁止用户交互其他的选项
+            self.imageView.userInteractionEnabled = NO;
+            
             CGFloat x = 0;
             
             CGAffineTransform transform = CGAffineTransformMake(1, 0,0,1, 0, 0);
@@ -113,6 +123,10 @@ static NSString * ID = @"imageCell";
             [UIView animateWithDuration:0.5 animations:^{
                 
                 self.wardrobeView.transform = CGAffineTransformTranslate(transform, x, 0);
+                
+            }completion:^(BOOL finished) {
+                
+                self.imageView.userInteractionEnabled = YES;
             }];
             
             self.isShow = !self.isShow;
@@ -151,18 +165,106 @@ static NSString * ID = @"imageCell";
 
 #pragma mark - AllButtonClick的方法
 - (IBAction)rulerBtnClick:(id)sender {
-    //整体的 motai 出来一个控制器
+    //整体的 modal 出来一个控制器
+    //添加蒙版,设置成为第一响应者
+    UIView * baffleV = [[UIView alloc]initWithFrame:self.view.bounds];
+    baffleV.backgroundColor = [UIColor grayColor];
+    baffleV.alpha = 0.5;
+    //BOOL ISTR = [baffleV isFirstResponder];//是否是 第一响应者的情况!
+    //[baffleV becomeFirstResponder];//成为第一响应者
+    //[baffleV resignFirstResponder];//取消第一响应者
+    [self.view addSubview:baffleV];
+    self.baffleView = baffleV;
+    UITapGestureRecognizer * tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(baffleViewDidClilck)];
+    [self.baffleView addGestureRecognizer:tap];
     
+    YQRulerVC * ruler = [[YQRulerVC alloc]init];
+    self.rulerVC = ruler;
+    [self.view addSubview:ruler.view];
     
+    self.rulerVC.view.frame = CGRectMake(0, heightSize, widthSize, 300);
+    
+    //添加动画
+    [UIView animateWithDuration:0.5 animations:^{
+        
+        //        [self.detailVC.view mas_makeConstraints:^(MASConstraintMaker *make) {
+        //            make.top.equalTo(baffleV.mas_top).offset(200);
+        //            make.width.equalTo(baffleV.mas_bottom).offset(200);
+        //        }];
+        self.rulerVC.view.frame = CGRectMake(0, heightSize/4, widthSize, 300);
+        
+    }];
+
     
 }
 
 - (IBAction)backgroundBtnClick:(id)sender {
+    //实现的思路是:添加模板, 然后的是:自定义的弹窗modal的效果
+    /*
+     //通过的是调用的popview的窗口来实现的
+     //1.创建内容的控制器
+     UIStoryboard * revise = [UIStoryboard storyboardWithName:@"YQReviseCase" bundle:nil];
+     YQReviseCaseTableViewController * reviseCaseVC = [revise instantiateInitialViewController];
+     
+     //2.创建popover的控制器
+     #pragma clang diagnostic push
+     #pragma clang diagnostic ignored "-Wdeprecated-declarations"
+     
+     self.casePopover = [[UIPopoverController alloc]initWithContentViewController:reviseCaseVC];
+     #pragma clang diagnostic pop
+     
+     CGFloat x = self.superview.superview.bounds.origin.x;
+     CGFloat y = self.superview.superview.bounds.origin.y;
+     CGRect rect = CGRectMake(x-350, y+230, 900, 600);
+     
+     //3.弹出present出来一个控制器
+     [self.casePopover presentPopoverFromRect:rect inView:self.superview.superview permittedArrowDirections:UIPopoverArrowDirectionUnknown animated:YES];
+     */
+    
     
     
 }
 
 - (IBAction)detailBtnClick:(id)sender {
+    //停止用户的交互
+    //self.view.userInteractionEnabled = NO;
+    //添加蒙版,设置成为第一响应者
+    UIView * baffleV = [[UIView alloc]initWithFrame:self.view.bounds];
+    baffleV.backgroundColor = [UIColor grayColor];
+    baffleV.alpha = 0.5;
+    //BOOL ISTR = [baffleV isFirstResponder];//是否是 第一响应者的情况!
+    //[baffleV becomeFirstResponder];//成为第一响应者
+    //[baffleV resignFirstResponder];//取消第一响应者
+    [self.view addSubview:baffleV];
+    self.baffleView = baffleV;
+    UITapGestureRecognizer * tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(baffleViewDidClilck)];
+    [self.baffleView addGestureRecognizer:tap];
+    
+    
+    //然后再添加控制器来成为 baffleV的子视图!
+    UIStoryboard * sb = [UIStoryboard storyboardWithName:@"YQDetail" bundle:nil];
+    self.detailVC = [sb instantiateInitialViewController];
+    [self.view addSubview:self.detailVC.view];
+    
+//    [self.detailVC.view mas_makeConstraints:^(MASConstraintMaker *make) {
+//        make.top.equalTo(baffleV.mas_bottom);
+//        make.left.equalTo(baffleV.mas_left).offset(30);
+//        make.right.equalTo(baffleV.mas_right).offset(30);
+//        make.width.equalTo(@400);
+//    }];
+    
+    self.detailVC.view.frame = CGRectMake(0, heightSize, widthSize, 300);
+    
+    //添加动画
+    [UIView animateWithDuration:0.5 animations:^{
+        
+//        [self.detailVC.view mas_makeConstraints:^(MASConstraintMaker *make) {
+//            make.top.equalTo(baffleV.mas_top).offset(200);
+//            make.width.equalTo(baffleV.mas_bottom).offset(200);
+//        }];
+       self.detailVC.view.frame = CGRectMake(0, heightSize/4, widthSize, 300);
+
+    }];
     
     
 }
@@ -181,5 +283,46 @@ static NSString * ID = @"imageCell";
     
     
 }
+
+#pragma mark - touchesBegin的解锁方法
+/*
+ //-(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
+ //
+ //
+ //    if([self.baffleView isFirstResponder]){
+ //
+ //        [UIView animateWithDuration:0.5 animations:^{
+ //
+ //            //        [self.detailVC.view mas_makeConstraints:^(MASConstraintMaker *make) {
+ //            //            make.top.equalTo(baffleV.mas_top).offset(200);
+ //            //            make.width.equalTo(baffleV.mas_bottom).offset(200);
+ //            //        }];
+ //            self.detailVC.view.frame = CGRectMake(0, heightSize/4, widthSize, 300);
+ //
+ //        }];
+ //
+ //        [self.baffleView removeFromSuperview];
+ //
+ //    }
+ //}
+ */
+
+-(void)baffleViewDidClilck{
+    
+    [UIView animateWithDuration:0.5 animations:^{
+        
+        //        [self.detailVC.view mas_makeConstraints:^(MASConstraintMaker *make) {
+        //            make.top.equalTo(baffleV.mas_top).offset(200);
+        //            make.width.equalTo(baffleV.mas_bottom).offset(200);
+        //        }];
+        self.detailVC.view.frame = CGRectMake(0, heightSize, widthSize, 300);
+        self.rulerVC.view.frame = CGRectMake(0, heightSize, widthSize, 300);
+        
+    }];
+    
+    [self.baffleView removeFromSuperview];
+
+}
+
 
 @end
