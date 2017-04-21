@@ -40,6 +40,9 @@
                                 <state key="normal" title="标尺">
                                     <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="rulerBtnClick:" destination="VWn-nY-4Hc" eventType="touchUpInside" id="2U2-V6-Xuc"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aIc-mA-gXH">
                                 <rect key="frame" x="0.0" y="104" width="45" height="45"/>
@@ -48,6 +51,9 @@
                                     <constraint firstAttribute="height" constant="45" id="ceh-2D-DDz"/>
                                 </constraints>
                                 <state key="normal" title="背景"/>
+                                <connections>
+                                    <action selector="backgroundBtnClick:" destination="VWn-nY-4Hc" eventType="touchUpInside" id="DZq-Pf-S8J"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h3g-BS-mse">
                                 <rect key="frame" x="0.0" y="148" width="45" height="45"/>
@@ -56,6 +62,9 @@
                                     <constraint firstAttribute="width" constant="45" id="qxv-At-Ert"/>
                                 </constraints>
                                 <state key="normal" title="详情"/>
+                                <connections>
+                                    <action selector="detailBtnClick:" destination="VWn-nY-4Hc" eventType="touchUpInside" id="hXf-MO-Q80"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VR4-Uk-spW">
                                 <rect key="frame" x="0.0" y="438" width="45" height="45"/>
@@ -64,6 +73,9 @@
                                     <constraint firstAttribute="width" constant="45" id="AaK-fv-5TP"/>
                                 </constraints>
                                 <state key="normal" title="标注"/>
+                                <connections>
+                                    <action selector="taggingBtnClick:" destination="VWn-nY-4Hc" eventType="touchUpInside" id="9HC-vw-bPP"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="20Z-mI-io5">
                                 <rect key="frame" x="0.0" y="483" width="45" height="45"/>
@@ -72,6 +84,9 @@
                                     <constraint firstAttribute="height" constant="45" id="OrC-fu-txI"/>
                                 </constraints>
                                 <state key="normal" title="图文"/>
+                                <connections>
+                                    <action selector="graphicBtnClick:" destination="VWn-nY-4Hc" eventType="touchUpInside" id="iGD-IF-Z93"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zkR-nn-whc">
                                 <rect key="frame" x="0.0" y="528" width="45" height="45"/>
@@ -80,6 +95,9 @@
                                     <constraint firstAttribute="height" constant="45" id="zMX-8Z-2Tx"/>
                                 </constraints>
                                 <state key="normal" title="保存"/>
+                                <connections>
+                                    <action selector="saveBtnClick:" destination="VWn-nY-4Hc" eventType="touchUpInside" id="Xej-f8-b1N"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.92506155550000002" green="1" blue="0.2235887848" alpha="1" colorSpace="calibratedRGB"/>
@@ -113,7 +131,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9Ux-y6-wsk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="304.80000000000001" y="326.08695652173918"/>
+            <point key="canvasLocation" x="305" y="305"/>
         </scene>
         <!--Item 4-->
         <scene sceneID="YUa-Ez-yuU">

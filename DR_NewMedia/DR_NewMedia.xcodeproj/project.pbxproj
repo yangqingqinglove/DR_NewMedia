@@ -28,6 +28,9 @@
 		2F4FA5EF1EA5EC8800E6E25F /* YQFirstTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F4FA5EE1EA5EC8800E6E25F /* YQFirstTableViewController.m */; };
 		2F4FA5F21EA5EF7100E6E25F /* YQButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F4FA5F11EA5EF7100E6E25F /* YQButton.m */; };
 		2F5E5CED1EA70DA600F5940B /* YQTitleScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F5E5CEC1EA70DA600F5940B /* YQTitleScrollView.m */; };
+		2F70F3771EA9A1B90012EF8A /* YQWardrobeCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F70F3761EA9A1B90012EF8A /* YQWardrobeCollectionView.m */; };
+		2F70F37B1EA9A4200012EF8A /* YQWardrobeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F70F3791EA9A4200012EF8A /* YQWardrobeCell.m */; };
+		2F70F37C1EA9A4200012EF8A /* YQWardrobeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2F70F37A1EA9A4200012EF8A /* YQWardrobeCell.xib */; };
 		2F8966931EA497FA00A1F697 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F8966921EA497FA00A1F697 /* main.m */; };
 		2F8966961EA497FA00A1F697 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F8966951EA497FA00A1F697 /* AppDelegate.m */; };
 		2F89669C1EA497FA00A1F697 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2F89669A1EA497FA00A1F697 /* Main.storyboard */; };
@@ -78,6 +81,11 @@
 		2F4FA5F11EA5EF7100E6E25F /* YQButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YQButton.m; sourceTree = "<group>"; };
 		2F5E5CEB1EA70DA600F5940B /* YQTitleScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YQTitleScrollView.h; sourceTree = "<group>"; };
 		2F5E5CEC1EA70DA600F5940B /* YQTitleScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YQTitleScrollView.m; sourceTree = "<group>"; };
+		2F70F3751EA9A1B90012EF8A /* YQWardrobeCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YQWardrobeCollectionView.h; sourceTree = "<group>"; };
+		2F70F3761EA9A1B90012EF8A /* YQWardrobeCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YQWardrobeCollectionView.m; sourceTree = "<group>"; };
+		2F70F3781EA9A4200012EF8A /* YQWardrobeCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YQWardrobeCell.h; sourceTree = "<group>"; };
+		2F70F3791EA9A4200012EF8A /* YQWardrobeCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YQWardrobeCell.m; sourceTree = "<group>"; };
+		2F70F37A1EA9A4200012EF8A /* YQWardrobeCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YQWardrobeCell.xib; sourceTree = "<group>"; };
 		2F89668E1EA497FA00A1F697 /* DR_NewMedia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DR_NewMedia.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2F8966921EA497FA00A1F697 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		2F8966941EA497FA00A1F697 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -314,6 +322,11 @@
 				2F8F895A1EA89275006DDDE9 /* YQTopView.h */,
 				2F8F895B1EA89275006DDDE9 /* YQTopView.m */,
 				2F8F895D1EA892F6006DDDE9 /* YQTopView.xib */,
+				2F70F3751EA9A1B90012EF8A /* YQWardrobeCollectionView.h */,
+				2F70F3761EA9A1B90012EF8A /* YQWardrobeCollectionView.m */,
+				2F70F3781EA9A4200012EF8A /* YQWardrobeCell.h */,
+				2F70F3791EA9A4200012EF8A /* YQWardrobeCell.m */,
+				2F70F37A1EA9A4200012EF8A /* YQWardrobeCell.xib */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -399,6 +412,7 @@
 				2F8F89581EA86A28006DDDE9 /* bottomView.xib in Resources */,
 				2F4FA5E31EA5E23700E6E25F /* 07.jpg in Resources */,
 				2F4FA5E61EA5E23700E6E25F /* 10.jpg in Resources */,
+				2F70F37C1EA9A4200012EF8A /* YQWardrobeCell.xib in Resources */,
 				2F4FA5E21EA5E23700E6E25F /* 06.jpg in Resources */,
 				2F8966A11EA497FA00A1F697 /* LaunchScreen.storyboard in Resources */,
 				2F8967051EA4FA7700A1F697 /* YQTableViewCell.xib in Resources */,
@@ -466,6 +480,7 @@
 				2F8F895C1EA89275006DDDE9 /* YQTopView.m in Sources */,
 				2F4FA5F21EA5EF7100E6E25F /* YQButton.m in Sources */,
 				2F8F89511EA86646006DDDE9 /* YQCollocationViewController.m in Sources */,
+				2F70F3771EA9A1B90012EF8A /* YQWardrobeCollectionView.m in Sources */,
 				2F4FA5B81EA5C3E800E6E25F /* SDCycleScrollView.m in Sources */,
 				2F8967041EA4FA7700A1F697 /* YQTableViewCell.m in Sources */,
 				2F8F89591EA86A28006DDDE9 /* YQBottomView.m in Sources */,
@@ -479,6 +494,7 @@
 				2F4FA5B51EA5C3E800E6E25F /* TADotView.m in Sources */,
 				2F4FA5B41EA5C3E800E6E25F /* TAAnimatedDotView.m in Sources */,
 				2F4FA5B91EA5C3E800E6E25F /* UIView+SDExtension.m in Sources */,
+				2F70F37B1EA9A4200012EF8A /* YQWardrobeCell.m in Sources */,
 				2F4FA5EF1EA5EC8800E6E25F /* YQFirstTableViewController.m in Sources */,
 				2F4FA5BC1EA5C52E00E6E25F /* YQCycleView.m in Sources */,
 			);

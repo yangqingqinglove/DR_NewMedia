@@ -20,7 +20,7 @@
 // 提供的是 类方法,加载xib
 +(instancetype)buttonMenu;
 
-@property(nonatomic,strong)id<YQTopViewClickDeleate>  deleage;
+@property(nonatomic,weak)id<YQTopViewClickDeleate>  deleage;
 
 
 
