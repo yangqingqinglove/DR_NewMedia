@@ -18,6 +18,7 @@
 #import "YQWardrobeCell.h"
 #import "YQDetailViewController.h"
 #import "YQRulerVC.h"
+#import "YQBackGroundViewController.h"
 #import <Masonry.h>
 
 @interface YQCollocationViewController ()<YQBottomViewClickDeleage,YQTopViewClickDeleate,UICollectionViewDelegate,UICollectionViewDataSource>
@@ -31,6 +32,8 @@
 ///各种的展示控制器
 @property(nonatomic,strong)YQDetailViewController * detailVC;
 @property(nonatomic,strong)YQRulerVC * rulerVC;
+@property(nonatomic,strong)YQBackGroundViewController * BGVC;
+
 
 
 /// 定义的记录属性 view
@@ -181,17 +184,20 @@ static NSString * ID = @"imageCell";
     YQRulerVC * ruler = [[YQRulerVC alloc]init];
     self.rulerVC = ruler;
     [self.view addSubview:ruler.view];
-    
-    self.rulerVC.view.frame = CGRectMake(0, heightSize, widthSize, 300);
+    self.rulerVC.view.alpha = 0;
+    self.rulerVC.view.hidden = YES;
+    self.rulerVC.view.frame = CGRectMake(0, heightSize/4, widthSize, 300);
     
     //添加动画
-    [UIView animateWithDuration:0.5 animations:^{
+    [UIView animateWithDuration:0.25 animations:^{
         
         //        [self.detailVC.view mas_makeConstraints:^(MASConstraintMaker *make) {
         //            make.top.equalTo(baffleV.mas_top).offset(200);
         //            make.width.equalTo(baffleV.mas_bottom).offset(200);
         //        }];
-        self.rulerVC.view.frame = CGRectMake(0, heightSize/4, widthSize, 300);
+        // self.rulerVC.view.frame = CGRectMake(0, heightSize/4, widthSize, 300);
+        self.rulerVC.view.alpha = 1;
+        self.rulerVC.view.hidden = NO;
         
     }];
 
@@ -220,7 +226,40 @@ static NSString * ID = @"imageCell";
      //3.弹出present出来一个控制器
      [self.casePopover presentPopoverFromRect:rect inView:self.superview.superview permittedArrowDirections:UIPopoverArrowDirectionUnknown animated:YES];
      */
+    //整体的 modal 出来一个控制器
+    //添加蒙版,设置成为第一响应者
+    UIView * baffleV = [[UIView alloc]initWithFrame:self.view.bounds];
+    baffleV.backgroundColor = [UIColor grayColor];
+    baffleV.alpha = 0.5;
+    //BOOL ISTR = [baffleV isFirstResponder];//是否是 第一响应者的情况!
+    //[baffleV becomeFirstResponder];//成为第一响应者
+    //[baffleV resignFirstResponder];//取消第一响应者
+    [self.view addSubview:baffleV];
+    self.baffleView = baffleV;
+    UITapGestureRecognizer * tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(baffleViewDidClilck)];
+    [self.baffleView addGestureRecognizer:tap];
     
+    UIStoryboard * sb = [UIStoryboard storyboardWithName:@"YQBackGround" bundle:nil];
+    self.BGVC = [sb instantiateInitialViewController];
+    [self.view addSubview:self.BGVC.view];
+    
+    self.BGVC.view.alpha = 0;
+    self.BGVC.view.hidden = YES;
+    self.BGVC.view.frame = CGRectMake(0, heightSize/4, widthSize, 300);
+    
+    //添加动画
+    [UIView animateWithDuration:0.25 animations:^{
+        
+        //        [self.detailVC.view mas_makeConstraints:^(MASConstraintMaker *make) {
+        //            make.top.equalTo(baffleV.mas_top).offset(200);
+        //            make.width.equalTo(baffleV.mas_bottom).offset(200);
+        //        }];
+        // self.rulerVC.view.frame = CGRectMake(0, heightSize/4, widthSize, 300);
+        self.BGVC.view.alpha = 1;
+        self.BGVC.view.hidden = NO;
+        
+    }];
+
     
     
 }
@@ -253,16 +292,21 @@ static NSString * ID = @"imageCell";
 //        make.width.equalTo(@400);
 //    }];
     
-    self.detailVC.view.frame = CGRectMake(0, heightSize, widthSize, 300);
+    self.detailVC.view.alpha = 0;
+    self.detailVC.view.hidden = YES;
+    self.detailVC.view.frame = CGRectMake(0, heightSize/4, widthSize, 300);
     
     //添加动画
-    [UIView animateWithDuration:0.5 animations:^{
+    [UIView animateWithDuration:0.25 animations:^{
         
 //        [self.detailVC.view mas_makeConstraints:^(MASConstraintMaker *make) {
 //            make.top.equalTo(baffleV.mas_top).offset(200);
 //            make.width.equalTo(baffleV.mas_bottom).offset(200);
 //        }];
-       self.detailVC.view.frame = CGRectMake(0, heightSize/4, widthSize, 300);
+//       self.detailVC.view.frame = CGRectMake(0, heightSize/4, widthSize, 300);
+        self.detailVC.view.alpha = 1;
+        self.detailVC.view.hidden = NO;
+
 
     }];
     
@@ -270,17 +314,118 @@ static NSString * ID = @"imageCell";
 }
 
 - (IBAction)taggingBtnClick:(id)sender {
+    //整体的 modal 出来一个控制器
+    //添加蒙版,设置成为第一响应者
+    UIView * baffleV = [[UIView alloc]initWithFrame:self.view.bounds];
+    baffleV.backgroundColor = [UIColor grayColor];
+    baffleV.alpha = 0.5;
+    //BOOL ISTR = [baffleV isFirstResponder];//是否是 第一响应者的情况!
+    //[baffleV becomeFirstResponder];//成为第一响应者
+    //[baffleV resignFirstResponder];//取消第一响应者
+    [self.view addSubview:baffleV];
+    self.baffleView = baffleV;
+    UITapGestureRecognizer * tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(baffleViewDidClilck)];
+    [self.baffleView addGestureRecognizer:tap];
     
+    UIStoryboard * sb = [UIStoryboard storyboardWithName:@"YQBackGround" bundle:nil];
+    self.BGVC = [sb instantiateInitialViewController];
+    [self.view addSubview:self.BGVC.view];
     
+    self.BGVC.view.alpha = 0;
+    self.BGVC.view.hidden = YES;
+    self.BGVC.view.frame = CGRectMake(0, heightSize/4, widthSize, 300);
+    
+    //添加动画
+    [UIView animateWithDuration:0.25 animations:^{
+        
+        //        [self.detailVC.view mas_makeConstraints:^(MASConstraintMaker *make) {
+        //            make.top.equalTo(baffleV.mas_top).offset(200);
+        //            make.width.equalTo(baffleV.mas_bottom).offset(200);
+        //        }];
+        // self.rulerVC.view.frame = CGRectMake(0, heightSize/4, widthSize, 300);
+        self.BGVC.view.alpha = 1;
+        self.BGVC.view.hidden = NO;
+        
+    }];
+
 }
 
 - (IBAction)graphicBtnClick:(id)sender {
+    //整体的 modal 出来一个控制器
+    //添加蒙版,设置成为第一响应者
+    UIView * baffleV = [[UIView alloc]initWithFrame:self.view.bounds];
+    baffleV.backgroundColor = [UIColor grayColor];
+    baffleV.alpha = 0.5;
+    //BOOL ISTR = [baffleV isFirstResponder];//是否是 第一响应者的情况!
+    //[baffleV becomeFirstResponder];//成为第一响应者
+    //[baffleV resignFirstResponder];//取消第一响应者
+    [self.view addSubview:baffleV];
+    self.baffleView = baffleV;
+    UITapGestureRecognizer * tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(baffleViewDidClilck)];
+    [self.baffleView addGestureRecognizer:tap];
     
+    UIStoryboard * sb = [UIStoryboard storyboardWithName:@"YQBackGround" bundle:nil];
+    self.BGVC = [sb instantiateInitialViewController];
+    [self.view addSubview:self.BGVC.view];
     
+    self.BGVC.view.alpha = 0;
+    self.BGVC.view.hidden = YES;
+    self.BGVC.view.frame = CGRectMake(0, heightSize/4, widthSize, 300);
+    
+    //添加动画
+    [UIView animateWithDuration:0.25 animations:^{
+        
+        //        [self.detailVC.view mas_makeConstraints:^(MASConstraintMaker *make) {
+        //            make.top.equalTo(baffleV.mas_top).offset(200);
+        //            make.width.equalTo(baffleV.mas_bottom).offset(200);
+        //        }];
+        // self.rulerVC.view.frame = CGRectMake(0, heightSize/4, widthSize, 300);
+        self.BGVC.view.alpha = 1;
+        self.BGVC.view.hidden = NO;
+        
+    }];
+
 }
 
 - (IBAction)saveBtnClick:(id)sender {
     
+    //通过alert的方式来进行的实现
+    UIAlertController * save = [UIAlertController alertControllerWithTitle:@"保存" message:@"是否要保存" preferredStyle:UIAlertControllerStyleAlert];
+    
+    [save addAction:[UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+        
+        NSLog(@"点击取消");
+        
+    }]];
+    
+    
+    
+    [save addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        
+        NSLog(@"点击确认");
+        
+    }]];
+    
+//    [alertController addAction:[UIAlertAction actionWithTitle:@"警告" style:UIAlertActionStyleDestructive handler:^(UIAlertAction * _Nonnull action) {
+//        
+//        NSLog(@"点击警告");
+//        
+//    }]];
+    
+    
+    
+//    [alertController addTextFieldWithConfigurationHandler:^(UITextField * _Nonnull textField) {
+//        
+//        NSLog(@"添加一个textField就会调用 这个block");
+//        
+//    }];
+    
+
+    // 由于它是一个控制器 直接modal出来就好了
+    
+    [self presentViewController:save animated:YES completion:nil];
+    
+
     
 }
 
@@ -309,14 +454,18 @@ static NSString * ID = @"imageCell";
 
 -(void)baffleViewDidClilck{
     
-    [UIView animateWithDuration:0.5 animations:^{
+    [UIView animateWithDuration:0.25 animations:^{
         
         //        [self.detailVC.view mas_makeConstraints:^(MASConstraintMaker *make) {
         //            make.top.equalTo(baffleV.mas_top).offset(200);
         //            make.width.equalTo(baffleV.mas_bottom).offset(200);
         //        }];
-        self.detailVC.view.frame = CGRectMake(0, heightSize, widthSize, 300);
-        self.rulerVC.view.frame = CGRectMake(0, heightSize, widthSize, 300);
+        self.detailVC.view.alpha = 0;
+        self.detailVC.view.hidden = YES;
+        self.rulerVC.view.alpha = 0;
+        self.rulerVC.view.hidden = YES;
+        self.BGVC.view.alpha = 0;
+        self.BGVC.view.hidden = YES;
         
     }];
     
