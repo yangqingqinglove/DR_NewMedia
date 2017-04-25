@@ -55,7 +55,6 @@ static NSString * ID = @"imageCell";
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    
     //1.加载topView
     YQTopView * topView = [YQTopView buttonMenu];
     topView.deleage = self;
