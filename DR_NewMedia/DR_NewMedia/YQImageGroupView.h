@@ -8,6 +8,14 @@
 
 #import <UIKit/UIKit.h>
 
+@class YQImageGroupView;
+
+@protocol YQImageGroupViewDelegate <NSObject>
+
+-(void)imageGroupView:(YQImageGroupView *)groupView ViewWithWidthSize:(CGFloat)width;
+
+@end
+
 @interface YQImageGroupView : UIImageView
 
 //停留的原帧数
@@ -27,6 +35,9 @@
  */
 @property(nonatomic,copy)NSString * currentUpImageName;
 @property(nonatomic,copy)NSString * currentDownImageName;
+
+@property(nonatomic,weak)id<YQImageGroupViewDelegate> delegate;
+
 
 
 /// 外界调用的合成的image

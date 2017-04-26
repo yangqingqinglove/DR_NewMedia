@@ -24,7 +24,7 @@
 #import "YQImageGroupView.h"
 #import <Masonry.h>
 
-@interface YQCollocationViewController ()<YQBottomViewClickDeleage,YQTopViewClickDeleate,UICollectionViewDelegate,UICollectionViewDataSource>
+@interface YQCollocationViewController ()<YQBottomViewClickDeleage,YQTopViewClickDeleate,UICollectionViewDelegate,UICollectionViewDataSource,YQImageGroupViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UIView *navBarView;
 
@@ -92,6 +92,9 @@ static NSString * ID = @"imageCell";
     [wardrobe registerNib:cellNib forCellWithReuseIdentifier:ID];
     self.wardrobeView = wardrobe;
     [self.view addSubview:wardrobe];
+    
+    //4.设置代理
+    self.imageView.delegate = self;
     
     
 }
@@ -206,6 +209,12 @@ static NSString * ID = @"imageCell";
     if(equal1 || equal2){//相等,证明的是,图片存在
         
         //alert 提示当前 衣服就是!
+        UIAlertController * alert = [UIAlertController alertControllerWithTitle:@"提示" message:@"已经在展示了哟!" preferredStyle:UIAlertControllerStyleAlert];
+        
+        [alert addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleCancel handler:nil]];
+        
+        [self presentViewController:alert animated:YES completion:nil ];
+        
         return;
     
     }else{//不相等的情况下,需要的是合成
@@ -579,6 +588,30 @@ static NSString * ID = @"imageCell";
     //内存优化!
     self.imageView.lastIndex = num;
     self.imageView.scaleStall = 1;
+    
+}
+
+#pragma mark - YQGroupViewDelegate_alert的代理方法
+-(void)imageGroupView:(YQImageGroupView *)groupView ViewWithWidthSize:(CGFloat)width{
+    
+    if (width > 1000) {
+        
+        UIAlertController * alert = [UIAlertController alertControllerWithTitle:@"提示" message:@"最大了,已经最大了哟!" preferredStyle:UIAlertControllerStyleAlert];
+        
+        [alert addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleCancel handler:nil]];
+        
+        [self presentViewController:alert animated:YES completion:nil ];
+
+        
+    }else{
+        
+        UIAlertController * alert = [UIAlertController alertControllerWithTitle:@"提示" message:@"最小了,已经最小了哟!" preferredStyle:UIAlertControllerStyleAlert];
+        
+        [alert addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleCancel handler:nil]];
+        
+        [self presentViewController:alert animated:YES completion:nil ];
+
+    }
     
 }
 

@@ -278,6 +278,12 @@
         
         //注意的是: 这里的pinch 在
         if (self.frame.size.width > 1000) {//上限
+            //提示用户! 已经是最大了! 代理要求,alert
+            if ([self.delegate respondsToSelector:@selector(imageGroupView:ViewWithWidthSize:)]) {
+                
+                [self.delegate imageGroupView:self ViewWithWidthSize:self.frame.size.width];
+            }
+            
             return;
         }
         
@@ -308,6 +314,12 @@
         self.stall = 1;
         
         if (self.frame.size.width <= 300) {//下限
+            
+            //提示用户! 已经是最小了! 代理要求控制器来alert
+            if ([self.delegate respondsToSelector:@selector(imageGroupView:ViewWithWidthSize:)]) {
+                
+                [self.delegate imageGroupView:self ViewWithWidthSize:self.frame.size.width];
+            }
             
             return;
         }
