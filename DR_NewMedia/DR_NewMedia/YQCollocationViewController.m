@@ -32,7 +32,7 @@
 
 @property(nonatomic,strong)YQWardrobeCollectionView * wardrobeView;
 
-///各种的展示控制器
+/// 各种的展示控制器
 @property(nonatomic,strong)YQDetailViewController * detailVC;
 @property(nonatomic,strong)YQRulerVC * rulerVC;
 @property(nonatomic,strong)YQBackGroundViewController * BGVC;
@@ -45,7 +45,9 @@
 /// 伸缩属性
 @property(nonatomic,assign)BOOL isShow;
 
-///
+/// 定义的是衣柜模型数组
+@property(nonatomic,strong)NSMutableArray * collocationArray;
+
 
 
 @end
@@ -92,6 +94,29 @@ static NSString * ID = @"imageCell";
     [self.view addSubview:wardrobe];
     
     
+}
+
+#pragma mark - 懒加载
+-(NSMutableArray *)collocationArray{
+    
+    if(!_collocationArray){
+        //添加下载收藏的图片柜
+        NSArray * images = @[@"170425_00000036",@"qun170425_000000",@"qun170425_00000036"];
+        _collocationArray = [NSMutableArray array];
+        
+        for(int i =0;i<images.count ;i++){
+            
+            NSString * string1 = [NSString stringWithFormat:@"%@_%02d.png",images[i],i*10];
+            NSString * path1 = [[NSBundle mainBundle] pathForResource:string1 ofType:nil];
+            
+                        //  生成图片
+            UIImage *image = [UIImage imageWithContentsOfFile:path1];
+            //  将图片加入数组
+            [_collocationArray addObject:image];
+        }
+    }
+    
+    return _collocationArray;
 }
 
 
@@ -154,7 +179,7 @@ static NSString * ID = @"imageCell";
 #pragma mark - collectionView的数据源方法
 -(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
     
-    return 20;
+    return self.collocationArray.count;
 }
 
 
@@ -164,10 +189,22 @@ static NSString * ID = @"imageCell";
     
     cell.backgroundColor = [UIColor whiteColor];
     //cell.imagename  = self.imagesArray[indexPath.row];
-    return cell;
+    //if(indexPath.row < self.collocationArray.count){
     
+        cell.imageview.image = self.collocationArray[indexPath.item];
+    //}
+    
+    return cell;
 }
 
+#pragma mark - collectionView的代理方法
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
+    //点击的item的选中的情况!
+    
+    
+
+
+}
 
 #pragma mark - AllButtonClick的方法
 - (IBAction)rulerBtnClick:(id)sender {
@@ -203,8 +240,6 @@ static NSString * ID = @"imageCell";
         self.rulerVC.view.hidden = NO;
         
     }];
-
-    
 }
 
 - (IBAction)backgroundBtnClick:(id)sender {

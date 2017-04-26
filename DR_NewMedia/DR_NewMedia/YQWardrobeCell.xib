@@ -18,19 +18,26 @@
                 <rect key="frame" x="0.0" y="0.0" width="90" height="90"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="QQK-8T-xK3">
+                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="170425_00000036_00.png" translatesAutoresizingMaskIntoConstraints="NO" id="Y5W-Jn-8yS">
                         <rect key="frame" x="0.0" y="0.0" width="90" height="90"/>
+                        <rect key="contentStretch" x="1" y="1" width="0.0" height="0.0"/>
                     </imageView>
                 </subviews>
             </view>
             <constraints>
-                <constraint firstAttribute="bottom" secondItem="QQK-8T-xK3" secondAttribute="bottom" id="3gL-og-iqE"/>
-                <constraint firstAttribute="trailing" secondItem="QQK-8T-xK3" secondAttribute="trailing" id="Fhd-LI-C0a"/>
-                <constraint firstItem="QQK-8T-xK3" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="I1p-TH-Z9c"/>
-                <constraint firstItem="QQK-8T-xK3" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="km0-dB-KvD"/>
+                <constraint firstAttribute="trailing" secondItem="Y5W-Jn-8yS" secondAttribute="trailing" id="2ZC-ZK-NFK"/>
+                <constraint firstItem="Y5W-Jn-8yS" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="H32-RK-jKi"/>
+                <constraint firstAttribute="bottom" secondItem="Y5W-Jn-8yS" secondAttribute="bottom" id="otj-qG-C6d"/>
+                <constraint firstItem="Y5W-Jn-8yS" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="xky-1U-Wzu"/>
             </constraints>
             <size key="customSize" width="77" height="63"/>
-            <point key="canvasLocation" x="38.5" y="58.5"/>
+            <connections>
+                <outlet property="imageview" destination="Y5W-Jn-8yS" id="Qth-ng-2ij"/>
+            </connections>
+            <point key="canvasLocation" x="-187" y="1"/>
         </collectionViewCell>
     </objects>
+    <resources>
+        <image name="170425_00000036_00.png" width="630" height="1120"/>
+    </resources>
 </document>

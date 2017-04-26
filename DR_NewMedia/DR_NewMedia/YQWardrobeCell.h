@@ -10,4 +10,7 @@
 
 @interface YQWardrobeCell : UICollectionViewCell
 
+@property (weak, nonatomic) IBOutlet UIImageView *imageview;
+
+
 @end
