@@ -14,4 +14,7 @@ pod ‘Masonry’
 
 pod ‘SDWebImage’
 
+pod 'MBProgressHUD'
+
+
 end

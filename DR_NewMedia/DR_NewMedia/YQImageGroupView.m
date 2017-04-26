@@ -25,8 +25,7 @@
 
 //记录起始点的位置point
 @property(nonatomic,assign)CGPoint firstPoint;
-//停留的原帧数
-@property(nonatomic,assign)int lastIndex;
+
 //记录索引
 @property(nonatomic,assign)int newIndex;
 
@@ -42,14 +41,6 @@
 
 //定制scaling 档位
 @property(nonatomic,assign)CGFloat  stall;
-//定制的缩放的档位
-@property(nonatomic,assign)CGFloat scaleStall;
-
-//定义的是图片的缓存池
-@property(nonatomic,strong)NSMutableArray * cacheArray;
-
-//记录原始的transform;
-@property(nonatomic,assign)CGAffineTransform  originalTransform;
 
 @end
 

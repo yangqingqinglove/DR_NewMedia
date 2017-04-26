@@ -4,6 +4,11 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>MBProgressHUD.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Masonry.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -22,12 +27,17 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>31D1DE21E39FC7633D48CA5189288BF2</key>
+		<key>3487F37BF43A997AE05BF381D3FDBC01</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>364C534117BD4EC3EE87CE5A35ACE258</key>
+		<key>36863793F9E6A1C6A15E88740146F4F7</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>586F2DFA9BDCC6675C2546793A69E5CC</key>
 		<dict>
 			<key>primary</key>
 			<true/>

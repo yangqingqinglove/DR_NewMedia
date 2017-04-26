@@ -6,9 +6,11 @@
 //  Copyright © 2017年 YQ. All rights reserved.
 //
 
+#define pictureFrames 36
 #define widthSize [UIScreen mainScreen].bounds.size.width
 #define heightSize [UIScreen mainScreen].bounds.size.height
 #define buttonSize 45
+#define ADuration 0.01
 
 #import "YQCollocationViewController.h"
 #import "YQBottomView.h"
@@ -19,13 +21,14 @@
 #import "YQDetailViewController.h"
 #import "YQRulerVC.h"
 #import "YQBackGroundViewController.h"
+#import "YQImageGroupView.h"
 #import <Masonry.h>
 
 @interface YQCollocationViewController ()<YQBottomViewClickDeleage,YQTopViewClickDeleate,UICollectionViewDelegate,UICollectionViewDataSource>
 
 @property (weak, nonatomic) IBOutlet UIView *navBarView;
 
-@property (weak, nonatomic) IBOutlet UIImageView *imageView;
+@property (weak, nonatomic) IBOutlet YQImageGroupView *imageView;
 
 @property(nonatomic,strong)YQWardrobeCollectionView * wardrobeView;
 
@@ -34,16 +37,15 @@
 @property(nonatomic,strong)YQRulerVC * rulerVC;
 @property(nonatomic,strong)YQBackGroundViewController * BGVC;
 
-
-
 /// 定义的记录属性 view
 @property(nonatomic,strong)UIView * bottomV;
 @property(nonatomic,strong)UIView * topView;
 @property(nonatomic,strong)UIView * baffleView;
 
-
 /// 伸缩属性
 @property(nonatomic,assign)BOOL isShow;
+
+///
 
 
 @end
@@ -93,13 +95,15 @@ static NSString * ID = @"imageCell";
 }
 
 
-#pragma mark --------YQBottomViewClickDeleage代理的执行的方法------
+#pragma mark YQBottomViewClickDeleage代理执行的方法
 -(void)bottomView:(YQBottomView *)bottomV didSelectedButtonFrom:(NSUInteger)from to:(int)To{
     
     if(self.imageView.animating){
         return;
     }
     
+    [self bottomViewDetegateToOriginalPicture];
+    [self bottomViewDetegateToPlayPictureFrom:To];
 
 }
 
@@ -160,10 +164,10 @@ static NSString * ID = @"imageCell";
     
     cell.backgroundColor = [UIColor whiteColor];
     //cell.imagename  = self.imagesArray[indexPath.row];
-    
     return cell;
     
 }
+
 
 #pragma mark - AllButtonClick的方法
 - (IBAction)rulerBtnClick:(id)sender {
@@ -258,9 +262,6 @@ static NSString * ID = @"imageCell";
         self.BGVC.view.hidden = NO;
         
     }];
-
-    
-    
 }
 
 - (IBAction)detailBtnClick:(id)sender {
@@ -429,28 +430,6 @@ static NSString * ID = @"imageCell";
 }
 
 #pragma mark - touchesBegin的解锁方法
-/*
- //-(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
- //
- //
- //    if([self.baffleView isFirstResponder]){
- //
- //        [UIView animateWithDuration:0.5 animations:^{
- //
- //            //        [self.detailVC.view mas_makeConstraints:^(MASConstraintMaker *make) {
- //            //            make.top.equalTo(baffleV.mas_top).offset(200);
- //            //            make.width.equalTo(baffleV.mas_bottom).offset(200);
- //            //        }];
- //            self.detailVC.view.frame = CGRectMake(0, heightSize/4, widthSize, 300);
- //
- //        }];
- //
- //        [self.baffleView removeFromSuperview];
- //
- //    }
- //}
- */
-
 -(void)baffleViewDidClilck{
     
     [UIView animateWithDuration:0.25 animations:^{
@@ -470,6 +449,67 @@ static NSString * ID = @"imageCell";
     
     [self.baffleView removeFromSuperview];
 
+}
+
+
+#pragma mark --------封装代理方法中的复原------
+-(void)bottomViewDetegateToOriginalPicture{
+    
+    [UIView animateWithDuration:0.5 animations:^{
+        
+        self.imageView.transform = self.imageView.originalTransform;
+    }];
+    
+}
+
+
+#pragma mark --------封装代理方法中的回播------
+-(void)bottomViewDetegateToPlayPictureFrom:(int)num{
+    
+    if (self.imageView.lastIndex == num) {
+        return;
+    }
+    
+    if (self.imageView.lastIndex < 0) {
+        // 如果是 负数的话就要求的是 回转一圈
+        self.imageView.lastIndex = self.imageView.lastIndex + pictureFrames;
+    }
+    
+    NSMutableArray * array = [NSMutableArray array];
+    //回到主视图的操作
+    //停留的帧数 倒序 回放到 原始地方的逻辑的处理
+    if( self.imageView.lastIndex < num){
+        
+        for (int i = self.imageView.lastIndex; i < num; i++) {
+            
+            [array addObject:self.imageView.cacheArray[i]];
+        }
+        
+    }else{
+        for (int i = self.imageView.lastIndex; i > num; i--) {
+            
+            [array addObject:self.imageView.cacheArray[i]];
+        }
+    }
+    
+    //  1.3把数组存入UIImageView中
+    self.imageView.animationImages = array;
+    
+    //  fps  12
+    self.imageView.animationDuration = ADuration * array.count * 10;
+    
+    //  1.5播放动画
+    [self.imageView startAnimating];
+    
+    [self.imageView performSelector:@selector(setAnimationImages:) withObject:nil afterDelay:self.imageView.animationDuration + 0.005 ];
+    
+    self.imageView.image = (UIImage *)self.imageView.cacheArray[num];
+    
+    //给组动画最后最后一张来赋值
+    //内存优化!
+    self.imageView.lastIndex = num;
+    self.imageView.scaleStall = 1;
+    
 }
 
 
