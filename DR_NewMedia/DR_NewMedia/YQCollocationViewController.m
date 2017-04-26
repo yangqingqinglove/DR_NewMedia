@@ -106,13 +106,10 @@ static NSString * ID = @"imageCell";
         
         for(int i =0;i<images.count ;i++){
             
-            NSString * string1 = [NSString stringWithFormat:@"%@_%02d.png",images[i],i*10];
-            NSString * path1 = [[NSBundle mainBundle] pathForResource:string1 ofType:nil];
+            NSString * string1 = [NSString stringWithFormat:@"%@_%02d.png",images[i],0];
             
-                        //  生成图片
-            UIImage *image = [UIImage imageWithContentsOfFile:path1];
             //  将图片加入数组
-            [_collocationArray addObject:image];
+            [_collocationArray addObject:string1];
         }
     }
     
@@ -191,7 +188,9 @@ static NSString * ID = @"imageCell";
     //cell.imagename  = self.imagesArray[indexPath.row];
     //if(indexPath.row < self.collocationArray.count){
     
-        cell.imageview.image = self.collocationArray[indexPath.item];
+    NSString * path1 = [[NSBundle mainBundle] pathForResource:self.collocationArray[indexPath.item] ofType:nil];
+    cell.imageview.image = [UIImage imageWithContentsOfFile:path1];;
+    
     //}
     
     return cell;
@@ -199,10 +198,49 @@ static NSString * ID = @"imageCell";
 
 #pragma mark - collectionView的代理方法
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
-    //点击的item的选中的情况!
+    //点击的item的选中的情况! 取出来进行检验图片名是否相同!
+    BOOL equal1 =[self.collocationArray[indexPath.item] isEqualToString: self.imageView.currentDownImageName];
     
-    
+    BOOL equal2 =[self.collocationArray[indexPath.item] isEqualToString: self.imageView.currentUpImageName];
 
+    if(equal1 || equal2){//相等,证明的是,图片存在
+        
+        //alert 提示当前 衣服就是!
+        return;
+    
+    }else{//不相等的情况下,需要的是合成
+        
+        
+        //图片是从记录的 位置,开始显示!
+        // 注意的是,这里还要有判断上衣和 下衣的逻辑 合成图片
+        NSString * string1 = self.collocationArray[indexPath.item];
+        NSString * string = [string1 substringToIndex:string1.length - 7];
+        
+        NSString * string2 = self.imageView.currentDownImageName;
+        NSString * string3 = [string2 substringToIndex:string2.length - 7];
+        
+        for(int i=0;i < pictureFrames ;i++){
+            
+            NSString * string1 = [NSString stringWithFormat:@"%@_%02d.png",string,i*10];
+            NSString * path1 = [[NSBundle mainBundle] pathForResource:string1 ofType:nil];
+            
+            NSString * string2 = [NSString stringWithFormat:@"%@_%02d.png",string3,i*10];
+            NSString * path2 = [[NSBundle mainBundle] pathForResource:string2 ofType:nil];
+            
+            //  生成图片
+            UIImage *image = [self.imageView addImagePath:path2 withImage:path1];
+            
+            //  将图片加入数组
+            [self.imageView.cacheArray replaceObjectAtIndex:i withObject:image];
+
+        }
+        
+        //最后的显示的是: 当前停止的状态
+        self.imageView.image = self.imageView.cacheArray[self.imageView.lastIndex];
+        self.imageView.currentUpImageName = string1;
+        
+    }
+    
 
 }
 
@@ -342,9 +380,7 @@ static NSString * ID = @"imageCell";
         self.detailVC.view.alpha = 1;
         self.detailVC.view.hidden = NO;
 
-
     }];
-    
     
 }
 
@@ -446,7 +482,6 @@ static NSString * ID = @"imageCell";
 //        NSLog(@"点击警告");
 //        
 //    }]];
-    
     
     
 //    [alertController addTextFieldWithConfigurationHandler:^(UITextField * _Nonnull textField) {

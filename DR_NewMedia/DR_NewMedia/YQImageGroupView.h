@@ -22,4 +22,15 @@
 //定制的缩放的档位
 @property(nonatomic,assign)CGFloat scaleStall;
 
+/*
+ 组合视图的up down的图片记录
+ */
+@property(nonatomic,copy)NSString * currentUpImageName;
+@property(nonatomic,copy)NSString * currentDownImageName;
+
+
+/// 外界调用的合成的image
+- (UIImage *)addImagePath:(NSString *)imagePath1 withImage:(NSString *)imagePath2;
+
+
 @end

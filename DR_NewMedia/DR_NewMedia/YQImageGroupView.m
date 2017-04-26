@@ -51,6 +51,11 @@
     if(self = [super initWithCoder:aDecoder]){
         //1.设置
         self.userInteractionEnabled = YES;
+        //属性记录
+        self.currentUpImageName = [NSString stringWithFormat:@"%@_%02d.png",pictureName2,0];
+        
+        self.currentDownImageName = [NSString stringWithFormat:@"%@_%02d.png",pictureName1,0];
+        
         //2.加载图片
         for(int i =0;i<pictureFrames ;i++){
             
