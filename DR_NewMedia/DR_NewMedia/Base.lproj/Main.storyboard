@@ -21,7 +21,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fS1-mg-0oq">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fS1-mg-0oq" customClass="YQNavTopView">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="60"/>
                                 <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -123,7 +123,7 @@
                             <constraint firstAttribute="trailing" secondItem="fS1-mg-0oq" secondAttribute="trailing" id="wWb-xH-uaP"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="搭配间" id="YYE-CJ-4QK"/>
+                    <tabBarItem key="tabBarItem" tag="1" title="搭配间" id="YYE-CJ-4QK"/>
                     <connections>
                         <outlet property="imageView" destination="7HO-pE-xGR" id="nEi-XP-Sdn"/>
                         <outlet property="navBarView" destination="fS1-mg-0oq" id="Kzq-F5-i6l"/>

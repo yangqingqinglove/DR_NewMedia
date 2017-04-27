@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		2F0B41DB1EACE9970075CC89 /* YQBackGroundViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F0B41DA1EACE9970075CC89 /* YQBackGroundViewController.m */; };
 		2F0B41DD1EACE9C70075CC89 /* YQBackGround.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2F0B41DC1EACE9C70075CC89 /* YQBackGround.storyboard */; };
+		2F4A3B071EB1DDCF007F9A3C /* YQNavTopView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F4A3B061EB1DDCF007F9A3C /* YQNavTopView.m */; };
 		2F4FA5B31EA5C3E800E6E25F /* TAAbstractDotView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F4FA5A61EA5C3E800E6E25F /* TAAbstractDotView.m */; };
 		2F4FA5B41EA5C3E800E6E25F /* TAAnimatedDotView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F4FA5A81EA5C3E800E6E25F /* TAAnimatedDotView.m */; };
 		2F4FA5B51EA5C3E800E6E25F /* TADotView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F4FA5AA1EA5C3E800E6E25F /* TADotView.m */; };
@@ -160,6 +161,9 @@
 		2F8F89591EA86A28006DDDE9 /* YQBottomView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F8F89571EA86A28006DDDE9 /* YQBottomView.m */; };
 		2F8F895C1EA89275006DDDE9 /* YQTopView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F8F895B1EA89275006DDDE9 /* YQTopView.m */; };
 		2F8F895E1EA892F6006DDDE9 /* YQTopView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2F8F895D1EA892F6006DDDE9 /* YQTopView.xib */; };
+		2FF1C8A31EB0A0C200A6EF5B /* UIView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FF1C8A01EB0A0C200A6EF5B /* UIView+Extension.m */; };
+		2FF1C8A41EB0A0C200A6EF5B /* YQconstTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FF1C8A21EB0A0C200A6EF5B /* YQconstTools.m */; };
+		2FF1C8A71EB0A31100A6EF5B /* MBProgressHUD+CZ.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FF1C8A61EB0A31100A6EF5B /* MBProgressHUD+CZ.m */; };
 		9F819B6540A4EA3112FAD3C5 /* libPods-DR_NewMedia.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A39F7F5079FEF0D1CE05A67 /* libPods-DR_NewMedia.a */; };
 /* End PBXBuildFile section */
 
@@ -167,6 +171,8 @@
 		2F0B41D91EACE9970075CC89 /* YQBackGroundViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YQBackGroundViewController.h; sourceTree = "<group>"; };
 		2F0B41DA1EACE9970075CC89 /* YQBackGroundViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YQBackGroundViewController.m; sourceTree = "<group>"; };
 		2F0B41DC1EACE9C70075CC89 /* YQBackGround.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = YQBackGround.storyboard; sourceTree = "<group>"; };
+		2F4A3B051EB1DDCF007F9A3C /* YQNavTopView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YQNavTopView.h; sourceTree = "<group>"; };
+		2F4A3B061EB1DDCF007F9A3C /* YQNavTopView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YQNavTopView.m; sourceTree = "<group>"; };
 		2F4FA5A51EA5C3E800E6E25F /* TAAbstractDotView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TAAbstractDotView.h; sourceTree = "<group>"; };
 		2F4FA5A61EA5C3E800E6E25F /* TAAbstractDotView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TAAbstractDotView.m; sourceTree = "<group>"; };
 		2F4FA5A71EA5C3E800E6E25F /* TAAnimatedDotView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TAAnimatedDotView.h; sourceTree = "<group>"; };
@@ -343,6 +349,13 @@
 		2F8F895A1EA89275006DDDE9 /* YQTopView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YQTopView.h; sourceTree = "<group>"; };
 		2F8F895B1EA89275006DDDE9 /* YQTopView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YQTopView.m; sourceTree = "<group>"; };
 		2F8F895D1EA892F6006DDDE9 /* YQTopView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YQTopView.xib; sourceTree = "<group>"; };
+		2FF1C89E1EB0A04100A6EF5B /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		2FF1C89F1EB0A0C200A6EF5B /* UIView+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Extension.h"; sourceTree = "<group>"; };
+		2FF1C8A01EB0A0C200A6EF5B /* UIView+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Extension.m"; sourceTree = "<group>"; };
+		2FF1C8A11EB0A0C200A6EF5B /* YQconstTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YQconstTools.h; sourceTree = "<group>"; };
+		2FF1C8A21EB0A0C200A6EF5B /* YQconstTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YQconstTools.m; sourceTree = "<group>"; };
+		2FF1C8A51EB0A31100A6EF5B /* MBProgressHUD+CZ.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MBProgressHUD+CZ.h"; sourceTree = "<group>"; };
+		2FF1C8A61EB0A31100A6EF5B /* MBProgressHUD+CZ.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MBProgressHUD+CZ.m"; sourceTree = "<group>"; };
 		5A39F7F5079FEF0D1CE05A67 /* libPods-DR_NewMedia.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-DR_NewMedia.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA1A62893ACCFC13E7146302 /* Pods-DR_NewMedia.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DR_NewMedia.release.xcconfig"; path = "Pods/Target Support Files/Pods-DR_NewMedia/Pods-DR_NewMedia.release.xcconfig"; sourceTree = "<group>"; };
 		C1C309F9F2243279F15FA893 /* Pods-DR_NewMedia.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DR_NewMedia.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DR_NewMedia/Pods-DR_NewMedia.debug.xcconfig"; sourceTree = "<group>"; };
@@ -560,6 +573,12 @@
 		2F70F38B1EAA109C0012EF8A /* category */ = {
 			isa = PBXGroup;
 			children = (
+				2FF1C89F1EB0A0C200A6EF5B /* UIView+Extension.h */,
+				2FF1C8A01EB0A0C200A6EF5B /* UIView+Extension.m */,
+				2FF1C8A11EB0A0C200A6EF5B /* YQconstTools.h */,
+				2FF1C8A21EB0A0C200A6EF5B /* YQconstTools.m */,
+				2FF1C8A51EB0A31100A6EF5B /* MBProgressHUD+CZ.h */,
+				2FF1C8A61EB0A31100A6EF5B /* MBProgressHUD+CZ.m */,
 			);
 			name = category;
 			sourceTree = "<group>";
@@ -611,6 +630,7 @@
 			children = (
 				2F8966941EA497FA00A1F697 /* AppDelegate.h */,
 				2F8966951EA497FA00A1F697 /* AppDelegate.m */,
+				2FF1C89E1EB0A04100A6EF5B /* PrefixHeader.pch */,
 				2F8966A81EA49C9B00A1F697 /* YQTabBarController.h */,
 				2F8966A91EA49C9B00A1F697 /* YQTabBarController.m */,
 			);
@@ -699,9 +719,9 @@
 		2F8F89541EA869E4006DDDE9 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				2F8F89551EA86A28006DDDE9 /* bottomView.xib */,
 				2F8F89561EA86A28006DDDE9 /* YQBottomView.h */,
 				2F8F89571EA86A28006DDDE9 /* YQBottomView.m */,
+				2F8F89551EA86A28006DDDE9 /* bottomView.xib */,
 				2F8F895A1EA89275006DDDE9 /* YQTopView.h */,
 				2F8F895B1EA89275006DDDE9 /* YQTopView.m */,
 				2F8F895D1EA892F6006DDDE9 /* YQTopView.xib */,
@@ -712,6 +732,8 @@
 				2F70F37A1EA9A4200012EF8A /* YQWardrobeCell.xib */,
 				2F64C9621EAF35E900FCFD93 /* YQImageGroupView.h */,
 				2F64C9631EAF35E900FCFD93 /* YQImageGroupView.m */,
+				2F4A3B051EB1DDCF007F9A3C /* YQNavTopView.h */,
+				2F4A3B061EB1DDCF007F9A3C /* YQNavTopView.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -973,7 +995,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				2F8966AA1EA49C9B00A1F697 /* YQTabBarController.m in Sources */,
+				2FF1C8A41EB0A0C200A6EF5B /* YQconstTools.m in Sources */,
 				2F8F895C1EA89275006DDDE9 /* YQTopView.m in Sources */,
+				2FF1C8A31EB0A0C200A6EF5B /* UIView+Extension.m in Sources */,
 				2F4FA5F21EA5EF7100E6E25F /* YQButton.m in Sources */,
 				2F70F3801EA9D9370012EF8A /* YQRulerVC.m in Sources */,
 				2F8F89511EA86646006DDDE9 /* YQCollocationViewController.m in Sources */,
@@ -987,6 +1011,7 @@
 				2F8966931EA497FA00A1F697 /* main.m in Sources */,
 				2F4FA5B31EA5C3E800E6E25F /* TAAbstractDotView.m in Sources */,
 				2F4FA5B61EA5C3E800E6E25F /* TAPageControl.m in Sources */,
+				2F4A3B071EB1DDCF007F9A3C /* YQNavTopView.m in Sources */,
 				2F4FA5B71EA5C3E800E6E25F /* SDCollectionViewCell.m in Sources */,
 				2F8966F41EA4F66400A1F697 /* YQHomeViewController.m in Sources */,
 				2F0B41DB1EACE9970075CC89 /* YQBackGroundViewController.m in Sources */,
@@ -996,6 +1021,7 @@
 				2F4FA5B91EA5C3E800E6E25F /* UIView+SDExtension.m in Sources */,
 				2F70F37B1EA9A4200012EF8A /* YQWardrobeCell.m in Sources */,
 				2F4FA5EF1EA5EC8800E6E25F /* YQFirstTableViewController.m in Sources */,
+				2FF1C8A71EB0A31100A6EF5B /* MBProgressHUD+CZ.m in Sources */,
 				2F4FA5BC1EA5C52E00E6E25F /* YQCycleView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1120,6 +1146,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = HVL2C5A8LT;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/DR_NewMedia/PrefixHeader.pch";
 				INFOPLIST_FILE = DR_NewMedia/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "DR.DR-NewMedia";
@@ -1133,6 +1160,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = HVL2C5A8LT;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/DR_NewMedia/PrefixHeader.pch";
 				INFOPLIST_FILE = DR_NewMedia/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "DR.DR-NewMedia";

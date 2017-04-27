@@ -15,14 +15,14 @@
 #import "YQCollocationViewController.h"
 #import "YQBottomView.h"
 #import "YQTopView.h"
-#import "YQTopView.h"
 #import "YQWardrobeCollectionView.h"
 #import "YQWardrobeCell.h"
 #import "YQDetailViewController.h"
 #import "YQRulerVC.h"
 #import "YQBackGroundViewController.h"
 #import "YQImageGroupView.h"
-#import <Masonry.h>
+#import <MBProgressHUD.h>
+
 
 @interface YQCollocationViewController ()<YQBottomViewClickDeleage,YQTopViewClickDeleate,UICollectionViewDelegate,UICollectionViewDataSource,YQImageGroupViewDelegate>
 
@@ -48,8 +48,6 @@
 /// 定义的是衣柜模型数组
 @property(nonatomic,strong)NSMutableArray * collocationArray;
 
-
-
 @end
 
 static NSString * ID = @"imageCell";
@@ -59,6 +57,17 @@ static NSString * ID = @"imageCell";
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    //0.添加菊花加载
+    MBProgressHUD * hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    
+    hud.mode = MBProgressHUDModeIndeterminate;
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2* NSEC_PER_SEC)), dispatch_get_main_queue(), ^(void){
+        
+        // Do something... downsometing....
+        [MBProgressHUD hideHUDForView:self.view animated:YES];
+        
+    });
+
     //1.加载topView
     YQTopView * topView = [YQTopView buttonMenu];
     topView.deleage = self;
@@ -95,9 +104,8 @@ static NSString * ID = @"imageCell";
     
     //4.设置代理
     self.imageView.delegate = self;
-    
-    
 }
+
 
 #pragma mark - 懒加载
 -(NSMutableArray *)collocationArray{
@@ -135,6 +143,7 @@ static NSString * ID = @"imageCell";
 -(void)topView:(YQTopView *)TopV buttonDidSelectTag:(NSInteger)tag{
     
     switch (tag) {
+            
         case 2:{//移动 transform
             
             //禁止用户交互其他的选项
@@ -219,35 +228,48 @@ static NSString * ID = @"imageCell";
     
     }else{//不相等的情况下,需要的是合成
         
+        [MBProgressHUD showHUDAddedTo:self.view animated:YES];
         
-        //图片是从记录的 位置,开始显示!
-        // 注意的是,这里还要有判断上衣和 下衣的逻辑 合成图片
-        NSString * string1 = self.collocationArray[indexPath.item];
-        NSString * string = [string1 substringToIndex:string1.length - 7];
-        
-        NSString * string2 = self.imageView.currentDownImageName;
-        NSString * string3 = [string2 substringToIndex:string2.length - 7];
-        
-        for(int i=0;i < pictureFrames ;i++){
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{
             
-            NSString * string1 = [NSString stringWithFormat:@"%@_%02d.png",string,i*10];
-            NSString * path1 = [[NSBundle mainBundle] pathForResource:string1 ofType:nil];
+            //图片是从记录的 位置,开始显示!
+            // 注意的是,这里还要有判断上衣和 下衣的逻辑 合成图片
+            NSString * string1 = self.collocationArray[indexPath.item];
+            NSString * string = [string1 substringToIndex:string1.length - 7];
             
-            NSString * string2 = [NSString stringWithFormat:@"%@_%02d.png",string3,i*10];
-            NSString * path2 = [[NSBundle mainBundle] pathForResource:string2 ofType:nil];
+            NSString * string2 = self.imageView.currentDownImageName;
+            NSString * string3 = [string2 substringToIndex:string2.length - 7];
             
-            //  生成图片
-            UIImage *image = [self.imageView addImagePath:path2 withImage:path1];
+            for(int i=0;i < pictureFrames ;i++){
+                
+                NSString * string1 = [NSString stringWithFormat:@"%@_%02d.png",string,i*10];
+                NSString * path1 = [[NSBundle mainBundle] pathForResource:string1 ofType:nil];
+                
+                NSString * string2 = [NSString stringWithFormat:@"%@_%02d.png",string3,i*10];
+                NSString * path2 = [[NSBundle mainBundle] pathForResource:string2 ofType:nil];
+                
+                //  生成图片
+                UIImage *image = [self.imageView addImagePath:path2 withImage:path1];
+                
+                //  将图片加入数组
+                [self.imageView.cacheArray replaceObjectAtIndex:i withObject:image];
+            };
             
-            //  将图片加入数组
-            [self.imageView.cacheArray replaceObjectAtIndex:i withObject:image];
-
-        }
+            dispatch_async(dispatch_get_main_queue(), ^{
+                
+                //最后的显示的是: 当前停止的状态
+                self.imageView.image = self.imageView.cacheArray[self.imageView.lastIndex];
+                self.imageView.currentUpImageName = string1;
+            });
+            
+        });
         
-        //最后的显示的是: 当前停止的状态
-        self.imageView.image = self.imageView.cacheArray[self.imageView.lastIndex];
-        self.imageView.currentUpImageName = string1;
-        
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^(void){
+            // Do something...
+            
+            [MBProgressHUD hideHUDForView:self.view animated:YES];
+            
+        });
     }
     
 
@@ -517,6 +539,7 @@ static NSString * ID = @"imageCell";
         //            make.top.equalTo(baffleV.mas_top).offset(200);
         //            make.width.equalTo(baffleV.mas_bottom).offset(200);
         //        }];
+        
         self.detailVC.view.alpha = 0;
         self.detailVC.view.hidden = YES;
         self.rulerVC.view.alpha = 0;
@@ -590,6 +613,7 @@ static NSString * ID = @"imageCell";
     self.imageView.scaleStall = 1;
     
 }
+
 
 #pragma mark - YQGroupViewDelegate_alert的代理方法
 -(void)imageGroupView:(YQImageGroupView *)groupView ViewWithWidthSize:(CGFloat)width{

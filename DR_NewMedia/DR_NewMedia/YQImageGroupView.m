@@ -48,7 +48,9 @@
 
 #pragma mark - 初始化方法
 -(instancetype)initWithCoder:(NSCoder *)aDecoder{
+    
     if(self = [super initWithCoder:aDecoder]){
+    
         //1.设置
         self.userInteractionEnabled = YES;
         //属性记录
@@ -56,23 +58,31 @@
         
         self.currentDownImageName = [NSString stringWithFormat:@"%@_%02d.png",pictureName1,0];
         
-        //2.加载图片
-        for(int i =0;i<pictureFrames ;i++){
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{
             
-            NSString * string1 = [NSString stringWithFormat:@"%@_%02d.png",pictureName1,i*10];
-            NSString * path1 = [[NSBundle mainBundle] pathForResource:string1 ofType:nil];
+            //2.加载图片
+            for(int i =0;i<pictureFrames ;i++){
+                
+                NSString * string1 = [NSString stringWithFormat:@"%@_%02d.png",pictureName1,i*10];
+                NSString * path1 = [[NSBundle mainBundle] pathForResource:string1 ofType:nil];
+                
+                NSString * string2 = [NSString stringWithFormat:@"%@_%02d.png",pictureName2,i*10];
+                NSString * path2 = [[NSBundle mainBundle] pathForResource:string2 ofType:nil];
+                
+                //  生成图片
+                UIImage *image = [self addImagePath:path1 withImage:path2];
+                
+                //  将图片加入数组
+                [self.cacheArray addObject:image];
+            }
             
-            NSString * string2 = [NSString stringWithFormat:@"%@_%02d.png",pictureName2,i*10];
-            NSString * path2 = [[NSBundle mainBundle] pathForResource:string2 ofType:nil];
+            dispatch_async(dispatch_get_main_queue(), ^{
+                //3.添加缓存
+                self.image = self.cacheArray[0];
+                
+            });
             
-            //  生成图片
-            UIImage *image = [self addImagePath:path1 withImage:path2];
-            
-            //  将图片加入数组
-            [self.cacheArray addObject:image];
-        }
-        //3.添加缓存
-        self.image = self.cacheArray[0];
+        });
         
         //4.1添加的是捏合的放大的手势
         UIPinchGestureRecognizer * pinch = [[UIPinchGestureRecognizer alloc]initWithTarget:self action:@selector(addPinchFunction:)];
