@@ -92,7 +92,7 @@ static NSString * ID = @"imageCell";
     //3.2 创建rect
     CGRect rect = CGRectMake(widthSize, 60 + 45, 60, heightSize - 48 -60 -45);
     YQWardrobeCollectionView * wardrobe = [[YQWardrobeCollectionView alloc]initWithFrame:rect collectionViewLayout:layout];
-    wardrobe.backgroundColor = [UIColor grayColor];
+    wardrobe.backgroundColor = [UIColor colorWithRed:187/255.0 green:190/255.0 blue:194/255.0 alpha:1.0];
     
     wardrobe.dataSource = self;
     wardrobe.delegate =   self;

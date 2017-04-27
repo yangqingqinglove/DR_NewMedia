@@ -5,7 +5,7 @@
 //  Created by neuracle on 16/5/4.
 //  Copyright © 2016年 neuracle. All rights reserved.
 //
-#define delta 50;
+#define delta 45;
 
 #import "YQBottomView.h"
 @interface YQBottomView()
@@ -58,7 +58,7 @@
     [super layoutSubviews];
 
     //所有的隐藏的按钮的大小都是一样的
-    CGRect btnBounds = CGRectMake(0, 0, 45, 45);
+    CGRect btnBounds = CGRectMake(0, 0, 40, 40);
     //遍历的三个隐藏的按钮
     for (UIButton * btn in self.item) {
         
