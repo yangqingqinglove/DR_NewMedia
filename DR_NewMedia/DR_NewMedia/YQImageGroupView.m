@@ -9,8 +9,8 @@
 #define X_Var 10
 #define ADuration 0.01
 #define pictureFrames 36
-#define pictureName1 @"qun170425_00000036"
-#define pictureName2 @"170425_00000036"
+#define pictureName1 @"ku170427_30000036"
+#define pictureName2 @"yi170427_40000036"
 
 #define buttonSize 45
 #define widthSize [UIScreen mainScreen].bounds.size.width
@@ -146,8 +146,10 @@
     int index = tempMoveX / (X_Var );
     //#warning TODO; 每次的旋转的index相同 导致的图片的跳帧的情况比较明显! bug成功解决
     if (index >= pictureFrames) {
+        
         index = pictureFrames - 1;
     }else if(index <= -pictureFrames){
+        
         index = -(pictureFrames -1);
     }
     
@@ -190,9 +192,15 @@
                 //  生成图片名
                 //  内存优化! (重点!!!)
                 //  将图片加入数组
-                [array arrayByAddingObject:self.cacheArray[(self.lastIndex + i)]];
+                if ((self.lastIndex + i) < 0) {
+                    
+                    [array arrayByAddingObject:self.cacheArray[pictureFrames +(self.lastIndex + i)]];
+                    
+                }else{
+                    
+                    [array arrayByAddingObject:self.cacheArray[(self.lastIndex + i)]];
+                }
             }
-            
         }
         
         //  1.3把数组存入UIImageView中

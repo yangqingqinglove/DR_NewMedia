@@ -20,7 +20,21 @@
                     <view key="view" contentMode="scaleToFill" id="pIC-6U-UPt">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Huc-SQ-NSt">
+                                <rect key="frame" x="37.5" y="258" width="300" height="150"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="150" id="dkA-uI-zS7"/>
+                                    <constraint firstAttribute="width" constant="300" id="tJG-Ei-9YG"/>
+                                </constraints>
+                                <state key="normal" title="新功能请期待哟!"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="Huc-SQ-NSt" firstAttribute="centerX" secondItem="pIC-6U-UPt" secondAttribute="centerX" id="Yse-LG-dlo"/>
+                            <constraint firstItem="Huc-SQ-NSt" firstAttribute="centerY" secondItem="pIC-6U-UPt" secondAttribute="centerY" id="iFr-Hj-GOj"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vGW-cA-SBi" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -112,12 +112,12 @@ static NSString * ID = @"imageCell";
     
     if(!_collocationArray){
         //添加下载收藏的图片柜
-        NSArray * images = @[@"170425_00000036",@"qun170425_000000",@"qun170425_00000036"];
+        NSArray * images = @[@"duowei_00",@"philips_hq6070_00",@"quen170427_40000036_00",@"yi170427_40000036_00",@"ku170427_30000036_00"];
         _collocationArray = [NSMutableArray array];
         
         for(int i =0;i<images.count ;i++){
             
-            NSString * string1 = [NSString stringWithFormat:@"%@_%02d.png",images[i],0];
+            NSString * string1 = [NSString stringWithFormat:@"%@.png",images[i]];
             
             //  将图片加入数组
             [_collocationArray addObject:string1];
@@ -200,8 +200,8 @@ static NSString * ID = @"imageCell";
     //cell.imagename  = self.imagesArray[indexPath.row];
     //if(indexPath.row < self.collocationArray.count){
     
-    NSString * path1 = [[NSBundle mainBundle] pathForResource:self.collocationArray[indexPath.item] ofType:nil];
-    cell.imageview.image = [UIImage imageWithContentsOfFile:path1];;
+    //NSString * path1 = [[NSBundle mainBundle] pathForResource:self.collocationArray[indexPath.item] ofType:nil];
+    cell.imageview.image = [UIImage imageNamed:self.collocationArray[indexPath.item]];
     
     //}
     
@@ -211,22 +211,13 @@ static NSString * ID = @"imageCell";
 #pragma mark - collectionView的代理方法
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
     //点击的item的选中的情况! 取出来进行检验图片名是否相同!
-    BOOL equal1 =[self.collocationArray[indexPath.item] isEqualToString: self.imageView.currentDownImageName];
+    //1.首先判断的是这个图片是单张or 组合
+    NSString * str = [self.collocationArray[indexPath.item] substringToIndex:2];
     
-    BOOL equal2 =[self.collocationArray[indexPath.item] isEqualToString: self.imageView.currentUpImageName];
-
-    if(equal1 || equal2){//相等,证明的是,图片存在
-        
-        //alert 提示当前 衣服就是!
-        UIAlertController * alert = [UIAlertController alertControllerWithTitle:@"提示" message:@"已经在展示了哟!" preferredStyle:UIAlertControllerStyleAlert];
-        
-        [alert addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleCancel handler:nil]];
-        
-        [self presentViewController:alert animated:YES completion:nil ];
-        
-        return;
     
-    }else{//不相等的情况下,需要的是合成
+    
+    
+    if(![str isEqualToString:@"yi"] && ![str isEqualToString:@"ku"]){//单张图片
         
         [MBProgressHUD showHUDAddedTo:self.view animated:YES];
         
@@ -235,44 +226,226 @@ static NSString * ID = @"imageCell";
             //图片是从记录的 位置,开始显示!
             // 注意的是,这里还要有判断上衣和 下衣的逻辑 合成图片
             NSString * string1 = self.collocationArray[indexPath.item];
-            NSString * string = [string1 substringToIndex:string1.length - 7];
+            NSString * string2 = [string1 substringToIndex:string1.length - 7];
             
-            NSString * string2 = self.imageView.currentDownImageName;
-            NSString * string3 = [string2 substringToIndex:string2.length - 7];
-            
-            for(int i=0;i < pictureFrames ;i++){
+//            NSString * string2 = self.imageView.currentDownImageName;
+//            NSString * string3 = [string2 substringToIndex:string2.length - 7];
+            if([str isEqualToString:@"qu"]){
                 
-                NSString * string1 = [NSString stringWithFormat:@"%@_%02d.png",string,i*10];
-                NSString * path1 = [[NSBundle mainBundle] pathForResource:string1 ofType:nil];
+                for(int i=0;i < pictureFrames ;i++){
+                    
+                    NSString * string3 = [NSString stringWithFormat:@"%@_%02d.png",string2,i*10];
+                    NSString * path1 = [[NSBundle mainBundle] pathForResource:string3 ofType:nil];
+                    
+                    //                NSString * string2 = [NSString stringWithFormat:@"%@_%02d.png",string3,i*10];
+                    //                NSString * path2 = [[NSBundle mainBundle] pathForResource:string2 ofType:nil];
+                    
+                    //  生成图片
+                    UIImage *image = [UIImage imageWithContentsOfFile:path1];
+                    
+                    //  将图片加入数组
+                    [self.imageView.cacheArray replaceObjectAtIndex:i withObject:image];
+                };
                 
-                NSString * string2 = [NSString stringWithFormat:@"%@_%02d.png",string3,i*10];
-                NSString * path2 = [[NSBundle mainBundle] pathForResource:string2 ofType:nil];
+            }else{
                 
-                //  生成图片
-                UIImage *image = [self.imageView addImagePath:path2 withImage:path1];
-                
-                //  将图片加入数组
-                [self.imageView.cacheArray replaceObjectAtIndex:i withObject:image];
-            };
+                for(int i=0;i < pictureFrames ;i++){
+                    
+                    NSString * string1 = [NSString stringWithFormat:@"%@_%02d.jpg",string2,i*10];
+                    NSString * path1 = [[NSBundle mainBundle] pathForResource:string1 ofType:nil];
+                    
+                    //                NSString * string2 = [NSString stringWithFormat:@"%@_%02d.png",string3,i*10];
+                    //                NSString * path2 = [[NSBundle mainBundle] pathForResource:string2 ofType:nil];
+                    
+                    //  生成图片
+                    UIImage *image = [UIImage imageWithContentsOfFile:path1];
+                    
+                    //  将图片加入数组
+                    [self.imageView.cacheArray replaceObjectAtIndex:i withObject:image];
+                };
+            }
             
             dispatch_async(dispatch_get_main_queue(), ^{
                 
                 //最后的显示的是: 当前停止的状态
                 self.imageView.image = self.imageView.cacheArray[self.imageView.lastIndex];
                 self.imageView.currentUpImageName = string1;
+                self.imageView.currentDownImageName = nil;
             });
             
         });
         
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^(void){
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^(void){
             // Do something...
             
             [MBProgressHUD hideHUDForView:self.view animated:YES];
             
         });
-    }
-    
+        
+    }else{
+        
+        
+        BOOL equal1 =[self.collocationArray[indexPath.item] isEqualToString: self.imageView.currentDownImageName];
+        
+        BOOL equal2 =[self.collocationArray[indexPath.item] isEqualToString: self.imageView.currentUpImageName];
+        
+        if(equal1 || equal2){//相等,证明的是,图片存在
+            
+            //alert 提示当前 衣服就是!
+            UIAlertController * alert = [UIAlertController alertControllerWithTitle:@"提示" message:@"已经在展示了哟!" preferredStyle:UIAlertControllerStyleAlert];
+            
+            [alert addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleCancel handler:nil]];
+            
+            [self presentViewController:alert animated:YES completion:nil ];
+            
+            return;
+            
+        }else{//不相等的情况下,需要的是合成 //还有的 逻辑的判断是 现存的是 如果是同类 和 不是同一类的情况
+            
+            
+            BOOL equal1 =[[self.imageView.currentDownImageName substringToIndex:2] isEqualToString: @"ku"];
+            
+            BOOL equal2 =[[self.imageView.currentUpImageName substringToIndex:2] isEqualToString: @"yi"];
+            
+            //BOOL equal3 =[self.collocationArray[indexPath.item] isEqualToString: @"ku"];
+            
+            BOOL equal4 =[str isEqualToString: @"yi"];
 
+            if(equal1 || equal2){
+            
+                [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+                
+                dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{
+                    
+                    //图片是从记录的 位置,开始显示!
+                    // 注意的是,这里还要有判断上衣和 下衣的逻辑 合成图片
+                    NSString * string1 = self.collocationArray[indexPath.item];
+                    NSString * string = [string1 substringToIndex:string1.length - 7];
+                    
+                    NSString * string2 = nil;
+                    if(equal1){//当前是裤子
+                        
+                        string2 = self.imageView.currentDownImageName;
+                        NSString * string3 = [string2 substringToIndex:string2.length - 7];
+                        
+                        for(int i=0;i < pictureFrames ;i++){
+                            
+                            NSString * string1 = [NSString stringWithFormat:@"%@_%02d.png",string,i*10];
+                            NSString * path1 = [[NSBundle mainBundle] pathForResource:string1 ofType:nil];
+                            
+                            NSString * string2 = [NSString stringWithFormat:@"%@_%02d.png",string3,i*10];
+                            NSString * path2 = [[NSBundle mainBundle] pathForResource:string2 ofType:nil];
+                            
+                            //  生成图片
+                            UIImage *image = [self.imageView addImagePath:path2 withImage:path1];
+                            
+                            //  将图片加入数组
+                            [self.imageView.cacheArray replaceObjectAtIndex:i withObject:image];
+                        };
+
+                    }else{
+                        
+                        string2 = self.imageView.currentUpImageName;
+                        NSString * string3 = [string2 substringToIndex:string2.length - 7];
+                        
+                        for(int i=0;i < pictureFrames ;i++){
+                            
+                            NSString * string1 = [NSString stringWithFormat:@"%@_%02d.png",string,i*10];
+                            NSString * path1 = [[NSBundle mainBundle] pathForResource:string1 ofType:nil];
+                            
+                            NSString * string2 = [NSString stringWithFormat:@"%@_%02d.png",string3,i*10];
+                            NSString * path2 = [[NSBundle mainBundle] pathForResource:string2 ofType:nil];
+                            
+                            //  生成图片
+                            UIImage *image = [self.imageView addImagePath:path1 withImage:path2];
+                            
+                            //  将图片加入数组
+                            [self.imageView.cacheArray replaceObjectAtIndex:i withObject:image];
+                        };
+                    }
+
+                    
+                    dispatch_async(dispatch_get_main_queue(), ^{
+                        
+                        //最后的显示的是: 当前停止的状态
+                        self.imageView.image = self.imageView.cacheArray[self.imageView.lastIndex];
+                        if(equal1){//当前是裤子
+                        
+                            self.imageView.currentUpImageName = string1;
+                        }else{
+                            
+                            self.imageView.currentDownImageName = string1;
+                        }
+                    });
+                    
+                });
+                
+                dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^(void){
+                    
+                    // Do something...
+                    
+                    [MBProgressHUD hideHUDForView:self.view animated:YES];
+                    
+                });
+                
+            }else{
+                
+                [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+                
+                dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{
+                    
+                    //图片是从记录的 位置,开始显示!
+                    // 注意的是,这里还要有判断上衣和 下衣的逻辑 合成图片
+                    NSString * string1 = self.collocationArray[indexPath.item];
+                    NSString * string = [string1 substringToIndex:string1.length - 7];
+                    
+                    //            NSString * string2 = self.imageView.currentDownImageName;
+                    //            NSString * string3 = [string2 substringToIndex:string2.length - 7];
+                    
+                    for(int i=0;i < pictureFrames ;i++){
+                        
+                        NSString * string1 = [NSString stringWithFormat:@"%@_%02d.png",string,i*10];
+                        NSString * path1 = [[NSBundle mainBundle] pathForResource:string1 ofType:nil];
+                        
+                        //                NSString * string2 = [NSString stringWithFormat:@"%@_%02d.png",string3,i*10];
+                        //                NSString * path2 = [[NSBundle mainBundle] pathForResource:string2 ofType:nil];
+                        
+                        //  生成图片
+                        UIImage *image = [UIImage imageWithContentsOfFile:path1];
+                        
+                        //  将图片加入数组
+                        [self.imageView.cacheArray replaceObjectAtIndex:i withObject:image];
+                    };
+                    
+                    dispatch_async(dispatch_get_main_queue(), ^{
+                        
+                        //最后的显示的是: 当前停止的状态
+                        self.imageView.image = self.imageView.cacheArray[self.imageView.lastIndex];
+                        
+                        if(equal4){
+                        
+                            self.imageView.currentUpImageName = string1;
+                            self.imageView.currentDownImageName = nil;
+                            
+                        }else{
+                            
+                            self.imageView.currentUpImageName = nil;
+                            self.imageView.currentDownImageName = string1;
+
+                        }
+                    });
+                    
+                });
+                
+                dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^(void){
+                    // Do something...
+                    
+                    [MBProgressHUD hideHUDForView:self.view animated:YES];
+                    
+                });
+            }
+        }
+    }
 }
 
 #pragma mark - AllButtonClick的方法

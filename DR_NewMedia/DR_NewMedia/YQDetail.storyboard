@@ -17,26 +17,29 @@
                         <viewControllerLayoutGuide type="top" id="Dkq-4C-xGW"/>
                         <viewControllerLayoutGuide type="bottom" id="eIz-gF-Ruq"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="i17-vX-gSU">
+                    <view key="view" alpha="0.80000000000000004" contentMode="scaleToFill" id="i17-vX-gSU">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" fixedFrame="YES" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="gex-t0-bac">
-                                <rect key="frame" x="62" y="243" width="150" height="2"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </progressView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YX8-27-abh">
-                                <rect key="frame" x="164" y="182" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YX8-27-abh">
+                                <rect key="frame" x="87.5" y="283.5" width="200" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="HIg-ee-z2e"/>
+                                    <constraint firstAttribute="height" constant="100" id="iOd-RD-coS"/>
+                                </constraints>
+                                <state key="normal" title="新功能请期待!"/>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.0" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="YX8-27-abh" firstAttribute="centerY" secondItem="i17-vX-gSU" secondAttribute="centerY" id="0va-xm-sAS"/>
+                            <constraint firstItem="YX8-27-abh" firstAttribute="centerX" secondItem="i17-vX-gSU" secondAttribute="centerX" id="JkR-Wh-Gd3"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0cM-eo-pgE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="222" y="107"/>
+            <point key="canvasLocation" x="-524" y="23"/>
         </scene>
     </scenes>
 </document>
