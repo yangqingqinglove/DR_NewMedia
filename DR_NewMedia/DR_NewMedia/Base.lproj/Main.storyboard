@@ -10,6 +10,23 @@
     </dependencies>
     <scenes>
         <!--搭配间-->
+        <scene sceneID="stZ-td-3Mk">
+            <objects>
+                <navigationController id="0ah-i1-TUs" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="搭配间" id="ptB-MF-vbj"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="tj7-Da-JCV">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="VWn-nY-4Hc" kind="relationship" relationship="rootViewController" id="iQx-TN-Sbd"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="k3r-vm-6Ae" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="17" y="354"/>
+        </scene>
+        <!--搭配间-->
         <scene sceneID="WTf-Tl-RO2">
             <objects>
                 <viewController id="VWn-nY-4Hc" customClass="YQCollocationViewController" sceneMemberID="viewController">
@@ -22,17 +39,17 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fS1-mg-0oq" customClass="YQNavTopView">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="60"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="64"/>
                                 <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="60" id="Maf-GV-J2Z"/>
+                                    <constraint firstAttribute="height" constant="64" id="Maf-GV-J2Z"/>
                                 </constraints>
                             </view>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="7HO-pE-xGR" customClass="YQImageGroupView">
-                                <rect key="frame" x="0.0" y="60" width="375" height="558"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lbv-gG-4UH">
-                                <rect key="frame" x="10" y="64" width="40" height="40"/>
+                                <rect key="frame" x="10" y="68" width="40" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="40" id="8K2-ke-eqw"/>
                                     <constraint firstAttribute="height" constant="40" id="Mwh-Z3-Ncc"/>
@@ -45,7 +62,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aIc-mA-gXH">
-                                <rect key="frame" x="10" y="109" width="40" height="40"/>
+                                <rect key="frame" x="10" y="113" width="40" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="40" id="N7T-QH-GMT"/>
                                     <constraint firstAttribute="height" constant="40" id="ceh-2D-DDz"/>
@@ -56,7 +73,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h3g-BS-mse">
-                                <rect key="frame" x="10" y="154" width="40" height="40"/>
+                                <rect key="frame" x="10" y="158" width="40" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="8WR-Gw-3OG"/>
                                     <constraint firstAttribute="width" constant="40" id="qxv-At-Ert"/>
@@ -124,6 +141,7 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" tag="1" title="搭配间" id="YYE-CJ-4QK"/>
+                    <navigationItem key="navigationItem" id="QvT-PM-2Ge"/>
                     <connections>
                         <outlet property="imageView" destination="7HO-pE-xGR" id="nEi-XP-Sdn"/>
                         <outlet property="navBarView" destination="fS1-mg-0oq" id="Kzq-F5-i6l"/>
@@ -131,7 +149,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9Ux-y6-wsk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="305" y="305"/>
+            <point key="canvasLocation" x="854" y="354"/>
         </scene>
         <!--Item 4-->
         <scene sceneID="YUa-Ez-yuU">
@@ -146,7 +164,7 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="pey-sk-tyb" id="CZW-Vh-c6B">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -160,7 +178,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6ic-kd-fIp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="305" y="1224"/>
+            <point key="canvasLocation" x="17" y="1082"/>
         </scene>
         <!--首页-->
         <scene sceneID="vZK-e4-fdU">
@@ -248,9 +266,9 @@
                     </tabBar>
                     <connections>
                         <segue destination="6FQ-wY-JRf" kind="relationship" relationship="viewControllers" id="ZuG-vS-DPj"/>
-                        <segue destination="VWn-nY-4Hc" kind="relationship" relationship="viewControllers" id="EXD-0D-TI1"/>
-                        <segue destination="vfg-Mw-3lL" kind="relationship" relationship="viewControllers" id="pTO-WG-1cD"/>
-                        <segue destination="Yfs-BH-0Tb" kind="relationship" relationship="viewControllers" id="8H7-nO-hbp"/>
+                        <segue destination="0ah-i1-TUs" kind="relationship" relationship="viewControllers" id="bJ9-VW-xi5"/>
+                        <segue destination="vfg-Mw-3lL" kind="relationship" relationship="viewControllers" id="sSJ-6g-Fb0"/>
+                        <segue destination="Yfs-BH-0Tb" kind="relationship" relationship="viewControllers" id="L6B-Ly-Vdp"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tqD-cH-gOH" userLabel="First Responder" sceneMemberID="firstResponder"/>

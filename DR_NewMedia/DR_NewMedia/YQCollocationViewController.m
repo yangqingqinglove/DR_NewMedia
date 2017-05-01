@@ -11,6 +11,7 @@
 #define heightSize [UIScreen mainScreen].bounds.size.height
 #define buttonSize 45
 #define ADuration 0.01
+#define downTime 3.5
 
 #import "YQCollocationViewController.h"
 #import "YQBottomView.h"
@@ -61,7 +62,7 @@ static NSString * ID = @"imageCell";
     MBProgressHUD * hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     
     hud.mode = MBProgressHUDModeIndeterminate;
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2* NSEC_PER_SEC)), dispatch_get_main_queue(), ^(void){
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(downTime* NSEC_PER_SEC)), dispatch_get_main_queue(), ^(void){
         
         // Do something... downsometing....
         [MBProgressHUD hideHUDForView:self.view animated:YES];
@@ -73,7 +74,7 @@ static NSString * ID = @"imageCell";
     topView.deleage = self;
     [self.view addSubview:topView];
     self.topView = topView;
-    self.topView.frame = CGRectMake(widthSize - 105, 60, 105, 45);
+    self.topView.frame = CGRectMake(widthSize - 105, 64, 105, 45);
     
     //2.创建buttonView的展示的效果
     YQBottomView * bottomView = [YQBottomView buttonMenu];
@@ -90,7 +91,7 @@ static NSString * ID = @"imageCell";
     layout.minimumLineSpacing = 5;
     
     //3.2 创建rect
-    CGRect rect = CGRectMake(widthSize, 60 + 45, 60, heightSize - 48 -60 -45);
+    CGRect rect = CGRectMake(widthSize, 64 + 45, 60, heightSize - 48 -64 -45);
     YQWardrobeCollectionView * wardrobe = [[YQWardrobeCollectionView alloc]initWithFrame:rect collectionViewLayout:layout];
     wardrobe.backgroundColor = [UIColor colorWithRed:187/255.0 green:190/255.0 blue:194/255.0 alpha:1.0];
     
@@ -104,6 +105,11 @@ static NSString * ID = @"imageCell";
     
     //4.设置代理
     self.imageView.delegate = self;
+    
+    //5.设置优先级
+    [self.navBarView bringSubviewToFront:self.view];
+    
+    
 }
 
 
@@ -380,7 +386,7 @@ static NSString * ID = @"imageCell";
                     
                 });
                 
-                dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^(void){
+                dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(downTime * NSEC_PER_SEC)), dispatch_get_main_queue(), ^(void){
                     
                     // Do something...
                     
