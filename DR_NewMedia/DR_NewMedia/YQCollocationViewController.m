@@ -11,7 +11,7 @@
 #define heightSize [UIScreen mainScreen].bounds.size.height
 #define buttonSize 45
 #define ADuration 0.01
-#define downTime 3.5
+#define downTime 1.5
 
 #import "YQCollocationViewController.h"
 #import "YQBottomView.h"
@@ -27,7 +27,7 @@
 
 @interface YQCollocationViewController ()<YQBottomViewClickDeleage,YQTopViewClickDeleate,UICollectionViewDelegate,UICollectionViewDataSource,YQImageGroupViewDelegate>
 
-@property (weak, nonatomic) IBOutlet UIView *navBarView;
+//@property (weak, nonatomic) IBOutlet UIView *navBarView;
 
 @property (weak, nonatomic) IBOutlet YQImageGroupView *imageView;
 
@@ -106,9 +106,20 @@ static NSString * ID = @"imageCell";
     //4.设置代理
     self.imageView.delegate = self;
     
-    //5.设置优先级
-    [self.navBarView bringSubviewToFront:self.view];
+    //5.设置自定义的titleView
+    UIImageView* imageView = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, 20, 20)];
+    imageView.image = [UIImage imageNamed:@""];
+    imageView.backgroundColor = [UIColor redColor];
     
+    self.navigationItem.titleView = imageView;
+    
+    //6.设置rightBar
+    UIButton * rightBnt = [UIButton buttonWithType:UIButtonTypeCustom];
+    rightBnt.bounds = CGRectMake(0, 0, 40, 40);
+    [rightBnt setTitle:@"设置" forState:UIControlStateNormal];
+    
+    UIBarButtonItem * bntItem = [[UIBarButtonItem alloc]initWithCustomView:rightBnt];
+    self.navigationItem.rightBarButtonItem = bntItem;
     
 }
 
@@ -456,6 +467,7 @@ static NSString * ID = @"imageCell";
 
 #pragma mark - AllButtonClick的方法
 - (IBAction)rulerBtnClick:(id)sender {
+    
     //整体的 modal 出来一个控制器
     //添加蒙版,设置成为第一响应者
     UIView * baffleV = [[UIView alloc]initWithFrame:self.view.bounds];
@@ -488,7 +500,17 @@ static NSString * ID = @"imageCell";
         self.rulerVC.view.hidden = NO;
         
     }];
+    
+    
+    // modal 弹框的效果的图形
+//    YQRulerVC * ruler = [[YQRulerVC alloc]init];
+//    ruler.modalPresentationStyle = UIModalPresentationFormSheet;// 只针对于 ipad的view,对于iphone的项目不适用!
+//    [self presentViewController:ruler animated:YES completion:nil];
+//    
 }
+
+
+
 
 - (IBAction)backgroundBtnClick:(id)sender {
     //实现的思路是:添加模板, 然后的是:自定义的弹窗modal的效果
@@ -545,6 +567,7 @@ static NSString * ID = @"imageCell";
         self.BGVC.view.hidden = NO;
         
     }];
+    
 }
 
 - (IBAction)detailBtnClick:(id)sender {

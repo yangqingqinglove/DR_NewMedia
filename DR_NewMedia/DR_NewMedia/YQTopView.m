@@ -25,6 +25,8 @@
 }
 
 - (IBAction)collectButtonClick:(UIButton *)sender {
+    
+    //self.backgroundColor = [UIColor grayColor];
     //执行的 frame的穿索加载!  就是一个show 和 UnShow的展示
     if([self.deleage respondsToSelector:@selector(topView:buttonDidSelectTag:)]){
     

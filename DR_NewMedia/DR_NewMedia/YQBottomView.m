@@ -47,10 +47,10 @@
 #pragma mark - 初始化三个隐藏的按钮
 -(void)initItems{
     //添加三个不同的按钮来进行的操作
-    [self addBtnWithBgImage:@"QQ截图20170420113941" tag:0];
-    [self addBtnWithBgImage:@"QQ截图20170420113940" tag:27];
-    [self addBtnWithBgImage:@"QQ截图20170420113943" tag:18];
-    [self addBtnWithBgImage:@"QQ截图20170420113942" tag:9];
+    [self addBtnWithBgImage:@"02角度_1" tag:0];
+    [self addBtnWithBgImage:@"02角度_4" tag:27];
+    [self addBtnWithBgImage:@"02角度_3" tag:18];
+    [self addBtnWithBgImage:@"02角度_2" tag:9];
 }
 
 -(void)layoutSubviews{

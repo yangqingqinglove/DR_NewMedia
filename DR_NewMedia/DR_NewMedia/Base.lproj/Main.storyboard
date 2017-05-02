@@ -24,7 +24,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="k3r-vm-6Ae" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="17" y="354"/>
+            <point key="canvasLocation" x="390" y="332"/>
         </scene>
         <!--搭配间-->
         <scene sceneID="WTf-Tl-RO2">
@@ -48,13 +48,13 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="7HO-pE-xGR" customClass="YQImageGroupView">
                                 <rect key="frame" x="0.0" y="64" width="375" height="554"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lbv-gG-4UH">
-                                <rect key="frame" x="10" y="68" width="40" height="40"/>
+                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lbv-gG-4UH">
+                                <rect key="frame" x="10" y="68" width="100" height="40"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="40" id="8K2-ke-eqw"/>
+                                    <constraint firstAttribute="width" constant="100" id="8K2-ke-eqw"/>
                                     <constraint firstAttribute="height" constant="40" id="Mwh-Z3-Ncc"/>
                                 </constraints>
-                                <state key="normal" image="05标尺" backgroundImage="shuipao">
+                                <state key="normal" image="055标尺">
                                     <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -67,7 +67,7 @@
                                     <constraint firstAttribute="width" constant="40" id="N7T-QH-GMT"/>
                                     <constraint firstAttribute="height" constant="40" id="ceh-2D-DDz"/>
                                 </constraints>
-                                <state key="normal" image="03背景" backgroundImage="shuipao"/>
+                                <state key="normal" image="033背景"/>
                                 <connections>
                                     <action selector="backgroundBtnClick:" destination="VWn-nY-4Hc" eventType="touchUpInside" id="DZq-Pf-S8J"/>
                                 </connections>
@@ -78,7 +78,7 @@
                                     <constraint firstAttribute="height" constant="40" id="8WR-Gw-3OG"/>
                                     <constraint firstAttribute="width" constant="40" id="qxv-At-Ert"/>
                                 </constraints>
-                                <state key="normal" image="04详情" backgroundImage="shuipao.png"/>
+                                <state key="normal" image="044详情"/>
                                 <connections>
                                     <action selector="detailBtnClick:" destination="VWn-nY-4Hc" eventType="touchUpInside" id="hXf-MO-Q80"/>
                                 </connections>
@@ -100,7 +100,7 @@
                                     <constraint firstAttribute="width" constant="40" id="1Rb-nI-RJc"/>
                                     <constraint firstAttribute="height" constant="40" id="zMX-8Z-2Tx"/>
                                 </constraints>
-                                <state key="normal" image="05日志" backgroundImage="shuipao.png"/>
+                                <state key="normal" image="055存档"/>
                                 <connections>
                                     <action selector="saveBtnClick:" destination="VWn-nY-4Hc" eventType="touchUpInside" id="Xej-f8-b1N"/>
                                 </connections>
@@ -144,12 +144,11 @@
                     <navigationItem key="navigationItem" id="QvT-PM-2Ge"/>
                     <connections>
                         <outlet property="imageView" destination="7HO-pE-xGR" id="nEi-XP-Sdn"/>
-                        <outlet property="navBarView" destination="fS1-mg-0oq" id="Kzq-F5-i6l"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9Ux-y6-wsk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="854" y="354"/>
+            <point key="canvasLocation" x="1405.5999999999999" y="348.57571214392806"/>
         </scene>
         <!--Item 4-->
         <scene sceneID="YUa-Ez-yuU">
@@ -164,7 +163,7 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="pey-sk-tyb" id="CZW-Vh-c6B">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -174,11 +173,28 @@
                             <outlet property="delegate" destination="Yfs-BH-0Tb" id="3Ct-cH-WSr"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="未登录" id="yS9-Cg-837" userLabel="Item 4"/>
+                    <tabBarItem key="tabBarItem" title="关注" id="yS9-Cg-837" userLabel="Item 4"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6ic-kd-fIp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="17" y="1082"/>
+            <point key="canvasLocation" x="390" y="1181"/>
+        </scene>
+        <!--首页-->
+        <scene sceneID="sUG-sd-9VA">
+            <objects>
+                <navigationController id="C4G-r2-sQn" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="首页" id="muU-Nq-iIc"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="rMn-Pg-0hn">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="6FQ-wY-JRf" kind="relationship" relationship="rootViewController" id="AnU-PO-ncg"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="a5Q-eR-qEE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="391" y="-354"/>
         </scene>
         <!--首页-->
         <scene sceneID="vZK-e4-fdU">
@@ -193,20 +209,20 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XGb-Vx-aqg" customClass="YQTitleScrollView">
-                                <rect key="frame" x="0.0" y="180" width="375" height="60"/>
+                                <rect key="frame" x="0.0" y="244" width="375" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="1Ir-7i-Hc0"/>
                                 </constraints>
                             </scrollView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="x98-xi-co2" customClass="YQCycleView">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="180"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="180"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="180" id="EFe-MU-cZF"/>
                                 </constraints>
                             </view>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e8r-xk-6T7">
-                                <rect key="frame" x="0.0" y="240" width="375" height="378"/>
+                                <rect key="frame" x="0.0" y="304" width="375" height="314"/>
                                 <connections>
                                     <outlet property="delegate" destination="6FQ-wY-JRf" id="aw0-h7-5Ie"/>
                                 </connections>
@@ -219,7 +235,7 @@
                             <constraint firstAttribute="trailing" secondItem="e8r-xk-6T7" secondAttribute="trailing" id="NwE-iW-nIl"/>
                             <constraint firstItem="XGb-Vx-aqg" firstAttribute="top" secondItem="x98-xi-co2" secondAttribute="bottom" id="Pi9-Gq-NxY"/>
                             <constraint firstItem="Nca-lq-ydZ" firstAttribute="top" secondItem="e8r-xk-6T7" secondAttribute="bottom" id="ROq-or-JGR"/>
-                            <constraint firstItem="x98-xi-co2" firstAttribute="top" secondItem="z7a-Cc-SHb" secondAttribute="bottom" constant="-20" id="YOF-WC-4pr"/>
+                            <constraint firstItem="x98-xi-co2" firstAttribute="top" secondItem="z7a-Cc-SHb" secondAttribute="bottom" id="YOF-WC-4pr"/>
                             <constraint firstItem="XGb-Vx-aqg" firstAttribute="leading" secondItem="RqI-OQ-b4j" secondAttribute="leading" id="Yeb-eM-EF5"/>
                             <constraint firstItem="e8r-xk-6T7" firstAttribute="leading" secondItem="RqI-OQ-b4j" secondAttribute="leading" id="Yf6-jl-HRn"/>
                             <constraint firstAttribute="trailing" secondItem="x98-xi-co2" secondAttribute="trailing" id="ti2-ZQ-3kf"/>
@@ -227,6 +243,7 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="首页" id="nQb-cB-1SE"/>
+                    <navigationItem key="navigationItem" id="SE3-1x-qa4"/>
                     <connections>
                         <outlet property="contentScrollView" destination="e8r-xk-6T7" id="1Q9-jB-V7H"/>
                         <outlet property="titleScrollView" destination="XGb-Vx-aqg" id="Idc-DL-lar"/>
@@ -234,7 +251,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Of1-cH-S7L" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="304.80000000000001" y="-344.07796101949026"/>
+            <point key="canvasLocation" x="1386" y="-383"/>
         </scene>
         <!--Item 3-->
         <scene sceneID="DFC-9N-G36">
@@ -253,7 +270,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rCR-Xx-H43" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="305" y="-1005"/>
+            <point key="canvasLocation" x="390" y="-1053"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="wMw-2R-VLD">
@@ -265,10 +282,10 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
-                        <segue destination="6FQ-wY-JRf" kind="relationship" relationship="viewControllers" id="ZuG-vS-DPj"/>
-                        <segue destination="0ah-i1-TUs" kind="relationship" relationship="viewControllers" id="bJ9-VW-xi5"/>
-                        <segue destination="vfg-Mw-3lL" kind="relationship" relationship="viewControllers" id="sSJ-6g-Fb0"/>
-                        <segue destination="Yfs-BH-0Tb" kind="relationship" relationship="viewControllers" id="L6B-Ly-Vdp"/>
+                        <segue destination="C4G-r2-sQn" kind="relationship" relationship="viewControllers" id="Okf-pa-QP5"/>
+                        <segue destination="0ah-i1-TUs" kind="relationship" relationship="viewControllers" id="xyL-Jn-yUb"/>
+                        <segue destination="Yfs-BH-0Tb" kind="relationship" relationship="viewControllers" id="nXM-Cw-zIA"/>
+                        <segue destination="vfg-Mw-3lL" kind="relationship" relationship="viewControllers" id="nwa-FS-W2f"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tqD-cH-gOH" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -277,11 +294,9 @@
         </scene>
     </scenes>
     <resources>
-        <image name="03背景" width="60" height="60"/>
-        <image name="04详情" width="60" height="60"/>
-        <image name="05日志" width="60" height="60"/>
-        <image name="05标尺" width="60" height="60"/>
-        <image name="shuipao" width="60" height="60"/>
-        <image name="shuipao.png" width="16" height="16"/>
+        <image name="033背景" width="40" height="40"/>
+        <image name="044详情" width="40" height="40"/>
+        <image name="055存档" width="40" height="40"/>
+        <image name="055标尺" width="94" height="40"/>
     </resources>
 </document>

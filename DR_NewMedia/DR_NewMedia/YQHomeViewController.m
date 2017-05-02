@@ -35,7 +35,35 @@
     // 4.设置contentSize
     CGFloat contentW = self.childViewControllers.count * [UIScreen mainScreen].bounds.size.width;
     self.contentScrollView.contentSize = CGSizeMake(contentW, 0);
-
+    
+    // 5.设置barItem的属性,item 就是模型
+    //注意的是: 一定要 拿到它的 栈顶的控制器来进行的设置它的属性
+    // 5.1 设置两边的 rignt and left的itemview的情况
+    //不要渲染的原始 图片(也可以是storyAboard的中来设置)
+    UIImage * image = [UIImage imageNamed:@"navigationbar_friendsearch"];
+    image = [image imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    
+    UIBarButtonItem * item = [[UIBarButtonItem alloc]initWithImage:image style:UIBarButtonItemStyleDone target:nil action:nil];
+    
+    self.navigationItem.leftBarButtonItem = item;
+    
+    // 5.2 可以的是设置 按钮的为item的情况!
+    UIButton * button = [UIButton buttonWithType:UIButtonTypeCustom];
+    // 默认的进行的获取 地点
+    //button
+    button.backgroundColor = [UIColor clearColor];//设置透明
+    button.bounds = CGRectMake(40, 0, 40, 20);
+    [button setTitle:@"武汉" forState:UIControlStateNormal];
+    
+    UIBarButtonItem * rightItem = [[UIBarButtonItem alloc]initWithCustomView:button];
+    
+    UIImageView * rightImage = [[UIImageView alloc]initWithImage:nil];
+    rightImage.bounds = CGRectMake(0, 0, 20, 20);
+    rightImage.backgroundColor = [UIColor grayColor];
+    
+    UIBarButtonItem * rightImageItem = [[UIBarButtonItem alloc]initWithCustomView:rightImage];
+    
+    self.navigationItem.rightBarButtonItems = @[rightImageItem,rightItem,];
     
 }
 
