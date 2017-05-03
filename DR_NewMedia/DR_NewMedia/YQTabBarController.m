@@ -14,7 +14,6 @@
 @property(nonatomic,assign)int lock;
 
 
-
 @end
 
 @implementation YQTabBarController
@@ -28,7 +27,7 @@
     // dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, 2 * NSEC_PER_SEC);
     hud.mode = MBProgressHUDModeIndeterminate;
     
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^(void){
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^(void){
         // Do something...
         
         [MBProgressHUD hideHUDForView:self.view animated:YES];

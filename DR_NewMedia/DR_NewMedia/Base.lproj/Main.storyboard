@@ -174,7 +174,7 @@
                             <outlet property="delegate" destination="Yfs-BH-0Tb" id="3Ct-cH-WSr"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="关注" id="yS9-Cg-837" userLabel="Item 4"/>
+                    <tabBarItem key="tabBarItem" title="未登录" id="yS9-Cg-837" userLabel="Item 4"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6ic-kd-fIp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

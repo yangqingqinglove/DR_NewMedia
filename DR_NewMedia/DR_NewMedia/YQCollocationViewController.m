@@ -11,7 +11,7 @@
 #define heightSize [UIScreen mainScreen].bounds.size.height
 #define buttonSize 45
 #define ADuration 0.01
-#define downTime 4.5
+#define downTime 14.5
 
 #import "YQCollocationViewController.h"
 #import "YQBottomView.h"
@@ -205,7 +205,6 @@ static NSString * ID = @"imageCell";
         default:
             break;
     }
-
 }
 
 

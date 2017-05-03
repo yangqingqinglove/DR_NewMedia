@@ -36,6 +36,9 @@
     CGFloat contentW = self.childViewControllers.count * [UIScreen mainScreen].bounds.size.width;
     self.contentScrollView.contentSize = CGSizeMake(contentW, 0);
     
+    // 4.1偏移的bug设置
+    self.automaticallyAdjustsScrollViewInsets = NO;
+    
     // 5.设置barItem的属性,item 就是模型
     //注意的是: 一定要 拿到它的 栈顶的控制器来进行的设置它的属性
     // 5.1 设置两边的 rignt and left的itemview的情况
