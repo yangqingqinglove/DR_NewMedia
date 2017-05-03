@@ -11,7 +11,7 @@
 #define heightSize [UIScreen mainScreen].bounds.size.height
 #define buttonSize 45
 #define ADuration 0.01
-#define downTime 1.5
+#define downTime 4.5
 
 #import "YQCollocationViewController.h"
 #import "YQBottomView.h"
@@ -74,7 +74,7 @@ static NSString * ID = @"imageCell";
     topView.deleage = self;
     [self.view addSubview:topView];
     self.topView = topView;
-    self.topView.frame = CGRectMake(widthSize - 105, 64, 105, 45);
+    self.topView.frame = CGRectMake(widthSize - 60, 64, 60, 45);
     
     //2.创建buttonView的展示的效果
     YQBottomView * bottomView = [YQBottomView buttonMenu];
@@ -89,6 +89,7 @@ static NSString * ID = @"imageCell";
     UICollectionViewFlowLayout * layout = [[UICollectionViewFlowLayout alloc]init];
     layout.scrollDirection = UICollectionViewScrollDirectionVertical;
     layout.minimumLineSpacing = 5;
+    layout.headerReferenceSize = CGSizeMake(60, 5);
     
     //3.2 创建rect
     CGRect rect = CGRectMake(widthSize, 64 + 45, 60, heightSize - 48 -64 -45);
@@ -116,6 +117,8 @@ static NSString * ID = @"imageCell";
     //6.设置rightBar
     UIButton * rightBnt = [UIButton buttonWithType:UIButtonTypeCustom];
     rightBnt.bounds = CGRectMake(0, 0, 40, 40);
+    rightBnt.backgroundColor = [UIColor clearColor];//设置透明
+    [rightBnt addTarget:self action:@selector(rightBarButtonClicked:) forControlEvents:UIControlEventTouchUpInside];
     [rightBnt setTitle:@"设置" forState:UIControlStateNormal];
     
     UIBarButtonItem * bntItem = [[UIBarButtonItem alloc]initWithCustomView:rightBnt];
@@ -170,10 +173,14 @@ static NSString * ID = @"imageCell";
             
             CGAffineTransform transform = CGAffineTransformMake(1, 0,0,1, 0, 0);
             if (!_isShow) {
+                
                 x = -60;
+                
+                TopV.backgroundColor = [UIColor colorWithRed:187/255.0 green:190/255.0 blue:194/255.0 alpha:1.0];
                 
             }else{
                 
+                TopV.backgroundColor = [UIColor clearColor];
                 x = 60;
             }
             
@@ -225,14 +232,12 @@ static NSString * ID = @"imageCell";
     return cell;
 }
 
+
 #pragma mark - collectionView的代理方法
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
     //点击的item的选中的情况! 取出来进行检验图片名是否相同!
     //1.首先判断的是这个图片是单张or 组合
     NSString * str = [self.collocationArray[indexPath.item] substringToIndex:2];
-    
-    
-    
     
     if(![str isEqualToString:@"yi"] && ![str isEqualToString:@"ku"]){//单张图片
         
@@ -840,6 +845,15 @@ static NSString * ID = @"imageCell";
     }
     
 }
+
+#pragma mark - rightBarButtonClick的方法
+-(void)rightBarButtonClicked:(UIButton *)bnt{
+
+
+
+}
+
+
 
 
 @end

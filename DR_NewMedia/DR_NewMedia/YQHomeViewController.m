@@ -54,6 +54,7 @@
     button.backgroundColor = [UIColor clearColor];//设置透明
     button.bounds = CGRectMake(40, 0, 40, 20);
     [button setTitle:@"武汉" forState:UIControlStateNormal];
+    [button addTarget:self action:@selector(rightBarButtonClicked:) forControlEvents:UIControlEventTouchUpInside];
     
     UIBarButtonItem * rightItem = [[UIBarButtonItem alloc]initWithCustomView:button];
     
@@ -205,5 +206,12 @@
     [self.titleScrollView scrollToRate:(self.contentScrollView.contentOffset.x / self.contentScrollView.frame.size.width)];
 
 }
+
+#pragma mark - rightBarClick方法
+-(void)rightBarButtonClicked:(UIButton *)btn{
+
+
+}
+
 
 @end

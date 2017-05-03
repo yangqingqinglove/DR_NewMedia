@@ -14,9 +14,10 @@
             <objects>
                 <navigationController id="0ah-i1-TUs" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="搭配间" id="ptB-MF-vbj"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="tj7-Da-JCV">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="tj7-Da-JCV">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                     </navigationBar>
                     <connections>
                         <segue destination="VWn-nY-4Hc" kind="relationship" relationship="rootViewController" id="iQx-TN-Sbd"/>
