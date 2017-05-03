@@ -11,7 +11,7 @@
 #define heightSize [UIScreen mainScreen].bounds.size.height
 #define buttonSize 45
 #define ADuration 0.01
-#define downTime 14.5
+#define downTime 2.5
 
 #import "YQCollocationViewController.h"
 #import "YQBottomView.h"
@@ -289,9 +289,16 @@ static NSString * ID = @"imageCell";
             dispatch_async(dispatch_get_main_queue(), ^{
                 
                 //最后的显示的是: 当前停止的状态
-                self.imageView.image = self.imageView.cacheArray[self.imageView.lastIndex];
+                self.imageView.image = self.imageView.cacheArray[0];
+                self.imageView.lastIndex = 0;
                 self.imageView.currentUpImageName = string1;
                 self.imageView.currentDownImageName = nil;
+                
+                [UIView animateWithDuration:0.25 animations:^{
+                    
+                    self.imageView.transform = self.imageView.originalTransform;
+                    
+                }];
             });
             
         });

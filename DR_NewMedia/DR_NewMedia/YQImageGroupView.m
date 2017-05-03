@@ -16,8 +16,8 @@
 #define widthSize [UIScreen mainScreen].bounds.size.width
 #define heightSize [UIScreen mainScreen].bounds.size.height
 
-#define pictureWidthSize 630
-#define pictureHeightSize 1120
+#define pictureWidthSize 315
+#define pictureHeightSize 560
 
 #import "YQImageGroupView.h"
 
@@ -373,8 +373,8 @@
     /*
      注意的是: 这个两个的图片合成的位置,设定的情况有待分析解决!两张图片的大小和位置是可以来进行 单独合成的!
      */
-    [image1 drawInRect:CGRectMake(0, 0, image1.size.width, image1.size.height)];
-    [image2 drawInRect:CGRectMake(0, 0, image2.size.width, image2.size.height)];
+    [image1 drawInRect:CGRectMake(0, 0, pictureWidthSize, pictureHeightSize)];
+    [image2 drawInRect:CGRectMake(0, 0, pictureWidthSize, pictureHeightSize)];
     
     UIImage *resultingImage = UIGraphicsGetImageFromCurrentImageContext();
     
