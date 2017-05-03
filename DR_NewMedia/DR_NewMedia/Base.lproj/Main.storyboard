@@ -27,6 +27,84 @@
             </objects>
             <point key="canvasLocation" x="390" y="332"/>
         </scene>
+        <!--关注-->
+        <scene sceneID="384-Qp-HkS">
+            <objects>
+                <viewController id="MRD-XD-zpQ" customClass="YQConcernViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ywL-Ka-Fbr"/>
+                        <viewControllerLayoutGuide type="bottom" id="628-Cj-ui0"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Tly-g6-ZH7">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mJR-vf-Spq" customClass="YQHeadTitleView">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="200"/>
+                                <color key="backgroundColor" red="1" green="0.80000001190000003" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="Wsg-rP-kpx"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vNo-RZ-all">
+                                <rect key="frame" x="0.0" y="200" width="375" height="40"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rNJ-pV-Hk4">
+                                        <rect key="frame" x="0.0" y="0.0" width="80" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="80" id="hBv-bh-2dP"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <state key="normal" title="全部">
+                                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        </state>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="66m-rP-6v3">
+                                        <rect key="frame" x="79" y="0.0" width="80" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="80" id="jjn-Hk-FUJ"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <state key="normal" title="回答">
+                                            <color key="titleColor" red="1" green="0.0" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="rNJ-pV-Hk4" secondAttribute="bottom" id="59W-2o-oaN"/>
+                                    <constraint firstAttribute="bottom" secondItem="66m-rP-6v3" secondAttribute="bottom" id="5Dp-hR-aG2"/>
+                                    <constraint firstItem="rNJ-pV-Hk4" firstAttribute="top" secondItem="vNo-RZ-all" secondAttribute="top" id="K6p-GB-vaQ"/>
+                                    <constraint firstItem="rNJ-pV-Hk4" firstAttribute="leading" secondItem="vNo-RZ-all" secondAttribute="leading" id="efy-Wa-8T7"/>
+                                    <constraint firstItem="66m-rP-6v3" firstAttribute="top" secondItem="vNo-RZ-all" secondAttribute="top" id="eyM-ta-Jqb"/>
+                                    <constraint firstAttribute="height" constant="40" id="xX0-XH-YvS"/>
+                                    <constraint firstItem="66m-rP-6v3" firstAttribute="leading" secondItem="rNJ-pV-Hk4" secondAttribute="trailing" id="zeQ-0o-kea"/>
+                                </constraints>
+                            </view>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DKc-k8-uGc">
+                                <rect key="frame" x="0.0" y="240" width="375" height="378"/>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="mJR-vf-Spq" firstAttribute="leading" secondItem="Tly-g6-ZH7" secondAttribute="leading" id="03i-w3-e7K"/>
+                            <constraint firstItem="vNo-RZ-all" firstAttribute="leading" secondItem="Tly-g6-ZH7" secondAttribute="leading" id="1YQ-M6-8jb"/>
+                            <constraint firstItem="DKc-k8-uGc" firstAttribute="top" secondItem="vNo-RZ-all" secondAttribute="bottom" id="9S6-oV-o9j"/>
+                            <constraint firstItem="628-Cj-ui0" firstAttribute="top" secondItem="DKc-k8-uGc" secondAttribute="bottom" id="TKO-Su-Bar"/>
+                            <constraint firstItem="DKc-k8-uGc" firstAttribute="leading" secondItem="Tly-g6-ZH7" secondAttribute="leading" id="XaC-Qh-OFb"/>
+                            <constraint firstItem="vNo-RZ-all" firstAttribute="top" secondItem="mJR-vf-Spq" secondAttribute="bottom" id="YJj-Jf-a0a"/>
+                            <constraint firstAttribute="trailing" secondItem="mJR-vf-Spq" secondAttribute="trailing" id="Ybi-8u-QXU"/>
+                            <constraint firstItem="mJR-vf-Spq" firstAttribute="top" secondItem="Tly-g6-ZH7" secondAttribute="top" id="gF5-1w-sCg"/>
+                            <constraint firstAttribute="trailing" secondItem="vNo-RZ-all" secondAttribute="trailing" id="iBm-Qs-jao"/>
+                            <constraint firstAttribute="trailing" secondItem="DKc-k8-uGc" secondAttribute="trailing" id="tE3-Gz-M7E"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="关注" id="vD5-Nr-0lW"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UDD-zJ-XYY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="390" y="1083"/>
+        </scene>
         <!--搭配间-->
         <scene sceneID="WTf-Tl-RO2">
             <objects>
@@ -155,35 +233,6 @@
             </objects>
             <point key="canvasLocation" x="1410" y="331"/>
         </scene>
-        <!--Item 4-->
-        <scene sceneID="YUa-Ez-yuU">
-            <objects>
-                <tableViewController id="Yfs-BH-0Tb" userLabel="Item 4" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="P2u-vU-vH4">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="pey-sk-tyb">
-                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="pey-sk-tyb" id="CZW-Vh-c6B">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="Yfs-BH-0Tb" id="pyX-nM-16I"/>
-                            <outlet property="delegate" destination="Yfs-BH-0Tb" id="3Ct-cH-WSr"/>
-                        </connections>
-                    </tableView>
-                    <tabBarItem key="tabBarItem" title="关注" id="yS9-Cg-837" userLabel="Item 4"/>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="6ic-kd-fIp" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="390" y="1181"/>
-        </scene>
         <!--首页-->
         <scene sceneID="sUG-sd-9VA">
             <objects>
@@ -269,13 +318,27 @@
                     <view key="view" contentMode="scaleToFill" id="qzt-XF-J7k">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="pJy-E6-jNX">
+                                <rect key="frame" x="0.0" y="68" width="375" height="550"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="550" id="Dk9-UB-JgA"/>
+                                </constraints>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" red="0.50196081400000003" green="0.0" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="pJy-E6-jNX" firstAttribute="leading" secondItem="qzt-XF-J7k" secondAttribute="leading" id="6y3-YH-Ebv"/>
+                            <constraint firstAttribute="trailing" secondItem="pJy-E6-jNX" secondAttribute="trailing" id="RUe-iI-TAd"/>
+                            <constraint firstItem="eej-uF-MAn" firstAttribute="top" secondItem="pJy-E6-jNX" secondAttribute="bottom" id="doW-E8-fGZ"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="未登录" id="ZDF-ob-SZB" userLabel="Item 3"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rCR-Xx-H43" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="390" y="-1053"/>
+            <point key="canvasLocation" x="362" y="-1138"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="wMw-2R-VLD">
@@ -289,8 +352,8 @@
                     <connections>
                         <segue destination="C4G-r2-sQn" kind="relationship" relationship="viewControllers" id="Okf-pa-QP5"/>
                         <segue destination="0ah-i1-TUs" kind="relationship" relationship="viewControllers" id="xyL-Jn-yUb"/>
-                        <segue destination="Yfs-BH-0Tb" kind="relationship" relationship="viewControllers" id="nXM-Cw-zIA"/>
-                        <segue destination="vfg-Mw-3lL" kind="relationship" relationship="viewControllers" id="nwa-FS-W2f"/>
+                        <segue destination="MRD-XD-zpQ" kind="relationship" relationship="viewControllers" id="1iI-tX-W10"/>
+                        <segue destination="vfg-Mw-3lL" kind="relationship" relationship="viewControllers" id="WNW-Mk-X78"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tqD-cH-gOH" userLabel="First Responder" sceneMemberID="firstResponder"/>

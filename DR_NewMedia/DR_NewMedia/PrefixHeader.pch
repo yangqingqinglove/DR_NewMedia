@@ -13,6 +13,7 @@
 #import "UIView+Extension.h"
 #import "YQconstTools.h"
 #import "MBProgressHUD+CZ.h"
+#import "SDCycleScrollView.h"
 
 
 #endif /* PrefixHeader_pch */

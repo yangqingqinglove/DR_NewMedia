@@ -219,6 +219,10 @@
 		2F7220EF1EB2E7560011C8D3 /* quen170427_40000036_70.png in Resources */ = {isa = PBXBuildFile; fileRef = 2F7220CB1EB2E7560011C8D3 /* quen170427_40000036_70.png */; };
 		2F7220F01EB2E7560011C8D3 /* quen170427_40000036_80.png in Resources */ = {isa = PBXBuildFile; fileRef = 2F7220CC1EB2E7560011C8D3 /* quen170427_40000036_80.png */; };
 		2F7220F11EB2E7560011C8D3 /* quen170427_40000036_90.png in Resources */ = {isa = PBXBuildFile; fileRef = 2F7220CD1EB2E7560011C8D3 /* quen170427_40000036_90.png */; };
+		2F78E8801EB9BF3500A47564 /* YQConcernViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F78E87F1EB9BF3500A47564 /* YQConcernViewController.m */; };
+		2F78E8821EB9D6B400A47564 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F78E8811EB9D6B400A47564 /* CoreLocation.framework */; };
+		2F78E8851EB9DB8600A47564 /* YQHeadTitleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F78E8841EB9DB8600A47564 /* YQHeadTitleView.m */; };
+		2F78E8871EB9DFE500A47564 /* YQHeadTitle.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2F78E8861EB9DFE500A47564 /* YQHeadTitle.xib */; };
 		2F8966931EA497FA00A1F697 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F8966921EA497FA00A1F697 /* main.m */; };
 		2F8966961EA497FA00A1F697 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F8966951EA497FA00A1F697 /* AppDelegate.m */; };
 		2F89669C1EA497FA00A1F697 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2F89669A1EA497FA00A1F697 /* Main.storyboard */; };
@@ -470,6 +474,12 @@
 		2F7220CB1EB2E7560011C8D3 /* quen170427_40000036_70.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = quen170427_40000036_70.png; sourceTree = "<group>"; };
 		2F7220CC1EB2E7560011C8D3 /* quen170427_40000036_80.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = quen170427_40000036_80.png; sourceTree = "<group>"; };
 		2F7220CD1EB2E7560011C8D3 /* quen170427_40000036_90.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = quen170427_40000036_90.png; sourceTree = "<group>"; };
+		2F78E87E1EB9BF3500A47564 /* YQConcernViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YQConcernViewController.h; sourceTree = "<group>"; };
+		2F78E87F1EB9BF3500A47564 /* YQConcernViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YQConcernViewController.m; sourceTree = "<group>"; };
+		2F78E8811EB9D6B400A47564 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		2F78E8831EB9DB8600A47564 /* YQHeadTitleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YQHeadTitleView.h; sourceTree = "<group>"; };
+		2F78E8841EB9DB8600A47564 /* YQHeadTitleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YQHeadTitleView.m; sourceTree = "<group>"; };
+		2F78E8861EB9DFE500A47564 /* YQHeadTitle.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YQHeadTitle.xib; sourceTree = "<group>"; };
 		2F89668E1EA497FA00A1F697 /* DR_NewMedia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DR_NewMedia.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2F8966921EA497FA00A1F697 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		2F8966941EA497FA00A1F697 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -510,6 +520,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2F78E8821EB9D6B400A47564 /* CoreLocation.framework in Frameworks */,
 				9F819B6540A4EA3112FAD3C5 /* libPods-DR_NewMedia.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -815,6 +826,42 @@
 			path = quen;
 			sourceTree = "<group>";
 		};
+		2F78E8791EB9B89400A47564 /* Concern */ = {
+			isa = PBXGroup;
+			children = (
+				2F78E87D1EB9BEC600A47564 /* Model */,
+				2F78E87C1EB9BEBB00A47564 /* View */,
+				2F78E87A1EB9BE6500A47564 /* Controller */,
+			);
+			name = Concern;
+			sourceTree = "<group>";
+		};
+		2F78E87A1EB9BE6500A47564 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				2F78E87E1EB9BF3500A47564 /* YQConcernViewController.h */,
+				2F78E87F1EB9BF3500A47564 /* YQConcernViewController.m */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		2F78E87C1EB9BEBB00A47564 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				2F78E8831EB9DB8600A47564 /* YQHeadTitleView.h */,
+				2F78E8841EB9DB8600A47564 /* YQHeadTitleView.m */,
+				2F78E8861EB9DFE500A47564 /* YQHeadTitle.xib */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		2F78E87D1EB9BEC600A47564 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
 		2F8966851EA497FA00A1F697 = {
 			isa = PBXGroup;
 			children = (
@@ -837,6 +884,7 @@
 		2F8966901EA497FA00A1F697 /* DR_NewMedia */ = {
 			isa = PBXGroup;
 			children = (
+				2F78E8791EB9B89400A47564 /* Concern */,
 				2F8F894E1EA86397006DDDE9 /* CollocationRoom */,
 				2F8966F11EA4F60C00A1F697 /* Home */,
 				2F8966F01EA4F53C00A1F697 /* Group */,
@@ -973,6 +1021,7 @@
 		DAD33F48926D9BE0C15DA6BC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				2F78E8811EB9D6B400A47564 /* CoreLocation.framework */,
 				5A39F7F5079FEF0D1CE05A67 /* libPods-DR_NewMedia.a */,
 			);
 			name = Frameworks;
@@ -1217,6 +1266,7 @@
 				2F7220661EB2D0680011C8D3 /* ku170427_30000036_130.png in Resources */,
 				2F8967051EA4FA7700A1F697 /* YQTableViewCell.xib in Resources */,
 				2F72204C1EB2D0680011C8D3 /* yi170427_40000036_220.png in Resources */,
+				2F78E8871EB9DFE500A47564 /* YQHeadTitle.xib in Resources */,
 				2F89669E1EA497FA00A1F697 /* Assets.xcassets in Resources */,
 				2F89669C1EA497FA00A1F697 /* Main.storyboard in Resources */,
 				2F721FAE1EB2CFA40011C8D3 /* philips_hq6070_120.jpg in Resources */,
@@ -1309,9 +1359,11 @@
 				2F4FA5B81EA5C3E800E6E25F /* SDCycleScrollView.m in Sources */,
 				2F8967041EA4FA7700A1F697 /* YQTableViewCell.m in Sources */,
 				2F64C9641EAF35E900FCFD93 /* YQImageGroupView.m in Sources */,
+				2F78E8801EB9BF3500A47564 /* YQConcernViewController.m in Sources */,
 				2F8F89591EA86A28006DDDE9 /* YQBottomView.m in Sources */,
 				2F5E5CED1EA70DA600F5940B /* YQTitleScrollView.m in Sources */,
 				2F8966961EA497FA00A1F697 /* AppDelegate.m in Sources */,
+				2F78E8851EB9DB8600A47564 /* YQHeadTitleView.m in Sources */,
 				2F8966931EA497FA00A1F697 /* main.m in Sources */,
 				2F4FA5B31EA5C3E800E6E25F /* TAAbstractDotView.m in Sources */,
 				2F4FA5B61EA5C3E800E6E25F /* TAPageControl.m in Sources */,

@@ -9,7 +9,6 @@
 //  应用初始化图片 轮播的情况!
 
 #import "YQCycleView.h"
-#import "SDCycleScrollView.h"
 
 @interface YQCycleView ()<SDCycleScrollViewDelegate>
 
