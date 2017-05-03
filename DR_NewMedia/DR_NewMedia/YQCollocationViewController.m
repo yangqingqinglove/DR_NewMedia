@@ -118,6 +118,7 @@ static NSString * ID = @"imageCell";
     UIButton * rightBnt = [UIButton buttonWithType:UIButtonTypeCustom];
     rightBnt.bounds = CGRectMake(0, 0, 40, 40);
     rightBnt.backgroundColor = [UIColor clearColor];//设置透明
+    [rightBnt setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
     [rightBnt addTarget:self action:@selector(rightBarButtonClicked:) forControlEvents:UIControlEventTouchUpInside];
     [rightBnt setTitle:@"设置" forState:UIControlStateNormal];
     

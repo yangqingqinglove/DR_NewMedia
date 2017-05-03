@@ -14,10 +14,10 @@
             <objects>
                 <navigationController id="0ah-i1-TUs" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="搭配间" id="ptB-MF-vbj"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="tj7-Da-JCV">
+                    <navigationBar key="navigationBar" alpha="0.20000000000000001" contentMode="scaleToFill" misplaced="YES" id="tj7-Da-JCV">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </navigationBar>
                     <connections>
                         <segue destination="VWn-nY-4Hc" kind="relationship" relationship="rootViewController" id="iQx-TN-Sbd"/>
@@ -46,11 +46,12 @@
                                     <constraint firstAttribute="height" constant="64" id="Maf-GV-J2Z"/>
                                 </constraints>
                             </view>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="7HO-pE-xGR" customClass="YQImageGroupView">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="7HO-pE-xGR" customClass="YQImageGroupView">
                                 <rect key="frame" x="0.0" y="64" width="375" height="554"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lbv-gG-4UH">
                                 <rect key="frame" x="10" y="68" width="100" height="40"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="100" id="8K2-ke-eqw"/>
                                     <constraint firstAttribute="height" constant="40" id="Mwh-Z3-Ncc"/>
@@ -64,6 +65,7 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aIc-mA-gXH">
                                 <rect key="frame" x="10" y="113" width="40" height="40"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="40" id="N7T-QH-GMT"/>
                                     <constraint firstAttribute="height" constant="40" id="ceh-2D-DDz"/>
@@ -75,6 +77,7 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h3g-BS-mse">
                                 <rect key="frame" x="10" y="158" width="40" height="40"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="8WR-Gw-3OG"/>
                                     <constraint firstAttribute="width" constant="40" id="qxv-At-Ert"/>
@@ -97,6 +100,7 @@
                             </button>
                             <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zkR-nn-whc">
                                 <rect key="frame" x="10" y="528" width="40" height="40"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="40" id="1Rb-nI-RJc"/>
                                     <constraint firstAttribute="height" constant="40" id="zMX-8Z-2Tx"/>
@@ -149,7 +153,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9Ux-y6-wsk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1405.5999999999999" y="348.57571214392806"/>
+            <point key="canvasLocation" x="1410" y="331"/>
         </scene>
         <!--Item 4-->
         <scene sceneID="YUa-Ez-yuU">
