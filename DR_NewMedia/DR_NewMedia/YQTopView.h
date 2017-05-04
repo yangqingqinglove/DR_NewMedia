@@ -17,6 +17,9 @@
 
 @interface YQTopView : UIView
 
+@property (weak, nonatomic) IBOutlet UIImageView *backImageView;
+
+
 // 提供的是 类方法,加载xib
 +(instancetype)buttonMenu;
 

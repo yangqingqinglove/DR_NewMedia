@@ -72,6 +72,7 @@ static NSString * ID = @"imageCell";
     //1.加载topView
     YQTopView * topView = [YQTopView buttonMenu];
     topView.deleage = self;
+    topView.backImageView.backgroundColor = [UIColor colorWithRed:187/255.0 green:190/255.0 blue:194/255.0 alpha:0.4];
     [self.view addSubview:topView];
     self.topView = topView;
     self.topView.frame = CGRectMake(widthSize - 60, 64, 60, 45);
@@ -89,12 +90,12 @@ static NSString * ID = @"imageCell";
     UICollectionViewFlowLayout * layout = [[UICollectionViewFlowLayout alloc]init];
     layout.scrollDirection = UICollectionViewScrollDirectionVertical;
     layout.minimumLineSpacing = 5;
-    layout.headerReferenceSize = CGSizeMake(60, 5);
+    layout.headerReferenceSize = CGSizeMake(60, 5 );
     
     //3.2 创建rect
     CGRect rect = CGRectMake(widthSize, 64 + 45, 60, heightSize - 48 -64 -45);
     YQWardrobeCollectionView * wardrobe = [[YQWardrobeCollectionView alloc]initWithFrame:rect collectionViewLayout:layout];
-    wardrobe.backgroundColor = [UIColor colorWithRed:187/255.0 green:190/255.0 blue:194/255.0 alpha:1.0];
+    wardrobe.backgroundColor = [UIColor colorWithRed:187/255.0 green:190/255.0 blue:194/255.0 alpha:0.4];
     
     wardrobe.dataSource = self;
     wardrobe.delegate =   self;
@@ -174,17 +175,15 @@ static NSString * ID = @"imageCell";
                 
                 x = -60;
                 
-                TopV.backgroundColor = [UIColor colorWithRed:187/255.0 green:190/255.0 blue:194/255.0 alpha:1.0];
-                
             }else{
                 
-                TopV.backgroundColor = [UIColor clearColor];
                 x = 60;
             }
             
             [UIView animateWithDuration:0.5 animations:^{
                 
                 self.wardrobeView.transform = CGAffineTransformTranslate(transform, x, 0);
+                TopV.backImageView.transform = CGAffineTransformTranslate(transform, x, 0);
                 
             }completion:^(BOOL finished) {
                 
