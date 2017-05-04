@@ -13,8 +13,8 @@
         <scene sceneID="stZ-td-3Mk">
             <objects>
                 <navigationController id="0ah-i1-TUs" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="搭配间" id="ptB-MF-vbj"/>
-                    <navigationBar key="navigationBar" alpha="0.20000000000000001" contentMode="scaleToFill" misplaced="YES" id="tj7-Da-JCV">
+                    <tabBarItem key="tabBarItem" title="搭配间" image="搭配间off" selectedImage="搭配间on" id="ptB-MF-vbj"/>
+                    <navigationBar key="navigationBar" alpha="0.20000000000000001" contentMode="scaleToFill" id="tj7-Da-JCV">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -39,9 +39,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mJR-vf-Spq" customClass="YQHeadTitleView">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mJR-vf-Spq">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="200"/>
-                                <color key="backgroundColor" red="1" green="0.80000001190000003" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="1" green="0.43529412150000002" blue="0.81176471709999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="200" id="Wsg-rP-kpx"/>
                                 </constraints>
@@ -99,11 +99,15 @@
                             <constraint firstAttribute="trailing" secondItem="DKc-k8-uGc" secondAttribute="trailing" id="tE3-Gz-M7E"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="关注" id="vD5-Nr-0lW"/>
+                    <tabBarItem key="tabBarItem" title="关注" image="动态off" selectedImage="动态on" id="vD5-Nr-0lW"/>
+                    <connections>
+                        <outlet property="ContentScrollView" destination="DKc-k8-uGc" id="RVi-Xi-5am"/>
+                        <outlet property="HeadView" destination="mJR-vf-Spq" id="s1v-I2-6Qk"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UDD-zJ-XYY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="390" y="1083"/>
+            <point key="canvasLocation" x="390" y="1082"/>
         </scene>
         <!--搭配间-->
         <scene sceneID="WTf-Tl-RO2">
@@ -237,7 +241,7 @@
         <scene sceneID="sUG-sd-9VA">
             <objects>
                 <navigationController id="C4G-r2-sQn" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="首页" id="muU-Nq-iIc"/>
+                    <tabBarItem key="tabBarItem" title="首页" image="首页off" selectedImage="首页on" id="muU-Nq-iIc"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="rMn-Pg-0hn">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -334,7 +338,7 @@
                             <constraint firstItem="eej-uF-MAn" firstAttribute="top" secondItem="pJy-E6-jNX" secondAttribute="bottom" id="doW-E8-fGZ"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="未登录" id="ZDF-ob-SZB" userLabel="Item 3"/>
+                    <tabBarItem key="tabBarItem" title="未登录" image="个人_未登录off" selectedImage="个人_未登录on" id="ZDF-ob-SZB" userLabel="Item 3"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rCR-Xx-H43" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -366,5 +370,13 @@
         <image name="044详情" width="40" height="40"/>
         <image name="055存档" width="40" height="40"/>
         <image name="055标尺" width="94" height="40"/>
+        <image name="个人_未登录off" width="23" height="23"/>
+        <image name="个人_未登录on" width="23" height="23"/>
+        <image name="动态off" width="23" height="23"/>
+        <image name="动态on" width="23" height="23"/>
+        <image name="搭配间off" width="23" height="23"/>
+        <image name="搭配间on" width="23" height="23"/>
+        <image name="首页off" width="23" height="23"/>
+        <image name="首页on" width="23" height="23"/>
     </resources>
 </document>

@@ -11,7 +11,7 @@
 #define heightSize [UIScreen mainScreen].bounds.size.height
 #define buttonSize 45
 #define ADuration 0.01
-#define downTime 2.5
+#define downTime 1.5
 
 #import "YQCollocationViewController.h"
 #import "YQBottomView.h"
@@ -108,19 +108,16 @@ static NSString * ID = @"imageCell";
     self.imageView.delegate = self;
     
     //5.设置自定义的titleView
-    UIImageView* imageView = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, 20, 20)];
-    imageView.image = [UIImage imageNamed:@""];
-    imageView.backgroundColor = [UIColor redColor];
-    
+    UIImageView* imageView = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, 25, 25)];
+    imageView.image = [UIImage imageNamed:@"扫描.png"];
     self.navigationItem.titleView = imageView;
     
     //6.设置rightBar
     UIButton * rightBnt = [UIButton buttonWithType:UIButtonTypeCustom];
-    rightBnt.bounds = CGRectMake(0, 0, 40, 40);
     rightBnt.backgroundColor = [UIColor clearColor];//设置透明
-    [rightBnt setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
     [rightBnt addTarget:self action:@selector(rightBarButtonClicked:) forControlEvents:UIControlEventTouchUpInside];
-    [rightBnt setTitle:@"设置" forState:UIControlStateNormal];
+    [rightBnt setImage:[UIImage imageNamed:@"其他.png"] forState:UIControlStateNormal];
+    [rightBnt sizeToFit];
     
     UIBarButtonItem * bntItem = [[UIBarButtonItem alloc]initWithCustomView:rightBnt];
     self.navigationItem.rightBarButtonItem = bntItem;

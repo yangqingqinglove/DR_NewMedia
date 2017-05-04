@@ -43,27 +43,33 @@
     //注意的是: 一定要 拿到它的 栈顶的控制器来进行的设置它的属性
     // 5.1 设置两边的 rignt and left的itemview的情况
     //不要渲染的原始 图片(也可以是storyAboard的中来设置)
-    UIImage * image = [UIImage imageNamed:@"navigationbar_friendsearch"];
+    UIImage * image = [UIImage imageNamed:@"logo.png"];
     image = [image imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    UIImageView * imageView = [[UIImageView alloc]initWithImage:image];
+//    imageView.contentMode = UIViewContentModeScaleAspectFill;
+//    imageView.bounds = CGRectMake(0, 0, 80, 25);
     
-    UIBarButtonItem * item = [[UIBarButtonItem alloc]initWithImage:image style:UIBarButtonItemStyleDone target:nil action:nil];
-    
+    UIBarButtonItem * item = [[UIBarButtonItem alloc]initWithCustomView:imageView];
     self.navigationItem.leftBarButtonItem = item;
+//    self.navigationItem.leftBarButtonItem.enabled = NO;
     
     // 5.2 可以的是设置 按钮的为item的情况!
     UIButton * button = [UIButton buttonWithType:UIButtonTypeCustom];
     // 默认的进行的获取 地点
     //button
     button.backgroundColor = [UIColor clearColor];//设置透明
-    button.bounds = CGRectMake(40, 0, 40, 20);
+    button.bounds = CGRectMake(0, 0, 40, 20);
     [button setTitle:@"武汉" forState:UIControlStateNormal];
+    [button setTitleColor:[UIColor colorWithRed:55.0/255.0 green:85.0/255.0 blue:166.0/255.0 alpha:1] forState:UIControlStateNormal];
+    
+    button.contentHorizontalAlignment = UIControlContentHorizontalAlignmentRight;
     [button addTarget:self action:@selector(rightBarButtonClicked:) forControlEvents:UIControlEventTouchUpInside];
     
     UIBarButtonItem * rightItem = [[UIBarButtonItem alloc]initWithCustomView:button];
     
-    UIImageView * rightImage = [[UIImageView alloc]initWithImage:nil];
-    rightImage.bounds = CGRectMake(0, 0, 20, 20);
-    rightImage.backgroundColor = [UIColor grayColor];
+    UIImageView * rightImage = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"下.png"]];
+    rightImage.bounds = CGRectMake(0, 0, 25, 25);
+    // rightImage.backgroundColor = [UIColor grayColor];
     
     UIBarButtonItem * rightImageItem = [[UIBarButtonItem alloc]initWithCustomView:rightImage];
     
@@ -106,7 +112,6 @@
         // 创建labe
         YQButton *btn = [[YQButton alloc] init];
         btn.tag = i;
-        
         
         // 设置frame
         CGFloat btnX = i * labelW;
