@@ -878,15 +878,15 @@ static NSString * ID = @"imageCell";
 #pragma mark - 接受所有的通知方法
 -(void)abserverAllNoties{
     
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(backgroundPictureChange:) name:@"backGroundChange" object:nil];
-    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(backgroundPictureChange:) name:YQbackGroundChange object:nil];
+    [YQNoteCenter addObserver:self selector:@selector(baffleViewDidClilck) name:YQCollocationRoomChildViewClose object:nil];
     
 }
 
 #pragma mark - 实现通知的方法
 -(void)backgroundPictureChange:(NSNotification *)noties{
 
-    NSString * pictureName = noties.userInfo[@"pictureName"];
+    NSString * pictureName = noties.userInfo[YQpictureName];
     self.backgroundImageView.image = [UIImage imageNamed:pictureName];
     
     //dismiss

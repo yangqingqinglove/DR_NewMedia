@@ -21,25 +21,40 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YX8-27-abh">
-                                <rect key="frame" x="87.5" y="283.5" width="200" height="100"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="detailImage" translatesAutoresizingMaskIntoConstraints="NO" id="7Hl-JM-a6O">
+                                <rect key="frame" x="0.0" y="361" width="375" height="306"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wl3-wF-RGu">
+                                <rect key="frame" x="329" y="0.0" width="46" height="361"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="200" id="HIg-ee-z2e"/>
-                                    <constraint firstAttribute="height" constant="100" id="iOd-RD-coS"/>
+                                    <constraint firstAttribute="width" constant="46" id="tZk-sK-W7S"/>
                                 </constraints>
-                                <state key="normal" title="新功能请期待!"/>
+                                <state key="normal" title="关闭">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="closeViewClicked:" destination="7TK-mT-3hB" eventType="touchUpInside" id="ydC-yJ-lsy"/>
+                                </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="0.0" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="YX8-27-abh" firstAttribute="centerY" secondItem="i17-vX-gSU" secondAttribute="centerY" id="0va-xm-sAS"/>
-                            <constraint firstItem="YX8-27-abh" firstAttribute="centerX" secondItem="i17-vX-gSU" secondAttribute="centerX" id="JkR-Wh-Gd3"/>
+                            <constraint firstItem="eIz-gF-Ruq" firstAttribute="top" secondItem="7Hl-JM-a6O" secondAttribute="bottom" id="1fL-Q7-9va"/>
+                            <constraint firstItem="7Hl-JM-a6O" firstAttribute="top" secondItem="wl3-wF-RGu" secondAttribute="bottom" id="MRY-da-nfJ"/>
+                            <constraint firstAttribute="trailing" secondItem="wl3-wF-RGu" secondAttribute="trailing" id="Uq9-45-XNO"/>
+                            <constraint firstItem="7Hl-JM-a6O" firstAttribute="top" secondItem="wl3-wF-RGu" secondAttribute="bottom" id="cpr-VZ-vdY"/>
+                            <constraint firstItem="wl3-wF-RGu" firstAttribute="top" secondItem="i17-vX-gSU" secondAttribute="top" id="n2F-mV-kLK"/>
+                            <constraint firstItem="7Hl-JM-a6O" firstAttribute="leading" secondItem="i17-vX-gSU" secondAttribute="leading" id="vBF-gt-2t1"/>
+                            <constraint firstAttribute="trailing" secondItem="7Hl-JM-a6O" secondAttribute="trailing" id="w4h-Bj-vPR"/>
                         </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0cM-eo-pgE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-524" y="23"/>
+            <point key="canvasLocation" x="-519.20000000000005" y="-35.532233883058474"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="detailImage" width="299" height="306"/>
+    </resources>
 </document>

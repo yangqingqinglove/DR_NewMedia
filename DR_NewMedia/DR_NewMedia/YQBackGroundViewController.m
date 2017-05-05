@@ -94,7 +94,7 @@ static NSString * ID = @"bgCell";
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
     
     //点击的是 item,将对应的图片传给控制 通知!
-    [[NSNotificationCenter defaultCenter]postNotificationName:@"backGroundChange" object:nil userInfo:@{@"pictureName":self.BGArray[indexPath.item]}];
+    [[NSNotificationCenter defaultCenter]postNotificationName:YQbackGroundChange object:nil userInfo:@{YQpictureName:self.BGArray[indexPath.item]}];
 
 
 }

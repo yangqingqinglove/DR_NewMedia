@@ -21,9 +21,11 @@
     
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (IBAction)closeViewClicked:(id)sender {
+    //发送通知给 主view
+    [YQNoteCenter postNotificationName:YQCollocationRoomChildViewClose object:nil];
+    
+    
 }
 
 

@@ -9,6 +9,8 @@
 #ifndef PrefixHeader_pch
 #define PrefixHeader_pch
 
+/// 公共宏:
+#define YQNoteCenter [NSNotificationCenter defaultCenter]//调用系统的通知中心!
 
 #import "UIView+Extension.h"
 #import "YQconstTools.h"
