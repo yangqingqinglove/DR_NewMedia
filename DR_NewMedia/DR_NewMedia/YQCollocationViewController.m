@@ -76,6 +76,7 @@ static NSString * ID = @"imageCell";
     topView.deleage = self;
     [topView bringSubviewToFront:topView.collectionImageVIEW];
     topView.backImageView.backgroundColor = collocationBackColor;
+    topView.collectionImageVIEW.selected = NO;
     [self.view addSubview:topView];
     self.topView = topView;
     self.topView.frame = CGRectMake(widthSize - 60, 64, 60, 45);
@@ -111,7 +112,18 @@ static NSString * ID = @"imageCell";
     //4.设置代理
     self.imageView.delegate = self;
     
-    //5.设置自定义的titleView
+    //5.0 设置nav 的大的透明的背景
+    UIImage * image = [[UIImage alloc]init];
+    [self.navigationController.navigationBar setBackgroundImage:image forBarMetrics:UIBarMetricsDefault];
+    self.navigationController.navigationBar.barStyle = UIBarStyleBlackOpaque;
+    
+    //去横线去阴影的方法
+    if ([self.navigationController.navigationBar respondsToSelector:@selector(shadowImage)])
+    {
+        [self.navigationController.navigationBar setShadowImage:[[UIImage alloc]init]];
+    }
+    
+    //5.1 设置自定义的titleView
     UIImageView* imageView = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, 25, 25)];
     imageView.image = [UIImage imageNamed:@"扫描.png"];
     self.navigationItem.titleView = imageView;
@@ -192,10 +204,12 @@ static NSString * ID = @"imageCell";
                 
             }completion:^(BOOL finished) {
                 
+                
                 self.imageView.userInteractionEnabled = YES;
             }];
             
             self.isShow = !self.isShow;
+            TopV.collectionImageVIEW.selected = self.isShow;
             
             break;
         }

@@ -11,6 +11,7 @@
 @implementation YQTopView
 
 +(instancetype)buttonMenu{
+    
     //加载xib
      return [[[NSBundle mainBundle]loadNibNamed:@"YQTopView" owner:nil options:nil] lastObject];
 }

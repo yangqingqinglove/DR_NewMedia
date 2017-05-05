@@ -21,7 +21,9 @@
                         <constraint firstAttribute="height" constant="40" id="c3R-au-fMH"/>
                         <constraint firstAttribute="width" constant="50" id="c4g-4w-67A"/>
                     </constraints>
-                    <state key="normal" image="066收藏"/>
+                    <state key="normal" image="006gzoff"/>
+                    <state key="selected" image="006gzon"/>
+                    <state key="highlighted" image="006gzon"/>
                     <connections>
                         <action selector="collectButtonClick:" destination="-1" eventType="touchUpInside" id="oWK-qX-Gtj"/>
                     </connections>
@@ -46,10 +48,11 @@
                 <outlet property="backImageView" destination="Axq-lr-M3X" id="kPR-Xg-qz7"/>
                 <outlet property="collectionImageVIEW" destination="1WL-fE-nhm" id="xhk-mg-jmw"/>
             </connections>
-            <point key="canvasLocation" x="-66.5" y="-303.5"/>
+            <point key="canvasLocation" x="-11" y="-463"/>
         </view>
     </objects>
     <resources>
-        <image name="066收藏" width="50" height="24"/>
+        <image name="006gzoff" width="75" height="36"/>
+        <image name="006gzon" width="75" height="36"/>
     </resources>
 </document>

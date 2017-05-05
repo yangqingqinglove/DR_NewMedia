@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		2F0B41DB1EACE9970075CC89 /* YQBackGroundViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F0B41DA1EACE9970075CC89 /* YQBackGroundViewController.m */; };
 		2F0B41DD1EACE9C70075CC89 /* YQBackGround.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2F0B41DC1EACE9C70075CC89 /* YQBackGround.storyboard */; };
-		2F4A3B071EB1DDCF007F9A3C /* YQNavTopView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F4A3B061EB1DDCF007F9A3C /* YQNavTopView.m */; };
 		2F4FA5B31EA5C3E800E6E25F /* TAAbstractDotView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F4FA5A61EA5C3E800E6E25F /* TAAbstractDotView.m */; };
 		2F4FA5B41EA5C3E800E6E25F /* TAAnimatedDotView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F4FA5A81EA5C3E800E6E25F /* TAAnimatedDotView.m */; };
 		2F4FA5B51EA5C3E800E6E25F /* TADotView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F4FA5AA1EA5C3E800E6E25F /* TADotView.m */; };
@@ -262,8 +261,6 @@
 		2F0B41D91EACE9970075CC89 /* YQBackGroundViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YQBackGroundViewController.h; sourceTree = "<group>"; };
 		2F0B41DA1EACE9970075CC89 /* YQBackGroundViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YQBackGroundViewController.m; sourceTree = "<group>"; };
 		2F0B41DC1EACE9C70075CC89 /* YQBackGround.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = YQBackGround.storyboard; sourceTree = "<group>"; };
-		2F4A3B051EB1DDCF007F9A3C /* YQNavTopView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YQNavTopView.h; sourceTree = "<group>"; };
-		2F4A3B061EB1DDCF007F9A3C /* YQNavTopView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YQNavTopView.m; sourceTree = "<group>"; };
 		2F4FA5A51EA5C3E800E6E25F /* TAAbstractDotView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TAAbstractDotView.h; sourceTree = "<group>"; };
 		2F4FA5A61EA5C3E800E6E25F /* TAAbstractDotView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TAAbstractDotView.m; sourceTree = "<group>"; };
 		2F4FA5A71EA5C3E800E6E25F /* TAAnimatedDotView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TAAnimatedDotView.h; sourceTree = "<group>"; };
@@ -1064,8 +1061,6 @@
 				2F70F37A1EA9A4200012EF8A /* YQWardrobeCell.xib */,
 				2F64C9621EAF35E900FCFD93 /* YQImageGroupView.h */,
 				2F64C9631EAF35E900FCFD93 /* YQImageGroupView.m */,
-				2F4A3B051EB1DDCF007F9A3C /* YQNavTopView.h */,
-				2F4A3B061EB1DDCF007F9A3C /* YQNavTopView.m */,
 				2F7B8A401EBB20D90085057E /* YQBackGroundCollectionCell.h */,
 				2F7B8A411EBB20D90085057E /* YQBackGroundCollectionCell.m */,
 				2F7B8A431EBB21380085057E /* YQBackGroundCell.xib */,
@@ -1437,7 +1432,6 @@
 				2F8966931EA497FA00A1F697 /* main.m in Sources */,
 				2F4FA5B31EA5C3E800E6E25F /* TAAbstractDotView.m in Sources */,
 				2F4FA5B61EA5C3E800E6E25F /* TAPageControl.m in Sources */,
-				2F4A3B071EB1DDCF007F9A3C /* YQNavTopView.m in Sources */,
 				2F4FA5B71EA5C3E800E6E25F /* SDCollectionViewCell.m in Sources */,
 				2F8966F41EA4F66400A1F697 /* YQHomeViewController.m in Sources */,
 				2F0B41DB1EACE9970075CC89 /* YQBackGroundViewController.m in Sources */,
