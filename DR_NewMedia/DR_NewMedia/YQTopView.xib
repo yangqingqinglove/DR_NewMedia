@@ -16,9 +16,9 @@
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
                 <button opaque="NO" tag="2" contentMode="scaleAspectFit" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1WL-fE-nhm">
-                    <rect key="frame" x="56" y="45.5" width="50" height="40"/>
+                    <rect key="frame" x="56" y="53.5" width="50" height="24"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="40" id="c3R-au-fMH"/>
+                        <constraint firstAttribute="height" constant="24" id="c3R-au-fMH"/>
                         <constraint firstAttribute="width" constant="50" id="c4g-4w-67A"/>
                     </constraints>
                     <state key="normal" image="006gzoff"/>
@@ -29,9 +29,9 @@
                     </connections>
                 </button>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Axq-lr-M3X">
-                    <rect key="frame" x="111" y="43" width="60" height="45"/>
+                    <rect key="frame" x="111" y="48.5" width="60" height="34"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="45" id="4Oh-A8-NoA"/>
+                        <constraint firstAttribute="height" constant="34" id="4Oh-A8-NoA"/>
                         <constraint firstAttribute="width" constant="60" id="zcr-Bd-nQ6"/>
                     </constraints>
                 </imageView>
@@ -48,7 +48,7 @@
                 <outlet property="backImageView" destination="Axq-lr-M3X" id="kPR-Xg-qz7"/>
                 <outlet property="collectionImageVIEW" destination="1WL-fE-nhm" id="xhk-mg-jmw"/>
             </connections>
-            <point key="canvasLocation" x="-11" y="-463"/>
+            <point key="canvasLocation" x="-11.5" y="-463.5"/>
         </view>
     </objects>
     <resources>

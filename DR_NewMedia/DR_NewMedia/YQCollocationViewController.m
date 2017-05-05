@@ -79,7 +79,7 @@ static NSString * ID = @"imageCell";
     topView.collectionImageVIEW.selected = NO;
     [self.view addSubview:topView];
     self.topView = topView;
-    self.topView.frame = CGRectMake(widthSize - 60, 64, 60, 45);
+    self.topView.frame = CGRectMake(widthSize - 60, 64, 60, 34);
     
     //2.创建buttonView的展示的效果
     YQBottomView * bottomView = [YQBottomView buttonMenu];
@@ -94,10 +94,10 @@ static NSString * ID = @"imageCell";
     UICollectionViewFlowLayout * layout = [[UICollectionViewFlowLayout alloc]init];
     layout.scrollDirection = UICollectionViewScrollDirectionVertical;
     layout.minimumLineSpacing = 5;
-    layout.headerReferenceSize = CGSizeMake(60, 5 );
+//    layout.headerReferenceSize = CGSizeMake(60, 5 );
     
     //3.2 创建rect
-    CGRect rect = CGRectMake(widthSize, 64 + 45, 60, heightSize - 48 -64 -45);
+    CGRect rect = CGRectMake(widthSize, 64 + 34, 60, heightSize - 48 -64 -34);
     YQWardrobeCollectionView * wardrobe = [[YQWardrobeCollectionView alloc]initWithFrame:rect collectionViewLayout:layout];
     wardrobe.backgroundColor = collocationBackColor;
     wardrobe.dataSource = self;

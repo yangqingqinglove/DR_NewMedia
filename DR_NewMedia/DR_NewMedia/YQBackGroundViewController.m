@@ -52,15 +52,13 @@ static NSString * ID = @"bgCell";
     
         _BGArray = [NSMutableArray array];
         
-        for(int i =1;i< 14 ;i++){
+        for(int i =1;i< 15 ;i++){
             
             NSString * string1 = [NSString stringWithFormat:@"backdrop_00%02d.jpg",i ];
             
             //  将图片加入数组
             [_BGArray addObject:string1];
         }
-
-        
     }
 
     return _BGArray;

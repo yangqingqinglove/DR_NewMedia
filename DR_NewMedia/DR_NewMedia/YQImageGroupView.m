@@ -155,6 +155,7 @@
     
     
     if(self.lastIndex +index >= pictureFrames){
+        
         //重新归零
         self.lastIndex = 0;
         
@@ -195,6 +196,10 @@
                 if ((self.lastIndex + i) < 0) {
                     
                     [array arrayByAddingObject:self.cacheArray[pictureFrames +(self.lastIndex + i)]];
+                    
+                }else if((self.lastIndex + i) >= pictureFrames){
+                    
+                    [array arrayByAddingObject:self.cacheArray[(self.lastIndex + i) - pictureFrames]];
                     
                 }else{
                     
@@ -357,7 +362,7 @@
 #pragma mark - gestureDelage的代理方法
 -(BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(nonnull UIGestureRecognizer *)otherGestureRecognizer{
     
-    return YES;
+    return NO;
 }
 
 #pragma mark --------添加合成图片的重要的方法------
