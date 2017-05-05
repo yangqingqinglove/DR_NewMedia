@@ -23,6 +23,7 @@
 #import "YQRulerVC.h"
 #import "YQBackGroundViewController.h"
 #import "YQImageGroupView.h"
+#import "YQSaveFileViewController.h"
 #import <MBProgressHUD.h>
 
 
@@ -39,6 +40,8 @@
 @property(nonatomic,strong)YQDetailViewController * detailVC;
 @property(nonatomic,strong)YQRulerVC * rulerVC;
 @property(nonatomic,strong)YQBackGroundViewController * BGVC;
+@property(nonatomic,strong)YQSaveFileViewController * saveFileVC;
+
 
 /// 定义的记录属性 view
 @property(nonatomic,strong)UIView * bottomV;
@@ -687,9 +690,6 @@ static NSString * ID = @"imageCell";
     UIView * baffleV = [[UIView alloc]initWithFrame:self.view.bounds];
     baffleV.backgroundColor = [UIColor grayColor];
     baffleV.alpha = 0.5;
-    //BOOL ISTR = [baffleV isFirstResponder];//是否是 第一响应者的情况!
-    //[baffleV becomeFirstResponder];//成为第一响应者
-    //[baffleV resignFirstResponder];//取消第一响应者
     [self.view addSubview:baffleV];
     self.baffleView = baffleV;
     UITapGestureRecognizer * tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(baffleViewDidClilck)];
@@ -720,41 +720,82 @@ static NSString * ID = @"imageCell";
 
 - (IBAction)saveBtnClick:(id)sender {
     
-    //通过alert的方式来进行的实现
-    UIAlertController * save = [UIAlertController alertControllerWithTitle:@"保存" message:@"是否要保存" preferredStyle:UIAlertControllerStyleAlert];
+    /* alert 弹框的方法封装
+     
+     //通过alert的方式来进行的实现
+     UIAlertController * save = [UIAlertController alertControllerWithTitle:@"保存" message:@"是否要保存" preferredStyle:UIAlertControllerStyleAlert];
+     
+     [save addAction:[UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+     
+     NSLog(@"点击取消");
+     
+     }]];
+     
+     
+     [save addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+     
+     NSLog(@"点击确认");
+     
+     }]];
+     
+     //    [alertController addAction:[UIAlertAction actionWithTitle:@"警告" style:UIAlertActionStyleDestructive handler:^(UIAlertAction * _Nonnull action) {
+     //
+     //        NSLog(@"点击警告");
+     //
+     //    }]];
+     
+     //    [alertController addTextFieldWithConfigurationHandler:^(UITextField * _Nonnull textField) {
+     //
+     //        NSLog(@"添加一个textField就会调用 这个block");
+     //
+     //    }];
+     
+     
+     // 由于它是一个控制器 直接modal出来就好了
+     
+     [self presentViewController:save animated:YES completion:nil];
+     
+     */
     
-    [save addAction:[UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+    //整体的 modal 出来一个控制器
+    //添加蒙版,设置成为第一响应者
+    UIView * baffleV = [[UIView alloc]initWithFrame:self.view.bounds];
+    baffleV.backgroundColor = [UIColor grayColor];
+    baffleV.alpha = 0.4;
+    [self.view addSubview:baffleV];
+    self.baffleView = baffleV;
+    UITapGestureRecognizer * tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(baffleViewDidClilck)];
+    [self.baffleView addGestureRecognizer:tap];
+    
+    UIStoryboard * sb = [UIStoryboard storyboardWithName:@"YQSaveFile" bundle:nil];
+    self.saveFileVC = [sb instantiateInitialViewController];
+    [self.view addSubview:self.saveFileVC.view];
+    
+    self.saveFileVC.view.alpha = 0;
+    self.saveFileVC.view.hidden = YES;
+    
+//    self.saveFileVC.view.frame = CGRectMake(0, heightSize/4, widthSize, 300);
+    [self.saveFileVC.view mas_makeConstraints:^(MASConstraintMaker *make) {
+       
+        make.left.right.equalTo(self.view);
+        make.bottom.equalTo(self.view.mas_bottom).offset(-46);
         
-        NSLog(@"点击取消");
+        make.height.mas_equalTo(90);
         
-    }]];
+    }];
     
-    
-    
-    [save addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+    //添加动画
+    [UIView animateWithDuration:0.25 animations:^{
         
-        NSLog(@"点击确认");
+        //        [self.detailVC.view mas_makeConstraints:^(MASConstraintMaker *make) {
+        //            make.top.equalTo(baffleV.mas_top).offset(200);
+        //            make.width.equalTo(baffleV.mas_bottom).offset(200);
+        //        }];
+        // self.rulerVC.view.frame = CGRectMake(0, heightSize/4, widthSize, 300);
+        self.saveFileVC.view.alpha = 1;
+        self.saveFileVC.view.hidden = NO;
         
-    }]];
-    
-//    [alertController addAction:[UIAlertAction actionWithTitle:@"警告" style:UIAlertActionStyleDestructive handler:^(UIAlertAction * _Nonnull action) {
-//        
-//        NSLog(@"点击警告");
-//        
-//    }]];
-    
-    
-//    [alertController addTextFieldWithConfigurationHandler:^(UITextField * _Nonnull textField) {
-//        
-//        NSLog(@"添加一个textField就会调用 这个block");
-//        
-//    }];
-    
-
-    // 由于它是一个控制器 直接modal出来就好了
-    
-    [self presentViewController:save animated:YES completion:nil];
-    
+    }];
 
     
 }

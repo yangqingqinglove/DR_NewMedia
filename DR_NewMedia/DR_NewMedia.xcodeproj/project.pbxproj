@@ -10,6 +10,10 @@
 		2F0B41DB1EACE9970075CC89 /* YQBackGroundViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F0B41DA1EACE9970075CC89 /* YQBackGroundViewController.m */; };
 		2F0B41DD1EACE9C70075CC89 /* YQBackGround.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2F0B41DC1EACE9C70075CC89 /* YQBackGround.storyboard */; };
 		2F4AB8961EBC4E1F0059AB90 /* backdrop_0013.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2F4AB8951EBC4E1F0059AB90 /* backdrop_0013.jpg */; };
+		2F4AB8991EBC7B970059AB90 /* YQSaveFileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F4AB8981EBC7B970059AB90 /* YQSaveFileViewController.m */; };
+		2F4AB89B1EBC7CA40059AB90 /* YQSaveFile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2F4AB89A1EBC7CA40059AB90 /* YQSaveFile.storyboard */; };
+		2F4AB89F1EBC7D8B0059AB90 /* YQSaveFileCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F4AB89D1EBC7D8B0059AB90 /* YQSaveFileCell.m */; };
+		2F4AB8A01EBC7D8B0059AB90 /* YQSaveFileCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2F4AB89E1EBC7D8B0059AB90 /* YQSaveFileCell.xib */; };
 		2F4FA5B31EA5C3E800E6E25F /* TAAbstractDotView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F4FA5A61EA5C3E800E6E25F /* TAAbstractDotView.m */; };
 		2F4FA5B41EA5C3E800E6E25F /* TAAnimatedDotView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F4FA5A81EA5C3E800E6E25F /* TAAnimatedDotView.m */; };
 		2F4FA5B51EA5C3E800E6E25F /* TADotView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F4FA5AA1EA5C3E800E6E25F /* TADotView.m */; };
@@ -262,6 +266,12 @@
 		2F0B41DA1EACE9970075CC89 /* YQBackGroundViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YQBackGroundViewController.m; sourceTree = "<group>"; };
 		2F0B41DC1EACE9C70075CC89 /* YQBackGround.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = YQBackGround.storyboard; sourceTree = "<group>"; };
 		2F4AB8951EBC4E1F0059AB90 /* backdrop_0013.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = backdrop_0013.jpg; sourceTree = "<group>"; };
+		2F4AB8971EBC7B970059AB90 /* YQSaveFileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YQSaveFileViewController.h; sourceTree = "<group>"; };
+		2F4AB8981EBC7B970059AB90 /* YQSaveFileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YQSaveFileViewController.m; sourceTree = "<group>"; };
+		2F4AB89A1EBC7CA40059AB90 /* YQSaveFile.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = YQSaveFile.storyboard; sourceTree = "<group>"; };
+		2F4AB89C1EBC7D8B0059AB90 /* YQSaveFileCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YQSaveFileCell.h; sourceTree = "<group>"; };
+		2F4AB89D1EBC7D8B0059AB90 /* YQSaveFileCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YQSaveFileCell.m; sourceTree = "<group>"; };
+		2F4AB89E1EBC7D8B0059AB90 /* YQSaveFileCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YQSaveFileCell.xib; sourceTree = "<group>"; };
 		2F4FA5A51EA5C3E800E6E25F /* TAAbstractDotView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TAAbstractDotView.h; sourceTree = "<group>"; };
 		2F4FA5A61EA5C3E800E6E25F /* TAAbstractDotView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TAAbstractDotView.m; sourceTree = "<group>"; };
 		2F4FA5A71EA5C3E800E6E25F /* TAAnimatedDotView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TAAnimatedDotView.h; sourceTree = "<group>"; };
@@ -1034,6 +1044,9 @@
 				2F0B41D91EACE9970075CC89 /* YQBackGroundViewController.h */,
 				2F0B41DA1EACE9970075CC89 /* YQBackGroundViewController.m */,
 				2F0B41DC1EACE9C70075CC89 /* YQBackGround.storyboard */,
+				2F4AB8971EBC7B970059AB90 /* YQSaveFileViewController.h */,
+				2F4AB8981EBC7B970059AB90 /* YQSaveFileViewController.m */,
+				2F4AB89A1EBC7CA40059AB90 /* YQSaveFile.storyboard */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -1064,6 +1077,9 @@
 				2F7B8A401EBB20D90085057E /* YQBackGroundCollectionCell.h */,
 				2F7B8A411EBB20D90085057E /* YQBackGroundCollectionCell.m */,
 				2F7B8A431EBB21380085057E /* YQBackGroundCell.xib */,
+				2F4AB89C1EBC7D8B0059AB90 /* YQSaveFileCell.h */,
+				2F4AB89D1EBC7D8B0059AB90 /* YQSaveFileCell.m */,
+				2F4AB89E1EBC7D8B0059AB90 /* YQSaveFileCell.xib */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -1160,6 +1176,7 @@
 				2F721F981EB2CFA40011C8D3 /* duowei_250.jpg in Resources */,
 				2F721FB91EB2CFA40011C8D3 /* philips_hq6070_220.jpg in Resources */,
 				2F721F861EB2CFA40011C8D3 /* duowei_00.jpg in Resources */,
+				2F4AB89B1EBC7CA40059AB90 /* YQSaveFile.storyboard in Resources */,
 				2F7220D41EB2E7560011C8D3 /* quen170427_40000036_140.png in Resources */,
 				2F721FA11EB2CFA40011C8D3 /* duowei_330.jpg in Resources */,
 				2F7B8A441EBB21380085057E /* YQBackGroundCell.xib in Resources */,
@@ -1224,6 +1241,7 @@
 				2F72203D1EB2D0680011C8D3 /* yi170427_40000036_00.png in Resources */,
 				2F721FB51EB2CFA40011C8D3 /* philips_hq6070_190.jpg in Resources */,
 				2F7220E51EB2E7560011C8D3 /* quen170427_40000036_30.png in Resources */,
+				2F4AB8A01EBC7D8B0059AB90 /* YQSaveFileCell.xib in Resources */,
 				2F7220E81EB2E7560011C8D3 /* quen170427_40000036_320.png in Resources */,
 				2F72206E1EB2D0680011C8D3 /* ku170427_30000036_200.png in Resources */,
 				2F721FC71EB2CFA40011C8D3 /* philips_hq6070_350.jpg in Resources */,
@@ -1425,6 +1443,8 @@
 				2F64C9641EAF35E900FCFD93 /* YQImageGroupView.m in Sources */,
 				2F78E8801EB9BF3500A47564 /* YQConcernViewController.m in Sources */,
 				2F8F89591EA86A28006DDDE9 /* YQBottomView.m in Sources */,
+				2F4AB8991EBC7B970059AB90 /* YQSaveFileViewController.m in Sources */,
+				2F4AB89F1EBC7D8B0059AB90 /* YQSaveFileCell.m in Sources */,
 				2F7B8A421EBB20D90085057E /* YQBackGroundCollectionCell.m in Sources */,
 				2F5E5CED1EA70DA600F5940B /* YQTitleScrollView.m in Sources */,
 				2F8966961EA497FA00A1F697 /* AppDelegate.m in Sources */,
