@@ -15,7 +15,7 @@
             <rect key="frame" x="0.0" y="0.0" width="111" height="131"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
-                <button opaque="NO" tag="2" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1WL-fE-nhm">
+                <button opaque="NO" tag="2" contentMode="scaleAspectFit" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1WL-fE-nhm">
                     <rect key="frame" x="56" y="45.5" width="50" height="40"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="40" id="c3R-au-fMH"/>
@@ -44,6 +44,7 @@
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
                 <outlet property="backImageView" destination="Axq-lr-M3X" id="kPR-Xg-qz7"/>
+                <outlet property="collectionImageVIEW" destination="1WL-fE-nhm" id="xhk-mg-jmw"/>
             </connections>
             <point key="canvasLocation" x="-66.5" y="-303.5"/>
         </view>

@@ -9,9 +9,10 @@
 #define pictureFrames 36
 #define widthSize [UIScreen mainScreen].bounds.size.width
 #define heightSize [UIScreen mainScreen].bounds.size.height
+#define collocationBackColor [UIColor colorWithRed:46/255.0 green:46/255.0 blue:46/255.0 alpha:0.3]
 #define buttonSize 45
 #define ADuration 0.01
-#define downTime 1.5
+#define downTime 2.5
 
 #import "YQCollocationViewController.h"
 #import "YQBottomView.h"
@@ -32,6 +33,7 @@
 @property (weak, nonatomic) IBOutlet YQImageGroupView *imageView;
 
 @property(nonatomic,strong)YQWardrobeCollectionView * wardrobeView;
+@property (weak, nonatomic) IBOutlet UIImageView *backgroundImageView;
 
 /// 各种的展示控制器
 @property(nonatomic,strong)YQDetailViewController * detailVC;
@@ -72,7 +74,8 @@ static NSString * ID = @"imageCell";
     //1.加载topView
     YQTopView * topView = [YQTopView buttonMenu];
     topView.deleage = self;
-    topView.backImageView.backgroundColor = [UIColor colorWithRed:187/255.0 green:190/255.0 blue:194/255.0 alpha:0.4];
+    [topView bringSubviewToFront:topView.collectionImageVIEW];
+    topView.backImageView.backgroundColor = collocationBackColor;
     [self.view addSubview:topView];
     self.topView = topView;
     self.topView.frame = CGRectMake(widthSize - 60, 64, 60, 45);
@@ -95,10 +98,10 @@ static NSString * ID = @"imageCell";
     //3.2 创建rect
     CGRect rect = CGRectMake(widthSize, 64 + 45, 60, heightSize - 48 -64 -45);
     YQWardrobeCollectionView * wardrobe = [[YQWardrobeCollectionView alloc]initWithFrame:rect collectionViewLayout:layout];
-    wardrobe.backgroundColor = [UIColor colorWithRed:187/255.0 green:190/255.0 blue:194/255.0 alpha:0.4];
-    
+    wardrobe.backgroundColor = collocationBackColor;
     wardrobe.dataSource = self;
     wardrobe.delegate =   self;
+    
     //3.3 注册原型cell
     UINib * cellNib = [UINib nibWithNibName:@"YQWardrobeCell" bundle:nil];
     [wardrobe registerNib:cellNib forCellWithReuseIdentifier:ID];
@@ -123,6 +126,9 @@ static NSString * ID = @"imageCell";
     UIBarButtonItem * bntItem = [[UIBarButtonItem alloc]initWithCustomView:rightBnt];
     self.navigationItem.rightBarButtonItem = bntItem;
     
+    //7.接受所有通知
+    [self abserverAllNoties];
+    
 }
 
 
@@ -142,7 +148,6 @@ static NSString * ID = @"imageCell";
             [_collocationArray addObject:string1];
         }
     }
-    
     return _collocationArray;
 }
 
@@ -216,7 +221,7 @@ static NSString * ID = @"imageCell";
     
     YQWardrobeCell * cell = [collectionView dequeueReusableCellWithReuseIdentifier:ID forIndexPath:indexPath];
     
-    cell.backgroundColor = [UIColor whiteColor];
+    //cell.backgroundColor = [UIColor whiteColor];
     //cell.imagename  = self.imagesArray[indexPath.row];
     //if(indexPath.row < self.collocationArray.count){
     
@@ -740,7 +745,7 @@ static NSString * ID = @"imageCell";
     
 }
 
-#pragma mark - touchesBegin的解锁方法
+#pragma mark - 移除弹框解锁方法
 -(void)baffleViewDidClilck{
     
     [UIView animateWithDuration:0.25 animations:^{
@@ -856,6 +861,30 @@ static NSString * ID = @"imageCell";
 
 }
 
+#pragma mark - 接受所有的通知方法
+-(void)abserverAllNoties{
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(backgroundPictureChange:) name:@"backGroundChange" object:nil];
+    
+    
+}
+
+#pragma mark - 实现通知的方法
+-(void)backgroundPictureChange:(NSNotification *)noties{
+
+    NSString * pictureName = noties.userInfo[@"pictureName"];
+    self.backgroundImageView.image = [UIImage imageNamed:pictureName];
+    
+    //dismiss
+    [self baffleViewDidClilck];
+
+}
+
+-(void)dealloc{
+
+    [[NSNotificationCenter defaultCenter]removeObserver:self];
+
+}
 
 
 

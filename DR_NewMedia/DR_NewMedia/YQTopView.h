@@ -19,6 +19,7 @@
 
 @property (weak, nonatomic) IBOutlet UIImageView *backImageView;
 
+@property (weak, nonatomic) IBOutlet UIButton *collectionImageVIEW;
 
 // 提供的是 类方法,加载xib
 +(instancetype)buttonMenu;

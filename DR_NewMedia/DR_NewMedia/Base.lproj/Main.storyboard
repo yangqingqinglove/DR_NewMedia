@@ -128,6 +128,9 @@
                                     <constraint firstAttribute="height" constant="64" id="Maf-GV-J2Z"/>
                                 </constraints>
                             </view>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="backdrop_0001.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="uG7-O1-qHg" userLabel="BackgroudImageView">
+                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
+                            </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="7HO-pE-xGR" customClass="YQImageGroupView">
                                 <rect key="frame" x="0.0" y="64" width="375" height="554"/>
                             </imageView>
@@ -152,7 +155,7 @@
                                     <constraint firstAttribute="width" constant="40" id="N7T-QH-GMT"/>
                                     <constraint firstAttribute="height" constant="40" id="ceh-2D-DDz"/>
                                 </constraints>
-                                <state key="normal" image="033背景"/>
+                                <state key="normal" image="033bj"/>
                                 <connections>
                                     <action selector="backgroundBtnClick:" destination="VWn-nY-4Hc" eventType="touchUpInside" id="DZq-Pf-S8J"/>
                                 </connections>
@@ -209,11 +212,14 @@
                             <constraint firstItem="ybI-3O-ckG" firstAttribute="top" secondItem="VR4-Uk-spW" secondAttribute="bottom" constant="140" id="0Fo-eC-Olr"/>
                             <constraint firstItem="aIc-mA-gXH" firstAttribute="top" secondItem="lbv-gG-4UH" secondAttribute="bottom" constant="5" id="1ny-SR-ypY"/>
                             <constraint firstItem="7HO-pE-xGR" firstAttribute="top" secondItem="fS1-mg-0oq" secondAttribute="bottom" id="587-RR-KxX"/>
+                            <constraint firstItem="ybI-3O-ckG" firstAttribute="top" secondItem="uG7-O1-qHg" secondAttribute="bottom" id="9Xg-NO-6wO"/>
                             <constraint firstItem="h3g-BS-mse" firstAttribute="leading" secondItem="qaZ-Gt-szO" secondAttribute="leading" constant="10" id="E3i-d7-x9X"/>
                             <constraint firstItem="ybI-3O-ckG" firstAttribute="top" secondItem="7HO-pE-xGR" secondAttribute="bottom" id="P4V-XW-T4a"/>
                             <constraint firstItem="lbv-gG-4UH" firstAttribute="top" secondItem="fS1-mg-0oq" secondAttribute="bottom" constant="4" id="SHL-Dx-RNg"/>
+                            <constraint firstAttribute="trailing" secondItem="uG7-O1-qHg" secondAttribute="trailing" id="Snf-dY-ATw"/>
                             <constraint firstItem="fS1-mg-0oq" firstAttribute="leading" secondItem="qaZ-Gt-szO" secondAttribute="leading" id="ToW-mc-L53"/>
                             <constraint firstItem="lbv-gG-4UH" firstAttribute="leading" secondItem="qaZ-Gt-szO" secondAttribute="leading" constant="10" id="Wwl-LH-yHp"/>
+                            <constraint firstItem="uG7-O1-qHg" firstAttribute="top" secondItem="fS1-mg-0oq" secondAttribute="bottom" id="aGQ-dk-okL"/>
                             <constraint firstItem="aIc-mA-gXH" firstAttribute="leading" secondItem="qaZ-Gt-szO" secondAttribute="leading" constant="10" id="fWv-1E-MCe"/>
                             <constraint firstItem="h3g-BS-mse" firstAttribute="top" secondItem="aIc-mA-gXH" secondAttribute="bottom" constant="5" id="hVl-57-puD"/>
                             <constraint firstItem="ybI-3O-ckG" firstAttribute="top" secondItem="zkR-nn-whc" secondAttribute="bottom" constant="50" id="hbE-il-gA9"/>
@@ -221,6 +227,7 @@
                             <constraint firstItem="VR4-Uk-spW" firstAttribute="leading" secondItem="qaZ-Gt-szO" secondAttribute="leading" constant="10" id="itD-Qh-TEr"/>
                             <constraint firstAttribute="trailing" secondItem="7HO-pE-xGR" secondAttribute="trailing" id="kHR-lP-7r8"/>
                             <constraint firstItem="ybI-3O-ckG" firstAttribute="top" secondItem="20Z-mI-io5" secondAttribute="bottom" constant="95" id="n1v-hI-eSc"/>
+                            <constraint firstItem="uG7-O1-qHg" firstAttribute="leading" secondItem="qaZ-Gt-szO" secondAttribute="leading" id="por-Tn-pRc"/>
                             <constraint firstItem="fS1-mg-0oq" firstAttribute="top" secondItem="qaZ-Gt-szO" secondAttribute="top" id="r7Q-lc-1VH"/>
                             <constraint firstItem="zkR-nn-whc" firstAttribute="leading" secondItem="qaZ-Gt-szO" secondAttribute="leading" constant="10" id="rrp-kK-9rh"/>
                             <constraint firstItem="7HO-pE-xGR" firstAttribute="leading" secondItem="qaZ-Gt-szO" secondAttribute="leading" id="sf2-Ik-qUQ"/>
@@ -230,12 +237,13 @@
                     <tabBarItem key="tabBarItem" tag="1" title="搭配间" id="YYE-CJ-4QK"/>
                     <navigationItem key="navigationItem" id="QvT-PM-2Ge"/>
                     <connections>
+                        <outlet property="backgroundImageView" destination="uG7-O1-qHg" id="KuE-mS-fdO"/>
                         <outlet property="imageView" destination="7HO-pE-xGR" id="nEi-XP-Sdn"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9Ux-y6-wsk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1410" y="331"/>
+            <point key="canvasLocation" x="1399" y="321"/>
         </scene>
         <!--首页-->
         <scene sceneID="sUG-sd-9VA">
@@ -366,10 +374,11 @@
         </scene>
     </scenes>
     <resources>
-        <image name="033背景" width="40" height="40"/>
+        <image name="033bj" width="40" height="40"/>
         <image name="044详情" width="40" height="40"/>
         <image name="055存档" width="40" height="40"/>
         <image name="055标尺" width="94" height="40"/>
+        <image name="backdrop_0001.jpg" width="630" height="1120"/>
         <image name="个人_未登录off" width="23" height="23"/>
         <image name="个人_未登录on" width="23" height="23"/>
         <image name="动态off" width="23" height="23"/>

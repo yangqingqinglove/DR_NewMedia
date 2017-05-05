@@ -16,8 +16,8 @@
 #define widthSize [UIScreen mainScreen].bounds.size.width
 #define heightSize [UIScreen mainScreen].bounds.size.height
 
-#define pictureWidthSize 157.5
-#define pictureHeightSize 280
+#define pictureWidthSize 315
+#define pictureHeightSize 560
 
 #import "YQImageGroupView.h"
 
