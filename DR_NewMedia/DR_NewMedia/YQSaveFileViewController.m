@@ -8,6 +8,7 @@
 
 #import "YQSaveFileViewController.h"
 #import "YQSaveFileCell.h"
+#import "YQBackGroundCollectionCell.h"
 
 @interface YQSaveFileViewController ()
 
@@ -29,15 +30,15 @@ static NSString * ID = @"fileCell";
     //1.自定义布局
     UICollectionViewFlowLayout * layout = [[UICollectionViewFlowLayout alloc]init];
     layout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
-    layout.minimumLineSpacing = 10;
+    layout.minimumLineSpacing = 5;
     layout.headerReferenceSize = CGSizeMake(5, 0);
-    
-    layout.itemSize = CGSizeMake(self.YQFileCollectionView.width /2, self.YQFileCollectionView.height);
+    //设置的是 item的宽度是 45
+    layout.itemSize = CGSizeMake(45, self.YQFileCollectionView.height);
     
     self.YQFileCollectionView.collectionViewLayout = layout;
     
     //2.注册原型cell
-    UINib * cellNib = [UINib nibWithNibName:@"YQSaveFileCell" bundle:nil];
+    UINib * cellNib = [UINib nibWithNibName:@"SaveFileCell" bundle:nil];
     [self.YQFileCollectionView registerNib:cellNib forCellWithReuseIdentifier:ID];
 
     
@@ -74,14 +75,15 @@ static NSString * ID = @"fileCell";
     
     YQSaveFileCell * cell = [collectionView dequeueReusableCellWithReuseIdentifier:ID forIndexPath:indexPath];
     
-    cell.backgroundColor = [UIColor colorWithRed:45/255.0 green:45/255.0 blue:60/255.0 alpha:0.4];
+    //cell.backgroundColor = [UIColor colorWithRed:45/255.0 green:45/255.0 blue:60/255.0 alpha:0.4];
     //cell.imagename  = self.imagesArray[indexPath.row];
     //if(indexPath.row < self.collocationArray.count){
     
     //    NSString * path1 = [[NSBundle mainBundle] pathForResource:self.BGArray[indexPath.item] ofType:nil];
-    // cell.saveImageView.image = [UIImage imageNamed:self.saveFileArray[indexPath.item]];
+     cell.saveImageView.image = [UIImage imageNamed:self.saveFileArray[indexPath.item]];
     
     //}
+    
     return cell;
 }
 

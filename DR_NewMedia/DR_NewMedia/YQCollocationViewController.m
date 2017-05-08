@@ -774,7 +774,7 @@ static NSString * ID = @"imageCell";
     self.saveFileVC.view.alpha = 0;
     self.saveFileVC.view.hidden = YES;
     
-//    self.saveFileVC.view.frame = CGRectMake(0, heightSize/4, widthSize, 300);
+    
     [self.saveFileVC.view mas_makeConstraints:^(MASConstraintMaker *make) {
        
         make.left.right.equalTo(self.view);
@@ -816,9 +816,15 @@ static NSString * ID = @"imageCell";
         self.rulerVC.view.hidden = YES;
         self.BGVC.view.alpha = 0;
         self.BGVC.view.hidden = YES;
+        self.saveFileVC.view.alpha = 0;
+        self.saveFileVC.view.hidden = YES;
         
     }];
     
+    [self.saveFileVC.view removeFromSuperview];
+    [self.BGVC.view removeFromSuperview];
+    [self.rulerVC.view removeFromSuperview];
+    [self.detailVC.view removeFromSuperview];
     [self.baffleView removeFromSuperview];
 
 }
