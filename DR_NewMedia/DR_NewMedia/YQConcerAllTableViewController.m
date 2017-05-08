@@ -10,6 +10,7 @@
 
 @interface YQConcerAllTableViewController ()
 
+
 @end
 
 static NSString * cellID = @"cell";

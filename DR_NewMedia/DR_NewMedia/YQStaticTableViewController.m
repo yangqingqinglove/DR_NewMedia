@@ -1,0 +1,29 @@
+//
+//  YQStaticTableViewController.m
+//  DR_NewMedia
+//
+//  Created by 杨庆 on 2017/5/8.
+//  Copyright © 2017年 YQ. All rights reserved.
+//
+
+#import "YQStaticTableViewController.h"
+
+@interface YQStaticTableViewController ()
+
+@end
+
+@implementation YQStaticTableViewController
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    
+    // Uncomment the following line to preserve selection between presentations.
+    // self.clearsSelectionOnViewWillAppear = NO;
+    
+    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
+    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+}
+
+
+
+@end

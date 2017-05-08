@@ -129,7 +129,9 @@ static NSString * ID = @"imageCell";
     //5.1 设置自定义的titleView
     UIImageView* imageView = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, 25, 25)];
     imageView.image = [UIImage imageNamed:@"扫描.png"];
-    self.navigationItem.titleView = imageView;
+    UIBarButtonItem * imageItem = [[UIBarButtonItem alloc]initWithCustomView:imageView];
+    self.navigationItem.leftBarButtonItem = imageItem;
+    
     
     //6.设置rightBar
     UIButton * rightBnt = [UIButton buttonWithType:UIButtonTypeCustom];

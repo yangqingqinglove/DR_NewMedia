@@ -256,6 +256,11 @@
 		2F8F895C1EA89275006DDDE9 /* YQTopView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F8F895B1EA89275006DDDE9 /* YQTopView.m */; };
 		2F8F895E1EA892F6006DDDE9 /* YQTopView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2F8F895D1EA892F6006DDDE9 /* YQTopView.xib */; };
 		2FA2958C1EC03E7300F5660C /* YQConcerAllTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA2958B1EC03E7300F5660C /* YQConcerAllTableViewController.m */; };
+		2FA295921EC05D5300F5660C /* YQMineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA295911EC05D5300F5660C /* YQMineViewController.m */; };
+		2FA295951EC065FD00F5660C /* YQMineHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA295941EC065FD00F5660C /* YQMineHeadView.m */; };
+		2FA295971EC0662000F5660C /* YQMineHead.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2FA295961EC0662000F5660C /* YQMineHead.xib */; };
+		2FA2959A1EC06F7500F5660C /* YQStaticTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA295991EC06F7500F5660C /* YQStaticTableViewController.m */; };
+		2FA2959C1EC0706800F5660C /* YQStaticTV.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2FA2959B1EC0706800F5660C /* YQStaticTV.storyboard */; };
 		2FF1C8A31EB0A0C200A6EF5B /* UIView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FF1C8A01EB0A0C200A6EF5B /* UIView+Extension.m */; };
 		2FF1C8A41EB0A0C200A6EF5B /* YQconstTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FF1C8A21EB0A0C200A6EF5B /* YQconstTools.m */; };
 		2FF1C8A71EB0A31100A6EF5B /* MBProgressHUD+CZ.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FF1C8A61EB0A31100A6EF5B /* MBProgressHUD+CZ.m */; };
@@ -544,6 +549,14 @@
 		2F8F895D1EA892F6006DDDE9 /* YQTopView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YQTopView.xib; sourceTree = "<group>"; };
 		2FA2958A1EC03E7300F5660C /* YQConcerAllTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YQConcerAllTableViewController.h; sourceTree = "<group>"; };
 		2FA2958B1EC03E7300F5660C /* YQConcerAllTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YQConcerAllTableViewController.m; sourceTree = "<group>"; };
+		2FA295901EC05D5300F5660C /* YQMineViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YQMineViewController.h; sourceTree = "<group>"; };
+		2FA295911EC05D5300F5660C /* YQMineViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YQMineViewController.m; sourceTree = "<group>"; };
+		2FA295931EC065FD00F5660C /* YQMineHeadView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YQMineHeadView.h; sourceTree = "<group>"; };
+		2FA295941EC065FD00F5660C /* YQMineHeadView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YQMineHeadView.m; sourceTree = "<group>"; };
+		2FA295961EC0662000F5660C /* YQMineHead.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YQMineHead.xib; sourceTree = "<group>"; };
+		2FA295981EC06F7500F5660C /* YQStaticTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YQStaticTableViewController.h; sourceTree = "<group>"; };
+		2FA295991EC06F7500F5660C /* YQStaticTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YQStaticTableViewController.m; sourceTree = "<group>"; };
+		2FA2959B1EC0706800F5660C /* YQStaticTV.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = YQStaticTV.storyboard; sourceTree = "<group>"; };
 		2FF1C89E1EB0A04100A6EF5B /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		2FF1C89F1EB0A0C200A6EF5B /* UIView+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Extension.h"; sourceTree = "<group>"; };
 		2FF1C8A01EB0A0C200A6EF5B /* UIView+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Extension.m"; sourceTree = "<group>"; };
@@ -948,6 +961,7 @@
 		2F8966901EA497FA00A1F697 /* DR_NewMedia */ = {
 			isa = PBXGroup;
 			children = (
+				2FA2958D1EC05BB500F5660C /* Mine */,
 				2F78E8791EB9B89400A47564 /* Concern */,
 				2F8F894E1EA86397006DDDE9 /* CollocationRoom */,
 				2F8966F11EA4F60C00A1F697 /* Home */,
@@ -1089,6 +1103,37 @@
 			name = View;
 			sourceTree = "<group>";
 		};
+		2FA2958D1EC05BB500F5660C /* Mine */ = {
+			isa = PBXGroup;
+			children = (
+				2FA2958F1EC05CFB00F5660C /* View */,
+				2FA2958E1EC05CB200F5660C /* Controller */,
+			);
+			name = Mine;
+			sourceTree = "<group>";
+		};
+		2FA2958E1EC05CB200F5660C /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				2FA295901EC05D5300F5660C /* YQMineViewController.h */,
+				2FA295911EC05D5300F5660C /* YQMineViewController.m */,
+				2FA295981EC06F7500F5660C /* YQStaticTableViewController.h */,
+				2FA295991EC06F7500F5660C /* YQStaticTableViewController.m */,
+				2FA2959B1EC0706800F5660C /* YQStaticTV.storyboard */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		2FA2958F1EC05CFB00F5660C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				2FA295931EC065FD00F5660C /* YQMineHeadView.h */,
+				2FA295941EC065FD00F5660C /* YQMineHeadView.m */,
+				2FA295961EC0662000F5660C /* YQMineHead.xib */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
 		DAD33F48926D9BE0C15DA6BC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -1176,6 +1221,7 @@
 				2F70F3881EA9F39F0012EF8A /* YQDetail.storyboard in Resources */,
 				2F7B8A3B1EBB0C300085057E /* backdrop_0008.jpg in Resources */,
 				2F7220651EB2D0680011C8D3 /* ku170427_30000036_120.png in Resources */,
+				2FA295971EC0662000F5660C /* YQMineHead.xib in Resources */,
 				2F721F8A1EB2CFA40011C8D3 /* duowei_120.jpg in Resources */,
 				2F721F891EB2CFA40011C8D3 /* duowei_110.jpg in Resources */,
 				2F721F981EB2CFA40011C8D3 /* duowei_250.jpg in Resources */,
@@ -1304,6 +1350,7 @@
 				2F7220571EB2D0680011C8D3 /* yi170427_40000036_320.png in Resources */,
 				2F7220D11EB2E7560011C8D3 /* quen170427_40000036_110.png in Resources */,
 				2F7220CF1EB2E7560011C8D3 /* quen170427_40000036_10.png in Resources */,
+				2FA2959C1EC0706800F5660C /* YQStaticTV.storyboard in Resources */,
 				2F7220691EB2D0680011C8D3 /* ku170427_30000036_160.png in Resources */,
 				2F721F8E1EB2CFA40011C8D3 /* duowei_160.jpg in Resources */,
 				2F721FBD1EB2CFA40011C8D3 /* philips_hq6070_260.jpg in Resources */,
@@ -1441,6 +1488,7 @@
 				2FF1C8A31EB0A0C200A6EF5B /* UIView+Extension.m in Sources */,
 				2F4FA5F21EA5EF7100E6E25F /* YQButton.m in Sources */,
 				2F70F3801EA9D9370012EF8A /* YQRulerVC.m in Sources */,
+				2FA2959A1EC06F7500F5660C /* YQStaticTableViewController.m in Sources */,
 				2F8F89511EA86646006DDDE9 /* YQCollocationViewController.m in Sources */,
 				2F70F3771EA9A1B90012EF8A /* YQWardrobeCollectionView.m in Sources */,
 				2F4FA5B81EA5C3E800E6E25F /* SDCycleScrollView.m in Sources */,
@@ -1462,8 +1510,10 @@
 				2F8966F41EA4F66400A1F697 /* YQHomeViewController.m in Sources */,
 				2F0B41DB1EACE9970075CC89 /* YQBackGroundViewController.m in Sources */,
 				2F70F3851EA9F1610012EF8A /* YQDetailViewController.m in Sources */,
+				2FA295951EC065FD00F5660C /* YQMineHeadView.m in Sources */,
 				2F4FA5B51EA5C3E800E6E25F /* TADotView.m in Sources */,
 				2F4FA5B41EA5C3E800E6E25F /* TAAnimatedDotView.m in Sources */,
+				2FA295921EC05D5300F5660C /* YQMineViewController.m in Sources */,
 				2F4FA5B91EA5C3E800E6E25F /* UIView+SDExtension.m in Sources */,
 				2F70F37B1EA9A4200012EF8A /* YQWardrobeCell.m in Sources */,
 				2F4FA5EF1EA5EC8800E6E25F /* YQFirstTableViewController.m in Sources */,
