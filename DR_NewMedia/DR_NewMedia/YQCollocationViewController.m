@@ -756,7 +756,6 @@ static NSString * ID = @"imageCell";
      [self presentViewController:save animated:YES completion:nil];
      
      */
-    
     //整体的 modal 出来一个控制器
     //添加蒙版,设置成为第一响应者
     UIView * baffleV = [[UIView alloc]initWithFrame:self.view.bounds];

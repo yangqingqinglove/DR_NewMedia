@@ -14,7 +14,7 @@
             <objects>
                 <navigationController id="0ah-i1-TUs" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="搭配间" image="搭配间off" selectedImage="搭配间on" id="ptB-MF-vbj"/>
-                    <navigationBar key="navigationBar" alpha="0.0" contentMode="scaleAspectFit" misplaced="YES" id="tj7-Da-JCV">
+                    <navigationBar key="navigationBar" alpha="0.0" contentMode="scaleAspectFit" id="tj7-Da-JCV">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -59,8 +59,11 @@
                                         <state key="normal" title="全部">
                                             <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                         </state>
+                                        <connections>
+                                            <action selector="AllButtonClicked:" destination="MRD-XD-zpQ" eventType="touchUpInside" id="Y8k-Sl-C34"/>
+                                        </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="66m-rP-6v3">
+                                    <button opaque="NO" tag="1" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="66m-rP-6v3">
                                         <rect key="frame" x="79" y="0.0" width="80" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="80" id="jjn-Hk-FUJ"/>
@@ -69,6 +72,9 @@
                                         <state key="normal" title="回答">
                                             <color key="titleColor" red="1" green="0.0" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="answerButtonClicked:" destination="MRD-XD-zpQ" eventType="touchUpInside" id="UU5-VN-gYd"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -82,8 +88,11 @@
                                     <constraint firstItem="66m-rP-6v3" firstAttribute="leading" secondItem="rNJ-pV-Hk4" secondAttribute="trailing" id="zeQ-0o-kea"/>
                                 </constraints>
                             </view>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DKc-k8-uGc">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DKc-k8-uGc">
                                 <rect key="frame" x="0.0" y="240" width="375" height="378"/>
+                                <connections>
+                                    <outlet property="delegate" destination="MRD-XD-zpQ" id="Ndi-w7-yBc"/>
+                                </connections>
                             </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -104,6 +113,8 @@
                     <connections>
                         <outlet property="ContentScrollView" destination="DKc-k8-uGc" id="RVi-Xi-5am"/>
                         <outlet property="HeadView" destination="mJR-vf-Spq" id="s1v-I2-6Qk"/>
+                        <outlet property="allButton" destination="rNJ-pV-Hk4" id="zCn-3g-AjR"/>
+                        <outlet property="answerButton" destination="66m-rP-6v3" id="6sN-ym-A5X"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UDD-zJ-XYY" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -233,7 +244,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9Ux-y6-wsk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1319" y="313"/>
+            <point key="canvasLocation" x="1385" y="333"/>
         </scene>
         <!--首页-->
         <scene sceneID="sUG-sd-9VA">

@@ -255,6 +255,7 @@
 		2F8F89591EA86A28006DDDE9 /* YQBottomView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F8F89571EA86A28006DDDE9 /* YQBottomView.m */; };
 		2F8F895C1EA89275006DDDE9 /* YQTopView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F8F895B1EA89275006DDDE9 /* YQTopView.m */; };
 		2F8F895E1EA892F6006DDDE9 /* YQTopView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2F8F895D1EA892F6006DDDE9 /* YQTopView.xib */; };
+		2FA2958C1EC03E7300F5660C /* YQConcerAllTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA2958B1EC03E7300F5660C /* YQConcerAllTableViewController.m */; };
 		2FF1C8A31EB0A0C200A6EF5B /* UIView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FF1C8A01EB0A0C200A6EF5B /* UIView+Extension.m */; };
 		2FF1C8A41EB0A0C200A6EF5B /* YQconstTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FF1C8A21EB0A0C200A6EF5B /* YQconstTools.m */; };
 		2FF1C8A71EB0A31100A6EF5B /* MBProgressHUD+CZ.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FF1C8A61EB0A31100A6EF5B /* MBProgressHUD+CZ.m */; };
@@ -541,6 +542,8 @@
 		2F8F895A1EA89275006DDDE9 /* YQTopView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YQTopView.h; sourceTree = "<group>"; };
 		2F8F895B1EA89275006DDDE9 /* YQTopView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YQTopView.m; sourceTree = "<group>"; };
 		2F8F895D1EA892F6006DDDE9 /* YQTopView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YQTopView.xib; sourceTree = "<group>"; };
+		2FA2958A1EC03E7300F5660C /* YQConcerAllTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YQConcerAllTableViewController.h; sourceTree = "<group>"; };
+		2FA2958B1EC03E7300F5660C /* YQConcerAllTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YQConcerAllTableViewController.m; sourceTree = "<group>"; };
 		2FF1C89E1EB0A04100A6EF5B /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		2FF1C89F1EB0A0C200A6EF5B /* UIView+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Extension.h"; sourceTree = "<group>"; };
 		2FF1C8A01EB0A0C200A6EF5B /* UIView+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Extension.m"; sourceTree = "<group>"; };
@@ -880,6 +883,8 @@
 			children = (
 				2F78E87E1EB9BF3500A47564 /* YQConcernViewController.h */,
 				2F78E87F1EB9BF3500A47564 /* YQConcernViewController.m */,
+				2FA2958A1EC03E7300F5660C /* YQConcerAllTableViewController.h */,
+				2FA2958B1EC03E7300F5660C /* YQConcerAllTableViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -1446,6 +1451,7 @@
 				2F4AB8991EBC7B970059AB90 /* YQSaveFileViewController.m in Sources */,
 				2F4AB89F1EBC7D8B0059AB90 /* YQSaveFileCell.m in Sources */,
 				2F7B8A421EBB20D90085057E /* YQBackGroundCollectionCell.m in Sources */,
+				2FA2958C1EC03E7300F5660C /* YQConcerAllTableViewController.m in Sources */,
 				2F5E5CED1EA70DA600F5940B /* YQTitleScrollView.m in Sources */,
 				2F8966961EA497FA00A1F697 /* AppDelegate.m in Sources */,
 				2F78E8851EB9DB8600A47564 /* YQHeadTitleView.m in Sources */,
