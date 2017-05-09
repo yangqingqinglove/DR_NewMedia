@@ -7,20 +7,14 @@
 //
 
 #import "YQConcernViewController.h"
-#import "YQHeadTitleView.h"
-#import "YQConcerAllTableViewController.h"
-
+#import "YQConcerFirstTableViewController.h"
+#import "YQButton.h"
 
 @interface YQConcernViewController ()<UIScrollViewDelegate>
 
-/// childView
-@property(nonatomic,strong)YQHeadTitleView * headTitleView;
-@property (weak, nonatomic) IBOutlet UIView *HeadView;
-@property (weak, nonatomic) IBOutlet UIScrollView *ContentScrollView;
+@property (weak, nonatomic) IBOutlet UIScrollView *titleScrollView;
 
-/// childButton
-@property (weak, nonatomic) IBOutlet UIButton *allButton;
-@property (weak, nonatomic) IBOutlet UIButton *answerButton;
+@property (weak, nonatomic) IBOutlet UIScrollView *contentScrollView;
 
 
 @end
@@ -29,136 +23,84 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
-    // 1.headtitle的初始化
-    [self initWithHeadTitleView];
-    
-    // 2.添加子控制器的方法
+    // 1.添加子控制器
     [self setupChildVces];
     
-    // 3.设置scrollview
-    CGFloat contentW = self.childViewControllers.count * [UIScreen mainScreen].bounds.size.width;
-    self.ContentScrollView.contentSize = CGSizeMake(contentW, 0);
+    // 2.添加顶部的所有标题
+    [self setupTitles];
     
-    // 4.设置默认的第一个 控制器
-    UIViewController *firstVc = [self.childViewControllers firstObject];
-    firstVc.view.frame = self.ContentScrollView.bounds;
-    [self.ContentScrollView addSubview:firstVc.view];
-    
-    // 5.默认的 全部按钮是选中的状态
-    self.allButton.selected = YES;
-    
+
+        
 }
 
-
-#pragma mark - init_childView方法
--(void)initWithHeadTitleView{
-    
-    self.headTitleView = [YQHeadTitleView headTitleInit];
-    [self.HeadView addSubview:self.headTitleView];
-    
-    [self.headTitleView mas_makeConstraints:^(MASConstraintMaker *make) {
-        
-        make.left.mas_equalTo(self.HeadView.mas_left).offset(10);
-        make.right.mas_equalTo(self.HeadView.mas_right).offset(-10);
-        make.bottom.mas_equalTo(self.HeadView.mas_bottom).offset(-10);
-        make.height.mas_equalTo(60);
-        
-    }];
-}
-
-#pragma mark - childVC的创建方法
+#pragma mark --------添加子控制器------
 - (void)setupChildVces
 {
-    YQConcerAllTableViewController *vc01 = [[YQConcerAllTableViewController alloc] init];
-    vc01.title = @"全部";
+    YQConcerFirstTableViewController *vc01 = [[YQConcerFirstTableViewController alloc] init];
+    vc01.title = @"热门推荐";
     [self addChildViewController:vc01];
     
-    YQConcerAllTableViewController *vc02 = [[YQConcerAllTableViewController alloc] init];
-    vc02.title = @"问答";
+    YQConcerFirstTableViewController *vc02 = [[YQConcerFirstTableViewController alloc] init];
+    vc02.title = @"关注";
     [self addChildViewController:vc02];
     
+    YQConcerFirstTableViewController *vc03 = [[YQConcerFirstTableViewController alloc] init];
+    vc03.title = @"问答";
+    [self addChildViewController:vc03];
+    
+    YQConcerFirstTableViewController *vc04 = [[YQConcerFirstTableViewController alloc] init];
+    vc04.title = @"我的消息";
+    [self addChildViewController:vc04];
+    
 }
 
-#pragma mark - buttonClicked的点击方法
-- (IBAction)AllButtonClicked:(UIButton *)sender {
-    if(sender.selected){
-        //默认是 选中的状态
-        return;
+#pragma mark --------添加顶部所有的标题------
+- (void)setupTitles
+{
+    // 创建button
+    NSUInteger count = self.childViewControllers.count;
+    
+    CGFloat labelW = self.view.bounds.size.width / count;
+    CGFloat labelH = self.titleScrollView.bounds.size.height -2;
+    CGFloat labelY = 0;
+    
+    for (NSUInteger i = 0; i < count; i++) {
+        // 创建labe
+        YQButton *btn = [[YQButton alloc] init];
+        btn.tag = i;
+        
+        // 设置frame
+        CGFloat btnX = i * labelW;
+        btn.frame = CGRectMake(btnX, labelY, labelW, labelH);
+        
+        // 设置文字和图片
+        UIViewController *vc = self.childViewControllers[i];
+        [btn setTitle:vc.title forState:UIControlStateNormal];
+        
+        //[btn setImage:[UIImage imageNamed:vc.title] forState:UIControlStateHighlighted];
+        //btn setImage:<#(nullable UIImage *)#> forState:<#(UIControlState)#>
+        
+        // 监听点击事件
+        [btn addTarget:self action:@selector(bottonDidClicked:) forControlEvents:UIControlEventTouchUpInside];
+        
+        [self.titleScrollView addSubview:btn];
     }
-    self.answerButton.selected = NO;
+    
+    // 设置scrollView的内容大小
+    CGFloat titlesContentW = count * labelW;
+    self.titleScrollView.contentSize = CGSizeMake(titlesContentW, 0);
+}
+
+-(void)bottonDidClicked:(UIButton *)btn{
+    
+    //这里的是:切换加载对应的VC
     // 计算x方向上的偏移量
-    CGFloat offsetX = sender.tag * self.ContentScrollView.frame.size.width;
+    CGFloat offsetX = btn.tag * self.contentScrollView.frame.size.width;
     
     // 设置偏移量
-    [self.ContentScrollView setContentOffset:CGPointMake(offsetX, 0) animated:YES];
-    sender.selected = !self.answerButton.selected;
+    [self.contentScrollView setContentOffset:CGPointMake(offsetX, 0) animated:YES];
     
 }
-
-- (IBAction)answerButtonClicked:(UIButton *)sender {
-    
-    if(sender.selected){
-        //默认是 选中的状态
-        return;
-    }
-    self.allButton.selected = NO;
-    // 计算x方向上的偏移量
-    CGFloat offsetX = sender.tag * self.ContentScrollView.frame.size.width;
-    
-    // 设置偏移量
-    [self.ContentScrollView setContentOffset:CGPointMake(offsetX, 0) animated:YES];
-    sender.selected = !self.allButton.selected;
-
-}
-
-#pragma mark - scrollView的代理方法
-- (void)scrollViewDidEndScrollingAnimation:(UIScrollView *)scrollView
-{
-    // 获得当前需要显示的子控制器索引
-    NSUInteger index = scrollView.contentOffset.x / scrollView.frame.size.width;
-    UIViewController *vc = self.childViewControllers[index];
-    // 对应的控制器的按钮来 进行的高亮选中处理
-    switch (index) {
-        case 0:{
-            
-            self.allButton.selected = YES;
-            self.answerButton.selected = NO;
-            break;
-        }
-        case 1:{
-            
-            self.allButton.selected = NO;
-            self.answerButton.selected = YES;
-            break;
-        }
-            
-        default:
-            break;
-    }
-
-    // 如果子控制器的view已经在上面,就直接返回
-    if (vc.view.superview) return;
-    
-    // 添加
-    CGFloat vcW = scrollView.frame.size.width;
-    CGFloat vcH = scrollView.frame.size.height;
-    CGFloat vcY = 0;
-    CGFloat vcX = index * vcW;
-    vc.view.frame = CGRectMake(vcX, vcY, vcW, vcH);
-    
-    [scrollView addSubview:vc.view];
-//    NSLog(@"index == %ld",index);
-}
-
-/**
- *  当scrollview停止滚动时调用这个方法 (用户手动触发的动画结束,会调用这个方法)
- */
-- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView
-{
-    [self scrollViewDidEndScrollingAnimation:scrollView];
-}
-
 
 
 @end

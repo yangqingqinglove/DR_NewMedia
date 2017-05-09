@@ -15,7 +15,7 @@
     if(self = [super initWithFrame:frame]){
         
         self.titleLabel.textAlignment = NSTextAlignmentNatural;
-        self.titleLabel.font = [UIFont systemFontOfSize:20];
+        self.titleLabel.font = [UIFont systemFontOfSize:17];
         self.titleLabel.textColor = [UIColor whiteColor];
         self.backgroundColor = [UIColor grayColor];
         self.userInteractionEnabled = YES;

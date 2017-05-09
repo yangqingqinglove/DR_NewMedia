@@ -36,6 +36,9 @@
 		2F4FA5F21EA5EF7100E6E25F /* YQButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F4FA5F11EA5EF7100E6E25F /* YQButton.m */; };
 		2F5E5CED1EA70DA600F5940B /* YQTitleScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F5E5CEC1EA70DA600F5940B /* YQTitleScrollView.m */; };
 		2F64C9641EAF35E900FCFD93 /* YQImageGroupView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F64C9631EAF35E900FCFD93 /* YQImageGroupView.m */; };
+		2F6E21791EC1C19B003A23D2 /* YQHotDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F6E21781EC1C19B003A23D2 /* YQHotDetailViewController.m */; };
+		2F6E217B1EC1C1D3003A23D2 /* YQHotDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2F6E217A1EC1C1D3003A23D2 /* YQHotDetail.storyboard */; };
+		2F6E217E1EC1CDFC003A23D2 /* YQConcerFirstTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F6E217D1EC1CDFC003A23D2 /* YQConcerFirstTableViewController.m */; };
 		2F70F3771EA9A1B90012EF8A /* YQWardrobeCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F70F3761EA9A1B90012EF8A /* YQWardrobeCollectionView.m */; };
 		2F70F37B1EA9A4200012EF8A /* YQWardrobeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F70F3791EA9A4200012EF8A /* YQWardrobeCell.m */; };
 		2F70F37C1EA9A4200012EF8A /* YQWardrobeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2F70F37A1EA9A4200012EF8A /* YQWardrobeCell.xib */; };
@@ -312,6 +315,11 @@
 		2F5E5CEC1EA70DA600F5940B /* YQTitleScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YQTitleScrollView.m; sourceTree = "<group>"; };
 		2F64C9621EAF35E900FCFD93 /* YQImageGroupView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YQImageGroupView.h; sourceTree = "<group>"; };
 		2F64C9631EAF35E900FCFD93 /* YQImageGroupView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YQImageGroupView.m; sourceTree = "<group>"; };
+		2F6E21771EC1C19B003A23D2 /* YQHotDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YQHotDetailViewController.h; sourceTree = "<group>"; };
+		2F6E21781EC1C19B003A23D2 /* YQHotDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YQHotDetailViewController.m; sourceTree = "<group>"; };
+		2F6E217A1EC1C1D3003A23D2 /* YQHotDetail.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = YQHotDetail.storyboard; sourceTree = "<group>"; };
+		2F6E217C1EC1CDFC003A23D2 /* YQConcerFirstTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YQConcerFirstTableViewController.h; sourceTree = "<group>"; };
+		2F6E217D1EC1CDFC003A23D2 /* YQConcerFirstTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YQConcerFirstTableViewController.m; sourceTree = "<group>"; };
 		2F70F3751EA9A1B90012EF8A /* YQWardrobeCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YQWardrobeCollectionView.h; sourceTree = "<group>"; };
 		2F70F3761EA9A1B90012EF8A /* YQWardrobeCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YQWardrobeCollectionView.m; sourceTree = "<group>"; };
 		2F70F3781EA9A4200012EF8A /* YQWardrobeCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YQWardrobeCell.h; sourceTree = "<group>"; };
@@ -896,8 +904,13 @@
 			children = (
 				2F78E87E1EB9BF3500A47564 /* YQConcernViewController.h */,
 				2F78E87F1EB9BF3500A47564 /* YQConcernViewController.m */,
+				2F6E21771EC1C19B003A23D2 /* YQHotDetailViewController.h */,
+				2F6E21781EC1C19B003A23D2 /* YQHotDetailViewController.m */,
+				2F6E217A1EC1C1D3003A23D2 /* YQHotDetail.storyboard */,
 				2FA2958A1EC03E7300F5660C /* YQConcerAllTableViewController.h */,
 				2FA2958B1EC03E7300F5660C /* YQConcerAllTableViewController.m */,
+				2F6E217C1EC1CDFC003A23D2 /* YQConcerFirstTableViewController.h */,
+				2F6E217D1EC1CDFC003A23D2 /* YQConcerFirstTableViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -1294,6 +1307,7 @@
 				2F7220E51EB2E7560011C8D3 /* quen170427_40000036_30.png in Resources */,
 				2F4AB8A01EBC7D8B0059AB90 /* SaveFileCell.xib in Resources */,
 				2F7220E81EB2E7560011C8D3 /* quen170427_40000036_320.png in Resources */,
+				2F6E217B1EC1C1D3003A23D2 /* YQHotDetail.storyboard in Resources */,
 				2F72206E1EB2D0680011C8D3 /* ku170427_30000036_200.png in Resources */,
 				2F721FC71EB2CFA40011C8D3 /* philips_hq6070_350.jpg in Resources */,
 				2F7220461EB2D0680011C8D3 /* yi170427_40000036_170.png in Resources */,
@@ -1510,6 +1524,7 @@
 				2F8966F41EA4F66400A1F697 /* YQHomeViewController.m in Sources */,
 				2F0B41DB1EACE9970075CC89 /* YQBackGroundViewController.m in Sources */,
 				2F70F3851EA9F1610012EF8A /* YQDetailViewController.m in Sources */,
+				2F6E217E1EC1CDFC003A23D2 /* YQConcerFirstTableViewController.m in Sources */,
 				2FA295951EC065FD00F5660C /* YQMineHeadView.m in Sources */,
 				2F4FA5B51EA5C3E800E6E25F /* TADotView.m in Sources */,
 				2F4FA5B41EA5C3E800E6E25F /* TAAnimatedDotView.m in Sources */,
@@ -1517,6 +1532,7 @@
 				2F4FA5B91EA5C3E800E6E25F /* UIView+SDExtension.m in Sources */,
 				2F70F37B1EA9A4200012EF8A /* YQWardrobeCell.m in Sources */,
 				2F4FA5EF1EA5EC8800E6E25F /* YQFirstTableViewController.m in Sources */,
+				2F6E21791EC1C19B003A23D2 /* YQHotDetailViewController.m in Sources */,
 				2FF1C8A71EB0A31100A6EF5B /* MBProgressHUD+CZ.m in Sources */,
 				2F4FA5BC1EA5C52E00E6E25F /* YQCycleView.m in Sources */,
 			);
