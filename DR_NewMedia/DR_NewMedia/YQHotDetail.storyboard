@@ -21,6 +21,22 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="X5f-Dr-8Hv">
+                                <rect key="frame" x="0.0" y="20" width="375" height="180"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="titleBG" translatesAutoresizingMaskIntoConstraints="NO" id="GkR-Wt-xu3">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="180"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="GkR-Wt-xu3" firstAttribute="leading" secondItem="X5f-Dr-8Hv" secondAttribute="leading" id="K75-cD-3Hr"/>
+                                    <constraint firstItem="GkR-Wt-xu3" firstAttribute="top" secondItem="X5f-Dr-8Hv" secondAttribute="top" id="V0F-md-krR"/>
+                                    <constraint firstAttribute="height" constant="180" id="fD0-t2-zI4"/>
+                                    <constraint firstAttribute="bottom" secondItem="GkR-Wt-xu3" secondAttribute="bottom" id="wDq-hT-LtC"/>
+                                    <constraint firstAttribute="trailing" secondItem="GkR-Wt-xu3" secondAttribute="trailing" id="ycY-7B-8WM"/>
+                                </constraints>
+                            </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XQT-pR-N5w">
                                 <rect key="frame" x="0.0" y="200" width="375" height="40"/>
                                 <subviews>
@@ -68,38 +84,34 @@
                                     <outlet property="delegate" destination="sJo-cK-wTY" id="XdF-Az-aqZ"/>
                                 </connections>
                             </scrollView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6kC-Ni-WT1">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="200"/>
-                                <color key="backgroundColor" red="1" green="0.43529412150000002" blue="0.81176471709999998" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="200" id="zcM-y5-NdX"/>
-                                </constraints>
-                            </view>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="6kC-Ni-WT1" firstAttribute="top" secondItem="m2Z-Ge-YQf" secondAttribute="top" id="6Ku-DY-L5Y"/>
+                            <constraint firstItem="X5f-Dr-8Hv" firstAttribute="leading" secondItem="m2Z-Ge-YQf" secondAttribute="leading" id="2lR-vf-QO9"/>
                             <constraint firstItem="t2V-fK-nfu" firstAttribute="top" secondItem="z8h-2y-9eu" secondAttribute="bottom" id="EHf-Ez-njV"/>
                             <constraint firstAttribute="trailing" secondItem="z8h-2y-9eu" secondAttribute="trailing" id="KYm-xo-6gQ"/>
+                            <constraint firstItem="X5f-Dr-8Hv" firstAttribute="top" secondItem="Wlj-lY-CMq" secondAttribute="bottom" id="MkB-JG-KPW"/>
                             <constraint firstItem="XQT-pR-N5w" firstAttribute="leading" secondItem="m2Z-Ge-YQf" secondAttribute="leading" id="Qmk-pp-Mix"/>
-                            <constraint firstItem="6kC-Ni-WT1" firstAttribute="leading" secondItem="m2Z-Ge-YQf" secondAttribute="leading" id="ZFg-DY-HmM"/>
-                            <constraint firstAttribute="trailing" secondItem="6kC-Ni-WT1" secondAttribute="trailing" id="ev9-si-SIn"/>
+                            <constraint firstItem="XQT-pR-N5w" firstAttribute="top" secondItem="X5f-Dr-8Hv" secondAttribute="bottom" id="SCf-7X-zm6"/>
                             <constraint firstAttribute="trailing" secondItem="XQT-pR-N5w" secondAttribute="trailing" id="fBy-63-hPb"/>
                             <constraint firstItem="z8h-2y-9eu" firstAttribute="leading" secondItem="m2Z-Ge-YQf" secondAttribute="leading" id="fOQ-Jm-0QY"/>
                             <constraint firstItem="z8h-2y-9eu" firstAttribute="top" secondItem="XQT-pR-N5w" secondAttribute="bottom" id="lhq-Pe-cUb"/>
-                            <constraint firstItem="XQT-pR-N5w" firstAttribute="top" secondItem="6kC-Ni-WT1" secondAttribute="bottom" id="u76-3Q-qYr"/>
+                            <constraint firstAttribute="trailing" secondItem="X5f-Dr-8Hv" secondAttribute="trailing" id="qXZ-6a-18r"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="ContentScrollView" destination="z8h-2y-9eu" id="4ei-cr-1av"/>
-                        <outlet property="HeadView" destination="6kC-Ni-WT1" id="80a-aW-gu8"/>
+                        <outlet property="HeadView" destination="X5f-Dr-8Hv" id="lHM-VO-W78"/>
                         <outlet property="allButton" destination="dUw-cH-Hzp" id="3b0-Yr-yLX"/>
                         <outlet property="answerButton" destination="W3E-vw-7rG" id="aQF-LK-KEW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5Za-DS-dr0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="105" y="1082"/>
+            <point key="canvasLocation" x="-44" y="981"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="titleBG" width="667" height="667"/>
+    </resources>
 </document>

@@ -29,6 +29,17 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+//    // 0.navBar设置为全透明的
+//    UIImage * image = [[UIImage alloc]init];
+//    [self.navigationController.navigationBar setBackgroundImage:image forBarMetrics:UIBarMetricsDefault];
+//    self.navigationController.navigationBar.barStyle = UIBarStyleBlackOpaque;
+//    
+//    //去横线去阴影的方法
+//    if ([self.navigationController.navigationBar respondsToSelector:@selector(shadowImage)])
+//    {
+//        [self.navigationController.navigationBar setShadowImage:[[UIImage alloc]init]];
+//    }
+    
 
     // 1.headtitle的初始化
     [self initWithHeadTitleView];
@@ -48,18 +59,7 @@
     // 5.默认的 全部按钮是选中的状态
     self.allButton.selected = YES;
     
-    // 6.navBar设置为全透明的
-    UIImage * image = [[UIImage alloc]init];
-    [self.navigationController.navigationBar setBackgroundImage:image forBarMetrics:UIBarMetricsDefault];
-    self.navigationController.navigationBar.barStyle = UIBarStyleBlackOpaque;
-    
-    //去横线去阴影的方法
-    if ([self.navigationController.navigationBar respondsToSelector:@selector(shadowImage)])
-    {
-        [self.navigationController.navigationBar setShadowImage:[[UIImage alloc]init]];
-    }
-
-    // 7.添加返回按钮组
+    // 6.添加返回按钮组
     UIButton * button = [UIButton buttonWithType:UIButtonTypeCustom];
     //button
     button.backgroundColor = [UIColor clearColor];//设置透明
@@ -77,10 +77,10 @@
     // rightImage.backgroundColor = [UIColor grayColor];
     
     UIBarButtonItem * rightImageItem = [[UIBarButtonItem alloc]initWithCustomView:rightImage];
-    
     self.navigationItem.leftBarButtonItems = @[rightImageItem,rightItem,];
 
-    
+    // 7.偏移的属性
+//    self.automaticallyAdjustsScrollViewInsets = NO;
 
 
 }

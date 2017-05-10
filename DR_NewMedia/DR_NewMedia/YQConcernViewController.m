@@ -73,6 +73,9 @@
 
     // 8.接受通知
     [self abserverAllNoties];
+    
+    
+    
 }
 
 #pragma mark --------添加子控制器------
