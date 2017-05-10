@@ -11,6 +11,8 @@ const CGFloat YQswitchViewHeight = 80;
 //通知
 NSString *const YQbackGroundChange = @"backGroundChangeNotification";
 NSString *const YQCollocationRoomChildViewClose = @"CollocationRoomChildViewCloseNotification";
+NSString *const YQContentTabelViewClicked = @"ContentTabelViewClicked";
+NSString *const YQHomeContentTabelViewClicked = @"HomeContentTabelViewClicked";
 
 //key
 NSString *const YQpictureName = @"pictureNameKey";

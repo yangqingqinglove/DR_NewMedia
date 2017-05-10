@@ -15,3 +15,7 @@ UIKIT_EXTERN NSString *const YQbackGroundChange;
 UIKIT_EXTERN NSString *const YQpictureName;
 
 UIKIT_EXTERN NSString *const YQCollocationRoomChildViewClose;
+
+UIKIT_EXTERN NSString *const YQContentTabelViewClicked;
+
+UIKIT_EXTERN NSString *const YQHomeContentTabelViewClicked;

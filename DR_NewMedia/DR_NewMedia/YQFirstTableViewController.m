@@ -32,7 +32,6 @@ static NSString * cellID = @"cell";
     return 20;
 }
 
-
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellID forIndexPath:indexPath];
@@ -41,6 +40,12 @@ static NSString * cellID = @"cell";
     cell.detailTextLabel.text = @"----详情界面的展示啦....";
     
     return cell;
+    
+}
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+
+    [YQNoteCenter postNotificationName:YQHomeContentTabelViewClicked object:nil userInfo:nil];
     
 }
 

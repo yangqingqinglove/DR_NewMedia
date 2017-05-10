@@ -264,6 +264,8 @@
 		2FA295971EC0662000F5660C /* YQMineHead.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2FA295961EC0662000F5660C /* YQMineHead.xib */; };
 		2FA2959A1EC06F7500F5660C /* YQStaticTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA295991EC06F7500F5660C /* YQStaticTableViewController.m */; };
 		2FA2959C1EC0706800F5660C /* YQStaticTV.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2FA2959B1EC0706800F5660C /* YQStaticTV.storyboard */; };
+		2FA71A421EC2FC7000702898 /* YQHomeContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA71A411EC2FC7000702898 /* YQHomeContentView.m */; };
+		2FA71A441EC2FCBE00702898 /* YQHomeContent.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2FA71A431EC2FCBE00702898 /* YQHomeContent.storyboard */; };
 		2FF1C8A31EB0A0C200A6EF5B /* UIView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FF1C8A01EB0A0C200A6EF5B /* UIView+Extension.m */; };
 		2FF1C8A41EB0A0C200A6EF5B /* YQconstTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FF1C8A21EB0A0C200A6EF5B /* YQconstTools.m */; };
 		2FF1C8A71EB0A31100A6EF5B /* MBProgressHUD+CZ.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FF1C8A61EB0A31100A6EF5B /* MBProgressHUD+CZ.m */; };
@@ -565,6 +567,9 @@
 		2FA295981EC06F7500F5660C /* YQStaticTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YQStaticTableViewController.h; sourceTree = "<group>"; };
 		2FA295991EC06F7500F5660C /* YQStaticTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YQStaticTableViewController.m; sourceTree = "<group>"; };
 		2FA2959B1EC0706800F5660C /* YQStaticTV.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = YQStaticTV.storyboard; sourceTree = "<group>"; };
+		2FA71A401EC2FC7000702898 /* YQHomeContentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YQHomeContentView.h; sourceTree = "<group>"; };
+		2FA71A411EC2FC7000702898 /* YQHomeContentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YQHomeContentView.m; sourceTree = "<group>"; };
+		2FA71A431EC2FCBE00702898 /* YQHomeContent.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = YQHomeContent.storyboard; sourceTree = "<group>"; };
 		2FF1C89E1EB0A04100A6EF5B /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		2FF1C89F1EB0A0C200A6EF5B /* UIView+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Extension.h"; sourceTree = "<group>"; };
 		2FF1C8A01EB0A0C200A6EF5B /* UIView+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Extension.m"; sourceTree = "<group>"; };
@@ -1025,6 +1030,9 @@
 				2F8966F31EA4F66400A1F697 /* YQHomeViewController.m */,
 				2F4FA5ED1EA5EC8800E6E25F /* YQFirstTableViewController.h */,
 				2F4FA5EE1EA5EC8800E6E25F /* YQFirstTableViewController.m */,
+				2FA71A401EC2FC7000702898 /* YQHomeContentView.h */,
+				2FA71A411EC2FC7000702898 /* YQHomeContentView.m */,
+				2FA71A431EC2FCBE00702898 /* YQHomeContent.storyboard */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -1410,6 +1418,7 @@
 				2F7220741EB2D0680011C8D3 /* ku170427_30000036_260.png in Resources */,
 				2F7220661EB2D0680011C8D3 /* ku170427_30000036_130.png in Resources */,
 				2F8967051EA4FA7700A1F697 /* YQTableViewCell.xib in Resources */,
+				2FA71A441EC2FCBE00702898 /* YQHomeContent.storyboard in Resources */,
 				2F72204C1EB2D0680011C8D3 /* yi170427_40000036_220.png in Resources */,
 				2F78E8871EB9DFE500A47564 /* YQHeadTitle.xib in Resources */,
 				2F89669E1EA497FA00A1F697 /* Assets.xcassets in Resources */,
@@ -1527,6 +1536,7 @@
 				2F6E217E1EC1CDFC003A23D2 /* YQConcerFirstTableViewController.m in Sources */,
 				2FA295951EC065FD00F5660C /* YQMineHeadView.m in Sources */,
 				2F4FA5B51EA5C3E800E6E25F /* TADotView.m in Sources */,
+				2FA71A421EC2FC7000702898 /* YQHomeContentView.m in Sources */,
 				2F4FA5B41EA5C3E800E6E25F /* TAAnimatedDotView.m in Sources */,
 				2FA295921EC05D5300F5660C /* YQMineViewController.m in Sources */,
 				2F4FA5B91EA5C3E800E6E25F /* UIView+SDExtension.m in Sources */,

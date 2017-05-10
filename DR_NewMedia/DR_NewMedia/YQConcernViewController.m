@@ -21,7 +21,6 @@
 @property(nonatomic,strong)UIButton * currentButton;
 
 
-
 @end
 
 @implementation YQConcernViewController
@@ -73,7 +72,6 @@
 
     // 8.接受通知
     [self abserverAllNoties];
-    
     
     
 }
@@ -203,9 +201,8 @@
 
 #pragma mark - 接受所有通知的方法
 -(void)abserverAllNoties{
-    
 
-    [YQNoteCenter addObserver:self selector:@selector(pushDetailView) name:@"contentTabelViewClicked" object:nil];
+    [YQNoteCenter addObserver:self selector:@selector(pushDetailView) name:YQContentTabelViewClicked object:nil];
 
 }
 

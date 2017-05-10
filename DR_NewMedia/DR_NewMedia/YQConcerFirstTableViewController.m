@@ -41,7 +41,7 @@ static NSString * ID = @"detailCell";
 #pragma mark - tabelView的代理方法
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     //弹出详情控制器
-    [YQNoteCenter postNotificationName:@"contentTabelViewClicked" object:nil userInfo:nil];
+    [YQNoteCenter postNotificationName:YQContentTabelViewClicked object:nil userInfo:nil];
     
     
 

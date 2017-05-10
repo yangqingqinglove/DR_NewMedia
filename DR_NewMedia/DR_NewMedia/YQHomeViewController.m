@@ -21,6 +21,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
     // 1.添加子控制器
     [self setupChildVces];
     
@@ -72,8 +73,10 @@
     // rightImage.backgroundColor = [UIColor grayColor];
     
     UIBarButtonItem * rightImageItem = [[UIBarButtonItem alloc]initWithCustomView:rightImage];
-    
     self.navigationItem.rightBarButtonItems = @[rightImageItem,rightItem,];
+    
+    // 6.接受通知
+    [self abserverAllNoties];
     
 }
 
@@ -222,6 +225,30 @@
 
 
 }
+
+#pragma mark - 接受通知的方法
+-(void)abserverAllNoties{
+    
+    [YQNoteCenter addObserver:self selector:@selector(pushHomeContentVC) name:YQHomeContentTabelViewClicked object:nil];
+}
+
+#pragma mark - 通知执行的方法
+-(void)pushHomeContentVC{
+    
+    UIStoryboard * sb = [UIStoryboard storyboardWithName:@"YQHomeContent" bundle:nil];
+    UIViewController * vc = [sb instantiateInitialViewController];
+    
+    [self.navigationController pushViewController:vc animated:YES];
+    
+}
+
+#pragma mark - dealloc方法
+-(void)dealloc{
+    
+    [YQNoteCenter removeObserver:self];
+
+}
+
 
 
 @end
