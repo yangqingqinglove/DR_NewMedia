@@ -67,7 +67,7 @@
     
     UIBarButtonItem * rightItem = [[UIBarButtonItem alloc]initWithCustomView:button];
     
-    UIImageView * rightImage = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"下.png"]];
+    UIImageView * rightImage = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"定位.png"]];
     rightImage.bounds = CGRectMake(0, 0, 25, 25);
     // rightImage.backgroundColor = [UIColor grayColor];
     
@@ -134,6 +134,7 @@
     CGFloat titlesContentW = count * labelW;
     self.titleScrollView.contentSize = CGSizeMake(titlesContentW, 0);
 }
+
 
 -(void)bottonDidClicked:(UIButton *)btn{
 
@@ -214,6 +215,7 @@
     [self.titleScrollView scrollToRate:(self.contentScrollView.contentOffset.x / self.contentScrollView.frame.size.width)];
 
 }
+
 
 #pragma mark - rightBarClick方法
 -(void)rightBarButtonClicked:(UIButton *)btn{

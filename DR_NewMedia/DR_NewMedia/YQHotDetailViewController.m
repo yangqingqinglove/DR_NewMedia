@@ -47,6 +47,40 @@
     
     // 5.默认的 全部按钮是选中的状态
     self.allButton.selected = YES;
+    
+    // 6.navBar设置为全透明的
+    UIImage * image = [[UIImage alloc]init];
+    [self.navigationController.navigationBar setBackgroundImage:image forBarMetrics:UIBarMetricsDefault];
+    self.navigationController.navigationBar.barStyle = UIBarStyleBlackOpaque;
+    
+    //去横线去阴影的方法
+    if ([self.navigationController.navigationBar respondsToSelector:@selector(shadowImage)])
+    {
+        [self.navigationController.navigationBar setShadowImage:[[UIImage alloc]init]];
+    }
+
+    // 7.添加返回按钮组
+    UIButton * button = [UIButton buttonWithType:UIButtonTypeCustom];
+    //button
+    button.backgroundColor = [UIColor clearColor];//设置透明
+    button.bounds = CGRectMake(0, 0, 40, 20);
+    [button setTitle:@"返回" forState:UIControlStateNormal];
+    [button setTitleColor:[UIColor colorWithRed:55.0/255.0 green:85.0/255.0 blue:166.0/255.0 alpha:1] forState:UIControlStateNormal];
+    
+    button.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
+    [button addTarget:self action:@selector(leftBarButtonClicked) forControlEvents:UIControlEventTouchUpInside];
+    
+    UIBarButtonItem * rightItem = [[UIBarButtonItem alloc]initWithCustomView:button];
+    
+    UIImageView * rightImage = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"左.png"]];
+    rightImage.bounds = CGRectMake(0, 0, 15, 15);
+    // rightImage.backgroundColor = [UIColor grayColor];
+    
+    UIBarButtonItem * rightImageItem = [[UIBarButtonItem alloc]initWithCustomView:rightImage];
+    
+    self.navigationItem.leftBarButtonItems = @[rightImageItem,rightItem,];
+
+    
 
 
 }
@@ -157,6 +191,14 @@
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView
 {
     [self scrollViewDidEndScrollingAnimation:scrollView];
+}
+
+
+#pragma mark - dismissVC方法
+-(void)leftBarButtonClicked{
+
+    [self.navigationController popViewControllerAnimated:YES];
+
 }
 
 

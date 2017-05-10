@@ -16,8 +16,12 @@
         
         self.titleLabel.textAlignment = NSTextAlignmentNatural;
         self.titleLabel.font = [UIFont systemFontOfSize:17];
-        self.titleLabel.textColor = [UIColor whiteColor];
-        self.backgroundColor = [UIColor grayColor];
+        [self setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+        [self setTitleColor:[UIColor blueColor] forState:UIControlStateSelected];
+//        UIImage * image = [UIImage imageNamed:@"buttonSelect"];
+//        [self setBackgroundImage:image forState:UIControlStateSelected];
+        
+        [self setBackgroundColor:[UIColor clearColor]];
         self.userInteractionEnabled = YES;
     
     }
