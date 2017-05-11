@@ -13,9 +13,11 @@ NSString *const YQbackGroundChange = @"backGroundChangeNotification";
 NSString *const YQCollocationRoomChildViewClose = @"CollocationRoomChildViewCloseNotification";
 NSString *const YQContentTabelViewClicked = @"ContentTabelViewClicked";
 NSString *const YQHomeContentTabelViewClicked = @"HomeContentTabelViewClicked";
+NSString *const YQSystemSettingPushController = @"SystemSettingPushControllerNotification";
 
 //key
 NSString *const YQpictureName = @"pictureNameKey";
+NSString *const YQSettingTitileKey = @"SettingTitileKey";
 
 
 //设置定义的x轴反向上的物理尺寸和像素尺寸的全局的宏

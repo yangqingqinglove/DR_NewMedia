@@ -27,6 +27,7 @@
 @implementation YQMineViewController
 
 - (void)viewDidLoad {
+    
     [super viewDidLoad];
     // 1.nav控制器要求实现的是透明
     UIImage * image = [[UIImage alloc]init];
@@ -46,6 +47,9 @@
     
     // 3.加载静态单元cell
     [self initStaticTableView];
+    
+    // 4.接受通知
+    [self abserverAllNoties];
 
 }
 
@@ -77,6 +81,31 @@
     }];
     
     
+}
+
+
+#pragma mark - 接受所有通知的方法
+-(void)abserverAllNoties{
+    
+    [YQNoteCenter addObserver:self selector:@selector(pushDetailView) name:YQSystemSettingPushController object:nil];
+    
+}
+
+#pragma mark - 通知执行的方法
+-(void)pushDetailView{
+    
+    UIStoryboard * sb = [UIStoryboard storyboardWithName:@"YQSystemSetting" bundle:nil];
+    UIViewController * vc = [sb instantiateInitialViewController];
+    
+    [self.navigationController pushViewController:vc animated:YES];
+    
+}
+
+
+#pragma mark --------dealloc------
+-(void)dealloc{
+    
+    [YQNoteCenter removeObserver:self];
 }
 
 

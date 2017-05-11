@@ -9,6 +9,12 @@
 #import "YQStaticTableViewController.h"
 
 @interface YQStaticTableViewController ()
+@property (weak, nonatomic) IBOutlet UILabel *historyLable;
+@property (weak, nonatomic) IBOutlet UILabel *messageLable;
+@property (weak, nonatomic) IBOutlet UILabel *opinionLable;
+
+@property (weak, nonatomic) IBOutlet UILabel *systemLable;
+
 
 @end
 
@@ -17,13 +23,57 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
     
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    
 }
 
+#pragma mark - tabelView的代理方法
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    if(indexPath.section == 0){
+        
+        switch (indexPath.row) {
+            case 0:{//历史足迹的通知
+                
+                
+                break;
+            }
+                
+            case 1:{//消息通知
+                
+                
+                break;
+            }
+                
+            default:
+                break;
+        }
+    
+    }else if (indexPath.section == 1){
+        
+        switch (indexPath.row) {
+            case 0:{//意见反馈的通知
+                
+                
+                break;
+            }
+                
+            case 1:{//发送系统设置的通知
+                [YQNoteCenter postNotificationName:YQSystemSettingPushController object:nil userInfo:nil];
+                
+                break;
+            }
+                
+            default:
+                break;
+        }
+
+    }else{//退出当前的帐号的功能---> 要求的弹出的是登录的界面
+    
+    
+    }
+
+}
 
 
 @end

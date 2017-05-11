@@ -19,3 +19,7 @@ UIKIT_EXTERN NSString *const YQCollocationRoomChildViewClose;
 UIKIT_EXTERN NSString *const YQContentTabelViewClicked;
 
 UIKIT_EXTERN NSString *const YQHomeContentTabelViewClicked;
+
+UIKIT_EXTERN NSString *const YQSystemSettingPushController;
+
+UIKIT_EXTERN NSString *const YQSettingTitileKey;
