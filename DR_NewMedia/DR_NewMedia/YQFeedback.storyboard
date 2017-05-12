@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Ucl-a7-xfL">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -9,10 +9,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Record MessageVC-->
+        <!--FeedbackVC-->
         <scene sceneID="hEy-45-DqG">
             <objects>
-                <viewController id="Ucl-a7-xfL" customClass="YQRecordMessageVC" sceneMemberID="viewController">
+                <viewController id="Ucl-a7-xfL" customClass="YQFeedbackVC" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="75M-UO-DkM"/>
                         <viewControllerLayoutGuide type="bottom" id="mAv-0g-Tde"/>
@@ -40,6 +40,9 @@
                                         <state key="normal" title="我的意见">
                                             <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                         </state>
+                                        <connections>
+                                            <action selector="myOpinionButtonClicked:" destination="Ucl-a7-xfL" eventType="touchUpInside" id="19A-5G-q0m"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LBQ-67-Xe4">
                                         <rect key="frame" x="100" y="0.0" width="100" height="40"/>
@@ -50,6 +53,9 @@
                                         <state key="normal" title="常见问题">
                                             <color key="titleColor" red="1" green="0.0" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="problemButtonClicked:" destination="Ucl-a7-xfL" eventType="touchUpInside" id="TmY-PV-DJN"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -65,6 +71,10 @@
                             </view>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WAE-sD-yhA">
                                 <rect key="frame" x="0.0" y="104" width="375" height="563"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="delegate" destination="Ucl-a7-xfL" id="B67-Ep-gN6"/>
+                                </connections>
                             </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -72,19 +82,23 @@
                             <constraint firstItem="cZF-Le-Vov" firstAttribute="leading" secondItem="Jqc-PW-Get" secondAttribute="leading" id="2SD-7V-zGc"/>
                             <constraint firstAttribute="trailing" secondItem="WAE-sD-yhA" secondAttribute="trailing" id="6mV-Mo-51G"/>
                             <constraint firstItem="WAE-sD-yhA" firstAttribute="top" secondItem="4dc-JZ-tnx" secondAttribute="bottom" id="DUW-5s-m3A"/>
+                            <constraint firstItem="cZF-Le-Vov" firstAttribute="top" secondItem="Jqc-PW-Get" secondAttribute="top" id="eml-eW-Aoa"/>
                             <constraint firstAttribute="trailing" secondItem="4dc-JZ-tnx" secondAttribute="trailing" id="geN-JW-fAZ"/>
                             <constraint firstItem="4dc-JZ-tnx" firstAttribute="leading" secondItem="Jqc-PW-Get" secondAttribute="leading" id="hwI-TK-AEX"/>
                             <constraint firstItem="WAE-sD-yhA" firstAttribute="leading" secondItem="Jqc-PW-Get" secondAttribute="leading" id="kxt-9P-222"/>
                             <constraint firstItem="mAv-0g-Tde" firstAttribute="top" secondItem="WAE-sD-yhA" secondAttribute="bottom" id="oUq-x9-7FT"/>
                             <constraint firstAttribute="trailing" secondItem="cZF-Le-Vov" secondAttribute="trailing" id="rhv-WR-zph"/>
-                            <constraint firstItem="cZF-Le-Vov" firstAttribute="top" secondItem="75M-UO-DkM" secondAttribute="bottom" constant="-20" id="sVc-Sg-pLY"/>
                             <constraint firstItem="4dc-JZ-tnx" firstAttribute="top" secondItem="cZF-Le-Vov" secondAttribute="bottom" id="vVq-Qd-KH4"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="myOpinionButton" destination="dze-hE-IF0" id="HWq-z6-COU"/>
+                        <outlet property="problemButton" destination="LBQ-67-Xe4" id="xER-qy-iPM"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WKk-dz-QO2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="18" y="973"/>
+            <point key="canvasLocation" x="-492" y="1098"/>
         </scene>
     </scenes>
 </document>

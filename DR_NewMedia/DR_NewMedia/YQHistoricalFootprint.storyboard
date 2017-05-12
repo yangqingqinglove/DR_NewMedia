@@ -38,8 +38,11 @@
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                         <state key="normal" title="阅读足迹">
-                                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="titleColor" red="1" green="0.0" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="readButtonClicked:" destination="s5t-X1-gcU" eventType="touchUpInside" id="SAJ-Gr-RnH"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="psF-BM-phZ">
                                         <rect key="frame" x="90" y="0.0" width="90" height="40"/>
@@ -48,8 +51,11 @@
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                         <state key="normal" title="分享足迹">
-                                            <color key="titleColor" red="1" green="0.0" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="shareButtonClicked:" destination="s5t-X1-gcU" eventType="touchUpInside" id="pUe-we-7Rs"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -65,12 +71,15 @@
                             </view>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l2g-Z6-8j5">
                                 <rect key="frame" x="0.0" y="104" width="375" height="563"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="delegate" destination="s5t-X1-gcU" id="cLg-Om-Uuu"/>
+                                </connections>
                             </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="l2g-Z6-8j5" firstAttribute="leading" secondItem="Jua-A5-w9v" secondAttribute="leading" id="2sG-xr-xyU"/>
-                            <constraint firstItem="0QZ-eK-hHH" firstAttribute="top" secondItem="vi9-EO-gvb" secondAttribute="bottom" constant="-20" id="3c8-mf-mHw"/>
                             <constraint firstItem="kbl-O0-Wah" firstAttribute="top" secondItem="l2g-Z6-8j5" secondAttribute="bottom" id="CbS-GJ-Fvi"/>
                             <constraint firstAttribute="trailing" secondItem="l2g-Z6-8j5" secondAttribute="trailing" id="Mu8-3A-R21"/>
                             <constraint firstItem="5Uk-bj-QdM" firstAttribute="leading" secondItem="Jua-A5-w9v" secondAttribute="leading" id="PmV-hN-JM8"/>
@@ -78,13 +87,19 @@
                             <constraint firstItem="0QZ-eK-hHH" firstAttribute="leading" secondItem="Jua-A5-w9v" secondAttribute="leading" id="XX3-Wi-yQW"/>
                             <constraint firstItem="5Uk-bj-QdM" firstAttribute="top" secondItem="0QZ-eK-hHH" secondAttribute="bottom" id="k8w-rX-X72"/>
                             <constraint firstAttribute="trailing" secondItem="0QZ-eK-hHH" secondAttribute="trailing" id="kTe-iJ-imz"/>
+                            <constraint firstItem="0QZ-eK-hHH" firstAttribute="top" secondItem="Jua-A5-w9v" secondAttribute="top" id="rxy-9i-hRs"/>
                             <constraint firstAttribute="trailing" secondItem="5Uk-bj-QdM" secondAttribute="trailing" id="tfh-L3-1Eb"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="contentScrollView" destination="l2g-Z6-8j5" id="VF3-DY-fuz"/>
+                        <outlet property="readButton" destination="Dwp-nv-W8W" id="bK1-EJ-VhX"/>
+                        <outlet property="shareButton" destination="psF-BM-phZ" id="XcD-wu-lxU"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="M9N-ea-maZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="18" y="973"/>
+            <point key="canvasLocation" x="-801" y="1015"/>
         </scene>
     </scenes>
 </document>

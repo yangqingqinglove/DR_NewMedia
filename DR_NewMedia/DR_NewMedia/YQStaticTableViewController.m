@@ -35,13 +35,13 @@
         switch (indexPath.row) {
             case 0:{//历史足迹的通知
                 
-                
+                [YQNoteCenter postNotificationName:YQPushChildsViewController object:nil userInfo:@{YQPushChlidsVCTitileKey:@"YQHistoricalFootprint"}];
                 break;
             }
                 
             case 1:{//消息通知
                 
-                
+                 [YQNoteCenter postNotificationName:YQPushChildsViewController object:nil userInfo:@{YQPushChlidsVCTitileKey:@"YQRecordMessage"}];
                 break;
             }
                 
@@ -59,7 +59,7 @@
             }
                 
             case 1:{//发送系统设置的通知
-                [YQNoteCenter postNotificationName:YQSystemSettingPushController object:nil userInfo:nil];
+                [YQNoteCenter postNotificationName:YQPushChildsViewController object:nil userInfo:@{YQPushChlidsVCTitileKey:@"YQSystemSetting"}];
                 
                 break;
             }

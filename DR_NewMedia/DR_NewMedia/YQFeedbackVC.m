@@ -12,6 +12,11 @@
 
 @interface YQFeedbackVC ()
 
+@property (weak, nonatomic) IBOutlet UIButton *myOpinionButton;
+
+@property (weak, nonatomic) IBOutlet UIButton *problemButton;
+
+
 @end
 
 @implementation YQFeedbackVC
@@ -22,6 +27,14 @@
 }
 
 
+- (IBAction)myOpinionButtonClicked:(UIButton *)sender {
+    
+    
+}
 
+- (IBAction)problemButtonClicked:(UIButton *)sender {
+    
+    
+}
 
 @end

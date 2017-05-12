@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="eXL-jB-3w1">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -40,6 +40,9 @@
                                         <state key="normal" title="评论">
                                             <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                         </state>
+                                        <connections>
+                                            <action selector="commentButtonClicked:" destination="eXL-jB-3w1" eventType="touchUpInside" id="U0a-pC-b5T"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" tag="1" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UJr-Ig-WKM">
                                         <rect key="frame" x="79" y="0.0" width="80" height="40"/>
@@ -50,6 +53,9 @@
                                         <state key="normal" title="赞">
                                             <color key="titleColor" red="1" green="0.0" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="agreeButtonClicked:" destination="eXL-jB-3w1" eventType="touchUpInside" id="aIy-OM-iL5"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -65,22 +71,31 @@
                             </view>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G23-gr-Fww">
                                 <rect key="frame" x="0.0" y="104" width="375" height="563"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="delegate" destination="eXL-jB-3w1" id="k5X-4u-EGq"/>
+                                </connections>
                             </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="WxG-9H-OMY" firstAttribute="top" secondItem="nQ1-Gv-BV8" secondAttribute="bottom" constant="-20" id="5lk-A3-2Uu"/>
                             <constraint firstAttribute="trailing" secondItem="WxG-9H-OMY" secondAttribute="trailing" id="BDC-T5-8JZ"/>
                             <constraint firstItem="bYn-ZG-hHH" firstAttribute="top" secondItem="G23-gr-Fww" secondAttribute="bottom" id="HEc-r8-5U8"/>
                             <constraint firstItem="WxG-9H-OMY" firstAttribute="leading" secondItem="R06-On-qKJ" secondAttribute="leading" id="INp-eb-VMQ"/>
                             <constraint firstItem="wA3-AM-Sgb" firstAttribute="leading" secondItem="R06-On-qKJ" secondAttribute="leading" id="R1i-zR-ICC"/>
                             <constraint firstAttribute="trailing" secondItem="G23-gr-Fww" secondAttribute="trailing" id="Vxk-i0-5hE"/>
+                            <constraint firstItem="WxG-9H-OMY" firstAttribute="top" secondItem="R06-On-qKJ" secondAttribute="top" id="hFM-f5-5HU"/>
                             <constraint firstItem="wA3-AM-Sgb" firstAttribute="top" secondItem="WxG-9H-OMY" secondAttribute="bottom" id="k6g-MD-iuG"/>
                             <constraint firstAttribute="trailing" secondItem="wA3-AM-Sgb" secondAttribute="trailing" id="nv2-JU-jNm"/>
                             <constraint firstItem="G23-gr-Fww" firstAttribute="leading" secondItem="R06-On-qKJ" secondAttribute="leading" id="pW9-Zn-GIc"/>
                             <constraint firstItem="G23-gr-Fww" firstAttribute="top" secondItem="wA3-AM-Sgb" secondAttribute="bottom" id="xVK-j8-qeB"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="agreeButton" destination="UJr-Ig-WKM" id="1Cc-5U-RXR"/>
+                        <outlet property="commentButton" destination="JWc-VI-Ehp" id="NYS-eo-Ty9"/>
+                        <outlet property="contentScrollView" destination="G23-gr-Fww" id="pyK-SL-LVy"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ELW-BX-KCa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

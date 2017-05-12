@@ -80,7 +80,7 @@
     self.navigationItem.leftBarButtonItems = @[rightImageItem,rightItem,];
 
     // 7.偏移的属性
-//    self.automaticallyAdjustsScrollViewInsets = NO;
+    self.automaticallyAdjustsScrollViewInsets = NO;
 
 
 }

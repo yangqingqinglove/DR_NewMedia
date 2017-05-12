@@ -87,16 +87,16 @@
 #pragma mark - 接受所有通知的方法
 -(void)abserverAllNoties{
     
-    [YQNoteCenter addObserver:self selector:@selector(pushDetailView) name:YQSystemSettingPushController object:nil];
-    
+    [YQNoteCenter addObserver:self selector:@selector(pushDetailView:) name:YQPushChildsViewController object:nil];
 }
 
 #pragma mark - 通知执行的方法
--(void)pushDetailView{
+-(void)pushDetailView:(NSNotification *)notes{
     
-    UIStoryboard * sb = [UIStoryboard storyboardWithName:@"YQSystemSetting" bundle:nil];
+    NSString * VCName = notes.userInfo[YQPushChlidsVCTitileKey];
+    
+    UIStoryboard * sb = [UIStoryboard storyboardWithName:VCName bundle:nil];
     UIViewController * vc = [sb instantiateInitialViewController];
-    
     [self.navigationController pushViewController:vc animated:YES];
     
 }

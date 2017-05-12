@@ -20,6 +20,8 @@ UIKIT_EXTERN NSString *const YQContentTabelViewClicked;
 
 UIKIT_EXTERN NSString *const YQHomeContentTabelViewClicked;
 
-UIKIT_EXTERN NSString *const YQSystemSettingPushController;
+UIKIT_EXTERN NSString *const YQPushChildsViewController;
 
 UIKIT_EXTERN NSString *const YQSettingTitileKey;
+
+UIKIT_EXTERN NSString *const YQPushChlidsVCTitileKey;
