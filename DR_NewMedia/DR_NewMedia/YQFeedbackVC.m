@@ -83,11 +83,11 @@
 - (void)setupChildVces
 {
     YQFeedbackTableViewController *vc01 = [[YQFeedbackTableViewController alloc] init];
-    vc01.title = @"评论";
+    vc01.title = @"我的意见";
     [self addChildViewController:vc01];
     
     YQFeedbackTableViewController *vc02 = [[YQFeedbackTableViewController alloc] init];
-    vc02.title = @"赞";
+    vc02.title = @"常见问题";
     [self addChildViewController:vc02];
     
 }

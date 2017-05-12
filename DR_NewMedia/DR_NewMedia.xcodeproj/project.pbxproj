@@ -289,6 +289,9 @@
 		2FABE2981EC555E80057995D /* YQHistoricalTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FABE2971EC555E80057995D /* YQHistoricalTableViewController.m */; };
 		2FABE29B1EC567FD0057995D /* YQMessageTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FABE29A1EC567FD0057995D /* YQMessageTableViewController.m */; };
 		2FABE29E1EC58D450057995D /* YQFeedbackTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FABE29D1EC58D450057995D /* YQFeedbackTableViewController.m */; };
+		2FABE2A61EC5A2AA0057995D /* City.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FABE2A21EC5A2AA0057995D /* City.m */; };
+		2FABE2A71EC5A2AA0057995D /* citydict.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2FABE2A31EC5A2AA0057995D /* citydict.plist */; };
+		2FABE2A81EC5A2AA0057995D /* CityListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FABE2A51EC5A2AA0057995D /* CityListViewController.m */; };
 		2FF1C8A31EB0A0C200A6EF5B /* UIView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FF1C8A01EB0A0C200A6EF5B /* UIView+Extension.m */; };
 		2FF1C8A41EB0A0C200A6EF5B /* YQconstTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FF1C8A21EB0A0C200A6EF5B /* YQconstTools.m */; };
 		2FF1C8A71EB0A31100A6EF5B /* MBProgressHUD+CZ.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FF1C8A61EB0A31100A6EF5B /* MBProgressHUD+CZ.m */; };
@@ -629,6 +632,11 @@
 		2FABE29A1EC567FD0057995D /* YQMessageTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YQMessageTableViewController.m; sourceTree = "<group>"; };
 		2FABE29C1EC58D450057995D /* YQFeedbackTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YQFeedbackTableViewController.h; sourceTree = "<group>"; };
 		2FABE29D1EC58D450057995D /* YQFeedbackTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YQFeedbackTableViewController.m; sourceTree = "<group>"; };
+		2FABE2A11EC5A2AA0057995D /* City.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = City.h; sourceTree = "<group>"; };
+		2FABE2A21EC5A2AA0057995D /* City.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = City.m; sourceTree = "<group>"; };
+		2FABE2A31EC5A2AA0057995D /* citydict.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = citydict.plist; sourceTree = "<group>"; };
+		2FABE2A41EC5A2AA0057995D /* CityListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CityListViewController.h; sourceTree = "<group>"; };
+		2FABE2A51EC5A2AA0057995D /* CityListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CityListViewController.m; sourceTree = "<group>"; };
 		2FF1C89E1EB0A04100A6EF5B /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		2FF1C89F1EB0A0C200A6EF5B /* UIView+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Extension.h"; sourceTree = "<group>"; };
 		2FF1C8A01EB0A0C200A6EF5B /* UIView+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Extension.m"; sourceTree = "<group>"; };
@@ -666,6 +674,7 @@
 		2F4FA5A21EA5C25100E6E25F /* Framework */ = {
 			isa = PBXGroup;
 			children = (
+				2FABE2A01EC5A2AA0057995D /* City */,
 				2F7B8A251EBB0C300085057E /* backdrop */,
 				2F70F38B1EAA109C0012EF8A /* category */,
 				2F4FA5D21EA5E23700E6E25F /* images */,
@@ -1186,6 +1195,7 @@
 		2FA2958D1EC05BB500F5660C /* Mine */ = {
 			isa = PBXGroup;
 			children = (
+				2FABE29F1EC590BD0057995D /* Model */,
 				2FA2958F1EC05CFB00F5660C /* View */,
 				2FA2958E1EC05CB200F5660C /* Controller */,
 			);
@@ -1248,6 +1258,25 @@
 				2FA295961EC0662000F5660C /* YQMineHead.xib */,
 			);
 			name = View;
+			sourceTree = "<group>";
+		};
+		2FABE29F1EC590BD0057995D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		2FABE2A01EC5A2AA0057995D /* City */ = {
+			isa = PBXGroup;
+			children = (
+				2FABE2A11EC5A2AA0057995D /* City.h */,
+				2FABE2A21EC5A2AA0057995D /* City.m */,
+				2FABE2A31EC5A2AA0057995D /* citydict.plist */,
+				2FABE2A41EC5A2AA0057995D /* CityListViewController.h */,
+				2FABE2A51EC5A2AA0057995D /* CityListViewController.m */,
+			);
+			path = City;
 			sourceTree = "<group>";
 		};
 		DAD33F48926D9BE0C15DA6BC /* Frameworks */ = {
@@ -1382,6 +1411,7 @@
 				2F4343561EC4646C00A58352 /* YQHistoricalFootprint.storyboard in Resources */,
 				2F7220441EB2D0680011C8D3 /* yi170427_40000036_150.png in Resources */,
 				2F721FBB1EB2CFA40011C8D3 /* philips_hq6070_240.jpg in Resources */,
+				2FABE2A71EC5A2AA0057995D /* citydict.plist in Resources */,
 				2F7B8A3F1EBB0C300085057E /* backdrop_0012.jpg in Resources */,
 				2F72205F1EB2D0680011C8D3 /* yi170427_40000036_80.png in Resources */,
 				2F7220831EB2D0680011C8D3 /* ku170427_30000036_80.png in Resources */,
@@ -1632,6 +1662,7 @@
 				2F4AB8991EBC7B970059AB90 /* YQSaveFileViewController.m in Sources */,
 				2F4343591EC4670100A58352 /* YQRecordMessageVC.m in Sources */,
 				2F4AB89F1EBC7D8B0059AB90 /* YQSaveFileCell.m in Sources */,
+				2FABE2A81EC5A2AA0057995D /* CityListViewController.m in Sources */,
 				2F7B8A421EBB20D90085057E /* YQBackGroundCollectionCell.m in Sources */,
 				2F43434F1EC442BB00A58352 /* YQAcceptNotiesTableViewController.m in Sources */,
 				2FA2958C1EC03E7300F5660C /* YQConcerAllTableViewController.m in Sources */,
@@ -1654,6 +1685,7 @@
 				2F43433A1EC40E9E00A58352 /* YQEditProfileTableViewController.m in Sources */,
 				2FABE2981EC555E80057995D /* YQHistoricalTableViewController.m in Sources */,
 				2F4FA5B51EA5C3E800E6E25F /* TADotView.m in Sources */,
+				2FABE2A61EC5A2AA0057995D /* City.m in Sources */,
 				2FA71A421EC2FC7000702898 /* YQHomeContentView.m in Sources */,
 				2F4FA5B41EA5C3E800E6E25F /* TAAnimatedDotView.m in Sources */,
 				2FA295921EC05D5300F5660C /* YQMineViewController.m in Sources */,
