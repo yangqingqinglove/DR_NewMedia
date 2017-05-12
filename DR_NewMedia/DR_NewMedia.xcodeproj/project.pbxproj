@@ -288,6 +288,7 @@
 		2FA71A441EC2FCBE00702898 /* YQHomeContent.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2FA71A431EC2FCBE00702898 /* YQHomeContent.storyboard */; };
 		2FABE2981EC555E80057995D /* YQHistoricalTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FABE2971EC555E80057995D /* YQHistoricalTableViewController.m */; };
 		2FABE29B1EC567FD0057995D /* YQMessageTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FABE29A1EC567FD0057995D /* YQMessageTableViewController.m */; };
+		2FABE29E1EC58D450057995D /* YQFeedbackTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FABE29D1EC58D450057995D /* YQFeedbackTableViewController.m */; };
 		2FF1C8A31EB0A0C200A6EF5B /* UIView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FF1C8A01EB0A0C200A6EF5B /* UIView+Extension.m */; };
 		2FF1C8A41EB0A0C200A6EF5B /* YQconstTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FF1C8A21EB0A0C200A6EF5B /* YQconstTools.m */; };
 		2FF1C8A71EB0A31100A6EF5B /* MBProgressHUD+CZ.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FF1C8A61EB0A31100A6EF5B /* MBProgressHUD+CZ.m */; };
@@ -626,6 +627,8 @@
 		2FABE2971EC555E80057995D /* YQHistoricalTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YQHistoricalTableViewController.m; sourceTree = "<group>"; };
 		2FABE2991EC567FD0057995D /* YQMessageTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YQMessageTableViewController.h; sourceTree = "<group>"; };
 		2FABE29A1EC567FD0057995D /* YQMessageTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YQMessageTableViewController.m; sourceTree = "<group>"; };
+		2FABE29C1EC58D450057995D /* YQFeedbackTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YQFeedbackTableViewController.h; sourceTree = "<group>"; };
+		2FABE29D1EC58D450057995D /* YQFeedbackTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YQFeedbackTableViewController.m; sourceTree = "<group>"; };
 		2FF1C89E1EB0A04100A6EF5B /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		2FF1C89F1EB0A0C200A6EF5B /* UIView+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Extension.h"; sourceTree = "<group>"; };
 		2FF1C8A01EB0A0C200A6EF5B /* UIView+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Extension.m"; sourceTree = "<group>"; };
@@ -1231,6 +1234,8 @@
 				2F43435C1EC4687300A58352 /* YQFeedbackVC.h */,
 				2F43435D1EC4687300A58352 /* YQFeedbackVC.m */,
 				2F43435F1EC4689500A58352 /* YQFeedback.storyboard */,
+				2FABE29C1EC58D450057995D /* YQFeedbackTableViewController.h */,
+				2FABE29D1EC58D450057995D /* YQFeedbackTableViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -1640,6 +1645,7 @@
 				2F4343541EC4641F00A58352 /* YQHistoricalFootprintVC.m in Sources */,
 				2F8966F41EA4F66400A1F697 /* YQHomeViewController.m in Sources */,
 				2F0B41DB1EACE9970075CC89 /* YQBackGroundViewController.m in Sources */,
+				2FABE29E1EC58D450057995D /* YQFeedbackTableViewController.m in Sources */,
 				2FABE29B1EC567FD0057995D /* YQMessageTableViewController.m in Sources */,
 				2F43433D1EC4350900A58352 /* YQPhoneTableViewController.m in Sources */,
 				2F70F3851EA9F1610012EF8A /* YQDetailViewController.m in Sources */,

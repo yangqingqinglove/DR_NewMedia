@@ -92,13 +92,14 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="contentScrollView" destination="WAE-sD-yhA" id="vz7-Fj-hRr"/>
                         <outlet property="myOpinionButton" destination="dze-hE-IF0" id="HWq-z6-COU"/>
                         <outlet property="problemButton" destination="LBQ-67-Xe4" id="xER-qy-iPM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WKk-dz-QO2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-492" y="1098"/>
+            <point key="canvasLocation" x="-713" y="1048"/>
         </scene>
     </scenes>
 </document>

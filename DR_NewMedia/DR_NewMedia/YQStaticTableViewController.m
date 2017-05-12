@@ -53,7 +53,7 @@
         
         switch (indexPath.row) {
             case 0:{//意见反馈的通知
-                
+                [YQNoteCenter postNotificationName:YQPushChildsViewController object:nil userInfo:@{YQPushChlidsVCTitileKey:@"YQFeedback"}];
                 
                 break;
             }
