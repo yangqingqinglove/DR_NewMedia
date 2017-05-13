@@ -8,6 +8,7 @@
 
 #import "CityListViewController.h"
 #import "City.h"
+
 @interface CityListViewController ()
 {
     NSDictionary *_cities; // 城市字典
@@ -16,11 +17,22 @@
     NSMutableArray *_cityNames; // 城市名
     NSArray *_filterData; // 搜索结果
     NSArray *_hotCity; // 热门城市
-    UISearchDisplayController *_searchController;
     
+    UISearchDisplayController *_searchController;
 }
 
+@property(nonatomic,copy)NSString * latelyString;
+
+/// 定位bnt
+@property(nonatomic,copy)UIButton * locationBnt;
+
+/// 最近bnt
+@property(nonatomic,copy)UIButton * latelyBnt;
+
+
 @end
+
+
 @implementation CityListViewController
 
 - (void)viewDidLoad {
@@ -32,6 +44,11 @@
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    
+    //接受通知
+    [self abserverAllNoties];
+    
+    
 }
 - (void)loadData
 {
@@ -41,7 +58,9 @@
     _keys = [NSMutableArray arrayWithArray:[[_cities allKeys] sortedArrayUsingSelector:@selector(compare:)]];
     _indexKeys = [NSMutableArray arrayWithArray:_keys];
     [_indexKeys insertObjects:@[@"#",@"$",@"*"] atIndexes:[NSIndexSet indexSetWithIndexesInRange:NSMakeRange(0, 3)]];
+    
     [_keys insertObjects:@[@"定位城市",@"最近访问城市",@"热门城市"] atIndexes:[NSIndexSet indexSetWithIndexesInRange:NSMakeRange(0, 3)]];
+    
     _cityNames = [NSMutableArray array];
     // 获取所有城市名
     for (NSArray *cityArr in [_cities allValues]) {
@@ -198,7 +217,7 @@
 #warning testData
             UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
             btn.frame = CGRectMake(spaceWidth, 10, 80, 40);
-            [btn setTitle:@"深圳市" forState:UIControlStateNormal];
+//            [btn setTitle:self.latelyString  forState:UIControlStateNormal];
             [btn setTitleColor:[UIColor darkGrayColor] forState:UIControlStateNormal];
             btn.layer.borderWidth = 0.5;
             [btn addTarget:self action:@selector(btnClicked:) forControlEvents:UIControlEventTouchUpInside];
@@ -210,7 +229,7 @@
 #warning testData
             UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
             btn.frame = CGRectMake(spaceWidth, 10, 80, 40);
-            [btn setTitle:@"深圳市" forState:UIControlStateNormal];
+//            [btn setTitle:self.latelyString forState:UIControlStateNormal];
             [btn setTitleColor:[UIColor darkGrayColor] forState:UIControlStateNormal];
             btn.layer.borderWidth = 0.5;
             [btn addTarget:self action:@selector(btnClicked:) forControlEvents:UIControlEventTouchUpInside];
@@ -239,8 +258,21 @@
     }
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+#pragma mark - 接受所有通知的方法
+-(void)abserverAllNoties{
+
+    [YQNoteCenter addObserver:self selector:@selector(upDateLocationCity:) name:YQSettingLocationTitileNotification object:nil];
+
 }
+
+-(void)upDateLocationCity:(NSNotification *)notes{
+    
+    self.latelyString = notes.userInfo[YQSettingLocationTitileKey];
+    
+    [self.latelyBnt setTitle:self.latelyString forState:UIControlStateNormal];
+    [self.locationBnt setTitle:self.latelyString forState:UIControlStateNormal];
+    
+}
+
+
 @end

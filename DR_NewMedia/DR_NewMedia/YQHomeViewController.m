@@ -22,7 +22,6 @@
 @property(nonatomic,strong)CLLocationManager * locationManager;
 @property(nonatomic,copy)NSString * currentCity;//当前城市
 
-
 @end
 
 @implementation YQHomeViewController
@@ -267,7 +266,6 @@
         //city
         self.currentCity = [[NSString alloc]init];
         [self.locationManager startUpdatingLocation];
-        
     }
 }
 
@@ -281,6 +279,7 @@
         //打开定位设置
         NSURL *settingsURL = [NSURL URLWithString:UIApplicationOpenSettingsURLString];
         [[UIApplication sharedApplication] openURL:settingsURL];
+        
     }];
     UIAlertAction * cancel = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
         
@@ -321,6 +320,7 @@
             [bnt setTitle:_currentCity forState:UIControlStateNormal];
             [bnt sizeToFit];
             //发送通知给定位的城市来添加
+            [YQNoteCenter postNotificationName:YQSettingLocationTitileNotification object:nil userInfo:@{YQSettingLocationTitileKey:_currentCity}];
             
         }else if (error == nil && placemarks.count == 0) {
             
