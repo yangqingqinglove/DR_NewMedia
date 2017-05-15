@@ -46,7 +46,7 @@ static NSString * cellID = @"cell";
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
 
     [YQNoteCenter postNotificationName:YQHomeContentTabelViewClicked object:nil userInfo:nil];
-    
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
 @end

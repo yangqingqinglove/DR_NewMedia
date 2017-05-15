@@ -42,7 +42,7 @@ static NSString * ID = @"detailCell";
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     //弹出详情控制器
     [YQNoteCenter postNotificationName:YQContentTabelViewClicked object:nil userInfo:nil];
-    
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
 
 }

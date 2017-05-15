@@ -17,5 +17,6 @@ pod ‘SDWebImage’
 pod 'MBProgressHUD'
 
 pod 'LBXScan/LBXZXing','~> 2.0'
+pod 'LBXScan/UI','~> 2.0'
 
 end

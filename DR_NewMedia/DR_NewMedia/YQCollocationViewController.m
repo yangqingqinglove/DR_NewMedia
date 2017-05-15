@@ -25,9 +25,10 @@
 #import "YQImageGroupView.h"
 #import "YQSaveFileViewController.h"
 #import <MBProgressHUD.h>
+#import "QRCodeReaderViewController.h"
 
 
-@interface YQCollocationViewController ()<YQBottomViewClickDeleage,YQTopViewClickDeleate,UICollectionViewDelegate,UICollectionViewDataSource,YQImageGroupViewDelegate,UIImagePickerControllerDelegate,UINavigationControllerDelegate>
+@interface YQCollocationViewController ()<YQBottomViewClickDeleage,YQTopViewClickDeleate,UICollectionViewDelegate,UICollectionViewDataSource,YQImageGroupViewDelegate,UIImagePickerControllerDelegate,UINavigationControllerDelegate,QRCodeReaderDelegate>
 
 //@property (weak, nonatomic) IBOutlet UIView *navBarView;
 
@@ -928,12 +929,36 @@ static NSString * ID = @"imageCell";
 
 }
 
-
 -(void)leftBarButtonClicked:(UIButton *)bnt{//zxing 的二维扫描
+    
+    QRCodeReaderViewController *reader = [QRCodeReaderViewController new];
+    reader.modalPresentationStyle = UIModalPresentationFormSheet;
+    reader.delegate = self;
+    
+    UINavigationController * nav = [[UINavigationController alloc]initWithRootViewController:reader];
+    
+    [self presentViewController:nav animated:YES completion:nil];
+}
+
+#pragma mark - scanResult的代理方法
+#pragma mark - QRCodeReader Delegate Methods
+
+- (void)reader:(QRCodeReaderViewController *)reader didScanResult:(NSString *)result
+{
+    [self dismissViewControllerAnimated:YES completion:^{
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"QRCodeReader" message:result delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+        [alert show];
+    }];
+}
 
 
+- (void)readerDidCancel:(QRCodeReaderViewController *)reader
+{
+    
+    [self dismissViewControllerAnimated:YES completion:nil];
     
 }
+
 
 #pragma mark - 接受所有的通知方法
 -(void)abserverAllNoties{

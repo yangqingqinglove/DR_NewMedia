@@ -1,4 +1,6 @@
 PODS:
+  - LBXScan/LBXZXing (2.0)
+  - LBXScan/UI (2.0)
   - Masonry (1.0.2)
   - MBProgressHUD (1.0.0)
   - SDWebImage (4.0.0):
@@ -6,15 +8,18 @@ PODS:
   - SDWebImage/Core (4.0.0)
 
 DEPENDENCIES:
+  - LBXScan/LBXZXing (~> 2.0)
+  - LBXScan/UI (~> 2.0)
   - Masonry
   - MBProgressHUD
   - SDWebImage
 
 SPEC CHECKSUMS:
+  LBXScan: 458f4b7a6688504a1415dc4a0f9822100e099f66
   Masonry: 7c429b56da9d4ee0bbb3ed77a5ea710d6a5df39e
   MBProgressHUD: 4890f671c94e8a0f3cf959aa731e9de2f036d71a
   SDWebImage: 76a6348bdc74eb5a55dd08a091ef298e56b55e41
 
-PODFILE CHECKSUM: 494c376a8605b2ae98ad10dd17d6946b61934ce1
+PODFILE CHECKSUM: 7876b59508dd77d0dcd3a2f6a90a54edce65ebcc
 
 COCOAPODS: 1.2.1

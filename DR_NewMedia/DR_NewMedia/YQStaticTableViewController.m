@@ -72,6 +72,8 @@
     
     
     }
+    
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
 
 }
 

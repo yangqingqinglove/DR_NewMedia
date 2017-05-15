@@ -4,6 +4,11 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>LBXScan.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>MBProgressHUD.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -27,17 +32,22 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>3487F37BF43A997AE05BF381D3FDBC01</key>
+		<key>25942710E2EA3916202CCEA0DEEABEC2</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>36863793F9E6A1C6A15E88740146F4F7</key>
+		<key>4F34F269176F204A486E722E46BD69F9</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
 		<key>586F2DFA9BDCC6675C2546793A69E5CC</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>84D9D0F79539B3B12482437AA2AC5C5A</key>
 		<dict>
 			<key>primary</key>
 			<true/>
