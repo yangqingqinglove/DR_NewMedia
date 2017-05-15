@@ -21,7 +21,6 @@
     UISearchDisplayController *_searchController;
 }
 
-@property(nonatomic,copy)NSString * latelyString;
 
 /// 定位bnt
 @property(nonatomic,copy)UIButton * locationBnt;
@@ -46,7 +45,7 @@
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     
     //接受通知
-    [self abserverAllNoties];
+    // [self abserverAllNoties];
     
     
 }
@@ -89,26 +88,45 @@
     _searchController = [[UISearchDisplayController alloc] initWithSearchBar:searchBar contentsController:self];
     _searchController.searchResultsDelegate = self;
     _searchController.searchResultsDataSource = self;
+    
 }
 
 
 - (void)btnClicked:(UIButton *)btn
 {
     NSLog(@"%@",btn.titleLabel.text);
+    //发送通知进行的是: 回传的功能
+    self.latelyString = btn.titleLabel.text;
+    [YQNoteCenter postNotificationName:YQSettingLocationTitileNotification object:nil userInfo:@{YQSettingLocationTitileKey:self.latelyString}];
+    
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 #pragma mark - Table view delegate
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    
+    NSString * cityString = nil;
+    
     if (tableView == self.tableView) {
         NSString *key = [_keys objectAtIndex:indexPath.section];
-        NSLog(@"%@",[[_cities objectForKey:key] objectAtIndex:indexPath.row]);
+        cityString = [[_cities objectForKey:key] objectAtIndex:indexPath.row];
+        NSLog(@"%@",cityString);
     }
     else
     {
-        NSLog(@"%@",[[_filterData objectAtIndex:indexPath.row] cityName]);
+        cityString = [[_filterData objectAtIndex:indexPath.row] cityName];
+        NSLog(@"%@",cityString);
+        
     }
+    //发送通知进行的是: 回传的功能
+    self.latelyString = cityString;
+    [YQNoteCenter postNotificationName:YQSettingLocationTitileNotification object:nil userInfo:@{YQSettingLocationTitileKey:self.latelyString}];
+    
+    [self.navigationController popViewControllerAnimated:YES];
 }
+
+
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
 {
     if (tableView == self.tableView) {
@@ -217,7 +235,7 @@
 #warning testData
             UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
             btn.frame = CGRectMake(spaceWidth, 10, 80, 40);
-//            [btn setTitle:self.latelyString  forState:UIControlStateNormal];
+            [btn setTitle:self.latelyString  forState:UIControlStateNormal];
             [btn setTitleColor:[UIColor darkGrayColor] forState:UIControlStateNormal];
             btn.layer.borderWidth = 0.5;
             [btn addTarget:self action:@selector(btnClicked:) forControlEvents:UIControlEventTouchUpInside];
@@ -229,7 +247,7 @@
 #warning testData
             UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
             btn.frame = CGRectMake(spaceWidth, 10, 80, 40);
-//            [btn setTitle:self.latelyString forState:UIControlStateNormal];
+            [btn setTitle:self.latelyString forState:UIControlStateNormal];
             [btn setTitleColor:[UIColor darkGrayColor] forState:UIControlStateNormal];
             btn.layer.borderWidth = 0.5;
             [btn addTarget:self action:@selector(btnClicked:) forControlEvents:UIControlEventTouchUpInside];
@@ -261,10 +279,8 @@
 #pragma mark - 接受所有通知的方法
 -(void)abserverAllNoties{
 
-    [YQNoteCenter addObserver:self selector:@selector(upDateLocationCity:) name:YQSettingLocationTitileNotification object:nil];
-
+   
 }
-
 -(void)upDateLocationCity:(NSNotification *)notes{
     
     self.latelyString = notes.userInfo[YQSettingLocationTitileKey];

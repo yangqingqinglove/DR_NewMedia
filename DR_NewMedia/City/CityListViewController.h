@@ -10,4 +10,7 @@
 
 @interface CityListViewController : UITableViewController
 
+/// 定位的城市
+@property(nonatomic,copy)NSString * latelyString;
+
 @end

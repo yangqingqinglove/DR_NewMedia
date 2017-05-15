@@ -129,9 +129,12 @@ static NSString * ID = @"imageCell";
     }
     
     //5.1 设置自定义的titleView
-    UIImageView* imageView = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, 25, 25)];
-    imageView.image = [UIImage imageNamed:@"扫描.png"];
-    UIBarButtonItem * imageItem = [[UIBarButtonItem alloc]initWithCustomView:imageView];
+    UIButton * leftBnt = [UIButton buttonWithType:UIButtonTypeCustom];
+    leftBnt.backgroundColor = [UIColor clearColor];//设置透明
+    [leftBnt addTarget:self action:@selector(leftBarButtonClicked:) forControlEvents:UIControlEventTouchUpInside];
+    [leftBnt setImage:[UIImage imageNamed:@"扫描.png"] forState:UIControlStateNormal];
+    [leftBnt sizeToFit];
+    UIBarButtonItem * imageItem = [[UIBarButtonItem alloc]initWithCustomView:leftBnt];
     self.navigationItem.leftBarButtonItem = imageItem;
     
     
@@ -918,11 +921,18 @@ static NSString * ID = @"imageCell";
     
 }
 
-#pragma mark - rightBarButtonClick的方法
--(void)rightBarButtonClicked:(UIButton *)bnt{
+#pragma mark - BarButtonClick的方法
+-(void)rightBarButtonClicked:(UIButton *)bnt{//设置更多 按钮的点击
 
 
 
+}
+
+
+-(void)leftBarButtonClicked:(UIButton *)bnt{//zxing 的二维扫描
+
+
+    
 }
 
 #pragma mark - 接受所有的通知方法

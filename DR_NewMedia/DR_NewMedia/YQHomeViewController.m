@@ -233,14 +233,19 @@
 -(void)rightBarButtonClicked:(UIButton *)btn{//点击了 定位城市的功能
     //跳转
     CityListViewController * cityVC = [[CityListViewController alloc]init];
+    
+    cityVC.latelyString = self.currentCity;
     [self.navigationController pushViewController:cityVC animated:YES];
-
+    
+    
 }
 
 #pragma mark - 接受通知的方法
 -(void)abserverAllNoties{
     
     [YQNoteCenter addObserver:self selector:@selector(pushHomeContentVC) name:YQHomeContentTabelViewClicked object:nil];
+    [YQNoteCenter addObserver:self selector:@selector(upDateLocationCity:) name:YQSettingLocationTitileNotification object:nil];
+
 }
 
 #pragma mark - 通知执行的方法
@@ -252,6 +257,17 @@
     [self.navigationController pushViewController:vc animated:YES];
     
 }
+
+-(void)upDateLocationCity:(NSNotification *)notes{
+    
+    self.currentCity = notes.userInfo[YQSettingLocationTitileKey];
+    UIBarButtonItem * buttonItem = self.navigationItem.rightBarButtonItems.lastObject;
+    UIButton * bnt = (UIButton *)buttonItem.customView;
+    [bnt setTitle:self.currentCity forState:UIControlStateNormal];
+    [bnt sizeToFit];
+    
+}
+
 
 #pragma mark - 定位功能实现的方法
 -(void)locate{
@@ -295,14 +311,16 @@
 - (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray<CLLocation *> *)locations {
     
     [self.locationManager stopUpdatingLocation];
-    if(self.currentCity.length >0){
-        return;
-    }
+    
+//    NSLog(@"%@",self.locationManager);
+//    NSLog(@"%ld",self.currentCity.length);
     
     CLLocation *currentLocation = [locations lastObject];
     CLGeocoder * geoCoder = [[CLGeocoder alloc] init];
     //反编码地理位置
     [geoCoder reverseGeocodeLocation:currentLocation completionHandler:^(NSArray<CLPlacemark *> * _Nullable placemarks, NSError * _Nullable error) {
+        
+        [self.locationManager stopUpdatingLocation];
         
         if (placemarks.count > 0) {
             
@@ -311,16 +329,13 @@
             if (!_currentCity) {
                 _currentCity = @"无法定位当前城市";
             }
-            
-            NSLog(@"%@",_currentCity); //这就是当前的城市
-            NSLog(@"%@",placeMark.name);//具体地址:  xx市xx区xx街道
-            
+//            NSLog(@"%@",_currentCity); //这就是当前的城市
+//            NSLog(@"%@",placeMark.name);//具体地址:  xx市xx区xx街道
+//            NSLog(@"%@",[NSThread currentThread]); // 显示的是主 线程
             UIBarButtonItem * buttonItem = self.navigationItem.rightBarButtonItems.lastObject;
             UIButton * bnt = (UIButton *)buttonItem.customView;
             [bnt setTitle:_currentCity forState:UIControlStateNormal];
             [bnt sizeToFit];
-            //发送通知给定位的城市来添加
-            [YQNoteCenter postNotificationName:YQSettingLocationTitileNotification object:nil userInfo:@{YQSettingLocationTitileKey:_currentCity}];
             
         }else if (error == nil && placemarks.count == 0) {
             
@@ -331,6 +346,8 @@
             NSLog(@"location error: %@ ",error);
         }
     }];
+    
+    [self.locationManager stopUpdatingLocation];
 }
 
 
