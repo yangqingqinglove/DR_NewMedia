@@ -22,7 +22,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="X8D-cP-i83">
-                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <rect key="frame" x="0.0" y="40" width="375" height="587"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="ZrQ-l9-USS">
                                     <size key="itemSize" width="126" height="121"/>
@@ -36,13 +36,60 @@
                                     <outlet property="delegate" destination="oHy-cT-c9e" id="4Hr-SV-MXl"/>
                                 </connections>
                             </collectionView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AIr-pC-0Ux">
+                                <rect key="frame" x="77.5" y="626" width="100" height="41"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="r9b-K0-2ha"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <state key="normal" title="拍照" image="相机">
+                                    <color key="titleColor" red="1" green="0.0" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="CameraMake:" destination="oHy-cT-c9e" eventType="touchUpInside" id="Hle-9I-HY4"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BfI-Qy-aJN">
+                                <rect key="frame" x="197.5" y="626" width="100" height="41"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="r2V-xA-fU1"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <state key="normal" title="相册" image="ͼƬ">
+                                    <color key="titleColor" red="1" green="0.0" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="pictureMake:" destination="oHy-cT-c9e" eventType="touchUpInside" id="mVZ-RE-eBq"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q6j-QG-YeO">
+                                <rect key="frame" x="295" y="0.0" width="80" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="80" id="25a-vn-3r5"/>
+                                </constraints>
+                                <state key="normal" title="关闭">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="closeButtonClick:" destination="oHy-cT-c9e" eventType="touchUpInside" id="iFG-rr-cIP"/>
+                                </connections>
+                            </button>
                         </subviews>
-                        <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="X8D-cP-i83" firstAttribute="top" secondItem="gD3-WZ-L2Z" secondAttribute="bottom" id="Oo7-ND-fOP"/>
+                            <constraint firstItem="q6j-QG-YeO" firstAttribute="top" secondItem="pIC-6U-UPt" secondAttribute="top" id="6n9-wq-L7L"/>
+                            <constraint firstItem="BfI-Qy-aJN" firstAttribute="top" secondItem="X8D-cP-i83" secondAttribute="bottom" constant="-1" id="DUt-IN-E7P"/>
+                            <constraint firstItem="BfI-Qy-aJN" firstAttribute="centerX" secondItem="pIC-6U-UPt" secondAttribute="centerX" constant="60" id="LYP-oI-grZ"/>
+                            <constraint firstItem="X8D-cP-i83" firstAttribute="top" secondItem="gD3-WZ-L2Z" secondAttribute="bottom" constant="20" id="Oo7-ND-fOP"/>
+                            <constraint firstItem="X8D-cP-i83" firstAttribute="top" secondItem="q6j-QG-YeO" secondAttribute="bottom" id="Pb5-VL-uau"/>
+                            <constraint firstItem="Gxt-O1-VIS" firstAttribute="top" secondItem="AIr-pC-0Ux" secondAttribute="bottom" id="Ss5-4a-cAS"/>
+                            <constraint firstAttribute="trailing" secondItem="q6j-QG-YeO" secondAttribute="trailing" id="Uvt-4a-jhz"/>
+                            <constraint firstItem="Gxt-O1-VIS" firstAttribute="top" secondItem="BfI-Qy-aJN" secondAttribute="bottom" id="Uy2-nY-ru7"/>
+                            <constraint firstItem="AIr-pC-0Ux" firstAttribute="centerX" secondItem="pIC-6U-UPt" secondAttribute="centerX" constant="-60" id="hJI-Ga-pcT"/>
                             <constraint firstAttribute="trailing" secondItem="X8D-cP-i83" secondAttribute="trailing" id="pnl-bR-u5H"/>
-                            <constraint firstItem="Gxt-O1-VIS" firstAttribute="top" secondItem="X8D-cP-i83" secondAttribute="bottom" id="rkK-UX-4QO"/>
+                            <constraint firstItem="Gxt-O1-VIS" firstAttribute="top" secondItem="X8D-cP-i83" secondAttribute="bottom" constant="40" id="rkK-UX-4QO"/>
                             <constraint firstItem="X8D-cP-i83" firstAttribute="leading" secondItem="pIC-6U-UPt" secondAttribute="leading" id="uu7-4B-VY3"/>
+                            <constraint firstItem="AIr-pC-0Ux" firstAttribute="top" secondItem="X8D-cP-i83" secondAttribute="bottom" constant="-1" id="ygC-cu-iaB"/>
                         </constraints>
                     </view>
                     <connections>
@@ -51,7 +98,11 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vGW-cA-SBi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-426.39999999999998" y="-30.134932533733135"/>
+            <point key="canvasLocation" x="-809" y="38"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="ͼƬ" width="32" height="32"/>
+        <image name="相机" width="32" height="32"/>
+    </resources>
 </document>

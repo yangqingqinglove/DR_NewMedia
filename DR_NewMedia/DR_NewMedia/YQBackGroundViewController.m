@@ -20,6 +20,10 @@
 /// 模型数据
 @property(nonatomic,strong)NSMutableArray * BGArray;
 
+/// 相机类
+@property(nonatomic,strong)UIImagePickerController * imagePicker;
+
+
 
 @end
 
@@ -43,6 +47,9 @@ static NSString * ID = @"bgCell";
     //2.注册原型cell
     UINib * cellNib = [UINib nibWithNibName:@"YQBackGroundCell" bundle:nil];
     [self.YQBGCollectionView registerNib:cellNib forCellWithReuseIdentifier:ID];
+    
+    //3.设置背景
+    self.view.backgroundColor = [UIColor colorWithRed:244.0/255.0 green:244.0/255.0 blue:244.0/255.0 alpha:0.5];
     
 }
 
@@ -99,6 +106,24 @@ static NSString * ID = @"bgCell";
 
 }
 
+#pragma mark - buttonClick的方法
+
+- (IBAction)CameraMake:(UIButton *)sender {//调用摄像头
+    
+    [YQNoteCenter postNotificationName:YQAddCameraNotification object:nil];
+    
+}
+
+- (IBAction)pictureMake:(UIButton *)sender {//获取相册的功能
+    
+    [YQNoteCenter postNotificationName:YQAddAlbumSelectImageNotification object:nil];
+
+}
+
+- (IBAction)closeButtonClick:(UIButton *)sender {//关闭退出界面
+    
+    [YQNoteCenter postNotificationName:YQCollocationRoomChildViewClose object:nil];
+}
 
 
 @end

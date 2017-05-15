@@ -27,7 +27,7 @@
 #import <MBProgressHUD.h>
 
 
-@interface YQCollocationViewController ()<YQBottomViewClickDeleage,YQTopViewClickDeleate,UICollectionViewDelegate,UICollectionViewDataSource,YQImageGroupViewDelegate>
+@interface YQCollocationViewController ()<YQBottomViewClickDeleage,YQTopViewClickDeleate,UICollectionViewDelegate,UICollectionViewDataSource,YQImageGroupViewDelegate,UIImagePickerControllerDelegate,UINavigationControllerDelegate>
 
 //@property (weak, nonatomic) IBOutlet UIView *navBarView;
 
@@ -55,6 +55,8 @@
 @property(nonatomic,strong)NSMutableArray * collocationArray;
 
 @end
+
+UIImagePickerController *_imagePickerController;
 
 static NSString * ID = @"imageCell";
 
@@ -928,6 +930,8 @@ static NSString * ID = @"imageCell";
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(backgroundPictureChange:) name:YQbackGroundChange object:nil];
     [YQNoteCenter addObserver:self selector:@selector(baffleViewDidClilck) name:YQCollocationRoomChildViewClose object:nil];
+    [YQNoteCenter addObserver:self selector:@selector(AddAlbum) name:YQAddAlbumSelectImageNotification object:nil];
+    [YQNoteCenter addObserver:self selector:@selector(AddCamera) name:YQAddCameraNotification object:nil];
     
 }
 
@@ -939,8 +943,83 @@ static NSString * ID = @"imageCell";
     
     //dismiss
     [self baffleViewDidClilck];
-
 }
+
+-(void)AddAlbum{
+    
+//    UIImagePickerController * imagePicker = [[UIImagePickerController alloc]init];
+    if(_imagePickerController == nil){
+        _imagePickerController = [[UIImagePickerController alloc]init];
+        _imagePickerController.delegate = self;
+        _imagePickerController.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
+        _imagePickerController.allowsEditing = YES;
+        
+    }
+    _imagePickerController.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+    [self presentViewController:_imagePickerController animated:YES completion:nil];
+    
+}
+
+-(void)AddCamera{
+    
+    BOOL iscamera = [UIImagePickerController isCameraDeviceAvailable:UIImagePickerControllerCameraDeviceRear];
+    
+    if (!iscamera) {
+        NSLog(@"没有摄像头");
+        return ;
+    }
+    if(_imagePickerController == nil){
+        _imagePickerController = [[UIImagePickerController alloc]init];
+        _imagePickerController.delegate = self;
+        _imagePickerController.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
+        _imagePickerController.allowsEditing = YES;
+        
+    }
+    _imagePickerController.sourceType = UIImagePickerControllerSourceTypeCamera;
+    [self presentViewController:_imagePickerController animated:YES completion:^{
+        
+        // 判断是否有后置摄像头
+        //        UIImagePickerControllerCameraDeviceFront ,为前置摄像头
+        
+        //        imagePick.allowsEditing = YES; //拍完照可以进行编辑
+//        这个是设置 视频流的 保存的
+//        imagePick.mediaTypes = @[(NSString *)kUTTypeMovie,(NSString *)kUTTypeImage];
+        
+    }];
+    
+}
+
+#pragma mark --UIImagePickerController Delegate
+// 相册图片选中后调用
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info{
+    
+//    NSLog(@"%@", info);// 打印出相应的key信息,注意的是 可以将key 和 valuy 进行的保存来获取照片的相应的点击的顺序!
+//    if(picker.sourceType == UIImagePickerControllerSourceTypeCamera){
+    
+        UIImage *image = [info objectForKey: UIImagePickerControllerEditedImage];
+        //    UIImagePickerControllerEditedImage  拍完照后可以进行编辑
+        self.backgroundImageView.image = image;
+        
+//    }else{
+//        
+//        UIImage *image = [info objectForKey: UIImagePickerControllerOriginalImage];
+//        //    UIImagePickerControllerEditedImage  拍完照后可以进行编辑
+//        self.backgroundImageView.image = image;
+//    
+//    }
+    
+    [picker dismissViewControllerAnimated:YES completion:nil];
+    
+}
+
+// 取消按钮的点击事件
+- (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker{
+    
+    [picker dismissViewControllerAnimated:YES completion:nil];
+    
+}
+
+#pragma mark - controller_dealloc的方法
 
 -(void)dealloc{
 

@@ -15,6 +15,8 @@ NSString *const YQContentTabelViewClicked = @"ContentTabelViewClicked";
 NSString *const YQHomeContentTabelViewClicked = @"HomeContentTabelViewClicked";
 NSString *const YQPushChildsViewController = @"PushChildsViewControllerNotification";
 NSString *const YQSettingLocationTitileNotification = @"LocationTitileNotification";
+NSString *const YQAddAlbumSelectImageNotification = @"AddAlbumSelectImageNotification";
+NSString *const YQAddCameraNotification = @"AddCameraNotification";
 
 //key
 NSString *const YQpictureName = @"pictureNameKey";

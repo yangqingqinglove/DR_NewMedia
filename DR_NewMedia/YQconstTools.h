@@ -25,4 +25,8 @@ UIKIT_EXTERN NSString *const YQPushChildsViewController;
 UIKIT_EXTERN NSString *const YQSettingLocationTitileNotification;
 UIKIT_EXTERN NSString *const YQSettingLocationTitileKey;
 
+UIKIT_EXTERN NSString *const YQAddAlbumSelectImageNotification;
+
+UIKIT_EXTERN NSString *const YQAddCameraNotification;
+
 UIKIT_EXTERN NSString *const YQPushChlidsVCTitileKey;
