@@ -185,8 +185,12 @@
 }
 
 #pragma mark - navBarClick的方法
--(void)rightBarButtonClicked:(UIButton *)rightBnt{
+-(void)rightBarButtonClicked:(UIButton *)rightBnt{//其他的功能的设置
 
+
+}
+
+-(void)right1BarButtonClicked:(UIButton *)right1Bnt{//继承的友盟 分享
 
 
 }

@@ -146,9 +146,16 @@ static NSString * ID = @"imageCell";
     [rightBnt addTarget:self action:@selector(rightBarButtonClicked:) forControlEvents:UIControlEventTouchUpInside];
     [rightBnt setImage:[UIImage imageNamed:@"其他.png"] forState:UIControlStateNormal];
     [rightBnt sizeToFit];
-    
     UIBarButtonItem * bntItem = [[UIBarButtonItem alloc]initWithCustomView:rightBnt];
-    self.navigationItem.rightBarButtonItem = bntItem;
+    
+    UIButton * rightBnt1 = [UIButton buttonWithType:UIButtonTypeCustom];
+    rightBnt1.backgroundColor = [UIColor clearColor];//设置透明
+    [rightBnt1 addTarget:self action:@selector(rightBarButtonClicked:) forControlEvents:UIControlEventTouchUpInside];
+    [rightBnt1 setImage:[UIImage imageNamed:@"share.png"] forState:UIControlStateNormal];
+    [rightBnt1 sizeToFit];
+
+    UIBarButtonItem * bntItem1 = [[UIBarButtonItem alloc]initWithCustomView:rightBnt1];
+    self.navigationItem.rightBarButtonItems = @[bntItem,bntItem1];
     
     //7.接受所有通知
     [self abserverAllNoties];
@@ -176,7 +183,7 @@ static NSString * ID = @"imageCell";
 }
 
 
-#pragma mark YQBottomViewClickDeleage代理执行的方法
+#pragma mark TopBottomViewClickDeleage代理执行的方法
 -(void)bottomView:(YQBottomView *)bottomV didSelectedButtonFrom:(NSUInteger)from to:(int)To{
     
     if(self.imageView.animating){
@@ -189,51 +196,36 @@ static NSString * ID = @"imageCell";
 }
 
 -(void)topView:(YQTopView *)TopV buttonDidSelectTag:(NSInteger)tag{
+    //移动 transform
+    //禁止用户交互其他的选项
+    self.imageView.userInteractionEnabled = NO;
     
-    switch (tag) {
-            
-        case 2:{//移动 transform
-            
-            //禁止用户交互其他的选项
-            self.imageView.userInteractionEnabled = NO;
-            
-            CGFloat x = 0;
-            
-            CGAffineTransform transform = CGAffineTransformMake(1, 0,0,1, 0, 0);
-            if (!_isShow) {
-                
-                x = -60;
-                
-            }else{
-                
-                x = 60;
-            }
-            
-            [UIView animateWithDuration:0.5 animations:^{
-                
-                self.wardrobeView.transform = CGAffineTransformTranslate(transform, x, 0);
-                TopV.backImageView.transform = CGAffineTransformTranslate(transform, x, 0);
-                
-            }completion:^(BOOL finished) {
-                
-                
-                self.imageView.userInteractionEnabled = YES;
-            }];
-            
-            self.isShow = !self.isShow;
-            TopV.collectionImageVIEW.selected = self.isShow;
-            
-            break;
-        }
-            
-        case 1:{// 友盟分享
-            
-            
-            break;
-        }
-        default:
-            break;
+    CGFloat x = 0;
+    
+    CGAffineTransform transform = CGAffineTransformMake(1, 0,0,1, 0, 0);
+    if (!_isShow) {
+        
+        x = -60;
+        
+    }else{
+        
+        x = 60;
     }
+    
+    [UIView animateWithDuration:0.5 animations:^{
+        
+        self.wardrobeView.transform = CGAffineTransformTranslate(transform, x, 0);
+        TopV.backImageView.transform = CGAffineTransformTranslate(transform, x, 0);
+        
+    }completion:^(BOOL finished) {
+        
+        
+        self.imageView.userInteractionEnabled = YES;
+    }];
+    
+    self.isShow = !self.isShow;
+    TopV.collectionImageVIEW.selected = self.isShow;
+    
 }
 
 
