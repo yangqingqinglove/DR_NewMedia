@@ -58,6 +58,7 @@
 		2F636EAC1EC9B04A00E97483 /* QRCameraSwitchButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F636EA61EC9B04A00E97483 /* QRCameraSwitchButton.m */; };
 		2F636EAD1EC9B04A00E97483 /* QRCodeReaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F636EA91EC9B04A00E97483 /* QRCodeReaderView.m */; };
 		2F636EAE1EC9B04A00E97483 /* QRCodeReaderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F636EAB1EC9B04A00E97483 /* QRCodeReaderViewController.m */; };
+		2F636EB01EC9F43E00E97483 /* beep.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2F636EAF1EC9F43E00E97483 /* beep.wav */; };
 		2F64C9641EAF35E900FCFD93 /* YQImageGroupView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F64C9631EAF35E900FCFD93 /* YQImageGroupView.m */; };
 		2F6E21791EC1C19B003A23D2 /* YQHotDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F6E21781EC1C19B003A23D2 /* YQHotDetailViewController.m */; };
 		2F6E217B1EC1C1D3003A23D2 /* YQHotDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2F6E217A1EC1C1D3003A23D2 /* YQHotDetail.storyboard */; };
@@ -281,6 +282,7 @@
 		2F8F89591EA86A28006DDDE9 /* YQBottomView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F8F89571EA86A28006DDDE9 /* YQBottomView.m */; };
 		2F8F895C1EA89275006DDDE9 /* YQTopView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F8F895B1EA89275006DDDE9 /* YQTopView.m */; };
 		2F8F895E1EA892F6006DDDE9 /* YQTopView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2F8F895D1EA892F6006DDDE9 /* YQTopView.xib */; };
+		2F90E0581ECAED7000A07EFE /* YQLongPressGestureRecognizer.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F90E0571ECAED7000A07EFE /* YQLongPressGestureRecognizer.m */; };
 		2FA2958C1EC03E7300F5660C /* YQConcerAllTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA2958B1EC03E7300F5660C /* YQConcerAllTableViewController.m */; };
 		2FA295921EC05D5300F5660C /* YQMineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA295911EC05D5300F5660C /* YQMineViewController.m */; };
 		2FA295951EC065FD00F5660C /* YQMineHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA295941EC065FD00F5660C /* YQMineHeadView.m */; };
@@ -381,6 +383,7 @@
 		2F636EA91EC9B04A00E97483 /* QRCodeReaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QRCodeReaderView.m; sourceTree = "<group>"; };
 		2F636EAA1EC9B04A00E97483 /* QRCodeReaderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QRCodeReaderViewController.h; sourceTree = "<group>"; };
 		2F636EAB1EC9B04A00E97483 /* QRCodeReaderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QRCodeReaderViewController.m; sourceTree = "<group>"; };
+		2F636EAF1EC9F43E00E97483 /* beep.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = beep.wav; sourceTree = "<group>"; };
 		2F64C9621EAF35E900FCFD93 /* YQImageGroupView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YQImageGroupView.h; sourceTree = "<group>"; };
 		2F64C9631EAF35E900FCFD93 /* YQImageGroupView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YQImageGroupView.m; sourceTree = "<group>"; };
 		2F6E21771EC1C19B003A23D2 /* YQHotDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YQHotDetailViewController.h; sourceTree = "<group>"; };
@@ -623,6 +626,8 @@
 		2F8F895A1EA89275006DDDE9 /* YQTopView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YQTopView.h; sourceTree = "<group>"; };
 		2F8F895B1EA89275006DDDE9 /* YQTopView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YQTopView.m; sourceTree = "<group>"; };
 		2F8F895D1EA892F6006DDDE9 /* YQTopView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YQTopView.xib; sourceTree = "<group>"; };
+		2F90E0561ECAED7000A07EFE /* YQLongPressGestureRecognizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YQLongPressGestureRecognizer.h; sourceTree = "<group>"; };
+		2F90E0571ECAED7000A07EFE /* YQLongPressGestureRecognizer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YQLongPressGestureRecognizer.m; sourceTree = "<group>"; };
 		2FA2958A1EC03E7300F5660C /* YQConcerAllTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YQConcerAllTableViewController.h; sourceTree = "<group>"; };
 		2FA2958B1EC03E7300F5660C /* YQConcerAllTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YQConcerAllTableViewController.m; sourceTree = "<group>"; };
 		2FA295901EC05D5300F5660C /* YQMineViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YQMineViewController.h; sourceTree = "<group>"; };
@@ -1089,6 +1094,7 @@
 		2F8966911EA497FA00A1F697 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				2F636EAF1EC9F43E00E97483 /* beep.wav */,
 				2F8966921EA497FA00A1F697 /* main.m */,
 			);
 			name = "Supporting Files";
@@ -1213,6 +1219,8 @@
 				2F4AB89C1EBC7D8B0059AB90 /* YQSaveFileCell.h */,
 				2F4AB89D1EBC7D8B0059AB90 /* YQSaveFileCell.m */,
 				2F4AB89E1EBC7D8B0059AB90 /* SaveFileCell.xib */,
+				2F90E0561ECAED7000A07EFE /* YQLongPressGestureRecognizer.h */,
+				2F90E0571ECAED7000A07EFE /* YQLongPressGestureRecognizer.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -1469,6 +1477,7 @@
 				2F4AB8A01EBC7D8B0059AB90 /* SaveFileCell.xib in Resources */,
 				2F7220E81EB2E7560011C8D3 /* quen170427_40000036_320.png in Resources */,
 				2F6E217B1EC1C1D3003A23D2 /* YQHotDetail.storyboard in Resources */,
+				2F636EB01EC9F43E00E97483 /* beep.wav in Resources */,
 				2F72206E1EB2D0680011C8D3 /* ku170427_30000036_200.png in Resources */,
 				2F721FC71EB2CFA40011C8D3 /* philips_hq6070_350.jpg in Resources */,
 				2F7220461EB2D0680011C8D3 /* yi170427_40000036_170.png in Resources */,
@@ -1695,6 +1704,7 @@
 				2F636EAD1EC9B04A00E97483 /* QRCodeReaderView.m in Sources */,
 				2F5E5CED1EA70DA600F5940B /* YQTitleScrollView.m in Sources */,
 				2F8966961EA497FA00A1F697 /* AppDelegate.m in Sources */,
+				2F90E0581ECAED7000A07EFE /* YQLongPressGestureRecognizer.m in Sources */,
 				2F78E8851EB9DB8600A47564 /* YQHeadTitleView.m in Sources */,
 				2F8966931EA497FA00A1F697 /* main.m in Sources */,
 				2F4FA5B31EA5C3E800E6E25F /* TAAbstractDotView.m in Sources */,

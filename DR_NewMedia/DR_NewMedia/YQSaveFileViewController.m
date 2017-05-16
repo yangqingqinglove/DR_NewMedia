@@ -9,8 +9,9 @@
 #import "YQSaveFileViewController.h"
 #import "YQSaveFileCell.h"
 #import "YQBackGroundCollectionCell.h"
+#import "YQLongPressGestureRecognizer.h"
 
-@interface YQSaveFileViewController ()
+@interface YQSaveFileViewController ()<UIGestureRecognizerDelegate>
 
 @property (weak, nonatomic) IBOutlet UICollectionView *YQFileCollectionView;
 
@@ -33,7 +34,7 @@ static NSString * ID = @"fileCell";
     layout.minimumLineSpacing = 5;
     layout.headerReferenceSize = CGSizeMake(5, 0);
     //设置的是 item的宽度是 45
-    layout.itemSize = CGSizeMake(45, self.YQFileCollectionView.height);
+    layout.itemSize = CGSizeMake(50, self.YQFileCollectionView.height);
     
     self.YQFileCollectionView.collectionViewLayout = layout;
     
@@ -42,7 +43,6 @@ static NSString * ID = @"fileCell";
     [self.YQFileCollectionView registerNib:cellNib forCellWithReuseIdentifier:ID];
 
     
-    
 }
 
 #pragma mark - 懒加载数据方法
@@ -50,16 +50,22 @@ static NSString * ID = @"fileCell";
     if(!_saveFileArray){
         
         _saveFileArray = [NSMutableArray array];
+        NSString * string1 = nil;
         
         for(int i =1;i< 15 ;i++){
             
-            NSString * string1 = [NSString stringWithFormat:@"_00%02d.jpg",i ];
+            if(i < 3 || i==4){
+                string1  = [NSString stringWithFormat:@"搭配%d.png",i];
+            }else{
             
+                string1  = [NSString stringWithFormat:@"add.png"];
+            }
+            
+            UIImage * image = [UIImage imageNamed:string1];
             //  将图片加入数组
-            [_saveFileArray addObject:string1];
+            [_saveFileArray addObject:image];
         }
     }
-    
     return _saveFileArray;
 }
 
@@ -79,25 +85,88 @@ static NSString * ID = @"fileCell";
     //cell.imagename  = self.imagesArray[indexPath.row];
     //if(indexPath.row < self.collocationArray.count){
     
-    //    NSString * path1 = [[NSBundle mainBundle] pathForResource:self.BGArray[indexPath.item] ofType:nil];
-     cell.saveImageView.image = [UIImage imageNamed:self.saveFileArray[indexPath.item]];
+    // NSString * path1 = [[NSBundle mainBundle] pathForResource:self.BGArray[indexPath.item] ofType:nil];
+    cell.saveImageView.image = self.saveFileArray[indexPath.item];
+    
+    NSDateFormatter *dataFormatter = [[NSDateFormatter alloc] init];
+    [dataFormatter setDateFormat:@"MM/dd"];
+    NSString *strDate = [dataFormatter stringFromDate:[NSDate date]];
+    
+    NSDateComponents *componets = [[NSCalendar autoupdatingCurrentCalendar] components:NSCalendarUnitWeekday fromDate:[NSDate date]];
+    NSInteger weekday = [componets weekday];//a就是星期几，1代表星期日，2代表星期一，后面依次
+    NSArray *weekArray = @[@"周日",@"周一",@"周二",@"周三",@"周四",@"周五",@"周六"];
+    NSString *weekStr = weekArray[weekday-1];
+    
+    cell.dateLabel.text = weekStr;
+    cell.timeLabel.text = strDate;
+    
+    YQLongPressGestureRecognizer * longPress = [[YQLongPressGestureRecognizer alloc]initWithTarget:self action:@selector(handleLongPress:)];
+    longPress.minimumPressDuration = 1.0;
+    longPress.delegate = self;
+    longPress.tag = indexPath.item;
+//    NSLog(@"view.tag==%ld",longPress.tag);
+    
+    [cell addGestureRecognizer:longPress];
     
     //}
-    
     return cell;
 }
-
 
 
 #pragma mark - CollectionView的代理方法
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
     
+    NSAssert(self.currentGrounpImage != nil, @"self.currentGrounpImage必须有值");
+    
     //点击的是 item,将对应的图片传给控制 通知!
-//    [[NSNotificationCenter defaultCenter]postNotificationName:YQbackGroundChange object:nil userInfo:@{YQpictureName:self.BGArray[indexPath.item]}];
+    //点击的是 当前的item来通过的 图片的替换的功能
+    [self.saveFileArray replaceObjectAtIndex:indexPath.item withObject:self.currentGrounpImage];
+    
+    NSArray * array = @[indexPath];
+    [collectionView reloadItemsAtIndexPaths:array];
     
     
 }
 
+#pragma mark - longPress触发的方法
+-(void)handleLongPress:(YQLongPressGestureRecognizer *)longpress{
+    //处理长按的手势时,系统会进行的调用的两次
+    if(longpress.state == UIGestureRecognizerStateBegan){
+        //弹框处理
+        UIAlertController * alertV =[UIAlertController alertControllerWithTitle:@"删除" message:@"是否要删除图片" preferredStyle:UIAlertControllerStyleAlert];
+        [alertV addAction:[UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+            
+            [alertV dismissViewControllerAnimated:YES completion:nil];
+            
+        }]];
+        
+        [alertV addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+            
+            [self.saveFileArray removeObjectAtIndex:longpress.tag];
+            NSIndexPath * indexPath = [NSIndexPath indexPathForRow:longpress.tag inSection:0];
+//            NSLog(@"longpress.view.tag==%ld",longpress.tag);
+            
+            NSArray * deleteItem = @[indexPath];
+            [self.YQFileCollectionView deleteItemsAtIndexPaths:deleteItem];
+            
+        }]];
+        
+        [self presentViewController:alertV animated:YES completion:^{
+            
+            UIImage * image = [UIImage imageNamed:[NSString stringWithFormat:@"add.png"]];
+            [self.saveFileArray addObject:image];
+            NSIndexPath * indexPath1 = [NSIndexPath indexPathForRow:self.saveFileArray.count -1 inSection:0];
+            NSArray * addItem = @[indexPath1];
+            [self.YQFileCollectionView insertItemsAtIndexPaths:addItem];
+            
+        }];
+    }
+}
 
+
+-(void)dealloc{
+
+
+}
 
 @end

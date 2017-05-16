@@ -35,6 +35,7 @@
 @property (weak, nonatomic) IBOutlet YQImageGroupView *imageView;
 
 @property(nonatomic,strong)YQWardrobeCollectionView * wardrobeView;
+
 @property (weak, nonatomic) IBOutlet UIImageView *backgroundImageView;
 
 /// 各种的展示控制器
@@ -226,6 +227,7 @@ static NSString * ID = @"imageCell";
         }
             
         case 1:{// 友盟分享
+            
             
             break;
         }
@@ -577,18 +579,18 @@ static NSString * ID = @"imageCell";
     UIView * baffleV = [[UIView alloc]initWithFrame:self.view.bounds];
     baffleV.backgroundColor = [UIColor grayColor];
     baffleV.alpha = 0.5;
-    //BOOL ISTR = [baffleV isFirstResponder];//是否是 第一响应者的情况!
-    //[baffleV becomeFirstResponder];//成为第一响应者
-    //[baffleV resignFirstResponder];//取消第一响应者
     [self.view addSubview:baffleV];
     self.baffleView = baffleV;
     UITapGestureRecognizer * tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(baffleViewDidClilck)];
     [self.baffleView addGestureRecognizer:tap];
     
-    UIStoryboard * sb = [UIStoryboard storyboardWithName:@"YQBackGround" bundle:nil];
-    self.BGVC = [sb instantiateInitialViewController];
-    [self.view addSubview:self.BGVC.view];
+    if(!self.BGVC){
+        
+        UIStoryboard * sb = [UIStoryboard storyboardWithName:@"YQBackGround" bundle:nil];
+        self.BGVC = [sb instantiateInitialViewController];
+    }
     
+    [self.view addSubview:self.BGVC.view];
     self.BGVC.view.alpha = 0;
     self.BGVC.view.hidden = YES;
     self.BGVC.view.frame = CGRectMake(0, heightSize/4, widthSize, 300);
@@ -623,12 +625,14 @@ static NSString * ID = @"imageCell";
     UITapGestureRecognizer * tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(baffleViewDidClilck)];
     [self.baffleView addGestureRecognizer:tap];
     
+    if(!self.detailVC){
     
-    //然后再添加控制器来成为 baffleV的子视图!
-    UIStoryboard * sb = [UIStoryboard storyboardWithName:@"YQDetail" bundle:nil];
-    self.detailVC = [sb instantiateInitialViewController];
+        //然后再添加控制器来成为 baffleV的子视图!
+        UIStoryboard * sb = [UIStoryboard storyboardWithName:@"YQDetail" bundle:nil];
+        self.detailVC = [sb instantiateInitialViewController];
+        
+    }
     [self.view addSubview:self.detailVC.view];
-    
 //    [self.detailVC.view mas_makeConstraints:^(MASConstraintMaker *make) {
 //        make.top.equalTo(baffleV.mas_bottom);
 //        make.left.equalTo(baffleV.mas_left).offset(30);
@@ -668,11 +672,13 @@ static NSString * ID = @"imageCell";
     self.baffleView = baffleV;
     UITapGestureRecognizer * tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(baffleViewDidClilck)];
     [self.baffleView addGestureRecognizer:tap];
+    if(!self.BGVC){
     
-    UIStoryboard * sb = [UIStoryboard storyboardWithName:@"YQBackGround" bundle:nil];
-    self.BGVC = [sb instantiateInitialViewController];
+        UIStoryboard * sb = [UIStoryboard storyboardWithName:@"YQBackGround" bundle:nil];
+        self.BGVC = [sb instantiateInitialViewController];
+    }
+    
     [self.view addSubview:self.BGVC.view];
-    
     self.BGVC.view.alpha = 0;
     self.BGVC.view.hidden = YES;
     self.BGVC.view.frame = CGRectMake(0, heightSize/4, widthSize, 300);
@@ -689,7 +695,6 @@ static NSString * ID = @"imageCell";
         self.BGVC.view.hidden = NO;
         
     }];
-
 }
 
 - (IBAction)graphicBtnClick:(id)sender {
@@ -703,10 +708,13 @@ static NSString * ID = @"imageCell";
     UITapGestureRecognizer * tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(baffleViewDidClilck)];
     [self.baffleView addGestureRecognizer:tap];
     
-    UIStoryboard * sb = [UIStoryboard storyboardWithName:@"YQBackGround" bundle:nil];
-    self.BGVC = [sb instantiateInitialViewController];
-    [self.view addSubview:self.BGVC.view];
+    if(!self.BGVC){
+        
+        UIStoryboard * sb = [UIStoryboard storyboardWithName:@"YQBackGround" bundle:nil];
+        self.BGVC = [sb instantiateInitialViewController];
+    }
     
+    [self.view addSubview:self.BGVC.view];
     self.BGVC.view.alpha = 0;
     self.BGVC.view.hidden = YES;
     self.BGVC.view.frame = CGRectMake(0, heightSize/4, widthSize, 300);
@@ -774,18 +782,20 @@ static NSString * ID = @"imageCell";
     UITapGestureRecognizer * tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(baffleViewDidClilck)];
     [self.baffleView addGestureRecognizer:tap];
     
-    UIStoryboard * sb = [UIStoryboard storyboardWithName:@"YQSaveFile" bundle:nil];
-    self.saveFileVC = [sb instantiateInitialViewController];
+    if(!self.saveFileVC){// 懒加载
+        
+        UIStoryboard * sb = [UIStoryboard storyboardWithName:@"YQSaveFile" bundle:nil];
+        self.saveFileVC = [sb instantiateInitialViewController];
+
+    }
     [self.view addSubview:self.saveFileVC.view];
-    
     self.saveFileVC.view.alpha = 0;
     self.saveFileVC.view.hidden = YES;
-    
     
     [self.saveFileVC.view mas_makeConstraints:^(MASConstraintMaker *make) {
        
         make.left.right.equalTo(self.view);
-        make.bottom.equalTo(self.view.mas_bottom).offset(-46);
+        make.bottom.equalTo(self.view.mas_bottom).offset(-48);
         
         make.height.mas_equalTo(90);
         
@@ -801,6 +811,7 @@ static NSString * ID = @"imageCell";
         // self.rulerVC.view.frame = CGRectMake(0, heightSize/4, widthSize, 300);
         self.saveFileVC.view.alpha = 1;
         self.saveFileVC.view.hidden = NO;
+        self.saveFileVC.currentGrounpImage = self.imageView.cacheArray[0];
         
     }];
 
@@ -828,7 +839,7 @@ static NSString * ID = @"imageCell";
         
     }];
     
-    [self.saveFileVC.view removeFromSuperview];
+    [self.saveFileVC.view removeFromSuperview]; //要求有一定的保存
     [self.BGVC.view removeFromSuperview];
     [self.rulerVC.view removeFromSuperview];
     [self.detailVC.view removeFromSuperview];
@@ -944,7 +955,7 @@ static NSString * ID = @"imageCell";
 #pragma mark - QRCodeReader Delegate Methods
 
 - (void)reader:(QRCodeReaderViewController *)reader didScanResult:(NSString *)result
-{
+{// 最后的扫描的结果是 得到是resulut的url 进行的函数的回调
     [self dismissViewControllerAnimated:YES completion:^{
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"QRCodeReader" message:result delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
         [alert show];

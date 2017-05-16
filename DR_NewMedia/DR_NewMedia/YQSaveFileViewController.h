@@ -10,4 +10,8 @@
 
 @interface YQSaveFileViewController : UIViewController
 
+/// 合成的图片的记录
+@property(nonatomic,strong)UIImage * currentGrounpImage;
+
+
 @end
