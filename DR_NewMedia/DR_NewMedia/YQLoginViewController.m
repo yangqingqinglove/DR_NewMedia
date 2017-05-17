@@ -8,9 +8,13 @@
 
 #import "YQLoginViewController.h"
 #import <UMSocialCore/UMSocialCore.h>
-
+#import "YQRegisterViewController.h"
+#import "YQLookupPassWordViewController.h"
 
 @interface YQLoginViewController ()
+
+
+
 
 @end
 
@@ -24,6 +28,26 @@
 
 }
 
+#pragma mark - LoginButton点击的方法
+- (IBAction)registerButtonClicked:(id)sender {
+    //创建sb 进行的弹窗展示
+    UIStoryboard * sb = [UIStoryboard storyboardWithName:@"YQRegsiter" bundle:nil];
+    UIViewController * vc = [sb instantiateInitialViewController];
+    [self presentViewController:vc animated:YES completion:nil];
+    
+}
+
+
+- (IBAction)lookUpPassWord:(id)sender {
+    //创建sb 进行的弹窗展示
+    UIStoryboard * sb = [UIStoryboard storyboardWithName:@"YQlookupPW" bundle:nil];
+    UIViewController * vc = [sb instantiateInitialViewController];
+    [self presentViewController:vc animated:YES completion:nil];
+    
+}
+
+
+#pragma mark - 微博的第三方登录方法
 - (void)getUserInfoForPlatform:(UMSocialPlatformType)platformType
 {
     [[UMSocialManager defaultManager] getUserInfoWithPlatform:platformType currentViewController:self completion:^(id result, NSError *error) {

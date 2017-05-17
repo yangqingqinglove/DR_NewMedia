@@ -11,6 +11,10 @@
 		2F0B41DD1EACE9C70075CC89 /* YQBackGround.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2F0B41DC1EACE9C70075CC89 /* YQBackGround.storyboard */; };
 		2F423DEC1ECC28BF006ABE67 /* YQLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F423DEB1ECC28BF006ABE67 /* YQLoginViewController.m */; };
 		2F423DEE1ECC28E0006ABE67 /* YQLogin.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2F423DED1ECC28E0006ABE67 /* YQLogin.storyboard */; };
+		2F423DF11ECC54CD006ABE67 /* YQRegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F423DF01ECC54CD006ABE67 /* YQRegisterViewController.m */; };
+		2F423DF31ECC550B006ABE67 /* YQRegsiter.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2F423DF21ECC550B006ABE67 /* YQRegsiter.storyboard */; };
+		2F423DF51ECC5552006ABE67 /* YQlookupPW.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2F423DF41ECC5552006ABE67 /* YQlookupPW.storyboard */; };
+		2F423DF81ECC556F006ABE67 /* YQLookupPassWordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F423DF71ECC556F006ABE67 /* YQLookupPassWordViewController.m */; };
 		2F4343261EC3F43300A58352 /* YQSystemSettingTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F4343251EC3F43300A58352 /* YQSystemSettingTableViewController.m */; };
 		2F4343281EC3F4BA00A58352 /* YQSystemSetting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2F4343271EC3F4BA00A58352 /* YQSystemSetting.storyboard */; };
 		2F43432F1EC3FBF900A58352 /* YQEditProfile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2F43432E1EC3FBF900A58352 /* YQEditProfile.storyboard */; };
@@ -312,6 +316,12 @@
 		2F423DEA1ECC28BF006ABE67 /* YQLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YQLoginViewController.h; sourceTree = "<group>"; };
 		2F423DEB1ECC28BF006ABE67 /* YQLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YQLoginViewController.m; sourceTree = "<group>"; };
 		2F423DED1ECC28E0006ABE67 /* YQLogin.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = YQLogin.storyboard; sourceTree = "<group>"; };
+		2F423DEF1ECC54CD006ABE67 /* YQRegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YQRegisterViewController.h; sourceTree = "<group>"; };
+		2F423DF01ECC54CD006ABE67 /* YQRegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YQRegisterViewController.m; sourceTree = "<group>"; };
+		2F423DF21ECC550B006ABE67 /* YQRegsiter.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = YQRegsiter.storyboard; sourceTree = "<group>"; };
+		2F423DF41ECC5552006ABE67 /* YQlookupPW.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = YQlookupPW.storyboard; sourceTree = "<group>"; };
+		2F423DF61ECC556F006ABE67 /* YQLookupPassWordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YQLookupPassWordViewController.h; sourceTree = "<group>"; };
+		2F423DF71ECC556F006ABE67 /* YQLookupPassWordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YQLookupPassWordViewController.m; sourceTree = "<group>"; };
 		2F4343241EC3F43300A58352 /* YQSystemSettingTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YQSystemSettingTableViewController.h; sourceTree = "<group>"; };
 		2F4343251EC3F43300A58352 /* YQSystemSettingTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YQSystemSettingTableViewController.m; sourceTree = "<group>"; };
 		2F4343271EC3F4BA00A58352 /* YQSystemSetting.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = YQSystemSetting.storyboard; sourceTree = "<group>"; };
@@ -755,6 +765,12 @@
 				2F423DEA1ECC28BF006ABE67 /* YQLoginViewController.h */,
 				2F423DEB1ECC28BF006ABE67 /* YQLoginViewController.m */,
 				2F423DED1ECC28E0006ABE67 /* YQLogin.storyboard */,
+				2F423DEF1ECC54CD006ABE67 /* YQRegisterViewController.h */,
+				2F423DF01ECC54CD006ABE67 /* YQRegisterViewController.m */,
+				2F423DF21ECC550B006ABE67 /* YQRegsiter.storyboard */,
+				2F423DF61ECC556F006ABE67 /* YQLookupPassWordViewController.h */,
+				2F423DF71ECC556F006ABE67 /* YQLookupPassWordViewController.m */,
+				2F423DF41ECC5552006ABE67 /* YQlookupPW.storyboard */,
 			);
 			name = Login;
 			sourceTree = "<group>";
@@ -1790,6 +1806,7 @@
 				2F4AB8A01EBC7D8B0059AB90 /* SaveFileCell.xib in Resources */,
 				2F7220E81EB2E7560011C8D3 /* quen170427_40000036_320.png in Resources */,
 				2F6E217B1EC1C1D3003A23D2 /* YQHotDetail.storyboard in Resources */,
+				2F423DF51ECC5552006ABE67 /* YQlookupPW.storyboard in Resources */,
 				2F636EB01EC9F43E00E97483 /* beep.wav in Resources */,
 				2F72206E1EB2D0680011C8D3 /* ku170427_30000036_200.png in Resources */,
 				2F721FC71EB2CFA40011C8D3 /* philips_hq6070_350.jpg in Resources */,
@@ -1891,6 +1908,7 @@
 				2F0B41DD1EACE9C70075CC89 /* YQBackGround.storyboard in Resources */,
 				2F7220611EB2D0680011C8D3 /* ku170427_30000036_00.png in Resources */,
 				2F721FA91EB2CFA40011C8D3 /* duowei_90.jpg in Resources */,
+				2F423DF31ECC550B006ABE67 /* YQRegsiter.storyboard in Resources */,
 				2F7220D91EB2E7560011C8D3 /* quen170427_40000036_190.png in Resources */,
 				2F721FB11EB2CFA40011C8D3 /* philips_hq6070_150.jpg in Resources */,
 				2F721FCB1EB2CFA40011C8D3 /* philips_hq6070_70.jpg in Resources */,
@@ -1994,6 +2012,7 @@
 				2F4343421EC439CE00A58352 /* YQDocumentBindingTableViewController.m in Sources */,
 				2F4FA5F21EA5EF7100E6E25F /* YQButton.m in Sources */,
 				2F70F3801EA9D9370012EF8A /* YQRulerVC.m in Sources */,
+				2F423DF11ECC54CD006ABE67 /* YQRegisterViewController.m in Sources */,
 				2FA2959A1EC06F7500F5660C /* YQStaticTableViewController.m in Sources */,
 				2F8F89511EA86646006DDDE9 /* YQCollocationViewController.m in Sources */,
 				2F70F3771EA9A1B90012EF8A /* YQWardrobeCollectionView.m in Sources */,
@@ -2040,6 +2059,7 @@
 				2FA71A421EC2FC7000702898 /* YQHomeContentView.m in Sources */,
 				2F4FA5B41EA5C3E800E6E25F /* TAAnimatedDotView.m in Sources */,
 				2FA295921EC05D5300F5660C /* YQMineViewController.m in Sources */,
+				2F423DF81ECC556F006ABE67 /* YQLookupPassWordViewController.m in Sources */,
 				2F4FA5B91EA5C3E800E6E25F /* UIView+SDExtension.m in Sources */,
 				2F70F37B1EA9A4200012EF8A /* YQWardrobeCell.m in Sources */,
 				2F636EAE1EC9B04A00E97483 /* QRCodeReaderViewController.m in Sources */,
