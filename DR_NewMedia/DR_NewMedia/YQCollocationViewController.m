@@ -26,6 +26,7 @@
 #import "YQSaveFileViewController.h"
 #import <MBProgressHUD.h>
 #import "QRCodeReaderViewController.h"
+#import <UShareUI/UShareUI.h>
 
 
 @interface YQCollocationViewController ()<YQBottomViewClickDeleage,YQTopViewClickDeleate,UICollectionViewDelegate,UICollectionViewDataSource,YQImageGroupViewDelegate,UIImagePickerControllerDelegate,UINavigationControllerDelegate,QRCodeReaderDelegate>
@@ -150,7 +151,7 @@ static NSString * ID = @"imageCell";
     
     UIButton * rightBnt1 = [UIButton buttonWithType:UIButtonTypeCustom];
     rightBnt1.backgroundColor = [UIColor clearColor];//设置透明
-    [rightBnt1 addTarget:self action:@selector(rightBarButtonClicked:) forControlEvents:UIControlEventTouchUpInside];
+    [rightBnt1 addTarget:self action:@selector(rightItem1BarButtonClicked:) forControlEvents:UIControlEventTouchUpInside];
     [rightBnt1 setImage:[UIImage imageNamed:@"share.png"] forState:UIControlStateNormal];
     [rightBnt1 sizeToFit];
 
@@ -932,6 +933,22 @@ static NSString * ID = @"imageCell";
 
 }
 
+-(void)rightItem1BarButtonClicked:(UIButton *)bnt{//友盟分享
+    
+    
+    
+    //显示分享面板
+    [UMSocialUIManager showShareMenuViewInWindowWithPlatformSelectionBlock:^(UMSocialPlatformType platformType, NSDictionary *userInfo) {
+        // 根据获取的platformType确定所选平台进行下一步操作
+        
+        [self shareWebPageToPlatformType:platformType ];
+        
+    }];
+    
+    
+
+}
+
 -(void)leftBarButtonClicked:(UIButton *)bnt{//zxing 的二维扫描
     
     QRCodeReaderViewController *reader = [QRCodeReaderViewController new];
@@ -943,21 +960,57 @@ static NSString * ID = @"imageCell";
     [self presentViewController:nav animated:YES completion:nil];
 }
 
+#pragma mark - 友盟分享内容视图方法
+- (void)shareWebPageToPlatformType:(UMSocialPlatformType)platformType
+{
+    //创建分享消息对象
+    UMSocialMessageObject *messageObject = [UMSocialMessageObject messageObject];
+    
+    //创建网页内容对象
+    NSString* thumbURL =  @"https://mobile.umeng.com/images/pic/home/social/img-1.png";
+    UMShareWebpageObject *shareObject = [UMShareWebpageObject shareObjectWithTitle:@"欢迎使用【友盟+】社会化组件U-Share" descr:@"欢迎使用【友盟+】社会化组件U-Share，SDK包最小，集成成本最低，助力您的产品开发、运营与推广！" thumImage:thumbURL];
+    //设置网页地址
+    shareObject.webpageUrl = @"http://mobile.umeng.com/social";
+    
+    //分享消息对象设置分享内容对象
+    messageObject.shareObject = shareObject;
+    
+    //调用分享接口
+    [[UMSocialManager defaultManager] shareToPlatform:platformType messageObject:messageObject currentViewController:self completion:^(id data, NSError *error) {
+        if (error) {
+            UMSocialLogInfo(@"************Share fail with error %@*********",error);
+        }else{
+            if ([data isKindOfClass:[UMSocialShareResponse class]]) {
+                UMSocialShareResponse *resp = data;
+                //分享结果消息
+                UMSocialLogInfo(@"response message is %@",resp.message);
+                //第三方原始返回的数据
+                UMSocialLogInfo(@"response originalResponse data is %@",resp.originalResponse);
+                
+            }else{
+                UMSocialLogInfo(@"response data is %@",data);
+            }
+        }
+//        [self alertWithError:error];
+    }];
+}
+
+
 #pragma mark - scanResult的代理方法
 #pragma mark - QRCodeReader Delegate Methods
-
 - (void)reader:(QRCodeReaderViewController *)reader didScanResult:(NSString *)result
 {// 最后的扫描的结果是 得到是resulut的url 进行的函数的回调
     [self dismissViewControllerAnimated:YES completion:^{
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"QRCodeReader" message:result delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
-        [alert show];
+        UIAlertController * alertVC = [UIAlertController alertControllerWithTitle:@"QRCodeReader" message:result preferredStyle:UIAlertControllerStyleActionSheet];
+        
+        [self presentViewController:alertVC animated:YES completion:nil];
+        
     }];
 }
 
 
 - (void)readerDidCancel:(QRCodeReaderViewController *)reader
 {
-    
     [self dismissViewControllerAnimated:YES completion:nil];
     
 }
