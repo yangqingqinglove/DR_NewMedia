@@ -27,6 +27,7 @@
 #import <MBProgressHUD.h>
 #import "QRCodeReaderViewController.h"
 #import <UShareUI/UShareUI.h>
+#import <UMSocialCore/UMSocialCore.h>
 
 
 @interface YQCollocationViewController ()<YQBottomViewClickDeleage,YQTopViewClickDeleate,UICollectionViewDelegate,UICollectionViewDataSource,YQImageGroupViewDelegate,UIImagePickerControllerDelegate,UINavigationControllerDelegate,QRCodeReaderDelegate>
@@ -935,18 +936,15 @@ static NSString * ID = @"imageCell";
 
 -(void)rightItem1BarButtonClicked:(UIButton *)bnt{//友盟分享
     
-    
-    
-    //显示分享面板
+    //显示分享面板(调用的是 友盟系统的UI的界面)
     [UMSocialUIManager showShareMenuViewInWindowWithPlatformSelectionBlock:^(UMSocialPlatformType platformType, NSDictionary *userInfo) {
         // 根据获取的platformType确定所选平台进行下一步操作
         
         [self shareWebPageToPlatformType:platformType ];
+//        [self getAuthWithUserInfoFromDouban];
         
     }];
     
-    
-
 }
 
 -(void)leftBarButtonClicked:(UIButton *)bnt{//zxing 的二维扫描
@@ -992,6 +990,27 @@ static NSString * ID = @"imageCell";
             }
         }
 //        [self alertWithError:error];
+    }];
+}
+
+#pragma mark - 获取SSO_豆瓣的授权方法
+
+- (void)getAuthWithUserInfoFromDouban
+{
+    [[UMSocialManager defaultManager] getUserInfoWithPlatform:UMSocialPlatformType_Douban currentViewController:nil completion:^(id result, NSError *error) {
+        if (error) {
+            
+        } else {
+            UMSocialUserInfoResponse *resp = result;
+            
+            // 授权信息
+            NSLog(@"Douban uid: %@", resp.uid);
+            NSLog(@"Douban accessToken: %@", resp.accessToken);
+            NSLog(@"Douban expiration: %@", resp.expiration);
+            
+            // 第三方平台SDK源数据
+            NSLog(@"Douban originalResponse: %@", resp.originalResponse);
+        }
     }];
 }
 

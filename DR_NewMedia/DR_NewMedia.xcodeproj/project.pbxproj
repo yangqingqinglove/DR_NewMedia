@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		2F0B41DB1EACE9970075CC89 /* YQBackGroundViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F0B41DA1EACE9970075CC89 /* YQBackGroundViewController.m */; };
 		2F0B41DD1EACE9C70075CC89 /* YQBackGround.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2F0B41DC1EACE9C70075CC89 /* YQBackGround.storyboard */; };
+		2F423DEC1ECC28BF006ABE67 /* YQLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F423DEB1ECC28BF006ABE67 /* YQLoginViewController.m */; };
+		2F423DEE1ECC28E0006ABE67 /* YQLogin.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2F423DED1ECC28E0006ABE67 /* YQLogin.storyboard */; };
 		2F4343261EC3F43300A58352 /* YQSystemSettingTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F4343251EC3F43300A58352 /* YQSystemSettingTableViewController.m */; };
 		2F4343281EC3F4BA00A58352 /* YQSystemSetting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2F4343271EC3F4BA00A58352 /* YQSystemSetting.storyboard */; };
 		2F43432F1EC3FBF900A58352 /* YQEditProfile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2F43432E1EC3FBF900A58352 /* YQEditProfile.storyboard */; };
@@ -251,7 +253,6 @@
 		2F7220F01EB2E7560011C8D3 /* quen170427_40000036_80.png in Resources */ = {isa = PBXBuildFile; fileRef = 2F7220CC1EB2E7560011C8D3 /* quen170427_40000036_80.png */; };
 		2F7220F11EB2E7560011C8D3 /* quen170427_40000036_90.png in Resources */ = {isa = PBXBuildFile; fileRef = 2F7220CD1EB2E7560011C8D3 /* quen170427_40000036_90.png */; };
 		2F78E8801EB9BF3500A47564 /* YQConcernViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F78E87F1EB9BF3500A47564 /* YQConcernViewController.m */; };
-		2F78E8821EB9D6B400A47564 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F78E8811EB9D6B400A47564 /* CoreLocation.framework */; };
 		2F78E8851EB9DB8600A47564 /* YQHeadTitleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F78E8841EB9DB8600A47564 /* YQHeadTitleView.m */; };
 		2F78E8871EB9DFE500A47564 /* YQHeadTitle.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2F78E8861EB9DFE500A47564 /* YQHeadTitle.xib */; };
 		2F7B8A331EBB0C300085057E /* backdrop_0001.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2F7B8A261EBB0C300085057E /* backdrop_0001.jpg */; };
@@ -283,36 +284,8 @@
 		2F8F895C1EA89275006DDDE9 /* YQTopView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F8F895B1EA89275006DDDE9 /* YQTopView.m */; };
 		2F8F895E1EA892F6006DDDE9 /* YQTopView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2F8F895D1EA892F6006DDDE9 /* YQTopView.xib */; };
 		2F90E0581ECAED7000A07EFE /* YQLongPressGestureRecognizer.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F90E0571ECAED7000A07EFE /* YQLongPressGestureRecognizer.m */; };
-		2F90E0A91ECAFE7E00A07EFE /* libAPOpenSdk.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F90E05E1ECAFE7E00A07EFE /* libAPOpenSdk.a */; };
-		2F90E0AA1ECAFE7E00A07EFE /* libSocialAlipayShare.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F90E05F1ECAFE7E00A07EFE /* libSocialAlipayShare.a */; };
-		2F90E0AB1ECAFE7E00A07EFE /* DTShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F90E0621ECAFE7E00A07EFE /* DTShareKit.framework */; };
-		2F90E0AC1ECAFE7E00A07EFE /* libSocialDingDing.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F90E0631ECAFE7E00A07EFE /* libSocialDingDing.a */; };
-		2F90E0AD1ECAFE7E00A07EFE /* libSocialDouban.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F90E0661ECAFE7E00A07EFE /* libSocialDouban.a */; };
-		2F90E0AE1ECAFE7E00A07EFE /* libSocialEmail.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F90E0691ECAFE7E00A07EFE /* libSocialEmail.a */; };
-		2F90E0AF1ECAFE7E00A07EFE /* libSocialEverNote.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F90E06C1ECAFE7E00A07EFE /* libSocialEverNote.a */; };
-		2F90E0B01ECAFE7E00A07EFE /* libSocialGooglePlus.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F90E06F1ECAFE7E00A07EFE /* libSocialGooglePlus.a */; };
-		2F90E0B11ECAFE7E00A07EFE /* libSocialInstagram.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F90E0721ECAFE7E00A07EFE /* libSocialInstagram.a */; };
-		2F90E0B21ECAFE7E00A07EFE /* libLWApiSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F90E0751ECAFE7E00A07EFE /* libLWApiSDK.a */; };
-		2F90E0B31ECAFE7E00A07EFE /* libSocialLaiWang.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F90E0761ECAFE7E00A07EFE /* libSocialLaiWang.a */; };
-		2F90E0B41ECAFE7E00A07EFE /* libSocialPocket.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F90E0821ECAFE7E00A07EFE /* libSocialPocket.a */; };
-		2F90E0B51ECAFE7E00A07EFE /* libSocialQQ.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F90E0851ECAFE7E00A07EFE /* libSocialQQ.a */; };
-		2F90E0B61ECAFE7E00A07EFE /* libSocialRenren.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F90E0881ECAFE7E00A07EFE /* libSocialRenren.a */; };
-		2F90E0B71ECAFE7E00A07EFE /* libSocialSina.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F90E08B1ECAFE7E00A07EFE /* libSocialSina.a */; };
-		2F90E0B81ECAFE7E00A07EFE /* libSocialTencentWeibo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F90E08E1ECAFE7E00A07EFE /* libSocialTencentWeibo.a */; };
-		2F90E0B91ECAFE7E00A07EFE /* libSocialUniqueId.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F90E0911ECAFE7E00A07EFE /* libSocialUniqueId.a */; };
-		2F90E0BA1ECAFE7E00A07EFE /* libSocialWeChat.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F90E0941ECAFE7E00A07EFE /* libSocialWeChat.a */; };
-		2F90E0BB1ECAFE7E00A07EFE /* libSocialYiXin.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F90E0971ECAFE7E00A07EFE /* libSocialYiXin.a */; };
-		2F90E0BC1ECAFE7E00A07EFE /* libYixinSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F90E0981ECAFE7E00A07EFE /* libYixinSDK.a */; };
-		2F90E0BD1ECAFE7E00A07EFE /* libSocialYouDao.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F90E09D1ECAFE7E00A07EFE /* libSocialYouDao.a */; };
-		2F90E0BE1ECAFE7E00A07EFE /* UMSocialCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F90E0A01ECAFE7E00A07EFE /* UMSocialCore.framework */; };
-		2F90E0BF1ECAFE7E00A07EFE /* UMSocialNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F90E0A11ECAFE7E00A07EFE /* UMSocialNetwork.framework */; };
 		2F90E0C01ECAFE7E00A07EFE /* UMSocialSDKPromptResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 2F90E0A21ECAFE7E00A07EFE /* UMSocialSDKPromptResources.bundle */; };
-		2F90E0C11ECAFE7E00A07EFE /* libUMSocialCloudShare.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F90E0A41ECAFE7E00A07EFE /* libUMSocialCloudShare.a */; };
-		2F90E0C21ECAFE7E00A07EFE /* libUMSocialLog.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F90E0A51ECAFE7E00A07EFE /* libUMSocialLog.a */; };
 		2F90E0C31ECAFE7E00A07EFE /* UMSocialSDKResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 2F90E0A71ECAFE7E00A07EFE /* UMSocialSDKResources.bundle */; };
-		2F90E0C41ECAFE7E00A07EFE /* UShareUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F90E0A81ECAFE7E00A07EFE /* UShareUI.framework */; };
-		2F90E0C61ECB017E00A07EFE /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F90E0C51ECB017E00A07EFE /* libsqlite3.tbd */; };
-		2F90E0C81ECB01DD00A07EFE /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F90E0C71ECB01DD00A07EFE /* CoreGraphics.framework */; };
 		2FA2958C1EC03E7300F5660C /* YQConcerAllTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA2958B1EC03E7300F5660C /* YQConcerAllTableViewController.m */; };
 		2FA295921EC05D5300F5660C /* YQMineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA295911EC05D5300F5660C /* YQMineViewController.m */; };
 		2FA295951EC065FD00F5660C /* YQMineHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA295941EC065FD00F5660C /* YQMineHeadView.m */; };
@@ -330,13 +303,15 @@
 		2FF1C8A31EB0A0C200A6EF5B /* UIView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FF1C8A01EB0A0C200A6EF5B /* UIView+Extension.m */; };
 		2FF1C8A41EB0A0C200A6EF5B /* YQconstTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FF1C8A21EB0A0C200A6EF5B /* YQconstTools.m */; };
 		2FF1C8A71EB0A31100A6EF5B /* MBProgressHUD+CZ.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FF1C8A61EB0A31100A6EF5B /* MBProgressHUD+CZ.m */; };
-		9F819B6540A4EA3112FAD3C5 /* libPods-DR_NewMedia.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A39F7F5079FEF0D1CE05A67 /* libPods-DR_NewMedia.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		2F0B41D91EACE9970075CC89 /* YQBackGroundViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YQBackGroundViewController.h; sourceTree = "<group>"; };
 		2F0B41DA1EACE9970075CC89 /* YQBackGroundViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YQBackGroundViewController.m; sourceTree = "<group>"; };
 		2F0B41DC1EACE9C70075CC89 /* YQBackGround.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = YQBackGround.storyboard; sourceTree = "<group>"; };
+		2F423DEA1ECC28BF006ABE67 /* YQLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YQLoginViewController.h; sourceTree = "<group>"; };
+		2F423DEB1ECC28BF006ABE67 /* YQLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YQLoginViewController.m; sourceTree = "<group>"; };
+		2F423DED1ECC28E0006ABE67 /* YQLogin.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = YQLogin.storyboard; sourceTree = "<group>"; };
 		2F4343241EC3F43300A58352 /* YQSystemSettingTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YQSystemSettingTableViewController.h; sourceTree = "<group>"; };
 		2F4343251EC3F43300A58352 /* YQSystemSettingTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YQSystemSettingTableViewController.m; sourceTree = "<group>"; };
 		2F4343271EC3F4BA00A58352 /* YQSystemSetting.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = YQSystemSetting.storyboard; sourceTree = "<group>"; };
@@ -759,36 +734,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2F90E0C81ECB01DD00A07EFE /* CoreGraphics.framework in Frameworks */,
-				2F90E0C61ECB017E00A07EFE /* libsqlite3.tbd in Frameworks */,
-				2F90E0B51ECAFE7E00A07EFE /* libSocialQQ.a in Frameworks */,
-				2F90E0B91ECAFE7E00A07EFE /* libSocialUniqueId.a in Frameworks */,
-				2F90E0AF1ECAFE7E00A07EFE /* libSocialEverNote.a in Frameworks */,
-				2F90E0C21ECAFE7E00A07EFE /* libUMSocialLog.a in Frameworks */,
-				2F90E0A91ECAFE7E00A07EFE /* libAPOpenSdk.a in Frameworks */,
-				2F90E0C11ECAFE7E00A07EFE /* libUMSocialCloudShare.a in Frameworks */,
-				2F90E0B21ECAFE7E00A07EFE /* libLWApiSDK.a in Frameworks */,
-				2F90E0BB1ECAFE7E00A07EFE /* libSocialYiXin.a in Frameworks */,
-				2F90E0AE1ECAFE7E00A07EFE /* libSocialEmail.a in Frameworks */,
-				2F90E0BA1ECAFE7E00A07EFE /* libSocialWeChat.a in Frameworks */,
-				2F90E0B81ECAFE7E00A07EFE /* libSocialTencentWeibo.a in Frameworks */,
-				2F90E0B31ECAFE7E00A07EFE /* libSocialLaiWang.a in Frameworks */,
-				2F90E0BD1ECAFE7E00A07EFE /* libSocialYouDao.a in Frameworks */,
-				2F90E0BC1ECAFE7E00A07EFE /* libYixinSDK.a in Frameworks */,
-				2F90E0B01ECAFE7E00A07EFE /* libSocialGooglePlus.a in Frameworks */,
-				2F90E0B71ECAFE7E00A07EFE /* libSocialSina.a in Frameworks */,
-				2F78E8821EB9D6B400A47564 /* CoreLocation.framework in Frameworks */,
-				2F90E0AC1ECAFE7E00A07EFE /* libSocialDingDing.a in Frameworks */,
-				2F90E0BE1ECAFE7E00A07EFE /* UMSocialCore.framework in Frameworks */,
-				2F90E0BF1ECAFE7E00A07EFE /* UMSocialNetwork.framework in Frameworks */,
-				2F90E0AB1ECAFE7E00A07EFE /* DTShareKit.framework in Frameworks */,
-				2F90E0B11ECAFE7E00A07EFE /* libSocialInstagram.a in Frameworks */,
-				2F90E0B41ECAFE7E00A07EFE /* libSocialPocket.a in Frameworks */,
-				2F90E0B61ECAFE7E00A07EFE /* libSocialRenren.a in Frameworks */,
-				2F90E0C41ECAFE7E00A07EFE /* UShareUI.framework in Frameworks */,
-				2F90E0AD1ECAFE7E00A07EFE /* libSocialDouban.a in Frameworks */,
-				2F90E0AA1ECAFE7E00A07EFE /* libSocialAlipayShare.a in Frameworks */,
-				9F819B6540A4EA3112FAD3C5 /* libPods-DR_NewMedia.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -802,6 +747,16 @@
 				BA1A62893ACCFC13E7146302 /* Pods-DR_NewMedia.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		2F423DE91ECC27FA006ABE67 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				2F423DEA1ECC28BF006ABE67 /* YQLoginViewController.h */,
+				2F423DEB1ECC28BF006ABE67 /* YQLoginViewController.m */,
+				2F423DED1ECC28E0006ABE67 /* YQLogin.storyboard */,
+			);
+			name = Login;
 			sourceTree = "<group>";
 		};
 		2F4FA5A21EA5C25100E6E25F /* Framework */ = {
@@ -1196,6 +1151,7 @@
 		2F8966901EA497FA00A1F697 /* DR_NewMedia */ = {
 			isa = PBXGroup;
 			children = (
+				2F423DE91ECC27FA006ABE67 /* Login */,
 				2FA2958D1EC05BB500F5660C /* Mine */,
 				2F78E8791EB9B89400A47564 /* Concern */,
 				2F8F894E1EA86397006DDDE9 /* CollocationRoom */,
@@ -1749,6 +1705,7 @@
 				2F70F38A1EAA08F90012EF8A /* YQRulerVC.xib in Resources */,
 				2F721F911EB2CFA40011C8D3 /* duowei_190.jpg in Resources */,
 				2F4FA5E41EA5E23700E6E25F /* 08.jpg in Resources */,
+				2F423DEE1ECC28E0006ABE67 /* YQLogin.storyboard in Resources */,
 				2F4343511EC442EE00A58352 /* YQAcceptNotice.storyboard in Resources */,
 				2F721FA31EB2CFA40011C8D3 /* duowei_350.jpg in Resources */,
 				2F70F3881EA9F39F0012EF8A /* YQDetail.storyboard in Resources */,
@@ -2054,6 +2011,7 @@
 				2F4343591EC4670100A58352 /* YQRecordMessageVC.m in Sources */,
 				2F4AB89F1EBC7D8B0059AB90 /* YQSaveFileCell.m in Sources */,
 				2FABE2A81EC5A2AA0057995D /* CityListViewController.m in Sources */,
+				2F423DEC1ECC28BF006ABE67 /* YQLoginViewController.m in Sources */,
 				2F7B8A421EBB20D90085057E /* YQBackGroundCollectionCell.m in Sources */,
 				2F43434F1EC442BB00A58352 /* YQAcceptNotiesTableViewController.m in Sources */,
 				2FA2958C1EC03E7300F5660C /* YQConcerAllTableViewController.m in Sources */,
@@ -2139,6 +2097,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_BITCODE = YES;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -2160,6 +2119,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VALID_ARCHS = "arm64 armv7";
 			};
 			name = Debug;
 		};
@@ -2188,6 +2148,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_BITCODE = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -2200,9 +2161,11 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
+				VALID_ARCHS = "arm64 armv7";
 			};
 			name = Release;
 		};
@@ -2212,6 +2175,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = HVL2C5A8LT;
+				ENABLE_BITCODE = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/UMSocial/SocialLibraries/DingDing",
@@ -2243,8 +2207,10 @@
 					"$(PROJECT_DIR)/UMSocial/SocialLibraries/YouDao",
 					"$(PROJECT_DIR)/UMSocial/UMSocialSDKPlugin",
 				);
+				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = "DR.DR-NewMedia";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				VALID_ARCHS = "arm64 armv7";
 			};
 			name = Debug;
 		};
@@ -2254,6 +2220,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = HVL2C5A8LT;
+				ENABLE_BITCODE = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/UMSocial/SocialLibraries/DingDing",
@@ -2285,8 +2252,10 @@
 					"$(PROJECT_DIR)/UMSocial/SocialLibraries/YouDao",
 					"$(PROJECT_DIR)/UMSocial/UMSocialSDKPlugin",
 				);
+				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = "DR.DR-NewMedia";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				VALID_ARCHS = "arm64 armv7";
 			};
 			name = Release;
 		};
