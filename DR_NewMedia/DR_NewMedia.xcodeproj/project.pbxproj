@@ -11,6 +11,10 @@
 		2F0B41DD1EACE9C70075CC89 /* YQBackGround.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2F0B41DC1EACE9C70075CC89 /* YQBackGround.storyboard */; };
 		2F423DEC1ECC28BF006ABE67 /* YQLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F423DEB1ECC28BF006ABE67 /* YQLoginViewController.m */; };
 		2F423DEE1ECC28E0006ABE67 /* YQLogin.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2F423DED1ECC28E0006ABE67 /* YQLogin.storyboard */; };
+		2F423DF11ECC54CD006ABE67 /* YQRegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F423DF01ECC54CD006ABE67 /* YQRegisterViewController.m */; };
+		2F423DF31ECC550B006ABE67 /* YQRegsiter.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2F423DF21ECC550B006ABE67 /* YQRegsiter.storyboard */; };
+		2F423DF51ECC5552006ABE67 /* YQlookupPW.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2F423DF41ECC5552006ABE67 /* YQlookupPW.storyboard */; };
+		2F423DF81ECC556F006ABE67 /* YQLookupPassWordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F423DF71ECC556F006ABE67 /* YQLookupPassWordViewController.m */; };
 		2F4343261EC3F43300A58352 /* YQSystemSettingTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F4343251EC3F43300A58352 /* YQSystemSettingTableViewController.m */; };
 		2F4343281EC3F4BA00A58352 /* YQSystemSetting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2F4343271EC3F4BA00A58352 /* YQSystemSetting.storyboard */; };
 		2F43432F1EC3FBF900A58352 /* YQEditProfile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2F43432E1EC3FBF900A58352 /* YQEditProfile.storyboard */; };
@@ -61,6 +65,9 @@
 		2F4AB89B1EBC7CA40059AB90 /* YQSaveFile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2F4AB89A1EBC7CA40059AB90 /* YQSaveFile.storyboard */; };
 		2F4AB89F1EBC7D8B0059AB90 /* YQSaveFileCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F4AB89D1EBC7D8B0059AB90 /* YQSaveFileCell.m */; };
 		2F4AB8A01EBC7D8B0059AB90 /* SaveFileCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2F4AB89E1EBC7D8B0059AB90 /* SaveFileCell.xib */; };
+		2F4AFFBF1ECD39F8004BC593 /* libSDWebImage.a in Sources */ = {isa = PBXBuildFile; fileRef = 2F4AFFB91ECD330A004BC593 /* libSDWebImage.a */; };
+		2F4AFFC11ECD3A74004BC593 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F4AFFC01ECD3A74004BC593 /* libc++.tbd */; };
+		2F4AFFC21ECD3AC5004BC593 /* libMBProgressHUD.a in Sources */ = {isa = PBXBuildFile; fileRef = 2F4AFFBB1ECD3314004BC593 /* libMBProgressHUD.a */; };
 		2F4FA5B31EA5C3E800E6E25F /* TAAbstractDotView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F4FA5A61EA5C3E800E6E25F /* TAAbstractDotView.m */; };
 		2F4FA5B41EA5C3E800E6E25F /* TAAnimatedDotView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F4FA5A81EA5C3E800E6E25F /* TAAnimatedDotView.m */; };
 		2F4FA5B51EA5C3E800E6E25F /* TADotView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F4FA5AA1EA5C3E800E6E25F /* TADotView.m */; };
@@ -336,6 +343,12 @@
 		2F423DEA1ECC28BF006ABE67 /* YQLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YQLoginViewController.h; sourceTree = "<group>"; };
 		2F423DEB1ECC28BF006ABE67 /* YQLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YQLoginViewController.m; sourceTree = "<group>"; };
 		2F423DED1ECC28E0006ABE67 /* YQLogin.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = YQLogin.storyboard; sourceTree = "<group>"; };
+		2F423DEF1ECC54CD006ABE67 /* YQRegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YQRegisterViewController.h; sourceTree = "<group>"; };
+		2F423DF01ECC54CD006ABE67 /* YQRegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YQRegisterViewController.m; sourceTree = "<group>"; };
+		2F423DF21ECC550B006ABE67 /* YQRegsiter.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = YQRegsiter.storyboard; sourceTree = "<group>"; };
+		2F423DF41ECC5552006ABE67 /* YQlookupPW.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = YQlookupPW.storyboard; sourceTree = "<group>"; };
+		2F423DF61ECC556F006ABE67 /* YQLookupPassWordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YQLookupPassWordViewController.h; sourceTree = "<group>"; };
+		2F423DF71ECC556F006ABE67 /* YQLookupPassWordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YQLookupPassWordViewController.m; sourceTree = "<group>"; };
 		2F4343241EC3F43300A58352 /* YQSystemSettingTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YQSystemSettingTableViewController.h; sourceTree = "<group>"; };
 		2F4343251EC3F43300A58352 /* YQSystemSettingTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YQSystemSettingTableViewController.m; sourceTree = "<group>"; };
 		2F4343271EC3F4BA00A58352 /* YQSystemSetting.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = YQSystemSetting.storyboard; sourceTree = "<group>"; };
@@ -425,6 +438,9 @@
 		2F4AB89C1EBC7D8B0059AB90 /* YQSaveFileCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YQSaveFileCell.h; sourceTree = "<group>"; };
 		2F4AB89D1EBC7D8B0059AB90 /* YQSaveFileCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YQSaveFileCell.m; sourceTree = "<group>"; };
 		2F4AB89E1EBC7D8B0059AB90 /* SaveFileCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SaveFileCell.xib; sourceTree = "<group>"; };
+		2F4AFFB91ECD330A004BC593 /* libSDWebImage.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libSDWebImage.a; path = "../../../Library/Developer/Xcode/DerivedData/DR_NewMedia-arygpvlhkqoplfeivrexkucndrcl/Build/Products/Debug-iphonesimulator/SDWebImage/libSDWebImage.a"; sourceTree = "<group>"; };
+		2F4AFFBB1ECD3314004BC593 /* libMBProgressHUD.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libMBProgressHUD.a; path = "../../../Library/Developer/Xcode/DerivedData/DR_NewMedia-arygpvlhkqoplfeivrexkucndrcl/Build/Products/Debug-iphonesimulator/MBProgressHUD/libMBProgressHUD.a"; sourceTree = "<group>"; };
+		2F4AFFC01ECD3A74004BC593 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
 		2F4FA5A51EA5C3E800E6E25F /* TAAbstractDotView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TAAbstractDotView.h; sourceTree = "<group>"; };
 		2F4FA5A61EA5C3E800E6E25F /* TAAbstractDotView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TAAbstractDotView.m; sourceTree = "<group>"; };
 		2F4FA5A71EA5C3E800E6E25F /* TAAnimatedDotView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TAAnimatedDotView.h; sourceTree = "<group>"; };
@@ -752,6 +768,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+<<<<<<< HEAD
 				2F4A007B1ECD88F8004BC593 /* libSocialQQ.a in Frameworks */,
 				2F4A00751ECD88F8004BC593 /* libSocialDingDing.a in Frameworks */,
 				2F4A00761ECD88F8004BC593 /* libSocialDouban.a in Frameworks */,
@@ -776,6 +793,9 @@
 				2F4A00811ECD88F8004BC593 /* libSocialWeChat.a in Frameworks */,
 				2F4A007E1ECD88F8004BC593 /* libSocialSMS.a in Frameworks */,
 				94E43C73ED9A0EC12545CED0 /* libPods-DR_NewMedia.a in Frameworks */,
+=======
+				2F4AFFC11ECD3A74004BC593 /* libc++.tbd in Frameworks */,
+>>>>>>> origin/master
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -797,6 +817,12 @@
 				2F423DEA1ECC28BF006ABE67 /* YQLoginViewController.h */,
 				2F423DEB1ECC28BF006ABE67 /* YQLoginViewController.m */,
 				2F423DED1ECC28E0006ABE67 /* YQLogin.storyboard */,
+				2F423DEF1ECC54CD006ABE67 /* YQRegisterViewController.h */,
+				2F423DF01ECC54CD006ABE67 /* YQRegisterViewController.m */,
+				2F423DF21ECC550B006ABE67 /* YQRegsiter.storyboard */,
+				2F423DF61ECC556F006ABE67 /* YQLookupPassWordViewController.h */,
+				2F423DF71ECC556F006ABE67 /* YQLookupPassWordViewController.m */,
+				2F423DF41ECC5552006ABE67 /* YQlookupPW.storyboard */,
 			);
 			name = Login;
 			sourceTree = "<group>";
@@ -1643,6 +1669,9 @@
 		DAD33F48926D9BE0C15DA6BC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				2F4AFFC01ECD3A74004BC593 /* libc++.tbd */,
+				2F4AFFBB1ECD3314004BC593 /* libMBProgressHUD.a */,
+				2F4AFFB91ECD330A004BC593 /* libSDWebImage.a */,
 				2F90E0C71ECB01DD00A07EFE /* CoreGraphics.framework */,
 				2F90E0C51ECB017E00A07EFE /* libsqlite3.tbd */,
 				2F78E8811EB9D6B400A47564 /* CoreLocation.framework */,
@@ -1808,6 +1837,7 @@
 				2F4AB8A01EBC7D8B0059AB90 /* SaveFileCell.xib in Resources */,
 				2F7220E81EB2E7560011C8D3 /* quen170427_40000036_320.png in Resources */,
 				2F6E217B1EC1C1D3003A23D2 /* YQHotDetail.storyboard in Resources */,
+				2F423DF51ECC5552006ABE67 /* YQlookupPW.storyboard in Resources */,
 				2F636EB01EC9F43E00E97483 /* beep.wav in Resources */,
 				2F72206E1EB2D0680011C8D3 /* ku170427_30000036_200.png in Resources */,
 				2F721FC71EB2CFA40011C8D3 /* philips_hq6070_350.jpg in Resources */,
@@ -1911,6 +1941,7 @@
 				2F0B41DD1EACE9C70075CC89 /* YQBackGround.storyboard in Resources */,
 				2F7220611EB2D0680011C8D3 /* ku170427_30000036_00.png in Resources */,
 				2F721FA91EB2CFA40011C8D3 /* duowei_90.jpg in Resources */,
+				2F423DF31ECC550B006ABE67 /* YQRegsiter.storyboard in Resources */,
 				2F7220D91EB2E7560011C8D3 /* quen170427_40000036_190.png in Resources */,
 				2F721FB11EB2CFA40011C8D3 /* philips_hq6070_150.jpg in Resources */,
 				2F721FCB1EB2CFA40011C8D3 /* philips_hq6070_70.jpg in Resources */,
@@ -2007,6 +2038,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2F4AFFC21ECD3AC5004BC593 /* libMBProgressHUD.a in Sources */,
+				2F4AFFBF1ECD39F8004BC593 /* libSDWebImage.a in Sources */,
 				2F8966AA1EA49C9B00A1F697 /* YQTabBarController.m in Sources */,
 				2FF1C8A41EB0A0C200A6EF5B /* YQconstTools.m in Sources */,
 				2F8F895C1EA89275006DDDE9 /* YQTopView.m in Sources */,
@@ -2014,6 +2047,7 @@
 				2F4343421EC439CE00A58352 /* YQDocumentBindingTableViewController.m in Sources */,
 				2F4FA5F21EA5EF7100E6E25F /* YQButton.m in Sources */,
 				2F70F3801EA9D9370012EF8A /* YQRulerVC.m in Sources */,
+				2F423DF11ECC54CD006ABE67 /* YQRegisterViewController.m in Sources */,
 				2FA2959A1EC06F7500F5660C /* YQStaticTableViewController.m in Sources */,
 				2F8F89511EA86646006DDDE9 /* YQCollocationViewController.m in Sources */,
 				2F70F3771EA9A1B90012EF8A /* YQWardrobeCollectionView.m in Sources */,
@@ -2060,6 +2094,7 @@
 				2FA71A421EC2FC7000702898 /* YQHomeContentView.m in Sources */,
 				2F4FA5B41EA5C3E800E6E25F /* TAAnimatedDotView.m in Sources */,
 				2FA295921EC05D5300F5660C /* YQMineViewController.m in Sources */,
+				2F423DF81ECC556F006ABE67 /* YQLookupPassWordViewController.m in Sources */,
 				2F4FA5B91EA5C3E800E6E25F /* UIView+SDExtension.m in Sources */,
 				2F70F37B1EA9A4200012EF8A /* YQWardrobeCell.m in Sources */,
 				2F636EAE1EC9B04A00E97483 /* QRCodeReaderViewController.m in Sources */,
@@ -2136,10 +2171,14 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				MTL_ENABLE_DEBUG_INFO = YES;
-				ONLY_ACTIVE_ARCH = YES;
+				ONLY_ACTIVE_ARCH = NO;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
+<<<<<<< HEAD
 				VALID_ARCHS = "arm64 armv7 armv7s";
+=======
+				VALID_ARCHS = "arm64 armv7 armv7s ";
+>>>>>>> origin/master
 			};
 			name = Debug;
 		};
@@ -2181,11 +2220,15 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
-				ONLY_ACTIVE_ARCH = YES;
+				ONLY_ACTIVE_ARCH = NO;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
+<<<<<<< HEAD
 				VALID_ARCHS = "arm64 armv7 armv7s";
+=======
+				VALID_ARCHS = "arm64 armv7 armv7s ";
+>>>>>>> origin/master
 			};
 			name = Release;
 		};
@@ -2229,6 +2272,7 @@
 					"$(PROJECT_DIR)/UMSocial/SocialLibraries/Line",
 					"$(PROJECT_DIR)/UMSocial/SocialLibraries/SMS",
 				);
+<<<<<<< HEAD
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_CFLAGS = (
 					"$(inherited)",
@@ -2249,6 +2293,16 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "DR.DR-NewMedia";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				VALID_ARCHS = "arm64 armv7 armv7s";
+=======
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-all_load",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "DR.DR-NewMedia";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				VALID_ARCHS = "arm64 armv7 armv7s ";
+>>>>>>> origin/master
 			};
 			name = Debug;
 		};
@@ -2292,6 +2346,7 @@
 					"$(PROJECT_DIR)/UMSocial/SocialLibraries/Line",
 					"$(PROJECT_DIR)/UMSocial/SocialLibraries/SMS",
 				);
+<<<<<<< HEAD
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_CFLAGS = (
 					"$(inherited)",
@@ -2312,6 +2367,16 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "DR.DR-NewMedia";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				VALID_ARCHS = "arm64 armv7 armv7s";
+=======
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-all_load",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "DR.DR-NewMedia";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				VALID_ARCHS = "arm64 armv7 armv7s ";
+>>>>>>> origin/master
 			};
 			name = Release;
 		};

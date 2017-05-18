@@ -941,7 +941,7 @@ static NSString * ID = @"imageCell";
         // 根据获取的platformType确定所选平台进行下一步操作
         
         [self shareWebPageToPlatformType:platformType ];
-//        [self getAuthWithUserInfoFromDouban];
+//        [self getAuthWithUserInfoFromWechat];
         
     }];
     
@@ -993,23 +993,29 @@ static NSString * ID = @"imageCell";
     }];
 }
 
-#pragma mark - 获取SSO_豆瓣的授权方法
-
-- (void)getAuthWithUserInfoFromDouban
-{
-    [[UMSocialManager defaultManager] getUserInfoWithPlatform:UMSocialPlatformType_Douban currentViewController:nil completion:^(id result, NSError *error) {
+#pragma mark - 获取SSO_微信的授权方法
+- (void)getAuthWithUserInfoFromWechat
+{// test测试的是很成功的
+    [[UMSocialManager defaultManager] getUserInfoWithPlatform:UMSocialPlatformType_WechatSession currentViewController:nil completion:^(id result, NSError *error) {
         if (error) {
             
         } else {
             UMSocialUserInfoResponse *resp = result;
             
             // 授权信息
-            NSLog(@"Douban uid: %@", resp.uid);
-            NSLog(@"Douban accessToken: %@", resp.accessToken);
-            NSLog(@"Douban expiration: %@", resp.expiration);
+            NSLog(@"Wechat uid: %@", resp.uid);
+            NSLog(@"Wechat openid: %@", resp.openid);
+            NSLog(@"Wechat accessToken: %@", resp.accessToken);
+            NSLog(@"Wechat refreshToken: %@", resp.refreshToken);
+            NSLog(@"Wechat expiration: %@", resp.expiration);
+            
+            // 用户信息
+            NSLog(@"Wechat name: %@", resp.name);
+            NSLog(@"Wechat iconurl: %@", resp.iconurl);
+            NSLog(@"Wechat gender: %@", resp.unionGender);
             
             // 第三方平台SDK源数据
-            NSLog(@"Douban originalResponse: %@", resp.originalResponse);
+            NSLog(@"Wechat originalResponse: %@", resp.originalResponse);
         }
     }];
 }

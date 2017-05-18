@@ -17,7 +17,7 @@
                         <viewControllerLayoutGuide type="top" id="XFo-3u-27F"/>
                         <viewControllerLayoutGuide type="bottom" id="Ie2-uN-WK1"/>
                     </layoutGuides>
-                    <view key="view" alpha="0.29999999999999999" contentMode="scaleToFill" id="FGh-LR-u3V">
+                    <view key="view" contentMode="scaleToFill" id="FGh-LR-u3V">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -52,7 +52,7 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SOD-WM-2Tn">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="密码" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SOD-WM-2Tn">
                                         <rect key="frame" x="57" y="199" width="190" height="47"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="47" id="3VJ-Ph-Z9A"/>
@@ -62,6 +62,13 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ayC-kC-By1">
+                                        <rect key="frame" x="255" y="199" width="62" height="47"/>
+                                        <state key="normal" title="找回密码"/>
+                                        <connections>
+                                            <action selector="lookUpPassWord:" destination="iSi-8C-g5d" eventType="touchUpInside" id="Jpb-S4-vfw"/>
+                                        </connections>
+                                    </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w2F-Gr-aBU">
                                         <rect key="frame" x="57.5" y="266" width="260" height="47"/>
                                         <color key="backgroundColor" red="1" green="0.0" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
@@ -99,9 +106,12 @@
                                         <rect key="frame" x="107.5" y="472" width="40" height="40"/>
                                         <state key="normal" title="Button"/>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ayC-kC-By1">
-                                        <rect key="frame" x="255" y="199" width="62" height="47"/>
-                                        <state key="normal" title="找回密码"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OAQ-bx-9Eq">
+                                        <rect key="frame" x="255" y="323" width="31" height="30"/>
+                                        <state key="normal" title="注册"/>
+                                        <connections>
+                                            <action selector="registerButtonClicked:" destination="iSi-8C-g5d" eventType="touchUpInside" id="4Ld-zt-pJ2"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -114,11 +124,13 @@
                                     <constraint firstItem="ayC-kC-By1" firstAttribute="bottom" secondItem="SOD-WM-2Tn" secondAttribute="bottom" id="AiO-uq-YTd"/>
                                     <constraint firstItem="SOD-WM-2Tn" firstAttribute="leading" secondItem="X7e-TP-aRx" secondAttribute="leading" id="AxK-XB-OoM"/>
                                     <constraint firstItem="ldj-Fo-50H" firstAttribute="height" secondItem="Mv2-Ot-7we" secondAttribute="height" id="EOP-R8-e1b"/>
+                                    <constraint firstItem="OAQ-bx-9Eq" firstAttribute="top" secondItem="w2F-Gr-aBU" secondAttribute="bottom" constant="10" id="Iv8-65-0Xg"/>
                                     <constraint firstItem="w2F-Gr-aBU" firstAttribute="centerX" secondItem="bdx-Nk-rhI" secondAttribute="centerX" id="JMS-R9-kkK"/>
                                     <constraint firstItem="ldj-Fo-50H" firstAttribute="centerY" secondItem="Mv2-Ot-7we" secondAttribute="centerY" id="Jgb-fe-BV2"/>
                                     <constraint firstItem="ayC-kC-By1" firstAttribute="trailing" secondItem="X7e-TP-aRx" secondAttribute="trailing" id="RlB-yX-OMW"/>
                                     <constraint firstItem="w2F-Gr-aBU" firstAttribute="top" secondItem="ayC-kC-By1" secondAttribute="bottom" constant="20" id="STa-W1-7Yq"/>
                                     <constraint firstItem="ldj-Fo-50H" firstAttribute="width" secondItem="Mv2-Ot-7we" secondAttribute="width" id="VuK-C3-ZWx"/>
+                                    <constraint firstItem="OAQ-bx-9Eq" firstAttribute="leading" secondItem="ayC-kC-By1" secondAttribute="leading" id="X0G-Im-PVV"/>
                                     <constraint firstItem="X7e-TP-aRx" firstAttribute="top" secondItem="OWD-jw-aUb" secondAttribute="bottom" constant="25" id="Y2e-GY-uZj"/>
                                     <constraint firstItem="a53-lj-AWo" firstAttribute="centerX" secondItem="bdx-Nk-rhI" secondAttribute="centerX" id="ZJm-Cc-2Ro"/>
                                     <constraint firstItem="SOD-WM-2Tn" firstAttribute="top" secondItem="X7e-TP-aRx" secondAttribute="bottom" constant="21" id="dHv-xX-XKw"/>
@@ -145,7 +157,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iLP-YT-c1C" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-52" y="117"/>
+            <point key="canvasLocation" x="-682" y="128"/>
         </scene>
     </scenes>
 </document>

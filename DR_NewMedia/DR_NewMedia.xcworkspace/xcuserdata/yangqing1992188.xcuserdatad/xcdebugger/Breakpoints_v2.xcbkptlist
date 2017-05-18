@@ -25,7 +25,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "1000"
             endingLineNumber = "1000"
-            landmarkName = "-getAuthWithUserInfoFromDouban"
+            landmarkName = "-getAuthWithUserInfoFromWechat"
             landmarkType = "7">
             <Locations>
                <Location
