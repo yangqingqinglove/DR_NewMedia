@@ -40,6 +40,9 @@
 		2F4AB89B1EBC7CA40059AB90 /* YQSaveFile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2F4AB89A1EBC7CA40059AB90 /* YQSaveFile.storyboard */; };
 		2F4AB89F1EBC7D8B0059AB90 /* YQSaveFileCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F4AB89D1EBC7D8B0059AB90 /* YQSaveFileCell.m */; };
 		2F4AB8A01EBC7D8B0059AB90 /* SaveFileCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2F4AB89E1EBC7D8B0059AB90 /* SaveFileCell.xib */; };
+		2F4AFFBF1ECD39F8004BC593 /* libSDWebImage.a in Sources */ = {isa = PBXBuildFile; fileRef = 2F4AFFB91ECD330A004BC593 /* libSDWebImage.a */; };
+		2F4AFFC11ECD3A74004BC593 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F4AFFC01ECD3A74004BC593 /* libc++.tbd */; };
+		2F4AFFC21ECD3AC5004BC593 /* libMBProgressHUD.a in Sources */ = {isa = PBXBuildFile; fileRef = 2F4AFFBB1ECD3314004BC593 /* libMBProgressHUD.a */; };
 		2F4FA5B31EA5C3E800E6E25F /* TAAbstractDotView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F4FA5A61EA5C3E800E6E25F /* TAAbstractDotView.m */; };
 		2F4FA5B41EA5C3E800E6E25F /* TAAnimatedDotView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F4FA5A81EA5C3E800E6E25F /* TAAnimatedDotView.m */; };
 		2F4FA5B51EA5C3E800E6E25F /* TADotView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F4FA5AA1EA5C3E800E6E25F /* TADotView.m */; };
@@ -359,6 +362,9 @@
 		2F4AB89C1EBC7D8B0059AB90 /* YQSaveFileCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YQSaveFileCell.h; sourceTree = "<group>"; };
 		2F4AB89D1EBC7D8B0059AB90 /* YQSaveFileCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YQSaveFileCell.m; sourceTree = "<group>"; };
 		2F4AB89E1EBC7D8B0059AB90 /* SaveFileCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SaveFileCell.xib; sourceTree = "<group>"; };
+		2F4AFFB91ECD330A004BC593 /* libSDWebImage.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libSDWebImage.a; path = "../../../Library/Developer/Xcode/DerivedData/DR_NewMedia-arygpvlhkqoplfeivrexkucndrcl/Build/Products/Debug-iphonesimulator/SDWebImage/libSDWebImage.a"; sourceTree = "<group>"; };
+		2F4AFFBB1ECD3314004BC593 /* libMBProgressHUD.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libMBProgressHUD.a; path = "../../../Library/Developer/Xcode/DerivedData/DR_NewMedia-arygpvlhkqoplfeivrexkucndrcl/Build/Products/Debug-iphonesimulator/MBProgressHUD/libMBProgressHUD.a"; sourceTree = "<group>"; };
+		2F4AFFC01ECD3A74004BC593 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
 		2F4FA5A51EA5C3E800E6E25F /* TAAbstractDotView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TAAbstractDotView.h; sourceTree = "<group>"; };
 		2F4FA5A61EA5C3E800E6E25F /* TAAbstractDotView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TAAbstractDotView.m; sourceTree = "<group>"; };
 		2F4FA5A71EA5C3E800E6E25F /* TAAnimatedDotView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TAAnimatedDotView.h; sourceTree = "<group>"; };
@@ -744,6 +750,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2F4AFFC11ECD3A74004BC593 /* libc++.tbd in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1639,6 +1646,9 @@
 		DAD33F48926D9BE0C15DA6BC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				2F4AFFC01ECD3A74004BC593 /* libc++.tbd */,
+				2F4AFFBB1ECD3314004BC593 /* libMBProgressHUD.a */,
+				2F4AFFB91ECD330A004BC593 /* libSDWebImage.a */,
 				2F90E0C71ECB01DD00A07EFE /* CoreGraphics.framework */,
 				2F90E0C51ECB017E00A07EFE /* libsqlite3.tbd */,
 				2F78E8811EB9D6B400A47564 /* CoreLocation.framework */,
@@ -2005,6 +2015,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2F4AFFC21ECD3AC5004BC593 /* libMBProgressHUD.a in Sources */,
+				2F4AFFBF1ECD39F8004BC593 /* libSDWebImage.a in Sources */,
 				2F8966AA1EA49C9B00A1F697 /* YQTabBarController.m in Sources */,
 				2FF1C8A41EB0A0C200A6EF5B /* YQconstTools.m in Sources */,
 				2F8F895C1EA89275006DDDE9 /* YQTopView.m in Sources */,
@@ -2117,7 +2129,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
-				ENABLE_BITCODE = YES;
+				ENABLE_BITCODE = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -2136,10 +2148,10 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				MTL_ENABLE_DEBUG_INFO = YES;
-				ONLY_ACTIVE_ARCH = YES;
+				ONLY_ACTIVE_ARCH = NO;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				VALID_ARCHS = "arm64 armv7";
+				VALID_ARCHS = "arm64 armv7 armv7s ";
 			};
 			name = Debug;
 		};
@@ -2168,7 +2180,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				ENABLE_BITCODE = YES;
+				ENABLE_BITCODE = NO;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -2181,11 +2193,11 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
-				ONLY_ACTIVE_ARCH = YES;
+				ONLY_ACTIVE_ARCH = NO;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
-				VALID_ARCHS = "arm64 armv7";
+				VALID_ARCHS = "arm64 armv7 armv7s ";
 			};
 			name = Release;
 		};
@@ -2195,7 +2207,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = HVL2C5A8LT;
-				ENABLE_BITCODE = YES;
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/UMSocial/SocialLibraries/DingDing",
@@ -2227,10 +2239,14 @@
 					"$(PROJECT_DIR)/UMSocial/SocialLibraries/YouDao",
 					"$(PROJECT_DIR)/UMSocial/UMSocialSDKPlugin",
 				);
-				ONLY_ACTIVE_ARCH = YES;
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-all_load",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "DR.DR-NewMedia";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				VALID_ARCHS = "arm64 armv7";
+				VALID_ARCHS = "arm64 armv7 armv7s ";
 			};
 			name = Debug;
 		};
@@ -2240,7 +2256,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = HVL2C5A8LT;
-				ENABLE_BITCODE = YES;
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/UMSocial/SocialLibraries/DingDing",
@@ -2272,10 +2288,14 @@
 					"$(PROJECT_DIR)/UMSocial/SocialLibraries/YouDao",
 					"$(PROJECT_DIR)/UMSocial/UMSocialSDKPlugin",
 				);
-				ONLY_ACTIVE_ARCH = YES;
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-all_load",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "DR.DR-NewMedia";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				VALID_ARCHS = "arm64 armv7";
+				VALID_ARCHS = "arm64 armv7 armv7s ";
 			};
 			name = Release;
 		};
