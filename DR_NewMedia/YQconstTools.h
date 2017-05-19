@@ -30,3 +30,9 @@ UIKIT_EXTERN NSString *const YQAddAlbumSelectImageNotification;
 UIKIT_EXTERN NSString *const YQAddCameraNotification;
 
 UIKIT_EXTERN NSString *const YQPushChlidsVCTitileKey;
+
+UIKIT_EXTERN NSString *const UserPassWordSave;
+
+UIKIT_EXTERN NSString *const IsFirstLogin;
+
+UIKIT_EXTERN NSString *const UserNickName;

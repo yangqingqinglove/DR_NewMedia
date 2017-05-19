@@ -25,7 +25,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "1000"
             endingLineNumber = "1000"
-            landmarkName = "-getAuthWithUserInfoFromDouban"
+            landmarkName = "-getAuthWithUserInfoFromWechat"
             landmarkType = "7">
             <Locations>
                <Location
@@ -36,12 +36,12 @@
                   moduleName = "DR_NewMedia"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/yangqing1992188/Documents/DR_NewMedia/DR_NewMedia/DR_NewMedia/YQCollocationViewController.m"
-                  timestampString = "516788047.758666"
+                  timestampString = "516858136.003364"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "1000"
                   endingLineNumber = "1000"
-                  offsetFromSymbolStart = "36">
+                  offsetFromSymbolStart = "16">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -51,12 +51,12 @@
                   moduleName = "DR_NewMedia"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/yangqing1992188/Documents/DR_NewMedia/DR_NewMedia/DR_NewMedia/YQCollocationViewController.m"
-                  timestampString = "516788047.761207"
+                  timestampString = "516858136.006137"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "1001"
                   endingLineNumber = "1001"
-                  offsetFromSymbolStart = "80">
+                  offsetFromSymbolStart = "75">
                </Location>
             </Locations>
          </BreakpointContent>

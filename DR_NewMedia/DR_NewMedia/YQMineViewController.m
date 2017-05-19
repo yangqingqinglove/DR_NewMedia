@@ -9,6 +9,7 @@
 #import "YQMineViewController.h"
 #import "YQMineHeadView.h"
 #import "YQStaticTableViewController.h"
+#import "YQLoginViewController.h"
 
 @interface YQMineViewController ()
 
@@ -20,6 +21,10 @@
 
 // 属性记录保存
 @property(nonatomic,strong)YQStaticTableViewController * staticTableView;
+
+// 登录状态的设置
+@property(nonatomic,assign)BOOL isLogin;
+
 
 
 @end
@@ -50,6 +55,10 @@
     
     // 4.接受通知
     [self abserverAllNoties];
+    
+    // 5.获取用户偏好设置的基本信息来设置
+    self.isLogin = [[NSUserDefaults standardUserDefaults] objectForKey:IsFirstLogin];
+    
 
 }
 
@@ -91,13 +100,35 @@
 }
 
 #pragma mark - 通知执行的方法
--(void)pushDetailView:(NSNotification *)notes{
+-(void)pushDetailView:(NSNotification *)notes{// 分为的是 未登录和 已登录的情况
+    
     
     NSString * VCName = notes.userInfo[YQPushChlidsVCTitileKey];
     
-    UIStoryboard * sb = [UIStoryboard storyboardWithName:VCName bundle:nil];
-    UIViewController * vc = [sb instantiateInitialViewController];
-    [self.navigationController pushViewController:vc animated:YES];
+    if(!self.isLogin){//没有登录的情况下:
+    
+        
+        BOOL isSetting = [VCName isEqualToString:@"YQSystemSetting"];
+        
+        if(isSetting){
+            
+            UIStoryboard * sb = [UIStoryboard storyboardWithName:VCName bundle:nil];
+            UIViewController * vc = [sb instantiateInitialViewController];
+            [self.navigationController pushViewController:vc animated:YES];
+            
+        }else{//弹出的登录注册的界面
+            
+            UIStoryboard * sb = [UIStoryboard storyboardWithName:@"YQLogin" bundle:nil];
+            UIViewController * vc = [sb instantiateInitialViewController];
+            [self presentViewController:vc animated:YES completion:nil];
+        
+        }
+    
+    }else{//已经登录的情况下
+        UIStoryboard * sb = [UIStoryboard storyboardWithName:VCName bundle:nil];
+        UIViewController * vc = [sb instantiateInitialViewController];
+        [self.navigationController pushViewController:vc animated:YES];
+    }
     
 }
 

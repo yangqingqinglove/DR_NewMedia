@@ -23,10 +23,10 @@ NSString *const YQpictureName = @"pictureNameKey";
 NSString *const YQSettingLocationTitileKey = @"LocationTitileKey";
 
 
-
 NSString *const YQPushChlidsVCTitileKey = @"ChlidsVCTitileKey";
-//设置定义的x轴反向上的物理尺寸和像素尺寸的全局的宏
 
-
-
+//用户偏好设置
+NSString *const UserPassWordSave = @"UserPassWordSave";
+NSString *const IsFirstLogin  =  @"isFirstLogin";
+NSString *const UserNickName = @"UserNickName";
 
